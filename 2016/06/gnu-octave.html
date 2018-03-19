@@ -1,0 +1,1724 @@
+<!DOCTYPE html>
+<html dir='ltr' xmlns='http://www.w3.org/1999/xhtml' xmlns:b='http://www.google.com/2005/gml/b' xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.com/2005/gml/expr'>
+<head>
+<link href='https://www.blogger.com/static/v1/widgets/3957297643-widget_css_bundle.css' rel='stylesheet' type='text/css'/>
+<meta content='width=device-width' name='viewport'/>
+<meta content='text/html; charset=UTF-8' http-equiv='Content-Type'/>
+<meta content='blogger' name='generator'/>
+<link href='http://pidia.selfhow.com/favicon.ico' rel='icon' type='image/x-icon'/>
+<link href='http://pidia.selfhow.com/2016/06/gnu-octave.html' rel='canonical'/>
+<link rel="alternate" type="application/atom+xml" title="셀프피디아 - Atom" href="http://pidia.selfhow.com/feeds/posts/default" />
+<link rel="alternate" type="application/rss+xml" title="셀프피디아 - RSS" href="http://pidia.selfhow.com/feeds/posts/default?alt=rss" />
+<link rel="service.post" type="application/atom+xml" title="셀프피디아 - Atom" href="https://www.blogger.com/feeds/6996732972947782461/posts/default" />
+
+<link rel="alternate" type="application/atom+xml" title="셀프피디아 - Atom" href="http://pidia.selfhow.com/feeds/3496938945955717519/comments/default" />
+<!--Can't find substitution for tag [blog.ieCssRetrofitLinks]-->
+<link href='https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/Gnu-octave-logo.svg/65px-Gnu-octave-logo.svg.png' rel='image_src'/>
+<meta content='http://pidia.selfhow.com/2016/06/gnu-octave.html' property='og:url'/>
+<meta content='GNU Octave' property='og:title'/>
+<meta content='       GNU Octave GNU Octave    개발원  John W. Eaton  초판  1988년 ( 1988 ) [ 1 ]  최신판  4.0. 1 / 2016년 3월 23일 (2개월 전)  (2016-03-23)  프로그램 언어  C++...' property='og:description'/>
+<meta content='https://lh5.googleusercontent.com/proxy/v6b_jqkCe7XVfcc1fZLqcM7luMoWh48w06_kuhXzdvYcryXs_h3_kvt8H8kKHbKeWiAO9XMF8UVlFf32mcK0YAPg2jvNG0Ol9bb4amYaY1P226Sds47AjMVnPnX1EXHNrw8u-YYrylrBPak2eiVt1VfdnKlaR3P52Xg2oJEA=w1200-h630-p-k-no-nu' property='og:image'/>
+<!--[if IE]> <script> (function() { var html5 = ("abbr,article,aside,audio,canvas,datalist,details," + "figure,footer,header,hgroup,mark,menu,meter,nav,output," + "progress,section,time,video").split(','); for (var i = 0; i < html5.length; i++) { document.createElement(html5[i]); } try { document.execCommand('BackgroundImageCache', false, true); } catch(e) {} })(); </script> <![endif]-->
+<link href='http://fonts.googleapis.com/css?family=Gloria+Hallelujah&ver=3.8-alpha' id='chalkboard-gloria-css' media='all' rel='stylesheet' type='text/css'/>
+<link href='http://fonts.googleapis.com/css?family=Roboto:400italic,700italic,400,700&subset=latin,latin-ext' id='chalkboard-roboto-css' media='all' rel='stylesheet' type='text/css'/>
+<!-- Start www.bloggertipandtrick.net: Changing the Blogger Title Tag -->
+<title>GNU Octave ~ 셀프피디아</title>
+<!-- End www.bloggertipandtrick.net: Changing the Blogger Title Tag -->
+<!--[if lt IE 9]> <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script> <![endif]-->
+<style id='page-skin-1' type='text/css'><!--
+/*
+-----------------------------------------------
+Template Name  : Classic Chalkboard
+Author         : NewBloggerThemes.com
+Author URL     : http://newbloggerthemes.com/
+Theme URL      : http://newbloggerthemes.com/classic-chalkboard-blogger-template/
+Created Date   : Wednesday, October 30, 2013
+License        : This template is free for both personal and commercial use, But to satisfy the 'attribution' clause of the license, you are required to keep the footer links intact which provides due credit to its authors.For more information about this license, please use this link :http://creativecommons.org/licenses/by/3.0/
+----------------------------------------------- */
+body#layout ul{list-style-type:none;list-style:none}
+body#layout ul li{list-style-type:none;list-style:none}
+body#layout #content {}
+body#layout #slidearea {display:none;}
+body#layout #headbox{display:none;}
+/* Variable definitions
+====================
+*/
+/* Use this with templates/template-twocol.html */
+.section, .widget {
+margin:0;
+padding:0;
+}
+/*
+Resetting and rebuilding styles have been helped along thanks to the fine work of
+Eric Meyer http://meyerweb.com/eric/tools/css/reset/index.html
+along with Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
+and Blueprint http://www.blueprintcss.org/
+*/
+/* =Reset
+-------------------------------------------------------------- */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+border: 0;
+font-family: inherit;
+font-size: 100%;
+font-style: inherit;
+font-weight: inherit;
+margin: 0;
+outline: 0;
+padding: 0;
+vertical-align: baseline;
+}
+html {
+font-size: 62.5%; /* Corrects text resizing oddly in IE6/7 when body font-size is set using em units http://clagnut.com/blog/348/#c790 */
+overflow-y: scroll; /* Keeps page centred in all browsers regardless of content height */
+-webkit-text-size-adjust: 100%; /* Prevents iOS text size adjust after orientation change, without disabling user zoom */
+-ms-text-size-adjust: 100%; /* www.456bereastreet.com/archive/201012/controlling_text_size_in_safari_for_ios_without_disabling_user_zoom/ */
+}
+body, .body-fauxcolumn-outer {
+background: #fff;
+}
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+nav,
+section {
+display: block;
+}
+ol, ul {
+list-style: none;
+}
+table { /* tables still need 'cellspacing="0"' in the markup */
+border-collapse: separate;
+border-spacing: 0;
+}
+caption, th, td {
+font-weight: normal;
+text-align: left;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+content: "";
+}
+blockquote, q {
+quotes: "" "";
+}
+a:focus {
+outline: thin dotted;
+}
+a:hover,
+a:active { /* Improves readability when focused and also mouse hovered in all browsers people.opera.com/patrickl/experiments/keyboard/test */
+outline: 0;
+}
+a img {
+border: 0;
+}
+/* =Global
+----------------------------------------------- */
+body,
+button,
+input,
+select,
+textarea {
+font-family: 'Roboto', Arial, Helvetica, sans-serif;
+font-size: 20px;
+font-size: 2.0rem;
+line-height: 1.6;
+}
+body.sidebar-active {
+font-size: 20px;
+font-size: 2.0rem;
+}
+body, .body-fauxcolumn-outer {
+background: #f1eedc;
+color: #eee;
+}
+/* Headings */
+h1,h2,h3,h4,h5,h6 {
+clear: both;
+font-family: 'Gloria Hallelujah', Arial, Helvetica, sans-serif;
+margin: 1.3em 0 .3em;
+}
+h1 {
+font-size: 48px;
+font-size: 4.8rem;
+margin: 0 0 .3em;
+}
+h2 {
+font-size: 42px;
+font-size: 4.2rem;
+}
+h3 {
+font-size: 36px;
+font-size: 3.6rem;
+}
+h4 {
+font-size: 24px;
+font-size: 2.4rem;
+}
+h5 {
+font-size: 20px;
+font-size: 2.0rem;
+}
+h6 {
+font-size: 18px;
+font-size: 1.8rem;
+}
+hr {
+background-color: #ccc;
+border: 0;
+height: 1px;
+margin-bottom: 1.6em;
+}
+/* Text elements */
+p {
+margin-bottom: 1.6em;
+}
+ul, ol {
+margin: 0 0 1.6em 3em;
+}
+ul {
+list-style: disc;
+}
+ol {
+list-style: decimal;
+}
+ul ul, ol ol, ul ol, ol ul {
+margin-bottom: 0;
+margin-left: 1.6em;
+}
+dt {
+font-weight: bold;
+}
+dd {
+margin: 0 1.6em 1.6em;
+}
+b, strong {
+font-weight: bold;
+}
+dfn, cite, em, i {
+font-style: italic;
+}
+blockquote {
+border-left: 5px solid #f5f5f5;
+font-style: italic;
+margin: 0 1.6em;
+padding: 0 0 0 1.6em;
+}
+address {
+font-style: italic;
+margin: 0 0 1.6em;
+}
+pre {
+background: rgba(255,255,255,.2);
+font-family: "Courier 10 Pitch", Courier, monospace;
+font-size: 18px;
+font-size: 1.8rem;
+line-height: 1.6;
+margin-bottom: 1.6em;
+padding: 1em 1.6em;
+overflow: auto;
+max-width: 100%;
+}
+code, kbd, tt, var {
+font: 18px Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+}
+abbr, acronym {
+border-bottom: 1px dotted #666;
+cursor: help;
+}
+mark, ins {
+background: #fff9c0;
+color: #333;
+text-decoration: none;
+}
+sup,
+sub {
+font-size: 75%;
+height: 0;
+line-height: 0;
+position: relative;
+vertical-align: baseline;
+}
+sup {
+bottom: 1ex;
+}
+sub {
+top: .5ex;
+}
+small {
+font-size: 75%;
+}
+big {
+font-size: 125%;
+}
+figure {
+margin: 0;
+}
+table {
+margin: 0 0 1.6em;
+width: 100%;
+}
+td {
+padding: 5px 7px;
+}
+tr.alternate {
+background: rgba(255,255,255,.1);
+}
+th {
+border-bottom: 5px solid #f5f5f5;
+font-weight: bold;
+padding: 5px 7px;
+}
+button,
+input,
+select,
+textarea {
+font-size: 100%; /* Corrects font size not being inherited in all browsers */
+margin: 0; /* Addresses margins set differently in IE6/7, F3/4, S5, Chrome */
+vertical-align: baseline; /* Improves appearance and consistency in all browsers */
+*vertical-align: middle; /* Improves appearance and consistency in all browsers */
+}
+button,
+input {
+line-height: normal; /* Addresses FF3/4 setting line-height using !important in the UA stylesheet */
+*overflow: visible;  /* Corrects inner spacing displayed oddly in IE6/7 */
+}
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+border: 1px solid #ccc;
+border-color: #ccc #ccc #bbb #ccc;
+border-radius: 3px;
+background: #e6e6e6;
+-webkit-box-shadow: inset 0 1px 0 rgba(255,255,255,0.5), inset 0 15px 17px rgba(255,255,255,0.5), inset 0 -5px 12px rgba(0,0,0,0.05);
+-moz-box-shadow: inset 0 1px 0 rgba(255,255,255,0.5), inset 0 15px 17px rgba(255,255,255,0.5), inset 0 -5px 12px rgba(0,0,0,0.05);
+box-shadow: inset 0 1px 0 rgba(255,255,255,0.5), inset 0 15px 17px rgba(255,255,255,0.5), inset 0 -5px 12px rgba(0,0,0,0.05);
+color: rgba(0,0,0,.8);
+cursor: pointer; /* Improves usability and consistency of cursor style between image-type 'input' and others */
+-webkit-appearance: button; /* Corrects inability to style clickable 'input' types in iOS */
+font-size: 12px;
+font-size: 1.4rem;
+line-height: 1;
+padding: .7em 1.6em .6em;
+text-shadow: 0 1px 0 rgba(255,255,255,.8);
+}
+button:hover,
+html input[type="button"]:hover,
+input[type="reset"]:hover,
+input[type="submit"]:hover {
+border-color: #ccc #bbb #aaa #bbb;
+-webkit-box-shadow: inset 0 1px 0 rgba(255,255,255,0.8), inset 0 15px 17px rgba(255,255,255,0.8), inset 0 -5px 12px rgba(0,0,0,0.02);
+-moz-box-shadow: inset 0 1px 0 rgba(255,255,255,0.8), inset 0 15px 17px rgba(255,255,255,0.8), inset 0 -5px 12px rgba(0,0,0,0.02);
+box-shadow: inset 0 1px 0 rgba(255,255,255,0.8), inset 0 15px 17px rgba(255,255,255,0.8), inset 0 -5px 12px rgba(0,0,0,0.02);
+}
+button:focus,
+html input[type="button"]:focus,
+input[type="reset"]:focus,
+input[type="submit"]:focus,
+button:active,
+html input[type="button"]:active,
+input[type="reset"]:active,
+input[type="submit"]:active {
+border-color: #aaa #bbb #bbb #bbb;
+-webkit-box-shadow: inset 0 -1px 0 rgba(255,255,255,0.5), inset 0 2px 5px rgba(0,0,0,0.15);
+-moz-box-shadow: inset 0 -1px 0 rgba(255,255,255,0.5), inset 0 2px 5px rgba(0,0,0,0.15);
+box-shadow: inset 0 -1px 0 rgba(255,255,255,0.5), inset 0 2px 5px rgba(0,0,0,0.15);
+}
+input[type="checkbox"],
+input[type="radio"] {
+box-sizing: border-box; /* Addresses box sizing set to content-box in IE8/9 */
+padding: 0; /* Addresses excess padding in IE8/9 */
+}
+input[type="search"] {
+-webkit-appearance: textfield; /* Addresses appearance set to searchfield in S5, Chrome */
+-moz-box-sizing: content-box;
+-webkit-box-sizing: content-box; /* Addresses box sizing set to border-box in S5, Chrome (include -moz to future-proof) */
+box-sizing: content-box;
+}
+input[type="search"]::-webkit-search-decoration { /* Corrects inner padding displayed oddly in S5, Chrome on OSX */
+-webkit-appearance: none;
+}
+button::-moz-focus-inner,
+input::-moz-focus-inner { /* Corrects inner padding and border displayed oddly in FF3/4 www.sitepen.com/blog/2008/05/14/the-devils-in-the-details-fixing-dojos-toolbar-buttons/ */
+border: 0;
+padding: 0;
+}
+input[type=text],
+input[type=email],
+input[type=password],
+textarea {
+color: #666;
+border: 1px solid #ccc;
+border-radius: 3px;
+}
+input[type=text]:focus,
+input[type=email]:focus,
+input[type=password]:focus,
+textarea:focus {
+color: #111;
+}
+input[type=text],
+input[type=email],
+input[type=password] {
+padding: 5px;
+position: relative;
+top: 3px;
+}
+textarea {
+overflow: auto; /* Removes default vertical scrollbar in IE6/7/8/9 */
+padding-left: 3px;
+vertical-align: top; /* Improves readability and alignment in all browsers */
+width: 98%;
+}
+/* Links */
+a {
+color: #fff;
+}
+a:visited {
+color: #fff;
+}
+a:hover,
+a:focus,
+a:active {
+color: #fff;
+}
+/* Alignment */
+.alignleft {
+display: inline;
+float: left;
+margin-right: 1.6em;
+margin-top: .8em;
+margin-bottom: .8em;
+}
+.alignright {
+display: inline;
+float: right;
+margin-left: 1.6em;
+margin-top: .8em;
+margin-bottom: .8em;
+}
+.aligncenter {
+clear: both;
+display: block;
+margin: .8em auto;
+}
+/* Text meant only for screen readers */
+.assistive-text {
+clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+clip: rect(1px, 1px, 1px, 1px);
+position: absolute !important;
+}
+/* =Layout
+----------------------------------------------- */
+#pagebwrap {
+background: #000 url('http://2.bp.blogspot.com/-A80lkNvsNUg/UnCKS_gy4iI/AAAAAAAALH4/fBNGe5OjwAo/s1600/chalk2.jpg') repeat;
+background-size: 360px auto;
+border-radius: 10px;
+display: block;
+box-shadow: 5px 5px 20px rgba(0,0,0,.5) inset;
+margin: 0 auto;
+padding: 15px 100px 5px;
+max-width: 960px;
+z-index: 10;
+}
+.wrapper {
+background: #855e42 url('http://2.bp.blogspot.com/-4uPv-bCyM1Y/UnCJh0DlmUI/AAAAAAAALHk/kvDStLoVuz8/s1600/woodtexture.jpg');
+background-size: 225px auto;
+border-radius: 10px;
+box-shadow: 5px 2px 15px rgba(0,0,0,.4);
+display: block;
+margin: 40px auto;
+max-width: 1170px;
+padding: 40px;
+}
+#main:before,
+#main:after {
+content: "";
+display: table;
+}
+#main:after {
+clear: both;
+}
+#primary {
+float: none;
+margin: 0;
+}
+.sidebar-active #primary {
+float: left;
+margin: 0 -25% 0 0;
+width: 100%;
+}
+#content,
+body.page-template-nosidebar-page-php #content,
+body.single-attachment #content {
+margin: 0;
+}
+.sidebar-active #content {
+margin: 0 35% 0 0;
+}
+#secondary { /* Sidebar 1 */
+float: right;
+overflow: hidden;
+width: 25%;
+}
+#tertiary { /* Footer sidebars */
+clear: both;
+}
+.site-footer {
+clear: both;
+width: 100%;
+}
+#colophon {
+background: url('http://1.bp.blogspot.com/-HKu0rscguYo/UnCIrezPUpI/AAAAAAAALHA/VuK3mvmn_6s/s1600/boardbottom-new.png') no-repeat center bottom;
+background-size: 100%;
+clear: both;
+display: block;
+font-family: 'Gloria Hallelujah', Arial, Helvetica, sans-serif;
+font-size: 16px;
+font-size: 1.6rem;
+margin: 50px auto -8px;
+max-width: 800px;
+text-align: center;
+width: 100%;
+min-height: 126px;
+}
+/* =Header
+----------------------------------------------- */
+#masthead {
+font-family: 'Gloria Hallelujah', Arial, Helvetica, sans-serif;
+margin: 0 0 3.2em;
+}
+#masthead:before,
+#masthead:after {
+content: "";
+display: table;
+}
+#masthead:after {
+clear: both;
+}
+#masthead img {
+display: block;
+margin: 15px auto;
+}
+.site-title {
+font-size: 250%;
+font-weight: bold;
+line-height: 1.25;
+margin: .67em 0 5px;
+text-align: center;
+text-decoration: none;
+text-transform: uppercase;
+}
+.site-title a {
+color: #fff;
+text-decoration: none;
+}
+.site-description {
+font-size: 24px;
+font-size: 2.4rem;
+font-weight: normal;
+margin: 0 0 1.6em;
+text-align: center;
+}
+/* =Menu
+----------------------------------------------- */
+.main-navigation {
+clear: both;
+display: block;
+float: left;
+text-align: center;
+width: 100%;
+}
+.main-navigation ul {
+list-style: none;
+margin: 0;
+padding-left: 0;
+}
+.main-navigation li {
+display: inline;
+position: relative;
+}
+.main-navigation a {
+display: inline-block;
+font-size: 19px;
+font-size: 1.9rem;
+line-height: 2em;
+padding: 3px 1em;
+text-align: center;
+text-decoration: none;
+}
+.main-navigation ul ul {
+background: url('http://1.bp.blogspot.com/-fEmJpRZ5E6U/UnCIpwOlVsI/AAAAAAAALG4/uJLT5UDUDyQ/s1600/chalk.png');
+border: 5px solid #f5f5f5;
+border-radius: 5px;
+-moz-box-shadow: 0 3px 3px rgba(0,0,0,0.2);
+-webkit-box-shadow: 0 3px 3px rgba(0,0,0,0.2);
+box-shadow: 0 3px 3px rgba(0,0,0,0.2);
+display: none;
+float: left;
+position: absolute;
+top: 1.6em;
+left: 0;
+z-index: 99999;
+}
+.main-navigation ul ul ul {
+left: 100%;
+top: -6px;
+}
+.main-navigation ul ul a {
+line-height: 1.5;
+text-align: left;
+width: 170px;
+}
+.main-navigation ul ul li {
+}
+.main-navigation li:hover > a {
+opacity: .8;
+}
+.main-navigation ul ul :hover > a {
+}
+.main-navigation ul ul a:hover {
+}
+.main-navigation ul li:hover > ul {
+display: block;
+}
+.main-navigation li.current_page_item a,
+.main-navigation li.current-menu-item a {
+text-decoration: underline;
+}
+/* Small menu */
+.menu-toggle {
+border: 5px solid #fff;
+border-radius: 10px;
+cursor: pointer;
+display: block;
+font-family: "Gloria Hallelujah", Arial, Helvetica, sans-serif;
+font-size: 20px;
+font-size: 2.0rem;
+margin: 0 auto;
+text-align: center;
+width: 125px;
+}
+.main-small-navigation .menu {
+display: none;
+}
+/* =Content
+----------------------------------------------- */
+.sticky.hentry {
+border: 1px solid #f5f5f5;
+border-radius: 15px;
+margin: 0 0 1.6em;
+padding: 30px;
+}
+.sticky.hentry:after,
+.archive .hentry:last-of-type:after,
+.search .hentry:last-of-type:after {
+display: none;
+}
+.hentry {
+margin: 0;
+}
+.hentry:after,
+#tertiary:before {
+background: url('http://1.bp.blogspot.com/-apHpvA6HWu0/UnCJe_DUcWI/AAAAAAAALHQ/EATAIrMRUlE/s1600/postseparator2.png') no-repeat center bottom;
+background-size: 335px auto;
+clear: both;
+content: "";
+display: block;
+margin: 0 0 1.6em;
+width: 100%;
+height: 85px;
+}
+.entry-title {
+font-size: 41px;
+font-size: 4.1rem;
+line-height: 1.2;
+text-align: center;
+margin: 0.5em 0 0.3em;
+}
+.entry-title a {
+text-decoration: none;
+}
+.entry-content {
+font-family: "Roboto", Arial, Helvetica, sans-serif;
+overflow: hidden;
+}
+.entry-meta {
+clear: both;
+color: rgba(255,255,255,.9);
+font-family: 'Gloria Hallelujah', Arial, Helvetica, sans-serif;
+font-size: 18px;
+font-size: 1.8rem;
+font-style: italic;
+text-align: center;
+margin-top: 15px;
+}
+.entry-meta a {
+color: rgba(255,255,255,.9);
+}
+.byline {
+display: none;
+}
+.single .byline,
+.group-blog .byline {
+display: inline;
+}
+.entry-content,
+.entry-summary {
+margin: 1.6em 0 0;
+}
+.page-links {
+clear: both;
+margin: 0 0 1.6em;
+}
+.page-title {
+font-size: 24px;
+font-size: 2.4rem;
+margin: 0 0 1.6em;
+}
+.single-attachment .attachment img {
+display: block;
+margin: 0 auto;
+}
+.single-attachment .entry-caption {
+text-align: center;
+}
+/* =Post Formats
+----------------------------------------------- */
+.format-link .entry-title {
+display: none;
+}
+/* =Media
+----------------------------------------------- */
+.site-header img,
+.entry-content img,
+.comment-content img,
+.widget img {
+max-width: 100%; /* Fluid images for posts, comments, and widgets */
+}
+.site-header img,
+.entry-content img,
+.comment-content img[height],
+img[class*="align"],
+img[class*="wp-image-"],
+.widget img {
+height: auto; /* Make sure images with WordPress-added height and width attributes are scaled correctly */
+}
+.site-header img,
+.entry-content img,
+img.size-full {
+max-width: 100%;
+}
+/* Make sure embeds and iframes fit their containers */
+embed,
+iframe,
+object {
+max-width: 100%;
+}
+/* =Navigation
+----------------------------------------------- */
+#nav-above {
+display: none;
+}
+.site-content .site-navigation {
+margin: 1.6em 0;
+overflow: hidden;
+}
+.site-content .site-navigation a {
+font-family: "Gloria Hallelujah", Arial, Helvetica, sans-serif;
+text-decoration: none;
+}
+.site-content .nav-previous {
+float: left;
+width: 50%;
+}
+.site-content .nav-next,
+.next-image {
+float: right;
+text-align: right;
+width: 50%;
+}
+/* =Widgets
+----------------------------------------------- */
+#tertiary:before,
+#tertiary:after {
+content: "";
+display: table;
+}
+#tertiary:after {
+clear: both;
+}
+.widget-left,
+.widget-middle,
+.widget-right {
+float: left;
+margin-right: 5%;
+overflow: hidden;
+width: 30%;
+}
+.widget-right {
+margin-right: 0;
+}
+.sidebar .widget {
+font-family: "Roboto", Arial, Helvetica, sans-serif;
+font-size: 16px;
+font-size: 1.6rem;
+margin: 0 0 1.6em;
+}
+.widget-title {
+font-family: "Gloria Hallelujah", Arial, Helvetica, sans-serif;
+font-size: 24px;
+font-size: 2.4rem;
+}
+.sidebar .widget h2 {
+font-family: "Gloria Hallelujah", Arial, Helvetica, sans-serif;
+font-size: 24px;
+font-size: 2.4rem;
+}
+.sidebar .widget-content{
+margin:0px;
+padding:0px;
+}
+.sidebar ul{
+margin:0px 0px 0px 24px;
+padding:0px;
+}
+.sidebar ul li{
+padding:5px 0px;
+margin:0px;
+border-bottom:0px solid #eeeeee;
+}
+/* Make sure select elements fit in widgets */
+.sidebar .widget select {
+max-width: 100%;
+}
+/* Search widget */
+#searchsubmit {
+display: none;
+}
+/* =Retina Media Queries
+----------------------------------------------- */
+@media only screen and (-webkit-min-device-pixel-ratio: 2),
+only screen and (-moz-min-device-pixel-ratio: 2),
+only screen and (-o-min-device-pixel-ratio: 2/1),
+only screen and (min-device-pixel-ratio: 2) {
+#colophon {
+background: url('http://2.bp.blogspot.com/-y13MmUYRb8c/UnCJhYXfrbI/AAAAAAAALHg/FbQ8MDfSNYU/s1600/boardbottom-new-2x.png') no-repeat center bottom;
+background-size: 100%;
+}
+}
+/* =Responsive Media Queries
+----------------------------------------------- */
+@media only screen and ( max-width: 900px ) {
+.widget-left,
+.widget-middle,
+.widget-right,
+#secondary {
+clear: both;
+float: none;
+margin: 0;
+width: 100%;
+}
+.sidebar-active #content {
+margin: 0;
+}
+}
+@media only screen and ( max-width: 800px ) {
+body, .body-fauxcolumn-outer {
+font-size: 18px;
+font-size: 1.8rem;
+}
+.wrapper {
+padding: 20px;
+}
+#pagebwrap {
+padding: 30px 30px 0;
+}
+.entry-title {
+font-size: 28px;
+font-size: 2.8rem;
+}
+.site-title {
+font-size: 36px;
+font-size: 3.6rem;
+}
+#colophon,
+.entry-meta,
+.entry-content {
+font-size: 14px;
+font-size: 1.4rem;
+}
+#colophon {
+max-width: 100%;
+}
+}
+h2.date-header {
+margin: 1.5em 0 .5em;
+display: none;
+}
+.main .widget {
+margin: 0 0 5px;
+padding: 0 0 2px;
+}
+.main .Blog {
+border-bottom-width: 0;
+}
+#header .description {
+color:#ffffff;
+font-size:14px;
+text-shadow:0px 1px 0px #000000;
+}
+/* Comments----------------------------------------------- */
+#comments {
+padding:10px;
+margin-bottom:20px;
+}
+#comments h4 {
+font-size:22px;
+margin-bottom:10px;
+}
+.deleted-comment {
+font-style: italic;
+color: gray;
+}
+#blog-pager-newer-link {
+float: left;
+}
+#blog-pager-older-link {
+float: right;
+}
+#blog-pager {
+text-align: center;
+padding:5px;
+}
+.feed-links {
+clear: both;
+}
+.comment-form {
+max-width: 600px;
+}
+#navbar-iframe {
+height: 0;
+visibility: hidden;
+display: none;
+}
+.PopularPosts .widget-content ul li {
+padding:6px 0px;
+}
+.reaction-buttons table{
+border:none;
+margin-bottom:5px;
+}
+.reaction-buttons table, .reaction-buttons td{
+border:none;
+}
+.bthumbimg {
+float:left;
+margin:0px 10px 5px 0px;
+background:none;
+padding:3px;
+border:1px solid #eee;
+}
+
+--></style>
+<script src='https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js' type='text/javascript'></script>
+<script type='text/javascript'>
+//<![CDATA[
+
+/*! jQuery Migrate v1.2.1 | (c) 2005, 2013 jQuery Foundation, Inc. and other contributors | jquery.org/license */
+jQuery.migrateMute===void 0&&(jQuery.migrateMute=!0),function(e,t,n){function r(n){var r=t.console;i[n]||(i[n]=!0,e.migrateWarnings.push(n),r&&r.warn&&!e.migrateMute&&(r.warn("JQMIGRATE: "+n),e.migrateTrace&&r.trace&&r.trace()))}function a(t,a,i,o){if(Object.defineProperty)try{return Object.defineProperty(t,a,{configurable:!0,enumerable:!0,get:function(){return r(o),i},set:function(e){r(o),i=e}}),n}catch(s){}e._definePropertyBroken=!0,t[a]=i}var i={};e.migrateWarnings=[],!e.migrateMute&&t.console&&t.console.log&&t.console.log("JQMIGRATE: Logging is active"),e.migrateTrace===n&&(e.migrateTrace=!0),e.migrateReset=function(){i={},e.migrateWarnings.length=0},"BackCompat"===document.compatMode&&r("jQuery is not compatible with Quirks Mode");var o=e("<input/>",{size:1}).attr("size")&&e.attrFn,s=e.attr,u=e.attrHooks.value&&e.attrHooks.value.get||function(){return null},c=e.attrHooks.value&&e.attrHooks.value.set||function(){return n},l=/^(?:input|button)$/i,d=/^[238]$/,p=/^(?:autofocus|autoplay|async|checked|controls|defer|disabled|hidden|loop|multiple|open|readonly|required|scoped|selected)$/i,f=/^(?:checked|selected)$/i;a(e,"attrFn",o||{},"jQuery.attrFn is deprecated"),e.attr=function(t,a,i,u){var c=a.toLowerCase(),g=t&&t.nodeType;return u&&(4>s.length&&r("jQuery.fn.attr( props, pass ) is deprecated"),t&&!d.test(g)&&(o?a in o:e.isFunction(e.fn[a])))?e(t)[a](i):("type"===a&&i!==n&&l.test(t.nodeName)&&t.parentNode&&r("Can't change the 'type' of an input or button in IE 6/7/8"),!e.attrHooks[c]&&p.test(c)&&(e.attrHooks[c]={get:function(t,r){var a,i=e.prop(t,r);return i===!0||"boolean"!=typeof i&&(a=t.getAttributeNode(r))&&a.nodeValue!==!1?r.toLowerCase():n},set:function(t,n,r){var a;return n===!1?e.removeAttr(t,r):(a=e.propFix[r]||r,a in t&&(t[a]=!0),t.setAttribute(r,r.toLowerCase())),r}},f.test(c)&&r("jQuery.fn.attr('"+c+"') may use property instead of attribute")),s.call(e,t,a,i))},e.attrHooks.value={get:function(e,t){var n=(e.nodeName||"").toLowerCase();return"button"===n?u.apply(this,arguments):("input"!==n&&"option"!==n&&r("jQuery.fn.attr('value') no longer gets properties"),t in e?e.value:null)},set:function(e,t){var a=(e.nodeName||"").toLowerCase();return"button"===a?c.apply(this,arguments):("input"!==a&&"option"!==a&&r("jQuery.fn.attr('value', val) no longer sets properties"),e.value=t,n)}};var g,h,v=e.fn.init,m=e.parseJSON,y=/^([^<]*)(<[\w\W]+>)([^>]*)$/;e.fn.init=function(t,n,a){var i;return t&&"string"==typeof t&&!e.isPlainObject(n)&&(i=y.exec(e.trim(t)))&&i[0]&&("<"!==t.charAt(0)&&r("$(html) HTML strings must start with '<' character"),i[3]&&r("$(html) HTML text after last tag is ignored"),"#"===i[0].charAt(0)&&(r("HTML string cannot start with a '#' character"),e.error("JQMIGRATE: Invalid selector string (XSS)")),n&&n.context&&(n=n.context),e.parseHTML)?v.call(this,e.parseHTML(i[2],n,!0),n,a):v.apply(this,arguments)},e.fn.init.prototype=e.fn,e.parseJSON=function(e){return e||null===e?m.apply(this,arguments):(r("jQuery.parseJSON requires a valid JSON string"),null)},e.uaMatch=function(e){e=e.toLowerCase();var t=/(chrome)[ \/]([\w.]+)/.exec(e)||/(webkit)[ \/]([\w.]+)/.exec(e)||/(opera)(?:.*version|)[ \/]([\w.]+)/.exec(e)||/(msie) ([\w.]+)/.exec(e)||0>e.indexOf("compatible")&&/(mozilla)(?:.*? rv:([\w.]+)|)/.exec(e)||[];return{browser:t[1]||"",version:t[2]||"0"}},e.browser||(g=e.uaMatch(navigator.userAgent),h={},g.browser&&(h[g.browser]=!0,h.version=g.version),h.chrome?h.webkit=!0:h.webkit&&(h.safari=!0),e.browser=h),a(e,"browser",e.browser,"jQuery.browser is deprecated"),e.sub=function(){function t(e,n){return new t.fn.init(e,n)}e.extend(!0,t,this),t.superclass=this,t.fn=t.prototype=this(),t.fn.constructor=t,t.sub=this.sub,t.fn.init=function(r,a){return a&&a instanceof e&&!(a instanceof t)&&(a=t(a)),e.fn.init.call(this,r,a,n)},t.fn.init.prototype=t.fn;var n=t(document);return r("jQuery.sub() is deprecated"),t},e.ajaxSetup({converters:{"text json":e.parseJSON}});var b=e.fn.data;e.fn.data=function(t){var a,i,o=this[0];return!o||"events"!==t||1!==arguments.length||(a=e.data(o,t),i=e._data(o,t),a!==n&&a!==i||i===n)?b.apply(this,arguments):(r("Use of jQuery.fn.data('events') is deprecated"),i)};var j=/\/(java|ecma)script/i,w=e.fn.andSelf||e.fn.addBack;e.fn.andSelf=function(){return r("jQuery.fn.andSelf() replaced by jQuery.fn.addBack()"),w.apply(this,arguments)},e.clean||(e.clean=function(t,a,i,o){a=a||document,a=!a.nodeType&&a[0]||a,a=a.ownerDocument||a,r("jQuery.clean() is deprecated");var s,u,c,l,d=[];if(e.merge(d,e.buildFragment(t,a).childNodes),i)for(c=function(e){return!e.type||j.test(e.type)?o?o.push(e.parentNode?e.parentNode.removeChild(e):e):i.appendChild(e):n},s=0;null!=(u=d[s]);s++)e.nodeName(u,"script")&&c(u)||(i.appendChild(u),u.getElementsByTagName!==n&&(l=e.grep(e.merge([],u.getElementsByTagName("script")),c),d.splice.apply(d,[s+1,0].concat(l)),s+=l.length));return d});var Q=e.event.add,x=e.event.remove,k=e.event.trigger,N=e.fn.toggle,T=e.fn.live,M=e.fn.die,S="ajaxStart|ajaxStop|ajaxSend|ajaxComplete|ajaxError|ajaxSuccess",C=RegExp("\\b(?:"+S+")\\b"),H=/(?:^|\s)hover(\.\S+|)\b/,A=function(t){return"string"!=typeof t||e.event.special.hover?t:(H.test(t)&&r("'hover' pseudo-event is deprecated, use 'mouseenter mouseleave'"),t&&t.replace(H,"mouseenter$1 mouseleave$1"))};e.event.props&&"attrChange"!==e.event.props[0]&&e.event.props.unshift("attrChange","attrName","relatedNode","srcElement"),e.event.dispatch&&a(e.event,"handle",e.event.dispatch,"jQuery.event.handle is undocumented and deprecated"),e.event.add=function(e,t,n,a,i){e!==document&&C.test(t)&&r("AJAX events should be attached to document: "+t),Q.call(this,e,A(t||""),n,a,i)},e.event.remove=function(e,t,n,r,a){x.call(this,e,A(t)||"",n,r,a)},e.fn.error=function(){var e=Array.prototype.slice.call(arguments,0);return r("jQuery.fn.error() is deprecated"),e.splice(0,0,"error"),arguments.length?this.bind.apply(this,e):(this.triggerHandler.apply(this,e),this)},e.fn.toggle=function(t,n){if(!e.isFunction(t)||!e.isFunction(n))return N.apply(this,arguments);r("jQuery.fn.toggle(handler, handler...) is deprecated");var a=arguments,i=t.guid||e.guid++,o=0,s=function(n){var r=(e._data(this,"lastToggle"+t.guid)||0)%o;return e._data(this,"lastToggle"+t.guid,r+1),n.preventDefault(),a[r].apply(this,arguments)||!1};for(s.guid=i;a.length>o;)a[o++].guid=i;return this.click(s)},e.fn.live=function(t,n,a){return r("jQuery.fn.live() is deprecated"),T?T.apply(this,arguments):(e(this.context).on(t,this.selector,n,a),this)},e.fn.die=function(t,n){return r("jQuery.fn.die() is deprecated"),M?M.apply(this,arguments):(e(this.context).off(t,this.selector||"**",n),this)},e.event.trigger=function(e,t,n,a){return n||C.test(e)||r("Global events are undocumented and deprecated"),k.call(this,e,t,n||document,a)},e.each(S.split("|"),function(t,n){e.event.special[n]={setup:function(){var t=this;return t!==document&&(e.event.add(document,n+"."+e.guid,function(){e.event.trigger(n,null,t,!0)}),e._data(this,n,e.guid++)),!1},teardown:function(){return this!==document&&e.event.remove(document,n+"."+e._data(this,n)),!1}}})}(jQuery,window);
+
+//]]>
+</script>
+<script type='text/javascript'>
+//<![CDATA[
+
+function showrecentcomments(json){for(var i=0;i<a_rc;i++){var b_rc=json.feed.entry[i];var c_rc;if(i==json.feed.entry.length)break;for(var k=0;k<b_rc.link.length;k++){if(b_rc.link[k].rel=='alternate'){c_rc=b_rc.link[k].href;break;}}c_rc=c_rc.replace("#","#comment-");var d_rc=c_rc.split("#");d_rc=d_rc[0];var e_rc=d_rc.split("/");e_rc=e_rc[5];e_rc=e_rc.split(".html");e_rc=e_rc[0];var f_rc=e_rc.replace(/-/g," ");f_rc=f_rc.link(d_rc);var g_rc=b_rc.published.$t;var h_rc=g_rc.substring(0,4);var i_rc=g_rc.substring(5,7);var j_rc=g_rc.substring(8,10);var k_rc=new Array();k_rc[1]="Jan";k_rc[2]="Feb";k_rc[3]="Mar";k_rc[4]="Apr";k_rc[5]="May";k_rc[6]="Jun";k_rc[7]="Jul";k_rc[8]="Aug";k_rc[9]="Sep";k_rc[10]="Oct";k_rc[11]="Nov";k_rc[12]="Dec";if("content" in b_rc){var l_rc=b_rc.content.$t;}else if("summary" in b_rc){var l_rc=b_rc.summary.$t;}else var l_rc="";var re=/<\S[^>]*>/g;l_rc=l_rc.replace(re,"");if(m_rc==true)document.write('On '+k_rc[parseInt(i_rc,10)]+' '+j_rc+' ');document.write('<a href="'+c_rc+'">'+b_rc.author[0].name.$t+'</a> commented');if(n_rc==true)document.write(' on '+f_rc);document.write(': ');if(l_rc.length<o_rc){document.write('<i>&#8220;');document.write(l_rc);document.write('&#8221;</i><br/><br/>');}else{document.write('<i>&#8220;');l_rc=l_rc.substring(0,o_rc);var p_rc=l_rc.lastIndexOf(" ");l_rc=l_rc.substring(0,p_rc);document.write(l_rc+'&hellip;&#8221;</i>');document.write('<br/><br/>');}}}
+
+function rp(json){document.write('<ul>');for(var i=0;i<numposts;i++){document.write('<li>');var entry=json.feed.entry[i];var posttitle=entry.title.$t;var posturl;if(i==json.feed.entry.length)break;for(var k=0;k<entry.link.length;k++){if(entry.link[k].rel=='alternate'){posturl=entry.link[k].href;break}}posttitle=posttitle.link(posturl);var readmorelink="(more)";readmorelink=readmorelink.link(posturl);var postdate=entry.published.$t;var cdyear=postdate.substring(0,4);var cdmonth=postdate.substring(5,7);var cdday=postdate.substring(8,10);var monthnames=new Array();monthnames[1]="Jan";monthnames[2]="Feb";monthnames[3]="Mar";monthnames[4]="Apr";monthnames[5]="May";monthnames[6]="Jun";monthnames[7]="Jul";monthnames[8]="Aug";monthnames[9]="Sep";monthnames[10]="Oct";monthnames[11]="Nov";monthnames[12]="Dec";if("content"in entry){var postcontent=entry.content.$t}else if("summary"in entry){var postcontent=entry.summary.$t}else var postcontent="";var re=/<\S[^>]*>/g;postcontent=postcontent.replace(re,"");document.write(posttitle);if(showpostdate==true)document.write(' - '+monthnames[parseInt(cdmonth,10)]+' '+cdday);if(showpostsummary==true){if(postcontent.length<numchars){document.write(postcontent)}else{postcontent=postcontent.substring(0,numchars);var quoteEnd=postcontent.lastIndexOf(" ");postcontent=postcontent.substring(0,quoteEnd);document.write(postcontent+'...'+readmorelink)}}document.write('</li>')}document.write('</ul>')}
+
+//]]>
+</script>
+<style id='custom-background-css' type='text/css'>
+body.custom-background { background-image: url('http://2.bp.blogspot.com/-oS920l1lAcQ/UnCJgDGqawI/AAAAAAAALHY/GRklHHyHTjM/s1600/walltexture.png'); background-repeat: repeat; background-position: top left; background-attachment: scroll; }
+</style>
+<link href='https://www.blogger.com/dyn-css/authorization.css?targetBlogID=6996732972947782461&amp;zx=f4c524e6-0f98-445f-8404-7de1e7905bae' media='none' onload='if(media!=&#39;all&#39;)media=&#39;all&#39;' rel='stylesheet'/><noscript><link href='https://www.blogger.com/dyn-css/authorization.css?targetBlogID=6996732972947782461&amp;zx=f4c524e6-0f98-445f-8404-7de1e7905bae' rel='stylesheet'/></noscript>
+</head>
+<body class='custom-background sidebar-active'>
+<div class='wrapper'>
+<div id='pagebwrap'>
+<header class='site-header' id='masthead' role='banner'>
+<div class='headersec section' id='headersec'><div class='widget Header' data-version='1' id='Header1'>
+<div id='header-inner'>
+<div class='titlewrapper'>
+<h1 class='site-title'>
+<a href='http://pidia.selfhow.com/'>셀프피디아</a>
+</h1>
+</div>
+<div class='descriptionwrapper'>
+<h2 class='site-description'>일본 위키피디아 번역</h2>
+</div>
+</div>
+</div></div>
+<nav class='site-navigation main-navigation' role='navigation'>
+<h1 class='assistive-text'>Menu</h1>
+<div class='assistive-text skip-link'><a href='#content' title='Skip to content'>Skip to content</a></div>
+<div class='menu'>
+<ul>
+<li><a href='http://pidia.selfhow.com/'>Home</a></li>
+<li><a href='#'>Business</a>
+<ul class='children'>
+<li><a href='#'>Internet</a></li>
+<li><a href='#'>Market</a></li>
+<li><a href='#'>Stock</a></li>
+</ul>
+</li>
+<li><a href='#'>Downloads</a>
+<ul class='children'>
+<li><a href='#'>Dvd</a></li>
+<li><a href='#'>Games</a></li>
+<li><a href='#'>Software</a>
+<ul class='children'>
+<li><a href='#'>Office</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href='#'>Parent Category</a>
+<ul class='children'>
+<li><a href='#'>Child Category 1</a>
+<ul class='children'>
+<li><a href='#'>Sub Child Category 1</a></li>
+<li><a href='#'>Sub Child Category 2</a></li>
+<li><a href='#'>Sub Child Category 3</a></li>
+</ul>
+</li>
+<li><a href='#'>Child Category 2</a></li>
+<li><a href='#'>Child Category 3</a></li>
+<li><a href='#'>Child Category 4</a></li>
+</ul>
+</li>
+<li><a href='#'>Featured</a></li>
+</ul>
+</div>
+</nav><!-- .site-navigation .main-navigation -->
+</header><!-- #masthead .site-header -->
+<div class='site-main' id='main'>
+<div class='content-area' id='primary'>
+<div class='site-content' id='content' role='main'>
+<div class='mainblogsec section' id='mainblogsec'><div class='widget Blog' data-version='1' id='Blog1'>
+<div class='blog-posts hfeed'>
+<!--Can't find substitution for tag [defaultAdStart]-->
+
+          <div class="date-outer">
+        
+<h2 class='date-header'><span>2016년 6월 27일 월요일</span></h2>
+
+          <div class="date-posts">
+        
+<div class='post-outer'>
+<article class='post hentry'>
+<a name='3496938945955717519'></a>
+<header class='entry-header'>
+<h2 class='post-title entry-title'>
+<a href='http://pidia.selfhow.com/2016/06/gnu-octave.html'>GNU Octave</a>
+</h2>
+</header>
+<div class='post-header-line-1'></div>
+<div class='post-body entry-content'>
+ <div class='ads_adsense_response'> <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script> <!-- 반응형텍스트디스플레이둘다 --> <ins class="adsbygoogle"      style="display:block"      data-ad-client="ca-pub-8393857339019314"      data-ad-slot="1428352782"      data-ad-format="auto"></ins> <script> (adsbygoogle = window.adsbygoogle || []).push({}); </script> </div> <h1>GNU Octave</h1><div class="content" id="bodyContent"><div class="mw-content-ltr" dir="ltr" id="mw-content-text" lang="ja"><div class="mf-section-0"><table class="infobox vevent" style="width:22em;"><caption class="summary nowrap">GNU Octave</caption> <tr><td colspan="2" style="text-align:center;"><a class="image" href="http://tranpedia.selfhow.com/search?q=&amp;submit=Search"><img alt="Gnu-octave-logo.svg" data-file-height="283" data-file-width="283" height="65" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/Gnu-octave-logo.svg/65px-Gnu-octave-logo.svg.png" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/6/6a/Gnu-octave-logo.svg/98px-Gnu-octave-logo.svg.png 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/6/6a/Gnu-octave-logo.svg/130px-Gnu-octave-logo.svg.png 2x" width="65"/></a></td> </tr><tr><td colspan="2" style="text-align:center;"><a class="image" href="http://tranpedia.selfhow.com/search?q=&amp;submit=Search"><img alt="Octave Sombrero.svg" data-file-height="170" data-file-width="300" height="147" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Octave_Sombrero.svg/260px-Octave_Sombrero.svg.png" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Octave_Sombrero.svg/390px-Octave_Sombrero.svg.png 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Octave_Sombrero.svg/520px-Octave_Sombrero.svg.png 2x" width="260"/></a></td> </tr><tr><th scope="row" style="text-align:left; white-space:nowrap;"><a href="http://tranpedia.selfhow.com/search?q=%EA%B0%9C%EB%B0%9C%EC%9B%90&amp;submit=Search" title="소프트웨어 개발자">개발원</a></th> <td>John W. Eaton</td> </tr><tr><th scope="row" style="text-align:left; white-space:nowrap;">초판</th> <td>1988년<span style="display:none">(<span class="bday dtstart published updated">1988</span>)</span>[<sup class="reference" id="cite_ref-1"><a href="http://tranpedia.selfhow.com/search?q=1&amp;submit=Search">1</a></sup>]</td> </tr><tr><th scope="row" style="text-align:left; white-space:nowrap;">최신판</th> <td>4.0. 1 <span class="bday dtstart published updated"></span>/ 2016년 3월 23일<span class="noprint">(2개월 전)</span> <span style="display:none">(2016-03-23)</span></td> </tr><tr><th scope="row" style="text-align:left; white-space:nowrap;">프로그램 언어</th> <td><a href="http://tranpedia.selfhow.com/search?q=C%2B%2B&amp;submit=Search" title="C++">C++</a></td> </tr><tr><th scope="row" style="text-align:left; white-space:nowrap;"><a href="http://tranpedia.selfhow.com/search?q=%EB%8C%80%EC%9D%91%20OS&amp;submit=Search" title=" operating system">대응 OS</a></th> <td><a href="http://tranpedia.selfhow.com/search?q=%ED%81%AC%EB%A1%9C%EC%8A%A4%20%ED%94%8C%EB%9E%AB%ED%8F%BC&amp;submit=Search" title="크로스 플랫폼">크로스 플랫폼</a></td> </tr><tr><th scope="row" style="text-align:left; white-space:nowrap;">종별</th> <td><a href="http://tranpedia.selfhow.com/search?q=%EC%88%98%EC%B9%98%20%ED%95%B4%EC%84%9D%20%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4&amp;submit=Search" title="수치 해석 소프트웨어">수치 해석 소프트웨어</a></td> </tr><tr><th scope="row" style="text-align:left; white-space:nowrap;"><a href="http://tranpedia.selfhow.com/search?q=%EB%9D%BC%EC%9D%B4%EC%84%BC%EC%8A%A4&amp;submit=Search" title="라이센스">라이센스</a></th> <td><a href="http://tranpedia.selfhow.com/search?q=GNU%20General%20Public%20License&amp;submit=Search" title="GNU General Public License">GNU General Public License</a></td> </tr><tr><th scope="row" style="text-align:left; white-space:nowrap;">공식 사이트</th> <td><a class="external text" href="http://tranpedia.selfhow.com/search?q=www.gnu.org/software/octave/&amp;submit=Search" rel="nofollow">www.gnu.org/software/octave/</a></td> </tr><tr class="noprint"><td colspan="2" style="text-align:right; font-size:85%;"><a href="http://tranpedia.selfhow.com/search?q=%ED%85%9C%ED%94%8C%EB%A6%BF%EC%9D%84%20%ED%91%9C%EC%8B%9C&amp;submit=Search" title="Template:Infobox Software">템플릿을 표시</a></td> </tr></table><p><b>GNU Octave</b>는, 주로 <a href="http://tranpedia.selfhow.com/search?q=%EC%88%98%EC%B9%98%20%ED%95%B4%EC%84%9D&amp;submit=Search" title="수치 해석">수치 해석</a>을 목적으로 한 고레벨 <a href="http://tranpedia.selfhow.com/search?q=%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%A8%20%EC%96%B8%EC%96%B4&amp;submit=Search" title="프로그램 언어">프로그램 언어</a>이다.Octave는 선형 및 비선형 문제를 수치적으로 풀기 위한 커멘드 라인&#183;인터페이스를 제공한다.또, <a href="http://tranpedia.selfhow.com/search?q=MATLAB&amp;submit=Search" title="MATLAB">MATLAB</a>과 거의 호환성이 있는, 수치 실험을 행하기 위한 프로그램 언어로서 사용할 수 있다. Octave는, <a href="http://tranpedia.selfhow.com/search?q=GNU%20%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8&amp;submit=Search" title="GNU 프로젝트">GNU 프로젝트</a>의 하나로 <a class="mw-redirect" href="http://tranpedia.selfhow.com/search?q=GNU%20General%20Public%20License&amp;submit=Search" title="GPL">GNU General Public License</a>의 조건아래의 <a href="http://tranpedia.selfhow.com/search?q=%ED%94%84%EB%A6%AC%20%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4&amp;submit=Search" title="프리 소프트웨어">프리 소프트웨어</a>이다. GNU Octave와 <a href="http://tranpedia.selfhow.com/search?q=Scilab&amp;submit=Search" title="Scilab">Scilab</a>은, MATLAB의 오픈 소스 대체품의 하나이다. 다만, Octave는, Scilab보다 MATLAB과의 호환성 유지에 중점을 두고 있는[<sup class="reference" id="cite_ref-Trappenberg2010_2-0"><a href="http://tranpedia.selfhow.com/search?q=2&amp;submit=Search">2</a></sup>] [<sup class="reference" id="cite_ref-MuhammadZalizniak2011_3-0"><a href="http://tranpedia.selfhow.com/search?q=3&amp;submit=Search">3</a></sup>] [<sup class="reference" id="cite_ref-MegreyMoksness2008_4-0"><a href="http://tranpedia.selfhow.com/search?q=4&amp;submit=Search">4</a></sup>] [<sup class="reference" id="cite_ref-Kapuno2008_5-0"><a href="http://tranpedia.selfhow.com/search?q=5&amp;submit=Search">5</a></sup>] [<sup class="reference" id="cite_ref-Herman2013_6-0"><a href="http://tranpedia.selfhow.com/search?q=6&amp;submit=Search">6</a></sup>] [<sup class="reference" id="cite_ref-WouwerSaucez2014_7-0"><a href="http://tranpedia.selfhow.com/search?q=7&amp;submit=Search">7</a></sup>].</p> <p></p> <div class="toc-mobile" id="toc"><h2>목차</h2></div></div><h2 class="section-heading in-block"><div class="mw-ui-icon mw-ui-icon-element indicator"></div><span class="mw-headline" id=".E9.96.8B.E7.99.BA.E3.81.AE.E7.B5.8C.E7.B7.AF">개발의 경위</span> <span></span></h2><div class="mf-section-1"> <p>개발이 시작된 것은 1988년즈음이다.당초는 화학반응기 설계의 수업으로 사용하기 위해서 만들어졌지만, 그 앞으로 1992년부터, 존&#12539;이튼(<a class="extiw" href="http://tranpedia.selfhow.com/search?q=John%20W.%20%20Eaton&amp;submit=Search" title="en:John W. Eaton">John W.  Eaton</a>)이 개발을 시작했다.그에 의한 최초의 알파판의 릴리스는 1993년 1월 4일로, 정식판(ver.  1.0)은 다음 해, 1994년 2월 17일에 릴리스 되었다.2007년 12월 21일에 버전 3.0이, 2015년 5월 29일에는 버전 4.0이 릴리스 되었다.</p> <p><b>Octave</b>라는 이름은, 이튼의 지도교관이며, 리지라도 가볍게 써 주는 개산의 계산(<a class="extiw" href="http://tranpedia.selfhow.com/search?q=back-of-the-envelope%20calculation&amp;submit=Search" title="en:back-of-the-envelope calculation">back-of-the-envelope calculation</a>)이 빨랐던 원오<a href="http://tranpedia.selfhow.com/search?q=%EB%A6%AC%EA%B1%B4%20%EC%A3%BC%EB%A6%BD%20%EB%8C%80%ED%95%99%20%EA%B5%90&amp;submit=Search" title="오리건 주립 대학">리건 주립 대학 교</a>수의 옥타브&#12539;레베슈피르(<a class="extiw" href="http://tranpedia.selfhow.com/search?q=Octave%20Levenspiel&amp;submit=Search" title="en:Octave Levenspiel">Octave Levenspiel</a>, <a href="http://tranpedia.selfhow.com/search?q=%EB%B0%98%EC%9D%91%20%EA%B3%B5%ED%95%99&amp;submit=Search" title="반응 공학">반응 공학</a>)에 연관되는[<sup class="reference" id="cite_ref-about_8-0"><a href="http://tranpedia.selfhow.com/search?q=8&amp;submit=Search">8</a></sup>].</p> <p>당초의 목적인 개인적인 계산기로서의 이용에 가세해 Octave는 학술적 및 공업적인 용도에도 사용되고 있다.예를 들면 미국 피츠버그&#12539;스파콘퓨팅&#12539;센터(Pittsburgh supercomputing center)에서는 대규모 병<a href="http://tranpedia.selfhow.com/search?q=%EB%A0%AC%20%EA%B3%84%EC%82%B0%EC%97%90&amp;submit=Search" title="병렬 계산">렬 계산에</a> 의한 사<a href="http://tranpedia.selfhow.com/search?q=%ED%9A%8C%20%EB%B3%B4%EC%9E%A5%20%EB%B2%88%ED%98%B8%EC%9D%98&amp;submit=Search" title="사회 보장 번호">회 보장 번호의</a> 공격에 대한 취약성 검증에, Octave를 사용하고 있는[<sup class="reference" id="cite_ref-9"><a href="http://tranpedia.selfhow.com/search?q=9&amp;submit=Search">9</a></sup>].</p> <p><a href="http://tranpedia.selfhow.com/search?q=%EC%9C%A0%EC%A0%80%20%EC%9D%B8%ED%84%B0%ED%8E%98%EC%9D%B4%EC%8A%A4&amp;submit=Search" title="유저 인터페이스">유저 인터페이스</a>는 오랫동안 <a href="http://tranpedia.selfhow.com/search?q=CUI&amp;submit=Search" title="캐릭터 유저 인터페이스">CUI</a>뿐이었지만, 3.8. 0에서는 <a href="http://tranpedia.selfhow.com/search?q=GUI&amp;submit=Search" title="그래피컬 유저 인터페이스">GUI</a>가 탑재된[<sup class="reference" id="cite_ref-10"><a href="http://tranpedia.selfhow.com/search?q=10&amp;submit=Search">10</a></sup>].</p> </div><h2 class="section-heading in-block"><div class="mw-ui-icon mw-ui-icon-element indicator"></div><span class="mw-headline" id=".E7.89.B9.E5.BE.B4">특징</span> <span></span></h2><div class="mf-section-2"> <ul><li>MATLAB 호환의 프로그램 언어의 <a href="http://tranpedia.selfhow.com/search?q=interpreter&amp;submit=Search" title="interpreter">interpreter</a>를 실장하고 있어, 또 <a class="mw-redirect" href="http://tranpedia.selfhow.com/search?q=GUI&amp;submit=Search" title="GUI">GUI</a>의 개발 환경이 갖추어져 있다.</li> <li><a href="http://tranpedia.selfhow.com/search?q=C%2B%2B&amp;submit=Search" title="C++">C++</a>와 <a href="http://tranpedia.selfhow.com/search?q=STL&amp;submit=Search" title="Standard Template Library">STL</a>를 이용하고 있다.</li> <li>Mex-file 및 Oct-file이라고 불리는 구조를 이용하고, C/C++언어로 기술된 자작 함수에 의해 Octave를 확장 가능하다.</li> <li>Octave 4.0으로부터 그래픽은 <a href="http://tranpedia.selfhow.com/search?q=gnuplot&amp;submit=Search" title="Gnuplot">gnuplot</a>로부터 <a href="http://tranpedia.selfhow.com/search?q=OpenGL&amp;submit=Search" title="OpenGL">OpenGL</a> graphics with <a href="http://tranpedia.selfhow.com/search?q=Qt&amp;submit=Search" title="Qt">Qt</a> widgets에 변경되었다.</li> <li>Octave는 행렬 계산으로 <a class="mw-redirect" href="http://tranpedia.selfhow.com/search?q=BLAS&amp;submit=Search" title="BLAS">BLAS</a>를 호출하고 있기 때문에 고속이고 신뢰성이 높다.</li> <li>Octave 4.0으로부터 <a href="http://tranpedia.selfhow.com/search?q=OpenMP&amp;submit=Search" title="OpenMP">OpenMP</a>가 디폴트로 유효하게 되어 있어 시스템에 OpenMP가 실장되고 있는 경우, 계산의 고속화를 기대할 수 있다.</li> </ul><h3 class="in-block"><span class="mw-headline" id=".E8.A8.88.E7.AE.97.E6.A9.9F.E8.A8.80.E8.AA.9E.E3.81.A8.E3.81.97.E3.81.A6.E3.81.AE_Octave">계산기 언어로서의 Octave</span> <span></span></h3> <p>Octave를 조작하기 위한 명령 계통은, <a href="http://tranpedia.selfhow.com/search?q=%EA%B3%84%EC%82%B0%EA%B8%B0%20%EC%96%B8%EC%96%B4&amp;submit=Search" title="프로그램 언어">계산기 언어</a>이기도 하다.Octave는 <a href="http://tranpedia.selfhow.com/search?q=C%EC%96%B8%EC%96%B4&amp;submit=Search" title="C언어">C언어</a>와 같은 구조화 언어이며, C언어의 <a href="http://tranpedia.selfhow.com/search?q=%ED%91%9C%EC%A4%80%20%EB%9D%BC%EC%9D%B4%EB%B8%8C%EB%9F%AC%EB%A6%AC&amp;submit=Search" title="표준 라이브러리">표준 라이브러리</a>에 포함되는 많은 함수가 Octave에서도 실장되고 있다.또 <a href="http://tranpedia.selfhow.com/search?q=UNIX&amp;submit=Search" title="POSIX">UNIX</a>의 <a href="http://tranpedia.selfhow.com/search?q=%EC%8B%9C%EC%8A%A4%ED%85%9C%20%EC%BD%9C&amp;submit=Search" title="시스템 콜">시스템 콜</a>도 몇개인가 이용할 수 있는[<sup class="reference" id="cite_ref-11"><a href="http://tranpedia.selfhow.com/search?q=11&amp;submit=Search">11</a></sup>].그러나 함수 호출때의, 당겨 수치의 참조 인도는 서포트되어 있지 않은[<sup class="reference" id="cite_ref-12"><a href="http://tranpedia.selfhow.com/search?q=12&amp;submit=Search">12</a></sup>].</p> <p>Octave 언어로 쓰여진 프로그램은, 함수 호출의 줄로 구성되는 스크립트이다.그 문법은 행렬 계산이 기본이며, 스크립트에 대하고는 행렬 계산의 연산자가 다수 이용할 수 있다.다종 다양한 <a href="http://tranpedia.selfhow.com/search?q=%EB%8D%B0%EC%9D%B4%ED%84%B0%20%EA%B5%AC%EC%A1%B0&amp;submit=Search" title="데이터 구조">데이터 구조</a>를 이용할 수 있는 것 외,  3.2이후의 버전으로는, <a href="http://tranpedia.selfhow.com/search?q=%EA%B0%9D%EC%B2%B4%20%EC%A7%80%ED%96%A5&amp;submit=Search" title="객체 지향">객체 지향</a> 프로그래밍 기능이 부가되었다.</p> <p>Octave의 문법은 MATLAB의 것과 매우 잘 닮아 있어 조금 주의해 프로그래밍 하는 것으로 Octave와 MATLAB의 양쪽 모두로 실행할 수 있는 스크립트를 쓸 수 있는[<sup class="reference" id="cite_ref-13"><a href="http://tranpedia.selfhow.com/search?q=13&amp;submit=Search">13</a></sup>].</p> <p>Octave는 <a href="http://tranpedia.selfhow.com/search?q=GNU%20General%20Public%20License&amp;submit=Search" title="GNU General Public License">GNU General Public License</a>에 의해서 공개되고 있기 때문에, 그 개변, 복제, 이용은 자유로운[<sup class="reference" id="cite_ref-about_8-1"><a href="http://tranpedia.selfhow.com/search?q=8&amp;submit=Search">8</a></sup>].Octave는 많은 <a href="http://tranpedia.selfhow.com/search?q=UNIX&amp;submit=Search" title="UNIX">UNIX</a>나 <a href="http://tranpedia.selfhow.com/search?q=Unix%EA%B3%84&amp;submit=Search" title="Unix계">Unix계</a>의 <a href="http://tranpedia.selfhow.com/search?q=%ED%94%8C%EB%9E%AB%ED%8F%BC&amp;submit=Search" title="플랫폼(컴퓨팅)">플랫폼</a>, <a href="http://tranpedia.selfhow.com/search?q=Mac%20OS%20X&amp;submit=Search" title="OS X">Mac OS X</a>, <a href="http://tranpedia.selfhow.com/search?q=Windows&amp;submit=Search" title="Microsoft Windows">Windows</a>로 실행할 수 있는[<sup class="reference" id="cite_ref-14"><a href="http://tranpedia.selfhow.com/search?q=14&amp;submit=Search">14</a></sup>].</p> <h3 class="in-block"><span class="mw-headline" id=".E9.96.A2.E6.95.B0.E5.90.8D.E3.80.81.E5.A4.89.E6.95.B0.E5.90.8D.E3.81.AE.E8.A3.9C.E5.AE.8C">함수명, 변수명의 보완</span> <span></span></h3> <p>대화적으로 실행중의 Octave의 커멘드 라인으로 탭을 입력하면, 함수명, 변수명, 파일명의 입력을 보완하는(<a href="http://tranpedia.selfhow.com/search?q=Bash&amp;submit=Search" title="Bash">Bash</a>의 <a class="new" href="http://tranpedia.selfhow.com/search?q=%ED%83%AD%20%EB%B3%B4%EC%99%84&amp;submit=Search" title="탭 보완(존재하지 않는 페이지)">탭 보완</a>(<a class="extiw" href="http://tranpedia.selfhow.com/search?q=en&amp;submit=Search" title="en:Command-line completion">en</a>)과 같은 기능).그 시점에서 커서의 직전에 입력되고 있는 텍스트를 보완한다.</p> <h3 class="in-block"><span class="mw-headline" id=".E3.83.92.E3.82.B9.E3.83.88.E3.83.AA.E6.A9.9F.E8.83.BD">역사 기능</span> <span></span></h3> <p>대화적으로 실행중의 Octave로는, 그때까지 입력된 커멘드 라인이 보존되고 있어 필요에 따라서 수정해 재실행할 수 있다.</p> <h3 class="in-block"><span class="mw-headline" id=".E3.83.87.E3.83.BC.E3.82.BF.E6.A7.8B.E9.80.A0">데이터 구조</span> <span></span></h3> <p>Octave로는 유저가 데이터 구조를 어느 정도 정의할 수 있다.예를 들어 스칼라, 행렬, 문자열의 변수를 가지는 구조체를 이하와 같이 해 정의할 수 있다.</p> <pre> octave:1&gt; x.a = 1; x.b = [1, 2; 3, 4]; x.c = "string"; octave:2&gt; x.a ans =  1 octave:3&gt; x.b ans =     1   2    3   4  octave:4&gt; x.c ans = string octave:5&gt; x x = {   a =  1   b =       1   2      3   4    c = string } </pre> <h3 class="in-block"><span class="mw-headline" id=".E6.9D.A1.E4.BB.B6.E5.88.A4.E5.AE.9A.E3.81.AE.E3.82.B7.E3.83.A7.E3.83.BC.E3.83.88.E3.82.AB.E3.83.83.E3.83.88">조건 판정의 쇼트 컷</span> <span></span></h3> <p><code></code><code></code>Octave로 조건 판정에 사용되는 논리 연산의 2항<a href="http://tranpedia.selfhow.com/search?q=%EC%97%B0%EC%82%B0%EC%9E%90&amp;submit=Search" title="연산자">연산자</a>, '&amp;&amp;' 및'||'가 평가될 때는, 합<a href="http://tranpedia.selfhow.com/search?q=%EC%84%A0%20%ED%8F%89%EA%B0%80%EB%A5%BC&amp;submit=Search" title="합선 평가">선 평가를</a> 한다(C언어의 경우와 같이).<code></code><code></code>한편, 조건 판정에'&amp;' 및'|'연산자를 사용했을 경우는 합선 평가는 행해지지 않는다.</p> <h3 class="in-block"><span class="mw-headline" id=".E3.82.A4.E3.83.B3.E3.82.AF.E3.83.AA.E3.83.A1.E3.83.B3.E3.83.88.E3.81.8A.E3.82.88.E3.81.B3.E3.83.87.E3.82.AF.E3.83.AA.E3.83.A1.E3.83.B3.E3.83.88.E6.BC.94.E7.AE.97.E5.AD.90">인크리먼트 및 감소 연산자</span> <span></span></h3> <p><code></code><code></code>Octave에는 C언어와 같은'++' 및'--'연산자가 있어, 역시 C언어와 같게 변수의 전 및 뒤로 둘 수 있다.<code></code><code></code>변수치의 증감 후에 대입을 실시하는'+=' 및'-='연산자도 있다.</p> <h3 class="in-block"><span class="mw-headline" id="Unwind-protect">Unwind-protect</span> <span></span></h3> <p>Octave로는 <a href="http://tranpedia.selfhow.com/search?q=LISP&amp;submit=Search" title="LISP">LISP</a>의'<code>unwind_protect</code>'[<sup class="reference" id="cite_ref-15"><a href="http://tranpedia.selfhow.com/search?q=15&amp;submit=Search">15</a></sup>]를 실장하고 있어, 거기에 따른 <a href="http://tranpedia.selfhow.com/search?q=%EC%98%88%EC%99%B8%20%EC%B2%98%EB%A6%AC&amp;submit=Search" title="예외 처리">예외 처리</a>를 기술할 수 있다.unwind_protect 블록은 Octave로는 이하와 같이 쓰여진다.</p> <div class="mw-highlight mw-content-ltr" dir="ltr"> <pre> <span class="n">unwind_protect</span>    <span class="n">body</span> <span class="n">unwind_protect_cleanup</span>    <span class="n">cleanup</span> <span class="n">end_unwind_protect</span> </pre></div> <p>Octave로는 일반적으로, 블록의 종단은'<code>end</code>'키워드로 나타나는(MATLAB과 호환이다)가, '<code>end_<i>block</i></code>'에서도 나타내 보일 수 있다.'<code>unwind_protect</code>'블록에서도'<code>end</code>'에 가세해'<code>end_unwind_protect</code>'를 사용할 수 있다.</p> <p>unwind_protect의 <i>cleanup</i>부는, 항상 실행된다.<i>body</i>부에서 예외가 발생했을 경우는, 그 시점에서 <i>cleanup</i>이 실행되어'<code>unwind_protect</code>'블록의 나머지의 부분이 평가될 것은 없다.</p> <p>Octave로는 다른 예외 처리도 사용할 수 있다(MATLAB과의 호환성을 갖게하기 위해).</p> <div class="mw-highlight mw-content-ltr" dir="ltr"> <pre> <span class="k">try</span>    <span class="n">body</span> <span class="k">catch</span>    <span class="n">exception_handling</span> <span class="k">end</span> </pre></div> <p>이'<code>try</code>'와'<code>catch</code>'를 사용하는 예로는'<code>unwind_protect</code>'블록과 달라, 예외가 <i>body</i>부에서 발생했을 때에 마셔 <i>exception_handling</i>이 실행된다.또 <i>exception_handling</i>의 실행 후는, '<code>rethrow( lasterror )</code>'문장이 <i>exception_handling</i>부에 기술되어 있지 않은 한은, '<code>try</code>'블록의 예외 발생 장소 이후의 부분이 평가될 것은 없다.</p> <h3 class="in-block"><span class="mw-headline" id=".E5.80.8B.E6.95.B0.E3.81.8C.E5.8F.AF.E5.A4.89.E3.81.AE.E5.BC.95.E6.95.B0">개수가 가변의 인수</span> <span></span></h3> <p>Octave로는 함수의 인수에 대해서, 그 개수의 상한을 지정하는 일 없이 가변으로 해둘 수 있다.인수가 0개 이상인 것을 지정하려면 , <code>varargin</code>를 인수로서 지정한다.<code>varargin</code>는, 인수 리스트의 마지막에 두는지, 또는 유일한 인수로서 지정한다.</p> <div class="mw-highlight mw-content-ltr" dir="ltr"> <pre> <span class="k"><span class="w"></span><span class="p"></span><span class="w"></span><span class="p"></span><span class="p"></span>function</span> s = <span class="nf">plus</span> (varargin) <span class="w">   </span><span class="k"><span class="p"></span><span class="o"></span><span class="p"></span>if</span> (<span class="n">nargin</span>==<span class="mi">0</span>)       <span class="n"><span class="p"></span><span class="p"></span>s</span> = <span class="mi">0</span>;    <span class="k">else</span>       <span class="n"><span class="p"></span><span class="p"></span><span class="p"></span><span class="o"></span><span class="p"></span><span class="p"></span><span class="p"></span><span class="p"></span>s</span> = <span class="n">varargin</span>{<span class="mi">1</span>} + <span class="n">plus</span> (<span class="n">varargin</span>{<span class="mi">2</span>:<span class="n">nargin</span>});    <span class="k">end</span> <span class="k">end</span> </pre></div> <h3 class="in-block"><span class="mw-headline" id=".E5.80.8B.E6.95.B0.E3.81.8C.E5.8F.AF.E5.A4.89.E3.81.AE.E8.BF.94.E3.82.8A.E5.80.A4">개수가 가변의 돌아가 값</span><span></span></h3> <p>Octave의 함수는, <code>varargout</code>을 사용하는 것으로 돌아가 값의 수가 실행시에 정해지도록(듯이) 기술할 수 있다.</p> <div class="mw-highlight mw-content-ltr" dir="ltr"> <pre> <span class="k"><span class="w"></span><span class="p"></span><span class="w"></span><span class="p"></span><span class="p"></span>function</span> varargout = <span class="nf">multiassign</span> (data) <span class="w">   </span><span class="k"><span class="p"></span><span class="p"></span>for</span> <span class="n">k</span>=<span class="mi">1</span>:<span class="n">nargout</span>       <span class="n"><span class="p"></span><span class="p"></span><span class="p"></span><span class="p"></span><span class="p"></span>varargout</span>{<span class="n">k</span>} = <span class="n">data</span>(:,<span class="n">k</span>);    <span class="k">end</span> <span class="k">end</span> </pre></div> <h3 class="in-block"><span class="mw-headline" id="C.2B.2B.E3.81.A8.E3.81.AE.E7.B5.B1.E5.90.88">C++와의 통합</span> <span></span></h3> <p>C++소스 프로그램중에서 직접, Octave의 함수를 부를 수 있다.이하의 예로는, <code>rand([10,1])</code>그렇다고 하는 Octave의 함수 호출을 C++의 프로그램중에서 가고 있다.</p> <div class="mw-highlight mw-content-ltr" dir="ltr"> <pre> <span class="cp">#include</span> &lt;<span class="cpf">octave/oct.h</span>&gt; <span class="p">...</span> <span class="n"><span class="p"></span><span class="p"></span>ColumnVector</span> <span class="n">NumRands</span>(<span class="mi">2</span>); <span class="n"><span class="p"></span><span class="p"></span><span class="o"></span><span class="p"></span>NumRands</span>(<span class="mi">0</span>) = <span class="mi">10</span>; <span class="n"><span class="p"></span><span class="p"></span><span class="o"></span><span class="p"></span>NumRands</span>(<span class="mi">1</span>) = <span class="mi">1</span>; <span class="n"><span class="p"></span><span class="p"></span>octave_value_list</span> <span class="n">f_arg</span>, <span class="n">f_ret</span>; <span class="n"><span class="p"></span><span class="p"></span><span class="o"></span><span class="p"></span><span class="p"></span>f_arg</span>(<span class="mi">0</span>) = <span class="n">octave_value</span>(<span class="n">NumRands</span>); <span class="n"><span class="o"></span><span class="p"></span><span class="p"></span><span class="p"></span><span class="p"></span>f_ret</span> = <span class="n">feval</span>("<span class="s">rand</span>",<span class="n">f_arg</span>,<span class="mi">1</span>); <span class="n"><span class="p"></span><span class="p"></span><span class="p"></span><span class="p"></span>Matrix</span> <span class="nf">unis</span>(<span class="n">f_ret</span>(<span class="mi">0</span>).<span class="n">matrix_value</span>()); </pre></div> </div><h2 class="section-heading in-block"><div class="mw-ui-icon mw-ui-icon-element indicator"></div><span class="mw-headline" id="MATLAB_.E3.81.A8.E3.81.AE.E4.BA.92.E6.8F.9B.E6.80.A7">MATLAB과의 호환성</span> <span></span></h2><div class="mf-section-3"> <p>Octave는, MATLAB과의 호환성을 주로 목표로 하고 있어 MATLAB의 기능의 대부분을 Octave도 가지고 있다.또 MATLAB을 위해서 쓰여진 프로그램도 수정하지 않고 동작하는 것이 많다.</p> <ol><li>행렬을 기본의 데이터 형식으로 하고 있다</li> <li>복소수에 대응</li> <li>강력한 build-in함수와 라이브러리를 가진다</li> <li>유저 정의 함수에 의해서 확장 가능</li> </ol><p>MATLAB과 Octave의 상이점에 대해서는, 오피셜&#12539;사이트의 FAQ에 정리하고 있는[<sup class="reference" id="cite_ref-16"><a href="http://tranpedia.selfhow.com/search?q=16&amp;submit=Search">16</a></sup>]이, 이하와 같은 것이 있다.</p> <ol><li>줄머리에%외에#를 두어도, 그 행을 코멘트로 할 수 있다</li> <li>++, --, +=, *=, /=등의 <a href="http://tranpedia.selfhow.com/search?q=C%EC%96%B8%EC%96%B4&amp;submit=Search" title="C언어">C언어</a>의 연산자를 사용할 수 있다</li> <li>[1:10](3)등과 같이, 변수(인스턴스)를 생성하지 않아도, 배열의 요소를 참조할 수 있다</li> <li>'외에,"를 사용해도 문자열을 정의할 수 있다</li> </ol></div><h2 class="section-heading in-block"><div class="mw-ui-icon mw-ui-icon-element indicator"></div><span class="mw-headline" id=".E9.96.A2.E9.80.A3.E9.A0.85.E7.9B.AE">관련 항목</span> <span></span></h2><div class="mf-section-4"> <ul><li><a href="http://tranpedia.selfhow.com/search?q=%EC%88%98%ED%95%99%EC%97%90%20%EA%B4%80%ED%95%9C%20%EA%B8%B0%EC%82%AC%EC%9D%98%20%EC%9D%BC%EB%9E%8C&amp;submit=Search" title="수학에 관한 기사의 일람">수학에 관한 기사의 일람</a></li> <li><a href="http://tranpedia.selfhow.com/search?q=%EC%88%98%EC%B9%98%20%ED%95%B4%EC%84%9D%20%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4&amp;submit=Search" title="수치 해석 소프트웨어">수치 해석 소프트웨어</a></li> <li>유사한 소프트웨어 <ul><li><a href="http://tranpedia.selfhow.com/search?q=FreeMat&amp;submit=Search" title="FreeMat">FreeMat</a></li> <li><a href="http://tranpedia.selfhow.com/search?q=MATLAB&amp;submit=Search" title="MATLAB">MATLAB</a></li> <li><a href="http://tranpedia.selfhow.com/search?q=Scilab&amp;submit=Search" title="Scilab">Scilab</a></li> </ul></li> </ul></div><h2 class="section-heading in-block"><div class="mw-ui-icon mw-ui-icon-element indicator"></div><span class="mw-headline" id=".E8.84.9A.E6.B3.A8">각주</span> <span></span></h2><div class="mf-section-5"> <ol class="references"><li id="cite_note-1"><b><a href="http://tranpedia.selfhow.com/search?q=&amp;submit=Search"></a></b>^<span class="reference-text"><cite style="font-style:normal">"<a class="external text" href="http://tranpedia.selfhow.com/search?q=Frequently%20asked%20questions%20about%20Octave%20%28with%20answers%29%E2%80%9D&amp;submit=Search" rel="nofollow">Frequently asked questions about Octave (with answers)"</a>(영어). <span title="">2011년 2월 14일</span> 열람.</cite></span></li> <li id="cite_note-Trappenberg2010-2"><b><a href="http://tranpedia.selfhow.com/search?q=&amp;submit=Search"></a></b>^ <span class="reference-text"><cite class="citation book" style="font-style:normal">Trappenberg, Thomas (2010). <i>Fundamentals of Computational Neuroscience</i>. Oxford University Press. p.&#160;361. <a href="http://tranpedia.selfhow.com/search?q=ISBN&amp;submit=Search" title="ISBN">ISBN</a>&#160;<a href="http://tranpedia.selfhow.com/search?q=978-0-19-956841-3&amp;submit=Search" title="특별:문헌 자료/978-0-19-956841-3">978-0-19-956841-3</a>.</cite><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=book&amp;rft.btitle=Fundamentals+of+Computational+Neuroscience&amp;rft.aulast=Trappenberg&amp;rft.aufirst=Thomas&amp;rft.au=Trappenberg%2C%26%2332%3BThomas&amp;rft.date=2010&amp;rft.pages=p.%26nbsp%3B361&amp;rft.pub=Oxford+University+Press&amp;rft.isbn=978-0-19-956841-3&amp;rfr_id=info:sid/ja.wikipedia.org:GNU_Octave"><span style="display: none;">&#160;</span></span></span></li> <li id="cite_note-MuhammadZalizniak2011-3"><b><a href="http://tranpedia.selfhow.com/search?q=&amp;submit=Search"></a></b>^ <span class="reference-text"><cite class="citation book" style="font-style:normal">Muhammad, A; Zalizniak, V (2011). <i>Practical Scientific Computing</i>. <a class="new" href="http://tranpedia.selfhow.com/search?q=Woodhead%20Publishing&amp;submit=Search" title="Woodhead Publishing (존재하지 않는 페이지)">Woodhead Publishing</a>. p.&#160;3. <a href="http://tranpedia.selfhow.com/search?q=ISBN&amp;submit=Search" title="ISBN">ISBN</a>&#160;<a href="http://tranpedia.selfhow.com/search?q=978-0-85709-226-7&amp;submit=Search" title="특별:문헌 자료/978-0-85709-226-7">978-0-85709-226-7</a>.</cite><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=book&amp;rft.btitle=Practical+Scientific+Computing&amp;rft.aulast=Muhammad&amp;rft.aufirst=A&amp;rft.au=Muhammad%2C%26%2332%3BA&amp;rft.au=Zalizniak%2C%26%2332%3BV&amp;rft.date=2011&amp;rft.pages=p.%26nbsp%3B3&amp;rft.pub=%5B%5BWoodhead+Publishing%5D%5D&amp;rft.isbn=978-0-85709-226-7&amp;rfr_id=info:sid/ja.wikipedia.org:GNU_Octave"><span style="display: none;">&#160;</span></span></span></li> <li id="cite_note-MegreyMoksness2008-4"><b><a href="http://tranpedia.selfhow.com/search?q=&amp;submit=Search"></a></b>^ <span class="reference-text"><cite class="citation book" style="font-style:normal">Megrey, Bernard A.; Moksness, Erlend (2008). <i>Computers in Fisheries Research</i>. Springer Science &amp; Business Media. p.&#160;345. <a href="http://tranpedia.selfhow.com/search?q=ISBN&amp;submit=Search" title="ISBN">ISBN</a>&#160;<a href="http://tranpedia.selfhow.com/search?q=978-1-4020-8636-6&amp;submit=Search" title="특별:문헌 자료/978-1-4020-8636-6">978-1-4020-8636-6</a>.</cite><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=book&amp;rft.btitle=Computers+in+Fisheries+Research&amp;rft.aulast=Megrey&amp;rft.aufirst=Bernard+A.&amp;rft.au=Megrey%2C%26%2332%3BBernard+A.&amp;rft.au=Moksness%2C%26%2332%3BErlend&amp;rft.date=2008&amp;rft.pages=p.%26nbsp%3B345&amp;rft.pub=Springer+Science+%26+Business+Media&amp;rft.isbn=978-1-4020-8636-6&amp;rfr_id=info:sid/ja.wikipedia.org:GNU_Octave"><span style="display: none;">&#160;</span></span></span></li> <li id="cite_note-Kapuno2008-5"><b><a href="http://tranpedia.selfhow.com/search?q=&amp;submit=Search"></a></b>^ <span class="reference-text"><cite class="citation book" style="font-style:normal">Kapuno, Raul Raymond (2008). <i>Programming for Chemical Engineers Using C, C++, and MATLAB</i>. Jones &amp; Bartlett Publishers. p.&#160;365. <a href="http://tranpedia.selfhow.com/search?q=ISBN&amp;submit=Search" title="ISBN">ISBN</a>&#160;<a href="http://tranpedia.selfhow.com/search?q=978-1-934015-09-4&amp;submit=Search" title="특별:문헌 자료/978-1-934015-09-4">978-1-934015-09-4</a>.</cite><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=book&amp;rft.btitle=Programming+for+Chemical+Engineers+Using+C%2C+C%2B%2B%2C+and+MATLAB&amp;rft.aulast=Kapuno&amp;rft.aufirst=Raul+Raymond&amp;rft.au=Kapuno%2C%26%2332%3BRaul+Raymond&amp;rft.date=2008&amp;rft.pages=p.%26nbsp%3B365&amp;rft.pub=Jones+%26+Bartlett+Publishers&amp;rft.isbn=978-1-934015-09-4&amp;rfr_id=info:sid/ja.wikipedia.org:GNU_Octave"><span style="display: none;">&#160;</span></span></span></li> <li id="cite_note-Herman2013-6"><b><a href="http://tranpedia.selfhow.com/search?q=&amp;submit=Search"></a></b>^ <span class="reference-text"><cite class="citation book" style="font-style:normal">Herman, Russell L. (2013). <i>A Course in Mathematical Methods for Physicists</i>. CRC Press. p.&#160;42. <a href="http://tranpedia.selfhow.com/search?q=ISBN&amp;submit=Search" title="ISBN">ISBN</a>&#160;<a href="http://tranpedia.selfhow.com/search?q=978-1-4665-8467-9&amp;submit=Search" title="특별:문헌 자료/978-1-4665-8467-9">978-1-4665-8467-9</a>.</cite><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=book&amp;rft.btitle=A+Course+in+Mathematical+Methods+for+Physicists&amp;rft.aulast=Herman&amp;rft.aufirst=Russell+L.&amp;rft.au=Herman%2C%26%2332%3BRussell+L.&amp;rft.date=2013&amp;rft.pages=p.%26nbsp%3B42&amp;rft.pub=CRC+Press&amp;rft.isbn=978-1-4665-8467-9&amp;rfr_id=info:sid/ja.wikipedia.org:GNU_Octave"><span style="display: none;">&#160;</span></span></span></li> <li id="cite_note-WouwerSaucez2014-7"><b><a href="http://tranpedia.selfhow.com/search?q=&amp;submit=Search"></a></b>^ <span class="reference-text"><cite class="citation book" style="font-style:normal">Wouwer, Alain Vande; Saucez, Philippe; Vilas, Carlos (2014). <i>Simulation of ODE/PDE Models with MATLAB&#9633;, OCTAVE and SCILAB: Scientific and Engineering Applications</i>. Springer. pp.&#160;114&#9633;115. <a href="http://tranpedia.selfhow.com/search?q=ISBN&amp;submit=Search" title="ISBN">ISBN</a>&#160;<a href="http://tranpedia.selfhow.com/search?q=978-3-319-06790-2&amp;submit=Search" title="특별:문헌 자료/978-3-319-06790-2">978-3-319-06790-2</a>.</cite><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=book&amp;rft.btitle=Simulation+of+ODE%2FPDE+Models+with+MATLAB%C2%AE%2C+OCTAVE+and+SCILAB%3A+Scientific+and+Engineering+Applications&amp;rft.aulast=Wouwer&amp;rft.aufirst=Alain+Vande&amp;rft.au=Wouwer%2C%26%2332%3BAlain+Vande&amp;rft.au=Saucez%2C%26%2332%3BPhilippe&amp;rft.au=Vilas%2C%26%2332%3BCarlos&amp;rft.date=2014&amp;rft.pages=pp.%26nbsp%3B114%E2%80%93115&amp;rft.pub=Springer&amp;rft.isbn=978-3-319-06790-2&amp;rfr_id=info:sid/ja.wikipedia.org:GNU_Octave"><span style="display: none;">&#160;</span></span></span></li> <li id="cite_note-about-8">^ <a href="http://tranpedia.selfhow.com/search?q=a&amp;submit=Search"><sup><i><b>a</b></i></sup></a> <a href="http://tranpedia.selfhow.com/search?q=b&amp;submit=Search"><sup><i><b>b</b></i></sup></a> <span class="reference-text"><cite style="font-style:normal">Eaton, John W. "<a class="external text" href="http://tranpedia.selfhow.com/search?q=About%20Octave&amp;submit=Search" rel="nofollow">About Octave</a>". <span title="">2009년 6월 28일</span> 열람.</cite></span></li> <li id="cite_note-9"><b><a href="http://tranpedia.selfhow.com/search?q=&amp;submit=Search"></a></b>^ <span class="reference-text"><a class="external text" href="http://tranpedia.selfhow.com/search?q=Social%20Security%20Number%20Vulnerability%20Findings%20Relied%20on%20Supercomputing&amp;submit=Search" rel="nofollow">Social Security Number Vulnerability Findings Relied on Supercomputing</a> HPCwire, July 8, 2009.</span></li> <li id="cite_note-10"><b><a href="http://tranpedia.selfhow.com/search?q=&amp;submit=Search"></a></b>^<span class="reference-text"><cite class="citation news" style="font-style:normal">말 오카 요코(<span title="">2014년 1월 6일</span>). <a class="external text" href="http://tranpedia.selfhow.com/search?q=%E2%80%9C%20%E3%80%8CGNU%20Octave%203.8.%200%E3%80%8D%EB%A6%B4%EB%A6%AC%EC%8A%A4%2C%20%EB%A7%88%EC%B9%A8%EB%82%B4%20GUI%EB%A5%BC%20%ED%83%91%EC%9E%AC%E2%80%9D&amp;submit=Search" rel="nofollow">" &#12300;GNU Octave 3.8. 0&#12301;릴리스, 마침내 GUI를 탑재"</a>. <i>SourceForge.JP Magazine</i>.  <span style="display:none;"><a class="external free" href="http://tranpedia.selfhow.com/search?q=http%3A//sourceforge.jp/magazine/14/01/06/152000&amp;submit=Search" rel="nofollow">http://sourceforge.jp/magazine/14/01/06/152000</a></span> <span class="reference-accessdate"><span title="">2014년 2월 10일</span> 열람</span>.</cite><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.genre=article&amp;rft.atitle=%E3%80%8CGNU+Octave+3.8.0%E3%80%8D%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9%E3%80%81%E3%81%A4%E3%81%84%E3%81%ABGUI%E3%82%92%E6%90%AD%E8%BC%89&amp;rft.jtitle=SourceForge.JP+Magazine&amp;rft.aulast=%E6%9C%AB%E5%B2%A1%E6%B4%8B%E5%AD%90&amp;rft.au=%E6%9C%AB%E5%B2%A1%E6%B4%8B%E5%AD%90&amp;rft.date=%3Cspan+title%3D%22%22%3E2014%E5%B9%B41%E6%9C%886%E6%97%A5%3C%2Fspan%3E&amp;rft_id=http%3A%2F%2Fsourceforge.jp%2Fmagazine%2F14%2F01%2F06%2F152000&amp;rfr_id=info:sid/ja.wikipedia.org:GNU_Octave"><span style="display: none;">&#160;</span></span></span></li> <li id="cite_note-11"><b><a href="http://tranpedia.selfhow.com/search?q=&amp;submit=Search"></a></b>^<span class="reference-text"><cite style="font-style:normal">"<a class="external text" href="http://tranpedia.selfhow.com/search?q=GNU%20Octave%20-%20Controlling%20subprocesses&amp;submit=Search" rel="nofollow">GNU Octave - Controlling subprocesses</a>"(<span title="November 14, 2008">2008년 11월 14일</span>). <span title="Jan 28, 2009">2009년 1월 28일</span> 열람.</cite></span></li> <li id="cite_note-12"><b><a href="http://tranpedia.selfhow.com/search?q=&amp;submit=Search"></a></b>^<span class="reference-text"><cite style="font-style:normal">"<a class="external text" href="http://tranpedia.selfhow.com/search?q=GNU%20Octave&amp;submit=Search" rel="nofollow">GNU Octave</a>". <span title="Jan 28, 2009">2009년 1월 28일</span> 열람.</cite></span></li> <li id="cite_note-13"><b><a href="http://tranpedia.selfhow.com/search?q=%5E&amp;submit=Search">^</a></b> <span class="reference-text"><cite style="font-style:normal">"<a class="external text" href="http://tranpedia.selfhow.com/search?q=FAQ%3A%20MATLAB%20compatibility&amp;submit=Search" rel="nofollow">FAQ: MATLAB compatibility</a>". <span title="July 4, 2009">2009년 7월 4일</span> 열람.</cite></span></li> <li id="cite_note-14"><b><a href="http://tranpedia.selfhow.com/search?q=%5E&amp;submit=Search">^</a></b> <span class="reference-text"><cite style="font-style:normal">"<a class="external text" href="http://tranpedia.selfhow.com/search?q=FAQ%3A%20Getting%20Octave&amp;submit=Search" rel="nofollow">FAQ: Getting Octave</a>". <span title="July 4, 2009">2009년 7월 4일</span> 열람.</cite></span></li> <li id="cite_note-15"><b><a href="http://tranpedia.selfhow.com/search?q=&amp;submit=Search"></a></b>^ <span class="reference-text"><a class="external text" href="http://tranpedia.selfhow.com/search?q=CLHS%3A%20Special%20Operator%20UNWIND-PROTECT&amp;submit=Search" rel="nofollow">CLHS: Special Operator UNWIND-PROTECT</a> Common Lisp Hyper Spec의 사이트에서의 해설(영어)</span></li> <li id="cite_note-16"><b><a href="http://tranpedia.selfhow.com/search?q=&amp;submit=Search"></a></b>^ <span class="reference-text"><a class="external text" href="http://tranpedia.selfhow.com/search?q=How%20is%20Octave%20different%20from%20Matlab%3F%ED%98%B8%ED%99%98%EC%84%B1%EC%97%90%20%EA%B4%80%ED%95%9C%20FAQ&amp;submit=Search" rel="nofollow">How is Octave different from Matlab?호환성에 관한 FAQ</a></span></li> </ol></div><h2 class="section-heading in-block"><div class="mw-ui-icon mw-ui-icon-element indicator"></div><span class="mw-headline" id=".E5.8F.82.E8.80.83.E6.96.87.E7.8C.AE">참고 문헌</span> <span></span></h2><div class="mf-section-6"> <table class="mbox-small plainlinks sisterproject noprint" style="border:1px solid #aaa;background-color:#f9f9f9;width:20em;"><tr><td class="mbox-image"><img alt="" data-file-height="1376" data-file-width="1024" height="40" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Commons-logo.svg/30px-Commons-logo.svg.png" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Commons-logo.svg/45px-Commons-logo.svg.png 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Commons-logo.svg/59px-Commons-logo.svg.png 2x" width="30"/></td> <td class="mbox-text plainlist" style="font-size:100%;">위키메디아&#12539;코몬즈에는, <b><span class="plainlinks"><a class="external text" href="http://tranpedia.selfhow.com/search?q=GNU%20Octave&amp;submit=Search">GNU Octave</a></span></b>에 관련하는 카테고리가 있습니다.</td> </tr></table><table class="mbox-small plainlinks sisterproject noprint" style="border:1px solid #aaa;background-color:#f9f9f9;width:20em;"><tr><td class="mbox-image"><img alt="" data-file-height="300" data-file-width="300" height="40" src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Wikibooks-logo.svg/40px-Wikibooks-logo.svg.png" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Wikibooks-logo.svg/60px-Wikibooks-logo.svg.png 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Wikibooks-logo.svg/80px-Wikibooks-logo.svg.png 2x" width="40"/></td> <td class="mbox-text plainlist" style="font-size:100%;">위키북스에 <b><a class="extiw" href="http://tranpedia.selfhow.com/search?q=GNU%20Octave&amp;submit=Search" title="b:GNU Octave">GNU Octave</a></b> 관련의 해설서&#12539;교과서가 있습니다.</td> </tr></table><table class="mbox-small plainlinks sisterproject noprint" style="border:1px solid #aaa;background-color:#f9f9f9;width:20em;"><tr><td class="mbox-image"><img alt="" data-file-height="300" data-file-width="300" height="40" src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Wikibooks-logo.svg/40px-Wikibooks-logo.svg.png" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Wikibooks-logo.svg/60px-Wikibooks-logo.svg.png 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Wikibooks-logo.svg/80px-Wikibooks-logo.svg.png 2x" width="40"/></td> <td class="mbox-text plainlist" style="font-size:100%;">영문판 위키북스에 본기사에 관련한 해설서&#12539;교과서가 있습니다. <div style="margin-left:10px;"><b><span class="plainlinks"><a class="external text" href="http://tranpedia.selfhow.com/search?q=Octave%20Programming%20Tutorial&amp;submit=Search">Octave Programming Tutorial</a></span></b></div> </td> </tr></table><ul><li>Hansen, Jesper (June 2011). <a class="external text" href="http://tranpedia.selfhow.com/search?q=GNU%20Octave%20Beginner%27s%20Guide&amp;submit=Search" rel="nofollow">GNU Octave Beginner's Guide</a>. <a class="extiw" href="http://tranpedia.selfhow.com/search?q=Packt%20Publishing&amp;submit=Search" title="en:Packt">Packt Publishing</a>.</li> </ul></div><h2 class="section-heading in-block"><div class="mw-ui-icon mw-ui-icon-element indicator"></div><span class="mw-headline" id=".E5.A4.96.E9.83.A8.E3.83.AA.E3.83.B3.E3.82.AF">외부 링크</span> <span></span></h2><div class="mf-section-7"> <p>일부를 제외하고, 모두 영어의 사이트이다.</p> <ul><li><a class="external text" href="http://tranpedia.selfhow.com/search?q=Octave.org%20Home%20Page&amp;submit=Search" rel="nofollow">Octave.org Home Page</a></li> <li><a class="external text" href="http://tranpedia.selfhow.com/search?q=%EC%98%A8%EB%9D%BC%EC%9D%B8%E3%83%BB%EB%A9%94%EB%89%B4%EC%96%BC%28%EC%98%81%EC%96%B4%29&amp;submit=Search" rel="nofollow">온라인&#12539;메뉴얼(영어)</a> (<a class="external text" href="http://tranpedia.selfhow.com/search?q=%EA%B5%AC%ED%8C%90%202.1.%20x%EC%9D%98%20%EC%9D%BC%EB%B3%B8%EC%96%B4%20%EB%B2%88%EC%97%AD&amp;submit=Search" rel="nofollow">구판 2.1. x의 일본어 번역</a>)</li> <li><a class="external text" href="http://tranpedia.selfhow.com/search?q=%EC%BB%A4%EB%AE%A4%EB%8B%88%ED%8B%B0%EC%97%90%20%EC%9D%98%ED%95%9C%20%EA%B0%9C%EB%B0%9C%20%EC%82%AC%EC%9D%B4%ED%8A%B8%20Octave-forge&amp;submit=Search" rel="nofollow">커뮤니티에 의한 개발 사이트 Octave-forge</a></li> <li><a class="external text" href="http://tranpedia.selfhow.com/search?q=Octave%20wiki&amp;submit=Search" rel="nofollow">Octave wiki</a> (브라우저에 따라서는 리디렉트가 타임 아웃을 일으키므로, 2회 클릭하면 좋다)</li> <li><a class="external text" href="http://tranpedia.selfhow.com/search?q=Online%20access%20to%20Octave&amp;submit=Search" rel="nofollow">Online access to Octave</a> 온라인으로 Octave에 의한 계산을 시험할 수 있다.</li> <li><a class="external text" href="http://tranpedia.selfhow.com/search?q=Octave%20-%20AIMSWiki&amp;submit=Search" rel="nofollow">Octave - AIMSWiki</a></li> <li><a class="external text" href="http://tranpedia.selfhow.com/search?q=QtOctave%20un%20Front-End%20para%20Octave&amp;submit=Search" rel="nofollow">QtOctave un Front-End para Octave</a>[<sup class="noprint Inline-Template nowrap"><i><a href="http://tranpedia.selfhow.com/search?q=%EB%A7%81%ED%81%AC%20%EC%9E%98%EB%9D%BC%EB%9D%BC&amp;submit=Search" title="Wikipedia:출전을 명기한다"><span title="외부 링크가 링크 조각이 되고 있습니다.(2012년 9월)">링크 잘라라</span></a></i></sup>] - 인터페이스를 그라이피칼에 확장한 QtOctave를 개발하고 있다.</li> <li><a class="external text" href="http://tranpedia.selfhow.com/search?q=DomainMath%20IDE&amp;submit=Search" rel="nofollow">DomainMath IDE</a> - GUI 프론트엔드를 개발하고 있다.오픈 소스.</li> <li><a class="external text" href="http://tranpedia.selfhow.com/search?q=MATLAB%20Central&amp;submit=Search" rel="nofollow">MATLAB Central</a> MATLAB의 유저 커뮤니티의 사이트.많은 과학기술 계산 스크립트가 투고되어 유저에 의해 평가되고 있다.MATLAB의 별도 판매 Toolbox를 사용하지 않는 스크립트는, GNU Octave로 그대로 이용할 수 있는 것도 많다.</li> <li><a class="external text" href="http://tranpedia.selfhow.com/search?q=Octave%20Programming%20Tutorial&amp;submit=Search">Octave Programming Tutorial</a> WikiBooks 프로젝트내의 문서집.</li> </ul></div><noscript><img alt="" height="1" src="https://ja.wikipedia.org/wiki/Special:CentralAutoLogin/start?type=1x1&amp;mobile=1" style="border: none; position: absolute;" title="" width="1"/></noscript></div><div class="printfooter"> &#12300;<a dir="ltr" href="http://tranpedia.selfhow.com/search?q=https%3A//ja.wikipedia.org/w/index.php%3F%20title%3DGNU_Octave%26oldid%3D59957126&amp;submit=Search">https://ja.wikipedia.org/w/index.php? title=GNU_Octave&amp;oldid=59957126</a>&#12301;으로부터 취득</div> </div>         <p>This article is <a href='https://ja.wikipedia.org/wiki/GNU_Octave' target='_blank'>taken from the Japanese Wikipedia  <strong>GNU Octave</strong> </a></p>         <p>This article is distributed by cc-by-sa or GFDL license in accordance <a href='https://en.wikipedia.org/wiki/Wikipedia:Copyrights' target='_blank'>with the provisions of Wikipedia.</a></p>         <p><a href='https://en.wikipedia.org/wiki/Wikipedia:General_disclaimer' target='_blank'>Wikipedia and Tranpedia does not guarantee the accuracy of this document. See our disclaimer for more information.</a></p>         <p>In addition, Tranpedia is simply not responsible for any show is only by translating the writings of foreign licenses that are compatible with CC-BY-SA license information.</p>      <div class='ads_adsense_response'> <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script> <!-- 반응형텍스트디스플레이둘다 --> <ins class="adsbygoogle"      style="display:block"      data-ad-client="ca-pub-8393857339019314"      data-ad-slot="1428352782"      data-ad-format="auto"></ins> <script> (adsbygoogle = window.adsbygoogle || []).push({}); </script> </div> 
+<div style='clear:both;'></div>
+<div class='post-share-buttons'>
+<a class='goog-inline-block share-button sb-email' href='https://www.blogger.com/share-post.g?blogID=6996732972947782461&postID=3496938945955717519&target=email' target='_blank' title='이메일로 전송'><span class='share-button-link-text'>이메일로 전송</span></a><a class='goog-inline-block share-button sb-blog' href='https://www.blogger.com/share-post.g?blogID=6996732972947782461&postID=3496938945955717519&target=blog' onclick='window.open(this.href, "_blank", "height=270,width=475"); return false;' target='_blank' title='BlogThis!'><span class='share-button-link-text'>BlogThis!</span></a><a class='goog-inline-block share-button sb-twitter' href='https://www.blogger.com/share-post.g?blogID=6996732972947782461&postID=3496938945955717519&target=twitter' target='_blank' title='Twitter에서 공유'><span class='share-button-link-text'>Twitter에서 공유</span></a><a class='goog-inline-block share-button sb-facebook' href='https://www.blogger.com/share-post.g?blogID=6996732972947782461&postID=3496938945955717519&target=facebook' onclick='window.open(this.href, "_blank", "height=430,width=640"); return false;' target='_blank' title='Facebook에서 공유'><span class='share-button-link-text'>Facebook에서 공유</span></a><div class='goog-inline-block dummy-container'><g:plusone source='blogger:blog:plusone' href='http://pidia.selfhow.com/2016/06/gnu-octave.html' size='medium' width='300' annotation='inline'/></div>
+</div>
+<span class='reaction-buttons'>
+</span>
+<div style='clear: both;'></div>
+</div>
+<footer class='entry-meta'>
+Posted on <time class='entry-date'>6/27/2016</time><span> by <span>selfpidia</span></span> | <a href='http://pidia.selfhow.com/2016/06/gnu-octave.html#comment-form' onclick=''>No comments</a>
+</footer>
+</article>
+<div style='clear: both;'></div>
+<div class='blog-pager' id='blog-pager'>
+<span id='blog-pager-newer-link'>
+<a class='blog-pager-newer-link' href='http://pidia.selfhow.com/2016/06/blog-post_609.html' id='Blog1_blog-pager-newer-link' title='최근 게시물'>최근 게시물</a>
+</span>
+<span id='blog-pager-older-link'>
+<a class='blog-pager-older-link' href='http://pidia.selfhow.com/2016/06/blog-post_748.html' id='Blog1_blog-pager-older-link' title='이전 게시물'>이전 게시물</a>
+</span>
+<a class='home-link' href='http://pidia.selfhow.com/'>홈</a>
+</div>
+<div class='clear'></div>
+<div class='comments' id='comments'>
+<a name='comments'></a>
+<h4>
+0
+개의 댓글:
+        
+</h4>
+<div id='Blog1_comments-block-wrapper'>
+<dl class='avatar-comment-indent' id='comments-block'>
+</dl>
+</div>
+<p class='comment-footer'>
+<div class='comment-form'>
+<a name='comment-form'></a>
+<h4 id='comment-post-message'>댓글 쓰기</h4>
+<p>
+</p>
+<a href='https://www.blogger.com/comment-iframe.g?blogID=6996732972947782461&postID=3496938945955717519' id='comment-editor-src'></a>
+<iframe allowtransparency='true' class='blogger-iframe-colorize blogger-comment-from-post' frameborder='0' height='410' id='comment-editor' name='comment-editor' src='' width='100%'></iframe>
+<!--Can't find substitution for tag [post.friendConnectJs]-->
+<script src='https://www.blogger.com/static/v1/jsbin/1565398628-comment_from_post_iframe.js' type='text/javascript'></script>
+<script type='text/javascript'>
+      BLOG_CMT_createIframe('https://www.blogger.com/rpc_relay.html', '0');
+    </script>
+</div>
+</p>
+<div id='backlinks-container'>
+<div id='Blog1_backlinks-container'>
+</div>
+</div>
+</div>
+</div>
+
+        </div></div>
+      
+<!--Can't find substitution for tag [adEnd]-->
+</div>
+<div style='clear: both;'></div>
+<div class='post-feeds'>
+<div class='feed-links'>
+피드 구독하기:
+<a class='feed-link' href='http://pidia.selfhow.com/feeds/3496938945955717519/comments/default' target='_blank' type='application/atom+xml'>댓글 (Atom)</a>
+</div>
+</div>
+<script type="text/javascript">window.___gcfg = {'lang': 'ko'};</script>
+</div></div>
+</div><!-- #content .site-content -->
+</div><!-- #primary .content-area -->
+<div class='widget-area' id='secondary' role='complementary'>
+<div class='widget widget_search'>
+<form action='/search' id='searchform' method='get' role='search'>
+<label class='assistive-text' for='s'>Search</label>
+<input class='field' id='s' name='q' placeholder='Search' type='text' value=''/>
+<input class='submit' id='searchsubmit' name='submit' type='submit' value='Search'/>
+</form>
+</div>
+<div class='sidebar section' id='sidebartop'><div class='widget HTML' data-version='1' id='HTML1'>
+<h2 class='title'>Recent Posts</h2>
+<div class='widget-content'>
+</div>
+<div class='clear'></div>
+<span class='widget-item-control'>
+<span class='item-control blog-admin'>
+<a class='quickedit' href='//www.blogger.com/rearrange?blogID=6996732972947782461&widgetType=HTML&widgetId=HTML1&action=editWidget&sectionId=sidebartop' onclick='return _WidgetManager._PopupConfig(document.getElementById("HTML1"));' target='configHTML1' title='수정'>
+<img alt='' height='18' src='https://resources.blogblog.com/img/icon18_wrench_allbkg.png' width='18'/>
+</a>
+</span>
+</span>
+<div class='clear'></div>
+</div>
+<div class='widget PopularPosts' data-version='1' id='PopularPosts1'>
+<h2>Popular Posts</h2>
+<div class='widget-content popular-posts'>
+<ul>
+<li>
+<div class='item-content'>
+<div class='item-title'><a href='http://pidia.selfhow.com/2016/12/blog-post_8280.html'>노예 성도 회장 히카루~음마에 점능 된 학원~</a></div>
+<div class='item-snippet'>      노예 성도 회장 히카루~음마에 점능 된 학원~ &#12300; 노예 성도 회장 히카루~음마에 점능 된 학원~ &#12301;( 어떤 것 줄여가며 꿰매어 실이야 나비히 가벼운 응마가짜응료 되었지만 구원)은, 키르타임코뮤니케이션의 라벨&#12539; 이차원 드림노베르즈 보다 발매된...</div>
+</div>
+<div style='clear: both;'></div>
+</li>
+<li>
+<div class='item-content'>
+<div class='item-title'><a href='http://pidia.selfhow.com/2017/03/blog-post_743.html'>사인&#12539;앤드&#12539;트레이드</a></div>
+<div class='item-snippet'>      사인&#12539;앤드&#12539;트레이드 사인&#12539;앤드&#12539;트레이드 (Sign and Trade)란, 북미 프로 농구 리그인 NBA  에 있어서 선수와 팀간의 계약 이행 형태의 하나이며, 리그와 NBA 선수 조합 과의 사이로의 결정(CBA)에 근거하고 있다.제한 없음의...</div>
+</div>
+<div style='clear: both;'></div>
+</li>
+<li>
+<div class='item-content'>
+<div class='item-title'><a href='http://pidia.selfhow.com/2017/03/8501.html'>인도네시아&#12539;에어 아시아 8501편 추락 사고</a></div>
+<div class='item-snippet'>      인도네시아&#12539;에어 아시아 8501편 추락 사고 인도네시아&#12539;에어 아시아 8501편   2014년 4월에 촬영된 해당기 PK-AXC   사고의 개요  일자  2014년 12월 28일 (2014-12-28)  개요  방향타 (라다-) 제어 시스템의...</div>
+</div>
+<div style='clear: both;'></div>
+</li>
+<li>
+<div class='item-content'>
+<div class='item-title'><a href='http://pidia.selfhow.com/2016/05/blog-post.html'>오오토모노 미유키</a></div>
+<div class='item-snippet'>오오토모노 미유키  &#160;  범례  오오토모노 미유키  시대  아스카 시대  중기-후기  탄생  타이카  2년( 646년 )? [ 1 ]  사망  다이호  원년 1월 15일 ( 701년  2월 27일 )  관직의 등급  마사히로3, 오노말 &#65288; 증 &#12539; 마사...</div>
+</div>
+<div style='clear: both;'></div>
+</li>
+<li>
+<div class='item-content'>
+<div class='item-title'><a href='http://pidia.selfhow.com/2017/02/blog-post_143.html'>중원 대학</a></div>
+<div class='item-snippet'>      중원 대학 나카하라대학      도서관   교훈  독신 역행  창립  1955년  학교 종별  사립대학  가맹 단체  재단법인 사립 나카하라대학  학장  장광정잠대(2012.8- )  직원  489명  학생  16,644명(2009년)  소...</div>
+</div>
+<div style='clear: both;'></div>
+</li>
+<li>
+<div class='item-content'>
+<div class='item-title'><a href='http://pidia.selfhow.com/2017/01/blog-post_767.html'>미즈노 마사유키</a></div>
+<div class='item-snippet'>      미즈노 마사유키  물의 마사유키  미즈노 마사유키  탄생  ( 1977-09-14 )  1977년 9월 14일 (39세)  일본  출신교  케이오 기쥬쿠 대학  졸업  직업  연출가 &#12289; 텔레비전 프로듀서 &#12289; 디렉터  미즈노 마사유키 (미즈노...</div>
+</div>
+<div style='clear: both;'></div>
+</li>
+<li>
+<div class='item-content'>
+<div class='item-title'><a href='http://pidia.selfhow.com/2016/06/blog-post.html'>타카기령</a></div>
+<div class='item-snippet'>       타카기령  타감 료  타카기령  프로필  출신지   일본 &#12539; 도쿄도 세타가야구  생년월일  1989년 9월 9일 (26세)  혈액형  O형  최종 학력  메이지 대학  정보 커뮤니케이션 학부  근무국  동일본 방송  활동 기간  2013년...</div>
+</div>
+<div style='clear: both;'></div>
+</li>
+<li>
+<div class='item-content'>
+<div class='item-title'><a href='http://pidia.selfhow.com/2016/10/blog-post_235.html'>토요타 세리나</a></div>
+<div class='item-snippet'>       토요타 세리나 (와)과낼 수 있는 리나 토요타 세리나   토요타 세리나   프로필  애칭  경배-, 경배-누  생년월일  1990년 10월 9일  현연령  26세  출신지   일본 &#12539; 아이치현  공칭 사이즈( 2016년  시점)  신장 /...</div>
+</div>
+<div style='clear: both;'></div>
+</li>
+<li>
+<div class='item-content'>
+<div class='item-title'><a href='http://pidia.selfhow.com/2017/03/blog-post_74.html'>휴&#12539;헤후나</a></div>
+<div class='item-snippet'>      휴&#12539;헤후나    이 생존 인물의 기사 에는 검증 가능 한 출전 이 요구되고 있습니다 . 신뢰할 수 있는 정보원 의 제공에 협력을 부탁합니다.생존 인물에 관한 출전이 없는, 혹은 불완전한 정보에 근거한 논쟁의 재료, 특히 잠재적으로 중상&#12539;명예...</div>
+</div>
+<div style='clear: both;'></div>
+</li>
+<li>
+<div class='item-content'>
+<div class='item-title'><a href='http://pidia.selfhow.com/2017/03/blog-post_658.html'>석유 발동기</a></div>
+<div class='item-snippet'>      석유 발동기    이 기사는 검증 가능 한 참고 문헌이나 출전 이 전혀 나타나지 않은지, 불충분합니다. 출전을 추가 해 기사의 신뢰성 향상에 협력해 주십시오. ( 2013년 10월 )     이 항목은 그 주제가 일본에 놓여진 기술이 되어 ...</div>
+</div>
+<div style='clear: both;'></div>
+</li>
+</ul>
+<div class='clear'></div>
+<span class='widget-item-control'>
+<span class='item-control blog-admin'>
+<a class='quickedit' href='//www.blogger.com/rearrange?blogID=6996732972947782461&widgetType=PopularPosts&widgetId=PopularPosts1&action=editWidget&sectionId=sidebartop' onclick='return _WidgetManager._PopupConfig(document.getElementById("PopularPosts1"));' target='configPopularPosts1' title='수정'>
+<img alt='' height='18' src='https://resources.blogblog.com/img/icon18_wrench_allbkg.png' width='18'/>
+</a>
+</span>
+</span>
+<div class='clear'></div>
+</div>
+</div><div class='widget BlogArchive' data-version='1' id='BlogArchive1'>
+<h2>Blog Archive</h2>
+<div class='widget-content'>
+<div id='ArchiveList'>
+<div id='BlogArchive1_ArchiveList'>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://pidia.selfhow.com/2018/'>2018</a>
+<span class='post-count' dir='ltr'>(1938)</span>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://pidia.selfhow.com/2018/03/'>3월</a>
+<span class='post-count' dir='ltr'>(194)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://pidia.selfhow.com/2018/02/'>2월</a>
+<span class='post-count' dir='ltr'>(1344)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://pidia.selfhow.com/2018/01/'>1월</a>
+<span class='post-count' dir='ltr'>(400)</span>
+</li>
+</ul>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://pidia.selfhow.com/2017/'>2017</a>
+<span class='post-count' dir='ltr'>(8190)</span>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://pidia.selfhow.com/2017/06/'>6월</a>
+<span class='post-count' dir='ltr'>(1290)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://pidia.selfhow.com/2017/05/'>5월</a>
+<span class='post-count' dir='ltr'>(1316)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://pidia.selfhow.com/2017/04/'>4월</a>
+<span class='post-count' dir='ltr'>(1379)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://pidia.selfhow.com/2017/03/'>3월</a>
+<span class='post-count' dir='ltr'>(1452)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://pidia.selfhow.com/2017/02/'>2월</a>
+<span class='post-count' dir='ltr'>(1303)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://pidia.selfhow.com/2017/01/'>1월</a>
+<span class='post-count' dir='ltr'>(1450)</span>
+</li>
+</ul>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate expanded'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy toggle-open'>&#9660;&#160;</span>
+</a>
+<a class='post-count-link' href='http://pidia.selfhow.com/2016/'>2016</a>
+<span class='post-count' dir='ltr'>(7570)</span>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://pidia.selfhow.com/2016/12/'>12월</a>
+<span class='post-count' dir='ltr'>(1459)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://pidia.selfhow.com/2016/11/'>11월</a>
+<span class='post-count' dir='ltr'>(1419)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://pidia.selfhow.com/2016/10/'>10월</a>
+<span class='post-count' dir='ltr'>(853)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://pidia.selfhow.com/2016/09/'>9월</a>
+<span class='post-count' dir='ltr'>(708)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://pidia.selfhow.com/2016/08/'>8월</a>
+<span class='post-count' dir='ltr'>(734)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://pidia.selfhow.com/2016/07/'>7월</a>
+<span class='post-count' dir='ltr'>(731)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate expanded'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy toggle-open'>&#9660;&#160;</span>
+</a>
+<a class='post-count-link' href='http://pidia.selfhow.com/2016/06/'>6월</a>
+<span class='post-count' dir='ltr'>(705)</span>
+<ul class='posts'>
+<li><a href='http://pidia.selfhow.com/2016/06/x_30.html'>락 맨 X시리즈</a></li>
+<li><a href='http://pidia.selfhow.com/2016/06/blog-post_778.html'>단풍 홀딩스</a></li>
+<li><a href='http://pidia.selfhow.com/2016/06/blog-post_750.html'>스트레프트리진</a></li>
+<li><a href='http://pidia.selfhow.com/2016/06/blog-post_247.html'>에이후쿠쵸역</a></li>
+<li><a href='http://pidia.selfhow.com/2016/06/aivd.html'>AIVD</a></li>
+<li><a href='http://pidia.selfhow.com/2016/06/jewel-julie.html'>JEWEL JULIE 추억</a></li>
+<li><a href='http://pidia.selfhow.com/2016/06/blog-post_826.html'>경찰의 도깨비-씨</a></li>
+<li><a href='http://pidia.selfhow.com/2016/06/t-64.html'>T-64</a></li>
+<li><a href='http://pidia.selfhow.com/2016/06/blog-post_393.html'>마츠시타방신</a></li>
+<li><a href='http://pidia.selfhow.com/2016/06/blog-post_564.html'>꽃의 다카라즈카 풍토기-봄의 춤&#8212;</a></li>
+<li><a href='http://pidia.selfhow.com/2016/06/blog-post_741.html'>스파이스 왕국</a></li>
+<li><a href='http://pidia.selfhow.com/2016/06/blog-post_340.html'>켄트군(로드아일랜드주)</a></li>
+<li><a href='http://pidia.selfhow.com/2016/06/blog-post_911.html'>(이)라면은 주차구역</a></li>
+<li><a href='http://pidia.selfhow.com/2016/06/blog-post_233.html'>세레모니알&#12539;오스</a></li>
+<li><a href='http://pidia.selfhow.com/2016/06/blog-post_430.html'>소녀 코믹 연재 작품의 일람</a></li>
+<li><a href='http://pidia.selfhow.com/2016/06/blog-post_385.html'>오야치 소면</a></li>
+<li><a href='http://pidia.selfhow.com/2016/06/blog-post_566.html'>버스트 커팅 에리어</a></li>
+<li><a href='http://pidia.selfhow.com/2016/06/blog-post_274.html'>아레코&#12539;에스칸다리안</a></li>
+<li><a href='http://pidia.selfhow.com/2016/06/blog-post_843.html'>전설왕</a></li>
+<li><a href='http://pidia.selfhow.com/2016/06/blog-post_217.html'>루모이항</a></li>
+<li><a href='http://pidia.selfhow.com/2016/06/blog-post_932.html'>후리 젠트</a></li>
+<li><a href='http://pidia.selfhow.com/2016/06/blog-post_704.html'>파콜라</a></li>
+<li><a href='http://pidia.selfhow.com/2016/06/blog-post_512.html'>영국 레코드 산업 협회</a></li>
+<li><a href='http://pidia.selfhow.com/2016/06/blog-post_603.html'>미야모토 치에</a></li>
+<li><a href='http://pidia.selfhow.com/2016/06/blog-post_547.html'>아놀드&#12539;르게</a></li>
+<li><a href='http://pidia.selfhow.com/2016/06/blog-post_949.html'>파&#12539;드&#12539;두</a></li>
+<li><a href='http://pidia.selfhow.com/2016/06/blog-post_334.html'>로봇트</a></li>
+<li><a href='http://pidia.selfhow.com/2016/06/blog-post_236.html'>오사카 인터내셔널 챌린지 배드민턴 선수권 대회</a></li>
+<li><a href='http://pidia.selfhow.com/2016/06/13.html'>제13회 세계 청년 학생 제전</a></li>
+<li><a href='http://pidia.selfhow.com/2016/06/blog-post_676.html'>초촌역</a></li>
+<li><a href='http://pidia.selfhow.com/2016/06/blog-post_355.html'>태워 순서 와</a></li>
+<li><a href='http://pidia.selfhow.com/2016/06/blog-post_823.html'>회기</a></li>
+<li><a href='http://pidia.selfhow.com/2016/06/chainsaw-maid.html'>CHAINSAW MAID</a></li>
+<li><a href='http://pidia.selfhow.com/2016/06/blog-post_225.html'>에어 스테이지</a></li>
+<li><a href='http://pidia.selfhow.com/2016/06/blog-post_121.html'>스미르노와&#12539;체르누이후 혜성</a></li>
+<li><a href='http://pidia.selfhow.com/2016/06/brainstorm.html'>brainstorm</a></li>
+<li><a href='http://pidia.selfhow.com/2016/06/blog-post_918.html'>아라스</a></li>
+<li><a href='http://pidia.selfhow.com/2016/06/blog-post_722.html'>에히메현립 이마지 특별 지원 학교</a></li>
+<li><a href='http://pidia.selfhow.com/2016/06/blog-post_294.html'>컬럼&#12539;다벤포트</a></li>
+<li><a href='http://pidia.selfhow.com/2016/06/1994.html'>세계 선수권 자전거 경기 대회 로드 레이스 1994</a></li>
+<li><a href='http://pidia.selfhow.com/2016/06/blog-post_912.html'>니시카와 타카히로</a></li>
+<li><a href='http://pidia.selfhow.com/2016/06/blog-post_747.html'>노자와마치(후쿠시마현)</a></li>
+<li><a href='http://pidia.selfhow.com/2016/06/blog-post_386.html'>모치린</a></li>
+<li><a href='http://pidia.selfhow.com/2016/06/blog-post_240.html'>오어 하카주</a></li>
+<li><a href='http://pidia.selfhow.com/2016/06/blog-post_979.html'>요정 후로렌스</a></li>
+<li><a href='http://pidia.selfhow.com/2016/06/blog-post_191.html'>시노즈카 쇼우지</a></li>
+<li><a href='http://pidia.selfhow.com/2016/06/blog-post_350.html'>쿠로다 히로유키</a></li>
+<li><a href='http://pidia.selfhow.com/2016/06/blog-post_756.html'>브레이크 타임</a></li>
+<li><a href='http://pidia.selfhow.com/2016/06/blog-post_646.html'>사계(비바르디)</a></li>
+<li><a href='http://pidia.selfhow.com/2016/06/africa-24.html'>Africa 24</a></li>
+<li><a href='http://pidia.selfhow.com/2016/06/blog-post_409.html'>도쿄 게이트 브릿지</a></li>
+<li><a href='http://pidia.selfhow.com/2016/06/blog-post_736.html'>가시라가시마 천주당</a></li>
+<li><a href='http://pidia.selfhow.com/2016/06/blog-post_837.html'>츠노다 토시유키</a></li>
+<li><a href='http://pidia.selfhow.com/2016/06/blog-post_870.html'>마츠모토시는 빌려 자료관</a></li>
+<li><a href='http://pidia.selfhow.com/2016/06/blog-post_944.html'>류시엔누&#12539;보와이에</a></li>
+<li><a href='http://pidia.selfhow.com/2016/06/2-12.html'>2월 12일(음력)</a></li>
+<li><a href='http://pidia.selfhow.com/2016/06/blog-post_743.html'>있어 호작전</a></li>
+<li><a href='http://pidia.selfhow.com/2016/06/blog-post_682.html'>논데리바라불&#12539;포워드</a></li>
+<li><a href='http://pidia.selfhow.com/2016/06/blog-post_183.html'>옥파(구축함)</a></li>
+<li><a href='http://pidia.selfhow.com/2016/06/blog-post_632.html'>플라스틱 탭&#12539;체드라&#12539;체다</a></li>
+<li><a href='http://pidia.selfhow.com/2016/06/blog-post_584.html'>라사역(중국)</a></li>
+<li><a href='http://pidia.selfhow.com/2016/06/blog-post_856.html'>요시다 타카후미</a></li>
+<li><a href='http://pidia.selfhow.com/2016/06/blog-post_724.html'>데지</a></li>
+<li><a href='http://pidia.selfhow.com/2016/06/blog-post_519.html'>오세아노&#12539;다&#12539;크르스</a></li>
+<li><a href='http://pidia.selfhow.com/2016/06/blog-post_499.html'>쿠로사키 출판</a></li>
+<li><a href='http://pidia.selfhow.com/2016/06/3_28.html'>한 그루의 나무 만수3</a></li>
+<li><a href='http://pidia.selfhow.com/2016/06/blog-post_230.html'>서부 전선(남북 전쟁)</a></li>
+<li><a href='http://pidia.selfhow.com/2016/06/blog-post_877.html'>에드나&#12539;파바이안스</a></li>
+<li><a href='http://pidia.selfhow.com/2016/06/blog-post_623.html'>후쿠오카시 타치와키산초등학교</a></li>
+<li><a href='http://pidia.selfhow.com/2016/06/blog-post_609.html'>모리타 나다츠카사</a></li>
+<li><a href='http://pidia.selfhow.com/2016/06/gnu-octave.html'>GNU Octave</a></li>
+<li><a href='http://pidia.selfhow.com/2016/06/blog-post_748.html'>소지지(이바라키시)</a></li>
+<li><a href='http://pidia.selfhow.com/2016/06/blog-post_451.html'>깜짝 전화</a></li>
+<li><a href='http://pidia.selfhow.com/2016/06/blog-post_913.html'>하-장미 이프</a></li>
+<li><a href='http://pidia.selfhow.com/2016/06/3_27.html'>엔리케 3세(카스티랴왕)</a></li>
+<li><a href='http://pidia.selfhow.com/2016/06/blog-post_602.html'>나마리 온천</a></li>
+<li><a href='http://pidia.selfhow.com/2016/06/blog-post_426.html'>아오모리 컴퓨터&#12539;컬리지</a></li>
+<li><a href='http://pidia.selfhow.com/2016/06/blog-post_531.html'>에보시드리</a></li>
+<li><a href='http://pidia.selfhow.com/2016/06/antenna.html'>Antenna</a></li>
+<li><a href='http://pidia.selfhow.com/2016/06/blog-post_999.html'>오오하라 야스오</a></li>
+<li><a href='http://pidia.selfhow.com/2016/06/blog-post_299.html'>슈바룸슈탓트</a></li>
+<li><a href='http://pidia.selfhow.com/2016/06/blog-post_444.html'>우오자키 출입구</a></li>
+<li><a href='http://pidia.selfhow.com/2016/06/blog-post_967.html'>소욘보 문자</a></li>
+<li><a href='http://pidia.selfhow.com/2016/06/blog-post_940.html'>타카하타 히데오</a></li>
+<li><a href='http://pidia.selfhow.com/2016/06/8_27.html'>후지테레비 수요일밤 8시 범위 시대극</a></li>
+<li><a href='http://pidia.selfhow.com/2016/06/3.html'>3죠(아시야시)</a></li>
+<li><a href='http://pidia.selfhow.com/2016/06/rendez-vous-98-electronic-night.html'>RENDEZ-VOUS &#39;98 ELECTRONIC NIGHT</a></li>
+<li><a href='http://pidia.selfhow.com/2016/06/blog-post_683.html'>입 맞춤(곡)</a></li>
+<li><a href='http://pidia.selfhow.com/2016/06/blog-post_439.html'>모하메드(밴드)</a></li>
+<li><a href='http://pidia.selfhow.com/2016/06/blog-post_650.html'>안녕은 말하지 않는다</a></li>
+<li><a href='http://pidia.selfhow.com/2016/06/blog-post_284.html'>사라&#12539;버크</a></li>
+<li><a href='http://pidia.selfhow.com/2016/06/blog-post_250.html'>윌리엄&#12539;데하트&#12539;하버드</a></li>
+<li><a href='http://pidia.selfhow.com/2016/06/blog-post_458.html'>국외범</a></li>
+<li><a href='http://pidia.selfhow.com/2016/06/blog-post_485.html'>달튼&#12539;트란보</a></li>
+<li><a href='http://pidia.selfhow.com/2016/06/blog-post_224.html'>코바노이시카그마</a></li>
+<li><a href='http://pidia.selfhow.com/2016/06/blog-post_835.html'>신채집 연금술 대가</a></li>
+<li><a href='http://pidia.selfhow.com/2016/06/blog-post_345.html'>메이테트콤</a></li>
+<li><a href='http://pidia.selfhow.com/2016/06/blog-post_258.html'>특별한 하루</a></li>
+<li><a href='http://pidia.selfhow.com/2016/06/9500.html'>국철 호키 9500형 화차</a></li>
+<li><a href='http://pidia.selfhow.com/2016/06/blog-post_420.html'>신타카마루(초대)</a></li>
+</ul>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://pidia.selfhow.com/2016/05/'>5월</a>
+<span class='post-count' dir='ltr'>(731)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://pidia.selfhow.com/2016/04/'>4월</a>
+<span class='post-count' dir='ltr'>(230)</span>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class='clear'></div>
+<span class='widget-item-control'>
+<span class='item-control blog-admin'>
+<a class='quickedit' href='//www.blogger.com/rearrange?blogID=6996732972947782461&widgetType=BlogArchive&widgetId=BlogArchive1&action=editWidget&sectionId=sidebartop' onclick='return _WidgetManager._PopupConfig(document.getElementById("BlogArchive1"));' target='configBlogArchive1' title='수정'>
+<img alt='' height='18' src='https://resources.blogblog.com/img/icon18_wrench_allbkg.png' width='18'/>
+</a>
+</span>
+</span>
+<div class='clear'></div>
+</div>
+</div><div class='widget Attribution' data-version='1' id='Attribution1'>
+<div class='widget-content' style='text-align: center;'>
+Powered by <a href='https://www.blogger.com' target='_blank'>Blogger</a>.
+</div>
+<div class='clear'></div>
+<span class='widget-item-control'>
+<span class='item-control blog-admin'>
+<a class='quickedit' href='//www.blogger.com/rearrange?blogID=6996732972947782461&widgetType=Attribution&widgetId=Attribution1&action=editWidget&sectionId=sidebartop' onclick='return _WidgetManager._PopupConfig(document.getElementById("Attribution1"));' target='configAttribution1' title='수정'>
+<img alt='' height='18' src='https://resources.blogblog.com/img/icon18_wrench_allbkg.png' width='18'/>
+</a>
+</span>
+</span>
+<div class='clear'></div>
+</div><div class='widget Navbar' data-version='1' id='Navbar1'><script type="text/javascript">
+    function setAttributeOnload(object, attribute, val) {
+      if(window.addEventListener) {
+        window.addEventListener('load',
+          function(){ object[attribute] = val; }, false);
+      } else {
+        window.attachEvent('onload', function(){ object[attribute] = val; });
+      }
+    }
+  </script>
+<div id="navbar-iframe-container"></div>
+<script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
+<script type="text/javascript">
+      gapi.load("gapi.iframes:gapi.iframes.style.bubble", function() {
+        if (gapi.iframes && gapi.iframes.getContext) {
+          gapi.iframes.getContext().openChild({
+              url: 'https://www.blogger.com/navbar.g?targetBlogID\x3d6996732972947782461\x26blogName\x3d%EC%85%80%ED%94%84%ED%94%BC%EB%94%94%EC%95%84\x26publishMode\x3dPUBLISH_MODE_HOSTED\x26navbarType\x3dLIGHT\x26layoutType\x3dLAYOUTS\x26searchRoot\x3dhttp://pidia.selfhow.com/search\x26blogLocale\x3dko\x26v\x3d2\x26homepageUrl\x3dhttp://pidia.selfhow.com/\x26targetPostID\x3d3496938945955717519\x26blogPostOrPageUrl\x3dhttp://pidia.selfhow.com/2016/06/gnu-octave.html\x26vt\x3d-8388320211926890658',
+              where: document.getElementById("navbar-iframe-container"),
+              id: "navbar-iframe"
+          });
+        }
+      });
+    </script><script type="text/javascript">
+(function() {
+var script = document.createElement('script');
+script.type = 'text/javascript';
+script.src = '//pagead2.googlesyndication.com/pagead/js/google_top_exp.js';
+var head = document.getElementsByTagName('head')[0];
+if (head) {
+head.appendChild(script);
+}})();
+</script>
+</div></div>
+</div>
+</div><!-- #main .site-main -->
+<footer class='site-footer' id='colophon' role='contentinfo'>
+<div class='site-info'>
+Copyright &#169; <script type='text/javascript'>var creditsyear = new Date();document.write(creditsyear.getFullYear());</script>
+<a href='http://pidia.selfhow.com/'>셀프피디아</a> | Powered by <a href='http://www.blogger.com/'>Blogger</a>
+</div><!-- .site-info -->
+<div class='author-credit'>
+Design by <a href='http://www.edwardrjenkins.com' target='_blank'>Edward R. Jenkins</a> | Blogger Template by <a href='http://newbloggerthemes.com' target='_blank' title='Best Blogger Templates'>NewBloggerThemes.com</a>
+</div>
+</footer><!-- #colophon .site-footer -->
+</div><!-- #pagebwrap .hfeed .site -->
+</div><!-- .wrapper -->
+<script type='text/javascript'>
+//<![CDATA[
+
+/**
+ * Handles toggling the main navigation menu for small screens.
+ */
+jQuery( document ).ready( function( $ ) {
+	var $masthead = $( '#masthead' ),
+	    timeout = false;
+
+	$.fn.smallMenu = function() {
+		$masthead.find( '.site-navigation' ).removeClass( 'main-navigation' ).addClass( 'main-small-navigation' );
+		$masthead.find( '.site-navigation h1' ).removeClass( 'assistive-text' ).addClass( 'menu-toggle' );
+
+		$( '.menu-toggle' ).unbind( 'click' ).click( function() {
+			$masthead.find( '.menu' ).toggle();
+			$( this ).toggleClass( 'toggled-on' );
+		} );
+	};
+
+	// Check viewport width on first load.
+	if ( $( window ).width() < 600 )
+		$.fn.smallMenu();
+
+	// Check viewport width when user resizes the browser window.
+	$( window ).resize( function() {
+		var browserWidth = $( window ).width();
+
+		if ( false !== timeout )
+			clearTimeout( timeout );
+
+		timeout = setTimeout( function() {
+			if ( browserWidth < 600 ) {
+				$.fn.smallMenu();
+			} else {
+				$masthead.find( '.site-navigation' ).removeClass( 'main-small-navigation' ).addClass( 'main-navigation' );
+				$masthead.find( '.site-navigation h1' ).removeClass( 'menu-toggle' ).addClass( 'assistive-text' );
+				$masthead.find( '.menu' ).removeAttr( 'style' );
+			}
+		}, 200 );
+	} );
+} );
+
+//]]>
+</script>
+<script src='https://apis.google.com/js/plusone.js' type='text/javascript'></script>
+
+<script type="text/javascript" src="https://www.blogger.com/static/v1/widgets/698371418-widgets.js"></script>
+<script type='text/javascript'>
+window['__wavt'] = 'AOuZoY7gowN9CFZk61P9cwqVDPiizTzPvg:1521288387528';_WidgetManager._Init('//www.blogger.com/rearrange?blogID\x3d6996732972947782461','//pidia.selfhow.com/2016/06/gnu-octave.html','6996732972947782461');
+_WidgetManager._SetDataContext([{'name': 'blog', 'data': {'blogId': '6996732972947782461', 'title': '셀프피디아', 'url': 'http://pidia.selfhow.com/2016/06/gnu-octave.html', 'canonicalUrl': 'http://pidia.selfhow.com/2016/06/gnu-octave.html', 'homepageUrl': 'http://pidia.selfhow.com/', 'searchUrl': 'http://pidia.selfhow.com/search', 'canonicalHomepageUrl': 'http://pidia.selfhow.com/', 'blogspotFaviconUrl': 'http://pidia.selfhow.com/favicon.ico', 'bloggerUrl': 'https://www.blogger.com', 'hasCustomDomain': true, 'httpsEnabled': false, 'enabledCommentProfileImages': true, 'gPlusViewType': 'FILTERED_POSTMOD', 'adultContent': false, 'analyticsAccountNumber': 'UA-73889181-8', 'encoding': 'UTF-8', 'locale': 'ko', 'localeUnderscoreDelimited': 'ko', 'languageDirection': 'ltr', 'isPrivate': false, 'isMobile': false, 'isMobileRequest': false, 'mobileClass': '', 'isPrivateBlog': false, 'feedLinks': '\x3clink rel\x3d\x22alternate\x22 type\x3d\x22application/atom+xml\x22 title\x3d\x22셀프피디아 - Atom\x22 href\x3d\x22http://pidia.selfhow.com/feeds/posts/default\x22 /\x3e\n\x3clink rel\x3d\x22alternate\x22 type\x3d\x22application/rss+xml\x22 title\x3d\x22셀프피디아 - RSS\x22 href\x3d\x22http://pidia.selfhow.com/feeds/posts/default?alt\x3drss\x22 /\x3e\n\x3clink rel\x3d\x22service.post\x22 type\x3d\x22application/atom+xml\x22 title\x3d\x22셀프피디아 - Atom\x22 href\x3d\x22https://www.blogger.com/feeds/6996732972947782461/posts/default\x22 /\x3e\n\n\x3clink rel\x3d\x22alternate\x22 type\x3d\x22application/atom+xml\x22 title\x3d\x22셀프피디아 - Atom\x22 href\x3d\x22http://pidia.selfhow.com/feeds/3496938945955717519/comments/default\x22 /\x3e\n', 'meTag': '', 'openIdOpTag': '', 'adsenseHostId': 'ca-host-pub-1556223355139109', 'adsenseHasAds': false, 'view': '', 'dynamicViewsCommentsSrc': '//www.blogblog.com/dynamicviews/4224c15c4e7c9321/js/comments.js', 'dynamicViewsScriptSrc': '//www.blogblog.com/dynamicviews/1eda9627641898c5', 'plusOneApiSrc': 'https://apis.google.com/js/plusone.js', 'sharing': {'platforms': [{'name': '공유 링크 만들기', 'key': 'link', 'shareMessage': '공유 링크 만들기', 'target': ''}, {'name': 'Facebook', 'key': 'facebook', 'shareMessage': 'Facebook에 공유', 'target': 'facebook'}, {'name': 'BlogThis!', 'key': 'blogThis', 'shareMessage': 'BlogThis!', 'target': 'blog'}, {'name': 'Twitter', 'key': 'twitter', 'shareMessage': 'Twitter에 공유', 'target': 'twitter'}, {'name': 'Pinterest', 'key': 'pinterest', 'shareMessage': 'Pinterest에 공유', 'target': 'pinterest'}, {'name': 'Google+', 'key': 'googlePlus', 'shareMessage': 'Google+에 공유', 'target': 'googleplus'}, {'name': '이메일', 'key': 'email', 'shareMessage': '이메일', 'target': 'email'}], 'googlePlusShareButtonWidth': 300, 'googlePlusBootstrap': '\x3cscript type\x3d\x22text/javascript\x22\x3ewindow.___gcfg \x3d {\x27lang\x27: \x27ko\x27};\x3c/script\x3e'}, 'hasCustomJumpLinkMessage': false, 'jumpLinkMessage': '자세한 내용 보기', 'pageType': 'item', 'postId': '3496938945955717519', 'postImageUrl': 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/Gnu-octave-logo.svg/65px-Gnu-octave-logo.svg.png', 'pageName': 'GNU Octave', 'pageTitle': '셀프피디아: GNU Octave'}}, {'name': 'features', 'data': {'lazy_images': 'false', 'sharing_get_link_dialog': 'true', 'sharing_native': 'false'}}, {'name': 'messages', 'data': {'edit': '수정', 'linkCopiedToClipboard': '링크를 클립보드에 복사했습니다.', 'ok': '확인', 'postLink': '글 링크'}}, {'name': 'template', 'data': {'name': 'custom', 'localizedName': '사용자 지정', 'isResponsive': false, 'isAlternateRendering': false, 'isCustom': true}}, {'name': 'view', 'data': {'classic': {'name': 'classic', 'url': '?view\x3dclassic'}, 'flipcard': {'name': 'flipcard', 'url': '?view\x3dflipcard'}, 'magazine': {'name': 'magazine', 'url': '?view\x3dmagazine'}, 'mosaic': {'name': 'mosaic', 'url': '?view\x3dmosaic'}, 'sidebar': {'name': 'sidebar', 'url': '?view\x3dsidebar'}, 'snapshot': {'name': 'snapshot', 'url': '?view\x3dsnapshot'}, 'timeslide': {'name': 'timeslide', 'url': '?view\x3dtimeslide'}, 'isMobile': false, 'title': 'GNU Octave', 'description': '       GNU Octave GNU Octave    개발원  John W. Eaton  초판  1988년 ( 1988 ) [ 1 ]  최신판  4.0. 1 / 2016년 3월 23일 (2개월 전)  (2016-03-23)  프로그램 언어  C++...', 'featuredImage': 'https://lh5.googleusercontent.com/proxy/v6b_jqkCe7XVfcc1fZLqcM7luMoWh48w06_kuhXzdvYcryXs_h3_kvt8H8kKHbKeWiAO9XMF8UVlFf32mcK0YAPg2jvNG0Ol9bb4amYaY1P226Sds47AjMVnPnX1EXHNrw8u-YYrylrBPak2eiVt1VfdnKlaR3P52Xg2oJEA', 'url': 'http://pidia.selfhow.com/2016/06/gnu-octave.html', 'type': 'item', 'isSingleItem': true, 'isMultipleItems': false, 'isError': false, 'isPage': false, 'isPost': true, 'isHomepage': false, 'isArchive': false, 'isLabelSearch': false, 'postId': 3496938945955717519}}]);
+_WidgetManager._RegisterWidget('_HeaderView', new _WidgetInfo('Header1', 'headersec', null, document.getElementById('Header1'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_BlogView', new _WidgetInfo('Blog1', 'mainblogsec', null, document.getElementById('Blog1'), {'cmtInteractionsEnabled': false, 'useNgc': false, 'lightboxEnabled': true, 'lightboxModuleUrl': 'https://www.blogger.com/static/v1/jsbin/1532655129-lbx__ko.js', 'lightboxCssUrl': 'https://www.blogger.com/static/v1/v-css/368954415-lightbox_bundle.css'}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_HTMLView', new _WidgetInfo('HTML1', 'sidebartop', null, document.getElementById('HTML1'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_PopularPostsView', new _WidgetInfo('PopularPosts1', 'sidebartop', null, document.getElementById('PopularPosts1'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_BlogArchiveView', new _WidgetInfo('BlogArchive1', 'sidebartop', null, document.getElementById('BlogArchive1'), {'languageDirection': 'ltr', 'loadingMessage': '로드 중\x26hellip;'}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_AttributionView', new _WidgetInfo('Attribution1', 'sidebartop', null, document.getElementById('Attribution1'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_NavbarView', new _WidgetInfo('Navbar1', 'sidebartop', null, document.getElementById('Navbar1'), {}, 'displayModeFull'));
+</script>
+</body>
+</html>

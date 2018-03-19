@@ -1,0 +1,1724 @@
+<!DOCTYPE html>
+<html dir='ltr' xmlns='http://www.w3.org/1999/xhtml' xmlns:b='http://www.google.com/2005/gml/b' xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.com/2005/gml/expr'>
+<head>
+<link href='https://www.blogger.com/static/v1/widgets/3957297643-widget_css_bundle.css' rel='stylesheet' type='text/css'/>
+<meta content='width=device-width' name='viewport'/>
+<meta content='text/html; charset=UTF-8' http-equiv='Content-Type'/>
+<meta content='blogger' name='generator'/>
+<link href='http://pidia.selfhow.com/favicon.ico' rel='icon' type='image/x-icon'/>
+<link href='http://pidia.selfhow.com/2016/11/blog-post_8289.html' rel='canonical'/>
+<link rel="alternate" type="application/atom+xml" title="셀프피디아 - Atom" href="http://pidia.selfhow.com/feeds/posts/default" />
+<link rel="alternate" type="application/rss+xml" title="셀프피디아 - RSS" href="http://pidia.selfhow.com/feeds/posts/default?alt=rss" />
+<link rel="service.post" type="application/atom+xml" title="셀프피디아 - Atom" href="https://www.blogger.com/feeds/6996732972947782461/posts/default" />
+
+<link rel="alternate" type="application/atom+xml" title="셀프피디아 - Atom" href="http://pidia.selfhow.com/feeds/65427964216509859/comments/default" />
+<!--Can't find substitution for tag [blog.ieCssRetrofitLinks]-->
+<link href='https://ja.wikipedia.org/wiki/Special:CentralAutoLogin/start?type=1x1&mobile=1' rel='image_src'/>
+<meta content='http://pidia.selfhow.com/2016/11/blog-post_8289.html' property='og:url'/>
+<meta content='루프 전개' property='og:title'/>
+<meta content='      루프 전개 루프 전개 (루프라고 야, 영어 : Loop Unwinding )는, 프로그램의 사이즈를 희생에 실행 속도를 최적화하는( 시간과 공간의 트레이드 오프 ), 루프 변환 ( 영문판 ) 으로 불리는 수법의 하나이다. loop unrol...' property='og:description'/>
+<meta content='https://lh3.googleusercontent.com/proxy/FKlxoYxtGQ70rc6PyaAbflR8G22MmLwYrZ6A-F-WoaiS-KxGcgRMW-TX3M9yfBx99EY0oeibTkoGBIWD4Lz5_g3uOOEgIRXslXbng0jidMdrRKzyZCrpQB49Ct64euL_x6U=w1200-h630-p-k-no-nu' property='og:image'/>
+<!--[if IE]> <script> (function() { var html5 = ("abbr,article,aside,audio,canvas,datalist,details," + "figure,footer,header,hgroup,mark,menu,meter,nav,output," + "progress,section,time,video").split(','); for (var i = 0; i < html5.length; i++) { document.createElement(html5[i]); } try { document.execCommand('BackgroundImageCache', false, true); } catch(e) {} })(); </script> <![endif]-->
+<link href='http://fonts.googleapis.com/css?family=Gloria+Hallelujah&ver=3.8-alpha' id='chalkboard-gloria-css' media='all' rel='stylesheet' type='text/css'/>
+<link href='http://fonts.googleapis.com/css?family=Roboto:400italic,700italic,400,700&subset=latin,latin-ext' id='chalkboard-roboto-css' media='all' rel='stylesheet' type='text/css'/>
+<!-- Start www.bloggertipandtrick.net: Changing the Blogger Title Tag -->
+<title>루프 전개 ~ 셀프피디아</title>
+<!-- End www.bloggertipandtrick.net: Changing the Blogger Title Tag -->
+<!--[if lt IE 9]> <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script> <![endif]-->
+<style id='page-skin-1' type='text/css'><!--
+/*
+-----------------------------------------------
+Template Name  : Classic Chalkboard
+Author         : NewBloggerThemes.com
+Author URL     : http://newbloggerthemes.com/
+Theme URL      : http://newbloggerthemes.com/classic-chalkboard-blogger-template/
+Created Date   : Wednesday, October 30, 2013
+License        : This template is free for both personal and commercial use, But to satisfy the 'attribution' clause of the license, you are required to keep the footer links intact which provides due credit to its authors.For more information about this license, please use this link :http://creativecommons.org/licenses/by/3.0/
+----------------------------------------------- */
+body#layout ul{list-style-type:none;list-style:none}
+body#layout ul li{list-style-type:none;list-style:none}
+body#layout #content {}
+body#layout #slidearea {display:none;}
+body#layout #headbox{display:none;}
+/* Variable definitions
+====================
+*/
+/* Use this with templates/template-twocol.html */
+.section, .widget {
+margin:0;
+padding:0;
+}
+/*
+Resetting and rebuilding styles have been helped along thanks to the fine work of
+Eric Meyer http://meyerweb.com/eric/tools/css/reset/index.html
+along with Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
+and Blueprint http://www.blueprintcss.org/
+*/
+/* =Reset
+-------------------------------------------------------------- */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+border: 0;
+font-family: inherit;
+font-size: 100%;
+font-style: inherit;
+font-weight: inherit;
+margin: 0;
+outline: 0;
+padding: 0;
+vertical-align: baseline;
+}
+html {
+font-size: 62.5%; /* Corrects text resizing oddly in IE6/7 when body font-size is set using em units http://clagnut.com/blog/348/#c790 */
+overflow-y: scroll; /* Keeps page centred in all browsers regardless of content height */
+-webkit-text-size-adjust: 100%; /* Prevents iOS text size adjust after orientation change, without disabling user zoom */
+-ms-text-size-adjust: 100%; /* www.456bereastreet.com/archive/201012/controlling_text_size_in_safari_for_ios_without_disabling_user_zoom/ */
+}
+body, .body-fauxcolumn-outer {
+background: #fff;
+}
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+nav,
+section {
+display: block;
+}
+ol, ul {
+list-style: none;
+}
+table { /* tables still need 'cellspacing="0"' in the markup */
+border-collapse: separate;
+border-spacing: 0;
+}
+caption, th, td {
+font-weight: normal;
+text-align: left;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+content: "";
+}
+blockquote, q {
+quotes: "" "";
+}
+a:focus {
+outline: thin dotted;
+}
+a:hover,
+a:active { /* Improves readability when focused and also mouse hovered in all browsers people.opera.com/patrickl/experiments/keyboard/test */
+outline: 0;
+}
+a img {
+border: 0;
+}
+/* =Global
+----------------------------------------------- */
+body,
+button,
+input,
+select,
+textarea {
+font-family: 'Roboto', Arial, Helvetica, sans-serif;
+font-size: 20px;
+font-size: 2.0rem;
+line-height: 1.6;
+}
+body.sidebar-active {
+font-size: 20px;
+font-size: 2.0rem;
+}
+body, .body-fauxcolumn-outer {
+background: #f1eedc;
+color: #eee;
+}
+/* Headings */
+h1,h2,h3,h4,h5,h6 {
+clear: both;
+font-family: 'Gloria Hallelujah', Arial, Helvetica, sans-serif;
+margin: 1.3em 0 .3em;
+}
+h1 {
+font-size: 48px;
+font-size: 4.8rem;
+margin: 0 0 .3em;
+}
+h2 {
+font-size: 42px;
+font-size: 4.2rem;
+}
+h3 {
+font-size: 36px;
+font-size: 3.6rem;
+}
+h4 {
+font-size: 24px;
+font-size: 2.4rem;
+}
+h5 {
+font-size: 20px;
+font-size: 2.0rem;
+}
+h6 {
+font-size: 18px;
+font-size: 1.8rem;
+}
+hr {
+background-color: #ccc;
+border: 0;
+height: 1px;
+margin-bottom: 1.6em;
+}
+/* Text elements */
+p {
+margin-bottom: 1.6em;
+}
+ul, ol {
+margin: 0 0 1.6em 3em;
+}
+ul {
+list-style: disc;
+}
+ol {
+list-style: decimal;
+}
+ul ul, ol ol, ul ol, ol ul {
+margin-bottom: 0;
+margin-left: 1.6em;
+}
+dt {
+font-weight: bold;
+}
+dd {
+margin: 0 1.6em 1.6em;
+}
+b, strong {
+font-weight: bold;
+}
+dfn, cite, em, i {
+font-style: italic;
+}
+blockquote {
+border-left: 5px solid #f5f5f5;
+font-style: italic;
+margin: 0 1.6em;
+padding: 0 0 0 1.6em;
+}
+address {
+font-style: italic;
+margin: 0 0 1.6em;
+}
+pre {
+background: rgba(255,255,255,.2);
+font-family: "Courier 10 Pitch", Courier, monospace;
+font-size: 18px;
+font-size: 1.8rem;
+line-height: 1.6;
+margin-bottom: 1.6em;
+padding: 1em 1.6em;
+overflow: auto;
+max-width: 100%;
+}
+code, kbd, tt, var {
+font: 18px Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+}
+abbr, acronym {
+border-bottom: 1px dotted #666;
+cursor: help;
+}
+mark, ins {
+background: #fff9c0;
+color: #333;
+text-decoration: none;
+}
+sup,
+sub {
+font-size: 75%;
+height: 0;
+line-height: 0;
+position: relative;
+vertical-align: baseline;
+}
+sup {
+bottom: 1ex;
+}
+sub {
+top: .5ex;
+}
+small {
+font-size: 75%;
+}
+big {
+font-size: 125%;
+}
+figure {
+margin: 0;
+}
+table {
+margin: 0 0 1.6em;
+width: 100%;
+}
+td {
+padding: 5px 7px;
+}
+tr.alternate {
+background: rgba(255,255,255,.1);
+}
+th {
+border-bottom: 5px solid #f5f5f5;
+font-weight: bold;
+padding: 5px 7px;
+}
+button,
+input,
+select,
+textarea {
+font-size: 100%; /* Corrects font size not being inherited in all browsers */
+margin: 0; /* Addresses margins set differently in IE6/7, F3/4, S5, Chrome */
+vertical-align: baseline; /* Improves appearance and consistency in all browsers */
+*vertical-align: middle; /* Improves appearance and consistency in all browsers */
+}
+button,
+input {
+line-height: normal; /* Addresses FF3/4 setting line-height using !important in the UA stylesheet */
+*overflow: visible;  /* Corrects inner spacing displayed oddly in IE6/7 */
+}
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+border: 1px solid #ccc;
+border-color: #ccc #ccc #bbb #ccc;
+border-radius: 3px;
+background: #e6e6e6;
+-webkit-box-shadow: inset 0 1px 0 rgba(255,255,255,0.5), inset 0 15px 17px rgba(255,255,255,0.5), inset 0 -5px 12px rgba(0,0,0,0.05);
+-moz-box-shadow: inset 0 1px 0 rgba(255,255,255,0.5), inset 0 15px 17px rgba(255,255,255,0.5), inset 0 -5px 12px rgba(0,0,0,0.05);
+box-shadow: inset 0 1px 0 rgba(255,255,255,0.5), inset 0 15px 17px rgba(255,255,255,0.5), inset 0 -5px 12px rgba(0,0,0,0.05);
+color: rgba(0,0,0,.8);
+cursor: pointer; /* Improves usability and consistency of cursor style between image-type 'input' and others */
+-webkit-appearance: button; /* Corrects inability to style clickable 'input' types in iOS */
+font-size: 12px;
+font-size: 1.4rem;
+line-height: 1;
+padding: .7em 1.6em .6em;
+text-shadow: 0 1px 0 rgba(255,255,255,.8);
+}
+button:hover,
+html input[type="button"]:hover,
+input[type="reset"]:hover,
+input[type="submit"]:hover {
+border-color: #ccc #bbb #aaa #bbb;
+-webkit-box-shadow: inset 0 1px 0 rgba(255,255,255,0.8), inset 0 15px 17px rgba(255,255,255,0.8), inset 0 -5px 12px rgba(0,0,0,0.02);
+-moz-box-shadow: inset 0 1px 0 rgba(255,255,255,0.8), inset 0 15px 17px rgba(255,255,255,0.8), inset 0 -5px 12px rgba(0,0,0,0.02);
+box-shadow: inset 0 1px 0 rgba(255,255,255,0.8), inset 0 15px 17px rgba(255,255,255,0.8), inset 0 -5px 12px rgba(0,0,0,0.02);
+}
+button:focus,
+html input[type="button"]:focus,
+input[type="reset"]:focus,
+input[type="submit"]:focus,
+button:active,
+html input[type="button"]:active,
+input[type="reset"]:active,
+input[type="submit"]:active {
+border-color: #aaa #bbb #bbb #bbb;
+-webkit-box-shadow: inset 0 -1px 0 rgba(255,255,255,0.5), inset 0 2px 5px rgba(0,0,0,0.15);
+-moz-box-shadow: inset 0 -1px 0 rgba(255,255,255,0.5), inset 0 2px 5px rgba(0,0,0,0.15);
+box-shadow: inset 0 -1px 0 rgba(255,255,255,0.5), inset 0 2px 5px rgba(0,0,0,0.15);
+}
+input[type="checkbox"],
+input[type="radio"] {
+box-sizing: border-box; /* Addresses box sizing set to content-box in IE8/9 */
+padding: 0; /* Addresses excess padding in IE8/9 */
+}
+input[type="search"] {
+-webkit-appearance: textfield; /* Addresses appearance set to searchfield in S5, Chrome */
+-moz-box-sizing: content-box;
+-webkit-box-sizing: content-box; /* Addresses box sizing set to border-box in S5, Chrome (include -moz to future-proof) */
+box-sizing: content-box;
+}
+input[type="search"]::-webkit-search-decoration { /* Corrects inner padding displayed oddly in S5, Chrome on OSX */
+-webkit-appearance: none;
+}
+button::-moz-focus-inner,
+input::-moz-focus-inner { /* Corrects inner padding and border displayed oddly in FF3/4 www.sitepen.com/blog/2008/05/14/the-devils-in-the-details-fixing-dojos-toolbar-buttons/ */
+border: 0;
+padding: 0;
+}
+input[type=text],
+input[type=email],
+input[type=password],
+textarea {
+color: #666;
+border: 1px solid #ccc;
+border-radius: 3px;
+}
+input[type=text]:focus,
+input[type=email]:focus,
+input[type=password]:focus,
+textarea:focus {
+color: #111;
+}
+input[type=text],
+input[type=email],
+input[type=password] {
+padding: 5px;
+position: relative;
+top: 3px;
+}
+textarea {
+overflow: auto; /* Removes default vertical scrollbar in IE6/7/8/9 */
+padding-left: 3px;
+vertical-align: top; /* Improves readability and alignment in all browsers */
+width: 98%;
+}
+/* Links */
+a {
+color: #fff;
+}
+a:visited {
+color: #fff;
+}
+a:hover,
+a:focus,
+a:active {
+color: #fff;
+}
+/* Alignment */
+.alignleft {
+display: inline;
+float: left;
+margin-right: 1.6em;
+margin-top: .8em;
+margin-bottom: .8em;
+}
+.alignright {
+display: inline;
+float: right;
+margin-left: 1.6em;
+margin-top: .8em;
+margin-bottom: .8em;
+}
+.aligncenter {
+clear: both;
+display: block;
+margin: .8em auto;
+}
+/* Text meant only for screen readers */
+.assistive-text {
+clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+clip: rect(1px, 1px, 1px, 1px);
+position: absolute !important;
+}
+/* =Layout
+----------------------------------------------- */
+#pagebwrap {
+background: #000 url('http://2.bp.blogspot.com/-A80lkNvsNUg/UnCKS_gy4iI/AAAAAAAALH4/fBNGe5OjwAo/s1600/chalk2.jpg') repeat;
+background-size: 360px auto;
+border-radius: 10px;
+display: block;
+box-shadow: 5px 5px 20px rgba(0,0,0,.5) inset;
+margin: 0 auto;
+padding: 15px 100px 5px;
+max-width: 960px;
+z-index: 10;
+}
+.wrapper {
+background: #855e42 url('http://2.bp.blogspot.com/-4uPv-bCyM1Y/UnCJh0DlmUI/AAAAAAAALHk/kvDStLoVuz8/s1600/woodtexture.jpg');
+background-size: 225px auto;
+border-radius: 10px;
+box-shadow: 5px 2px 15px rgba(0,0,0,.4);
+display: block;
+margin: 40px auto;
+max-width: 1170px;
+padding: 40px;
+}
+#main:before,
+#main:after {
+content: "";
+display: table;
+}
+#main:after {
+clear: both;
+}
+#primary {
+float: none;
+margin: 0;
+}
+.sidebar-active #primary {
+float: left;
+margin: 0 -25% 0 0;
+width: 100%;
+}
+#content,
+body.page-template-nosidebar-page-php #content,
+body.single-attachment #content {
+margin: 0;
+}
+.sidebar-active #content {
+margin: 0 35% 0 0;
+}
+#secondary { /* Sidebar 1 */
+float: right;
+overflow: hidden;
+width: 25%;
+}
+#tertiary { /* Footer sidebars */
+clear: both;
+}
+.site-footer {
+clear: both;
+width: 100%;
+}
+#colophon {
+background: url('http://1.bp.blogspot.com/-HKu0rscguYo/UnCIrezPUpI/AAAAAAAALHA/VuK3mvmn_6s/s1600/boardbottom-new.png') no-repeat center bottom;
+background-size: 100%;
+clear: both;
+display: block;
+font-family: 'Gloria Hallelujah', Arial, Helvetica, sans-serif;
+font-size: 16px;
+font-size: 1.6rem;
+margin: 50px auto -8px;
+max-width: 800px;
+text-align: center;
+width: 100%;
+min-height: 126px;
+}
+/* =Header
+----------------------------------------------- */
+#masthead {
+font-family: 'Gloria Hallelujah', Arial, Helvetica, sans-serif;
+margin: 0 0 3.2em;
+}
+#masthead:before,
+#masthead:after {
+content: "";
+display: table;
+}
+#masthead:after {
+clear: both;
+}
+#masthead img {
+display: block;
+margin: 15px auto;
+}
+.site-title {
+font-size: 250%;
+font-weight: bold;
+line-height: 1.25;
+margin: .67em 0 5px;
+text-align: center;
+text-decoration: none;
+text-transform: uppercase;
+}
+.site-title a {
+color: #fff;
+text-decoration: none;
+}
+.site-description {
+font-size: 24px;
+font-size: 2.4rem;
+font-weight: normal;
+margin: 0 0 1.6em;
+text-align: center;
+}
+/* =Menu
+----------------------------------------------- */
+.main-navigation {
+clear: both;
+display: block;
+float: left;
+text-align: center;
+width: 100%;
+}
+.main-navigation ul {
+list-style: none;
+margin: 0;
+padding-left: 0;
+}
+.main-navigation li {
+display: inline;
+position: relative;
+}
+.main-navigation a {
+display: inline-block;
+font-size: 19px;
+font-size: 1.9rem;
+line-height: 2em;
+padding: 3px 1em;
+text-align: center;
+text-decoration: none;
+}
+.main-navigation ul ul {
+background: url('http://1.bp.blogspot.com/-fEmJpRZ5E6U/UnCIpwOlVsI/AAAAAAAALG4/uJLT5UDUDyQ/s1600/chalk.png');
+border: 5px solid #f5f5f5;
+border-radius: 5px;
+-moz-box-shadow: 0 3px 3px rgba(0,0,0,0.2);
+-webkit-box-shadow: 0 3px 3px rgba(0,0,0,0.2);
+box-shadow: 0 3px 3px rgba(0,0,0,0.2);
+display: none;
+float: left;
+position: absolute;
+top: 1.6em;
+left: 0;
+z-index: 99999;
+}
+.main-navigation ul ul ul {
+left: 100%;
+top: -6px;
+}
+.main-navigation ul ul a {
+line-height: 1.5;
+text-align: left;
+width: 170px;
+}
+.main-navigation ul ul li {
+}
+.main-navigation li:hover > a {
+opacity: .8;
+}
+.main-navigation ul ul :hover > a {
+}
+.main-navigation ul ul a:hover {
+}
+.main-navigation ul li:hover > ul {
+display: block;
+}
+.main-navigation li.current_page_item a,
+.main-navigation li.current-menu-item a {
+text-decoration: underline;
+}
+/* Small menu */
+.menu-toggle {
+border: 5px solid #fff;
+border-radius: 10px;
+cursor: pointer;
+display: block;
+font-family: "Gloria Hallelujah", Arial, Helvetica, sans-serif;
+font-size: 20px;
+font-size: 2.0rem;
+margin: 0 auto;
+text-align: center;
+width: 125px;
+}
+.main-small-navigation .menu {
+display: none;
+}
+/* =Content
+----------------------------------------------- */
+.sticky.hentry {
+border: 1px solid #f5f5f5;
+border-radius: 15px;
+margin: 0 0 1.6em;
+padding: 30px;
+}
+.sticky.hentry:after,
+.archive .hentry:last-of-type:after,
+.search .hentry:last-of-type:after {
+display: none;
+}
+.hentry {
+margin: 0;
+}
+.hentry:after,
+#tertiary:before {
+background: url('http://1.bp.blogspot.com/-apHpvA6HWu0/UnCJe_DUcWI/AAAAAAAALHQ/EATAIrMRUlE/s1600/postseparator2.png') no-repeat center bottom;
+background-size: 335px auto;
+clear: both;
+content: "";
+display: block;
+margin: 0 0 1.6em;
+width: 100%;
+height: 85px;
+}
+.entry-title {
+font-size: 41px;
+font-size: 4.1rem;
+line-height: 1.2;
+text-align: center;
+margin: 0.5em 0 0.3em;
+}
+.entry-title a {
+text-decoration: none;
+}
+.entry-content {
+font-family: "Roboto", Arial, Helvetica, sans-serif;
+overflow: hidden;
+}
+.entry-meta {
+clear: both;
+color: rgba(255,255,255,.9);
+font-family: 'Gloria Hallelujah', Arial, Helvetica, sans-serif;
+font-size: 18px;
+font-size: 1.8rem;
+font-style: italic;
+text-align: center;
+margin-top: 15px;
+}
+.entry-meta a {
+color: rgba(255,255,255,.9);
+}
+.byline {
+display: none;
+}
+.single .byline,
+.group-blog .byline {
+display: inline;
+}
+.entry-content,
+.entry-summary {
+margin: 1.6em 0 0;
+}
+.page-links {
+clear: both;
+margin: 0 0 1.6em;
+}
+.page-title {
+font-size: 24px;
+font-size: 2.4rem;
+margin: 0 0 1.6em;
+}
+.single-attachment .attachment img {
+display: block;
+margin: 0 auto;
+}
+.single-attachment .entry-caption {
+text-align: center;
+}
+/* =Post Formats
+----------------------------------------------- */
+.format-link .entry-title {
+display: none;
+}
+/* =Media
+----------------------------------------------- */
+.site-header img,
+.entry-content img,
+.comment-content img,
+.widget img {
+max-width: 100%; /* Fluid images for posts, comments, and widgets */
+}
+.site-header img,
+.entry-content img,
+.comment-content img[height],
+img[class*="align"],
+img[class*="wp-image-"],
+.widget img {
+height: auto; /* Make sure images with WordPress-added height and width attributes are scaled correctly */
+}
+.site-header img,
+.entry-content img,
+img.size-full {
+max-width: 100%;
+}
+/* Make sure embeds and iframes fit their containers */
+embed,
+iframe,
+object {
+max-width: 100%;
+}
+/* =Navigation
+----------------------------------------------- */
+#nav-above {
+display: none;
+}
+.site-content .site-navigation {
+margin: 1.6em 0;
+overflow: hidden;
+}
+.site-content .site-navigation a {
+font-family: "Gloria Hallelujah", Arial, Helvetica, sans-serif;
+text-decoration: none;
+}
+.site-content .nav-previous {
+float: left;
+width: 50%;
+}
+.site-content .nav-next,
+.next-image {
+float: right;
+text-align: right;
+width: 50%;
+}
+/* =Widgets
+----------------------------------------------- */
+#tertiary:before,
+#tertiary:after {
+content: "";
+display: table;
+}
+#tertiary:after {
+clear: both;
+}
+.widget-left,
+.widget-middle,
+.widget-right {
+float: left;
+margin-right: 5%;
+overflow: hidden;
+width: 30%;
+}
+.widget-right {
+margin-right: 0;
+}
+.sidebar .widget {
+font-family: "Roboto", Arial, Helvetica, sans-serif;
+font-size: 16px;
+font-size: 1.6rem;
+margin: 0 0 1.6em;
+}
+.widget-title {
+font-family: "Gloria Hallelujah", Arial, Helvetica, sans-serif;
+font-size: 24px;
+font-size: 2.4rem;
+}
+.sidebar .widget h2 {
+font-family: "Gloria Hallelujah", Arial, Helvetica, sans-serif;
+font-size: 24px;
+font-size: 2.4rem;
+}
+.sidebar .widget-content{
+margin:0px;
+padding:0px;
+}
+.sidebar ul{
+margin:0px 0px 0px 24px;
+padding:0px;
+}
+.sidebar ul li{
+padding:5px 0px;
+margin:0px;
+border-bottom:0px solid #eeeeee;
+}
+/* Make sure select elements fit in widgets */
+.sidebar .widget select {
+max-width: 100%;
+}
+/* Search widget */
+#searchsubmit {
+display: none;
+}
+/* =Retina Media Queries
+----------------------------------------------- */
+@media only screen and (-webkit-min-device-pixel-ratio: 2),
+only screen and (-moz-min-device-pixel-ratio: 2),
+only screen and (-o-min-device-pixel-ratio: 2/1),
+only screen and (min-device-pixel-ratio: 2) {
+#colophon {
+background: url('http://2.bp.blogspot.com/-y13MmUYRb8c/UnCJhYXfrbI/AAAAAAAALHg/FbQ8MDfSNYU/s1600/boardbottom-new-2x.png') no-repeat center bottom;
+background-size: 100%;
+}
+}
+/* =Responsive Media Queries
+----------------------------------------------- */
+@media only screen and ( max-width: 900px ) {
+.widget-left,
+.widget-middle,
+.widget-right,
+#secondary {
+clear: both;
+float: none;
+margin: 0;
+width: 100%;
+}
+.sidebar-active #content {
+margin: 0;
+}
+}
+@media only screen and ( max-width: 800px ) {
+body, .body-fauxcolumn-outer {
+font-size: 18px;
+font-size: 1.8rem;
+}
+.wrapper {
+padding: 20px;
+}
+#pagebwrap {
+padding: 30px 30px 0;
+}
+.entry-title {
+font-size: 28px;
+font-size: 2.8rem;
+}
+.site-title {
+font-size: 36px;
+font-size: 3.6rem;
+}
+#colophon,
+.entry-meta,
+.entry-content {
+font-size: 14px;
+font-size: 1.4rem;
+}
+#colophon {
+max-width: 100%;
+}
+}
+h2.date-header {
+margin: 1.5em 0 .5em;
+display: none;
+}
+.main .widget {
+margin: 0 0 5px;
+padding: 0 0 2px;
+}
+.main .Blog {
+border-bottom-width: 0;
+}
+#header .description {
+color:#ffffff;
+font-size:14px;
+text-shadow:0px 1px 0px #000000;
+}
+/* Comments----------------------------------------------- */
+#comments {
+padding:10px;
+margin-bottom:20px;
+}
+#comments h4 {
+font-size:22px;
+margin-bottom:10px;
+}
+.deleted-comment {
+font-style: italic;
+color: gray;
+}
+#blog-pager-newer-link {
+float: left;
+}
+#blog-pager-older-link {
+float: right;
+}
+#blog-pager {
+text-align: center;
+padding:5px;
+}
+.feed-links {
+clear: both;
+}
+.comment-form {
+max-width: 600px;
+}
+#navbar-iframe {
+height: 0;
+visibility: hidden;
+display: none;
+}
+.PopularPosts .widget-content ul li {
+padding:6px 0px;
+}
+.reaction-buttons table{
+border:none;
+margin-bottom:5px;
+}
+.reaction-buttons table, .reaction-buttons td{
+border:none;
+}
+.bthumbimg {
+float:left;
+margin:0px 10px 5px 0px;
+background:none;
+padding:3px;
+border:1px solid #eee;
+}
+
+--></style>
+<script src='https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js' type='text/javascript'></script>
+<script type='text/javascript'>
+//<![CDATA[
+
+/*! jQuery Migrate v1.2.1 | (c) 2005, 2013 jQuery Foundation, Inc. and other contributors | jquery.org/license */
+jQuery.migrateMute===void 0&&(jQuery.migrateMute=!0),function(e,t,n){function r(n){var r=t.console;i[n]||(i[n]=!0,e.migrateWarnings.push(n),r&&r.warn&&!e.migrateMute&&(r.warn("JQMIGRATE: "+n),e.migrateTrace&&r.trace&&r.trace()))}function a(t,a,i,o){if(Object.defineProperty)try{return Object.defineProperty(t,a,{configurable:!0,enumerable:!0,get:function(){return r(o),i},set:function(e){r(o),i=e}}),n}catch(s){}e._definePropertyBroken=!0,t[a]=i}var i={};e.migrateWarnings=[],!e.migrateMute&&t.console&&t.console.log&&t.console.log("JQMIGRATE: Logging is active"),e.migrateTrace===n&&(e.migrateTrace=!0),e.migrateReset=function(){i={},e.migrateWarnings.length=0},"BackCompat"===document.compatMode&&r("jQuery is not compatible with Quirks Mode");var o=e("<input/>",{size:1}).attr("size")&&e.attrFn,s=e.attr,u=e.attrHooks.value&&e.attrHooks.value.get||function(){return null},c=e.attrHooks.value&&e.attrHooks.value.set||function(){return n},l=/^(?:input|button)$/i,d=/^[238]$/,p=/^(?:autofocus|autoplay|async|checked|controls|defer|disabled|hidden|loop|multiple|open|readonly|required|scoped|selected)$/i,f=/^(?:checked|selected)$/i;a(e,"attrFn",o||{},"jQuery.attrFn is deprecated"),e.attr=function(t,a,i,u){var c=a.toLowerCase(),g=t&&t.nodeType;return u&&(4>s.length&&r("jQuery.fn.attr( props, pass ) is deprecated"),t&&!d.test(g)&&(o?a in o:e.isFunction(e.fn[a])))?e(t)[a](i):("type"===a&&i!==n&&l.test(t.nodeName)&&t.parentNode&&r("Can't change the 'type' of an input or button in IE 6/7/8"),!e.attrHooks[c]&&p.test(c)&&(e.attrHooks[c]={get:function(t,r){var a,i=e.prop(t,r);return i===!0||"boolean"!=typeof i&&(a=t.getAttributeNode(r))&&a.nodeValue!==!1?r.toLowerCase():n},set:function(t,n,r){var a;return n===!1?e.removeAttr(t,r):(a=e.propFix[r]||r,a in t&&(t[a]=!0),t.setAttribute(r,r.toLowerCase())),r}},f.test(c)&&r("jQuery.fn.attr('"+c+"') may use property instead of attribute")),s.call(e,t,a,i))},e.attrHooks.value={get:function(e,t){var n=(e.nodeName||"").toLowerCase();return"button"===n?u.apply(this,arguments):("input"!==n&&"option"!==n&&r("jQuery.fn.attr('value') no longer gets properties"),t in e?e.value:null)},set:function(e,t){var a=(e.nodeName||"").toLowerCase();return"button"===a?c.apply(this,arguments):("input"!==a&&"option"!==a&&r("jQuery.fn.attr('value', val) no longer sets properties"),e.value=t,n)}};var g,h,v=e.fn.init,m=e.parseJSON,y=/^([^<]*)(<[\w\W]+>)([^>]*)$/;e.fn.init=function(t,n,a){var i;return t&&"string"==typeof t&&!e.isPlainObject(n)&&(i=y.exec(e.trim(t)))&&i[0]&&("<"!==t.charAt(0)&&r("$(html) HTML strings must start with '<' character"),i[3]&&r("$(html) HTML text after last tag is ignored"),"#"===i[0].charAt(0)&&(r("HTML string cannot start with a '#' character"),e.error("JQMIGRATE: Invalid selector string (XSS)")),n&&n.context&&(n=n.context),e.parseHTML)?v.call(this,e.parseHTML(i[2],n,!0),n,a):v.apply(this,arguments)},e.fn.init.prototype=e.fn,e.parseJSON=function(e){return e||null===e?m.apply(this,arguments):(r("jQuery.parseJSON requires a valid JSON string"),null)},e.uaMatch=function(e){e=e.toLowerCase();var t=/(chrome)[ \/]([\w.]+)/.exec(e)||/(webkit)[ \/]([\w.]+)/.exec(e)||/(opera)(?:.*version|)[ \/]([\w.]+)/.exec(e)||/(msie) ([\w.]+)/.exec(e)||0>e.indexOf("compatible")&&/(mozilla)(?:.*? rv:([\w.]+)|)/.exec(e)||[];return{browser:t[1]||"",version:t[2]||"0"}},e.browser||(g=e.uaMatch(navigator.userAgent),h={},g.browser&&(h[g.browser]=!0,h.version=g.version),h.chrome?h.webkit=!0:h.webkit&&(h.safari=!0),e.browser=h),a(e,"browser",e.browser,"jQuery.browser is deprecated"),e.sub=function(){function t(e,n){return new t.fn.init(e,n)}e.extend(!0,t,this),t.superclass=this,t.fn=t.prototype=this(),t.fn.constructor=t,t.sub=this.sub,t.fn.init=function(r,a){return a&&a instanceof e&&!(a instanceof t)&&(a=t(a)),e.fn.init.call(this,r,a,n)},t.fn.init.prototype=t.fn;var n=t(document);return r("jQuery.sub() is deprecated"),t},e.ajaxSetup({converters:{"text json":e.parseJSON}});var b=e.fn.data;e.fn.data=function(t){var a,i,o=this[0];return!o||"events"!==t||1!==arguments.length||(a=e.data(o,t),i=e._data(o,t),a!==n&&a!==i||i===n)?b.apply(this,arguments):(r("Use of jQuery.fn.data('events') is deprecated"),i)};var j=/\/(java|ecma)script/i,w=e.fn.andSelf||e.fn.addBack;e.fn.andSelf=function(){return r("jQuery.fn.andSelf() replaced by jQuery.fn.addBack()"),w.apply(this,arguments)},e.clean||(e.clean=function(t,a,i,o){a=a||document,a=!a.nodeType&&a[0]||a,a=a.ownerDocument||a,r("jQuery.clean() is deprecated");var s,u,c,l,d=[];if(e.merge(d,e.buildFragment(t,a).childNodes),i)for(c=function(e){return!e.type||j.test(e.type)?o?o.push(e.parentNode?e.parentNode.removeChild(e):e):i.appendChild(e):n},s=0;null!=(u=d[s]);s++)e.nodeName(u,"script")&&c(u)||(i.appendChild(u),u.getElementsByTagName!==n&&(l=e.grep(e.merge([],u.getElementsByTagName("script")),c),d.splice.apply(d,[s+1,0].concat(l)),s+=l.length));return d});var Q=e.event.add,x=e.event.remove,k=e.event.trigger,N=e.fn.toggle,T=e.fn.live,M=e.fn.die,S="ajaxStart|ajaxStop|ajaxSend|ajaxComplete|ajaxError|ajaxSuccess",C=RegExp("\\b(?:"+S+")\\b"),H=/(?:^|\s)hover(\.\S+|)\b/,A=function(t){return"string"!=typeof t||e.event.special.hover?t:(H.test(t)&&r("'hover' pseudo-event is deprecated, use 'mouseenter mouseleave'"),t&&t.replace(H,"mouseenter$1 mouseleave$1"))};e.event.props&&"attrChange"!==e.event.props[0]&&e.event.props.unshift("attrChange","attrName","relatedNode","srcElement"),e.event.dispatch&&a(e.event,"handle",e.event.dispatch,"jQuery.event.handle is undocumented and deprecated"),e.event.add=function(e,t,n,a,i){e!==document&&C.test(t)&&r("AJAX events should be attached to document: "+t),Q.call(this,e,A(t||""),n,a,i)},e.event.remove=function(e,t,n,r,a){x.call(this,e,A(t)||"",n,r,a)},e.fn.error=function(){var e=Array.prototype.slice.call(arguments,0);return r("jQuery.fn.error() is deprecated"),e.splice(0,0,"error"),arguments.length?this.bind.apply(this,e):(this.triggerHandler.apply(this,e),this)},e.fn.toggle=function(t,n){if(!e.isFunction(t)||!e.isFunction(n))return N.apply(this,arguments);r("jQuery.fn.toggle(handler, handler...) is deprecated");var a=arguments,i=t.guid||e.guid++,o=0,s=function(n){var r=(e._data(this,"lastToggle"+t.guid)||0)%o;return e._data(this,"lastToggle"+t.guid,r+1),n.preventDefault(),a[r].apply(this,arguments)||!1};for(s.guid=i;a.length>o;)a[o++].guid=i;return this.click(s)},e.fn.live=function(t,n,a){return r("jQuery.fn.live() is deprecated"),T?T.apply(this,arguments):(e(this.context).on(t,this.selector,n,a),this)},e.fn.die=function(t,n){return r("jQuery.fn.die() is deprecated"),M?M.apply(this,arguments):(e(this.context).off(t,this.selector||"**",n),this)},e.event.trigger=function(e,t,n,a){return n||C.test(e)||r("Global events are undocumented and deprecated"),k.call(this,e,t,n||document,a)},e.each(S.split("|"),function(t,n){e.event.special[n]={setup:function(){var t=this;return t!==document&&(e.event.add(document,n+"."+e.guid,function(){e.event.trigger(n,null,t,!0)}),e._data(this,n,e.guid++)),!1},teardown:function(){return this!==document&&e.event.remove(document,n+"."+e._data(this,n)),!1}}})}(jQuery,window);
+
+//]]>
+</script>
+<script type='text/javascript'>
+//<![CDATA[
+
+function showrecentcomments(json){for(var i=0;i<a_rc;i++){var b_rc=json.feed.entry[i];var c_rc;if(i==json.feed.entry.length)break;for(var k=0;k<b_rc.link.length;k++){if(b_rc.link[k].rel=='alternate'){c_rc=b_rc.link[k].href;break;}}c_rc=c_rc.replace("#","#comment-");var d_rc=c_rc.split("#");d_rc=d_rc[0];var e_rc=d_rc.split("/");e_rc=e_rc[5];e_rc=e_rc.split(".html");e_rc=e_rc[0];var f_rc=e_rc.replace(/-/g," ");f_rc=f_rc.link(d_rc);var g_rc=b_rc.published.$t;var h_rc=g_rc.substring(0,4);var i_rc=g_rc.substring(5,7);var j_rc=g_rc.substring(8,10);var k_rc=new Array();k_rc[1]="Jan";k_rc[2]="Feb";k_rc[3]="Mar";k_rc[4]="Apr";k_rc[5]="May";k_rc[6]="Jun";k_rc[7]="Jul";k_rc[8]="Aug";k_rc[9]="Sep";k_rc[10]="Oct";k_rc[11]="Nov";k_rc[12]="Dec";if("content" in b_rc){var l_rc=b_rc.content.$t;}else if("summary" in b_rc){var l_rc=b_rc.summary.$t;}else var l_rc="";var re=/<\S[^>]*>/g;l_rc=l_rc.replace(re,"");if(m_rc==true)document.write('On '+k_rc[parseInt(i_rc,10)]+' '+j_rc+' ');document.write('<a href="'+c_rc+'">'+b_rc.author[0].name.$t+'</a> commented');if(n_rc==true)document.write(' on '+f_rc);document.write(': ');if(l_rc.length<o_rc){document.write('<i>&#8220;');document.write(l_rc);document.write('&#8221;</i><br/><br/>');}else{document.write('<i>&#8220;');l_rc=l_rc.substring(0,o_rc);var p_rc=l_rc.lastIndexOf(" ");l_rc=l_rc.substring(0,p_rc);document.write(l_rc+'&hellip;&#8221;</i>');document.write('<br/><br/>');}}}
+
+function rp(json){document.write('<ul>');for(var i=0;i<numposts;i++){document.write('<li>');var entry=json.feed.entry[i];var posttitle=entry.title.$t;var posturl;if(i==json.feed.entry.length)break;for(var k=0;k<entry.link.length;k++){if(entry.link[k].rel=='alternate'){posturl=entry.link[k].href;break}}posttitle=posttitle.link(posturl);var readmorelink="(more)";readmorelink=readmorelink.link(posturl);var postdate=entry.published.$t;var cdyear=postdate.substring(0,4);var cdmonth=postdate.substring(5,7);var cdday=postdate.substring(8,10);var monthnames=new Array();monthnames[1]="Jan";monthnames[2]="Feb";monthnames[3]="Mar";monthnames[4]="Apr";monthnames[5]="May";monthnames[6]="Jun";monthnames[7]="Jul";monthnames[8]="Aug";monthnames[9]="Sep";monthnames[10]="Oct";monthnames[11]="Nov";monthnames[12]="Dec";if("content"in entry){var postcontent=entry.content.$t}else if("summary"in entry){var postcontent=entry.summary.$t}else var postcontent="";var re=/<\S[^>]*>/g;postcontent=postcontent.replace(re,"");document.write(posttitle);if(showpostdate==true)document.write(' - '+monthnames[parseInt(cdmonth,10)]+' '+cdday);if(showpostsummary==true){if(postcontent.length<numchars){document.write(postcontent)}else{postcontent=postcontent.substring(0,numchars);var quoteEnd=postcontent.lastIndexOf(" ");postcontent=postcontent.substring(0,quoteEnd);document.write(postcontent+'...'+readmorelink)}}document.write('</li>')}document.write('</ul>')}
+
+//]]>
+</script>
+<style id='custom-background-css' type='text/css'>
+body.custom-background { background-image: url('http://2.bp.blogspot.com/-oS920l1lAcQ/UnCJgDGqawI/AAAAAAAALHY/GRklHHyHTjM/s1600/walltexture.png'); background-repeat: repeat; background-position: top left; background-attachment: scroll; }
+</style>
+<link href='https://www.blogger.com/dyn-css/authorization.css?targetBlogID=6996732972947782461&amp;zx=f4c524e6-0f98-445f-8404-7de1e7905bae' media='none' onload='if(media!=&#39;all&#39;)media=&#39;all&#39;' rel='stylesheet'/><noscript><link href='https://www.blogger.com/dyn-css/authorization.css?targetBlogID=6996732972947782461&amp;zx=f4c524e6-0f98-445f-8404-7de1e7905bae' rel='stylesheet'/></noscript>
+</head>
+<body class='custom-background sidebar-active'>
+<div class='wrapper'>
+<div id='pagebwrap'>
+<header class='site-header' id='masthead' role='banner'>
+<div class='headersec section' id='headersec'><div class='widget Header' data-version='1' id='Header1'>
+<div id='header-inner'>
+<div class='titlewrapper'>
+<h1 class='site-title'>
+<a href='http://pidia.selfhow.com/'>셀프피디아</a>
+</h1>
+</div>
+<div class='descriptionwrapper'>
+<h2 class='site-description'>일본 위키피디아 번역</h2>
+</div>
+</div>
+</div></div>
+<nav class='site-navigation main-navigation' role='navigation'>
+<h1 class='assistive-text'>Menu</h1>
+<div class='assistive-text skip-link'><a href='#content' title='Skip to content'>Skip to content</a></div>
+<div class='menu'>
+<ul>
+<li><a href='http://pidia.selfhow.com/'>Home</a></li>
+<li><a href='#'>Business</a>
+<ul class='children'>
+<li><a href='#'>Internet</a></li>
+<li><a href='#'>Market</a></li>
+<li><a href='#'>Stock</a></li>
+</ul>
+</li>
+<li><a href='#'>Downloads</a>
+<ul class='children'>
+<li><a href='#'>Dvd</a></li>
+<li><a href='#'>Games</a></li>
+<li><a href='#'>Software</a>
+<ul class='children'>
+<li><a href='#'>Office</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href='#'>Parent Category</a>
+<ul class='children'>
+<li><a href='#'>Child Category 1</a>
+<ul class='children'>
+<li><a href='#'>Sub Child Category 1</a></li>
+<li><a href='#'>Sub Child Category 2</a></li>
+<li><a href='#'>Sub Child Category 3</a></li>
+</ul>
+</li>
+<li><a href='#'>Child Category 2</a></li>
+<li><a href='#'>Child Category 3</a></li>
+<li><a href='#'>Child Category 4</a></li>
+</ul>
+</li>
+<li><a href='#'>Featured</a></li>
+</ul>
+</div>
+</nav><!-- .site-navigation .main-navigation -->
+</header><!-- #masthead .site-header -->
+<div class='site-main' id='main'>
+<div class='content-area' id='primary'>
+<div class='site-content' id='content' role='main'>
+<div class='mainblogsec section' id='mainblogsec'><div class='widget Blog' data-version='1' id='Blog1'>
+<div class='blog-posts hfeed'>
+<!--Can't find substitution for tag [defaultAdStart]-->
+
+          <div class="date-outer">
+        
+<h2 class='date-header'><span>2016년 11월 29일 화요일</span></h2>
+
+          <div class="date-posts">
+        
+<div class='post-outer'>
+<article class='post hentry'>
+<a name='65427964216509859'></a>
+<header class='entry-header'>
+<h2 class='post-title entry-title'>
+<a href='http://pidia.selfhow.com/2016/11/blog-post_8289.html'>루프 전개</a>
+</h2>
+</header>
+<div class='post-header-line-1'></div>
+<div class='post-body entry-content'>
+ <div class='ads_adsense_response'> <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script> <ins class="adsbygoogle"      style="display:block"      data-ad-client="ca-pub-8393857339019314"      data-ad-slot="1428352782"      data-ad-format="auto"></ins> <script> (adsbygoogle = window.adsbygoogle || []).push({}); </script> </div> <h1>루프 전개</h1><div class="content" id="bodyContent"><div class="mw-content-ltr" dir="ltr" id="mw-content-text" lang="ja"><script>function mfTempOpenSection(id){var block=document.getElementById("mf-section-"+id);block.className+=" open-block";block.previousSibling.className+=" open-block";}</script><div class="mf-section-0" id="mf-section-0"><p><b>루프 전개</b>(루프라고 야, <a href="http://tranpedia.selfhow.com/search?q=%EC%98%81%EC%96%B4&amp;submit=Search" title="영어">영어</a>: <span lang="en" xml:lang="en">Loop Unwinding</span>)는, 프로그램의 사이즈를 희생에 실행 속도를 최적화하는(<a href="http://tranpedia.selfhow.com/search?q=%EC%8B%9C%EA%B0%84%EA%B3%BC%20%EA%B3%B5%EA%B0%84%EC%9D%98%20%ED%8A%B8%EB%A0%88%EC%9D%B4%EB%93%9C%20%EC%98%A4%ED%94%84&amp;submit=Search" title="시간과 공간의 트레이드 오프">시간과 공간의 트레이드 오프</a>), <span title="링크처의 항목은 아직 없습니다.신규의 집필이나, 발설어판으로부터의 번역이 바람직합니다."><a class="new" href="http://tranpedia.selfhow.com/search?q=%EB%A3%A8%ED%94%84%20%EB%B3%80%ED%99%98&amp;submit=Search" title="루프 변환(존재하지 않는 페이지)">루프 변환</a><span class="noprint" style="font-size: 0.77em; font-weight: normal;">(<a class="extiw" href="http://tranpedia.selfhow.com/search?q=%EC%98%81%EB%AC%B8%ED%8C%90&amp;submit=Search" title="en:loop transformation">영문판</a>)</span></span>으로 불리는 수법의 하나이다.<b>loop unrolling</b>(<a href="http://tranpedia.selfhow.com/search?q=%EC%98%81%EC%96%B4&amp;submit=Search" title="영어">영어</a>: <span lang="en" xml:lang="en">Loop Unrolling</span>)이라고도 부른다.프로그래머가 수동으로 실시하기도 하고, <a href="http://tranpedia.selfhow.com/search?q=%EC%BB%B4%ED%8C%8C%EC%9D%BC%EB%9F%AC&amp;submit=Search" title="컴파일러 최적화">컴파일러</a>가 실시하기도 한다.</p> <p>루프 전개의 목적은, 매회가 반복할 것에 발생하는 &#12300;루프의 종료&#12301;조건의 테스트를 감소시키는(혹은 없앤다) 일에 의해서, 실행 속도를 향상시키는 것이다[<sup class="reference" id="cite_ref-1"><a href="http://tranpedia.selfhow.com/search?q=1&amp;submit=Search">1</a></sup>][<sup class="reference" id="cite_ref-2"><a href="http://tranpedia.selfhow.com/search?q=2&amp;submit=Search">2</a></sup>].루프는, 루프 자체를 제어하기 위한 <a class="mw-disambig" href="http://tranpedia.selfhow.com/search?q=%EC%98%A4%EB%B2%84%ED%97%A4%EB%93%9C&amp;submit=Search" title="오버헤드">오버헤드</a>가 없어지도록(듯이), 독립한 명령 블록의 연속으로 고쳐 쓸 수 있는[<sup class="reference" id="cite_ref-3"><a href="http://tranpedia.selfhow.com/search?q=3&amp;submit=Search">3</a></sup>].</p> <p></p> <div class="toc-mobile" id="toc"><h2>목차</h2></div></div><h2 class="section-heading in-block" onclick="javascript:mfTempOpenSection(1)"><div class="mw-ui-icon mw-ui-icon-element indicator"></div><span class="mw-headline" id=".E5.88.A9.E7.82.B9">이점</span> <span></span></h2><div class="mf-section-1 collapsible-block" id="mf-section-1"> <p>루프의 오버헤드는, 포인터 또는 인덱스를 인크리먼트 해 배열의 다음 요소를 가리키기 위한 명령군(<a href="http://tranpedia.selfhow.com/search?q=%ED%8F%AC%EC%9D%B8%ED%84%B0&amp;submit=Search" title="포인터(프로그래밍)">포인터</a> 연산)과 &#12300;루프 종료 조건&#12301;의 테스트에 유래한다.최적화 컴파일러등에서 배열의 개개의 요소에의 참조를 위한 오프셋을 사전에 계산할 수 있어 그것을 직접 <a href="http://tranpedia.selfhow.com/search?q=%EA%B8%B0%EA%B3%84%EC%96%B4&amp;submit=Search" title="기계어">기계어</a> 명령열로 할 수 있다면, 실행시의 여분의 연산을 생략할 수 있다.</p> <ul><li>루프 전개에 의해서 프로그램이 길어졌다고 해도, 그 이상으로 실질적인 실행 명령수가 삭감되면, 전체적으로는 성능이 강화된다.</li> <li><a href="http://tranpedia.selfhow.com/search?q=%EB%B6%84%EA%B8%B0%20%ED%8C%A8%EB%84%90%ED%8B%B0&amp;submit=Search" title="분기 예측">분기 패널티</a>가 최소화되는[<sup class="reference" id="cite_ref-fog2012_4-0"><a href="http://tranpedia.selfhow.com/search?q=4&amp;submit=Search">4</a></sup>].</li> <li>루프내의 각 문이 서로 의존하고 있지 않는 경우(즉, 루프가 있는 주회의 결과가 그 후의 주회로 필요하게 되지 않는 경우), 그러한 문장은 <a href="http://tranpedia.selfhow.com/search?q=%EB%B3%91%EB%A0%AC%20%EA%B3%84%EC%82%B0&amp;submit=Search" title="병렬 계산">병렬 계산</a>할 수 있을 가능성이 있다.</li> <li>컴파일시에 루프 회수(배열 요소수)가 불명한 경우에서도, 동적 루프 전개를 실장 가능하다(<a href="http://tranpedia.selfhow.com/search?q=Duff%27s%20device&amp;submit=Search" title="Duff's device">Duff's device</a>).</li> </ul><p>최적화 컴파일러에는 자동적 또는 요구에 따라 루프 전개할 수 있는 것도 있다.</p> </div><h2 class="section-heading in-block" onclick="javascript:mfTempOpenSection(2)"><div class="mw-ui-icon mw-ui-icon-element indicator"></div><span class="mw-headline" id=".E6.AC.A0.E7.82.B9">결점</span> <span></span></h2><div class="mf-section-2 collapsible-block" id="mf-section-2"> <ul><li>프로그램의 코드 사이즈가 증대하기 위해(때문에), <a href="http://tranpedia.selfhow.com/search?q=%ED%8E%B8%EC%9E%85%20%EC%8B%9C%EC%8A%A4%ED%85%9C&amp;submit=Search" title="편입 시스템">편입 시스템</a> 등 메모리 용량이 작은 경우는 적절하지 않다. <ul><li>명령 캐쉬 미스 회수가 증가해 성능을 저하시키는 일이 있다.</li> </ul></li> <li>최적화 컴파일러는 투과적으로 루프 전개하지만, 전개 후의 코드는 <a href="http://tranpedia.selfhow.com/search?q=%EA%B0%80%EB%8F%85%EC%84%B1&amp;submit=Search" title="가독성">가독성</a>이 저하한다.</li> <li>루프내의 처리가 함수 호출이었던 경우, <a href="http://tranpedia.selfhow.com/search?q=%EC%9D%B8%20%EB%9D%BC%EC%9D%B8%20%EC%A0%84%EA%B0%9C&amp;submit=Search" title="인 라인 전개">인 라인 전개</a>를 수반한 루프 전개는 코드가 방대하게 너무 되어서 현실적이지 않은 것이 있다.따라서 그것들 2개의 최적화동안에는 <a href="http://tranpedia.selfhow.com/search?q=%ED%8A%B8%EB%A0%88%EC%9D%B4%EB%93%9C%20%EC%98%A4%ED%94%84&amp;submit=Search" title="트레이드 오프">트레이드 오프</a>의 관계가 있다고도 말할 수 있다.</li> <li>전개 후에 어떠한 최적화가 가능한가에도 의존하지만, 일시 변수용으로 레지스터를 많이 필요로 하는 경우는 성능이 저하할 가능성도 있는[<sup class="reference" id="cite_ref-5"><a href="http://tranpedia.selfhow.com/search?q=5&amp;submit=Search">5</a></sup>].</li> <li>작고 단순한 루프는 예외지만, 루프 본체내에 분기가 있는 경우는 <a class="mw-redirect" href="http://tranpedia.selfhow.com/search?q=%EC%9E%AC%EA%B7%80%20%ED%98%B8%EC%B6%9C&amp;submit=Search" title="재귀 호출">재귀 호출</a>보다 늦어지는 일이 있는[<sup class="reference" id="cite_ref-6"><a href="http://tranpedia.selfhow.com/search?q=6&amp;submit=Search">6</a></sup>].</li> </ul></div><h2 class="section-heading in-block" onclick="javascript:mfTempOpenSection(3)"><div class="mw-ui-icon mw-ui-icon-element indicator"></div><span class="mw-headline" id=".E9.9D.99.E7.9A.84.2F.E6.89.8B.E5.8B.95.E3.83.AB.E3.83.BC.E3.83.97.E5.B1.95.E9.96.8B">정적/수동 루프 전개</span> <span></span></h2><div class="mf-section-3 collapsible-block" id="mf-section-3"> <p>일손에 의한(또는 정적인) 루프 전개는, 프로그래머가 루프를 분석해 전개하는 것으로 루프의 오버헤드를 저감 시키는 것이다.한편 컴파일러가 실시하는 루프 전개를 동적 루프 전개라고 부른다.</p> <h3 class="in-block"><span class="mw-headline" id="C.E8.A8.80.E8.AA.9E.E3.81.A7.E3.81.AE.E7.B0.A1.E5.8D.98.E3.81.AA.E4.BE.8B">C언어로의 간단한 예</span><span></span></h3> <p>어느 프로그램의 수속으로, 데이터의 집합체로부터 100개의 요소를 삭제(delete)할 필요가 있다고 한다.이 때문에, <code>for</code> 루프내에서 함수 <i>delete(요소의 번호)을</i> 호출한다.이 부분을 최적화하는 경우, 루프에 필요한 오바헷드가 자원을 다대하게 소비하고 있다면, 루프 전개로 성능이 향상한다.</p> <table border="1" cellpadding="1" class="wikitable"><tr><th>통상의 루프</th> <th>루프 전개 후</th> </tr><tr><td> <div class="mw-highlight mw-content-ltr" dir="ltr"> <pre>  <span class="kt"><span class="p"></span>int</span> <span class="n">x</span>;  <span class="k"><span class="p"></span><span class="o"></span><span class="p"></span><span class="o"></span><span class="p"></span><span class="o"></span><span class="p"></span>for</span> (<span class="n">x</span> = <span class="mi">0</span>; <span class="n">x</span> &lt; <span class="mi">100</span>; <span class="n">x</span>++)  <span class="p">{</span>      <span class="n"><span class="p"></span><span class="p"></span>delete</span>(<span class="n">x</span>);  <span class="p">}</span> </pre></div> </td> <td> <div class="mw-highlight mw-content-ltr" dir="ltr"> <pre>  <span class="kt"><span class="p"></span>int</span> <span class="n">x</span>;   <span class="k"><span class="p"></span><span class="o"></span><span class="p"></span><span class="o"></span><span class="p"></span><span class="o"></span><span class="p"></span>for</span> (<span class="n">x</span> = <span class="mi">0</span>; <span class="n">x</span> &lt; <span class="mi">100</span>; <span class="n">x</span>+=<span class="mi">5</span>)  <span class="p">{</span>      <span class="n"><span class="p"></span><span class="p"></span>delete</span>(<span class="n">x</span>);      <span class="n"><span class="p"></span><span class="o"></span><span class="p"></span>delete</span>(<span class="n">x</span>+<span class="mi">1</span>);      <span class="n"><span class="p"></span><span class="o"></span><span class="p"></span>delete</span>(<span class="n">x</span>+<span class="mi">2</span>);      <span class="n"><span class="p"></span><span class="o"></span><span class="p"></span>delete</span>(<span class="n">x</span>+<span class="mi">3</span>);      <span class="n"><span class="p"></span><span class="o"></span><span class="p"></span>delete</span>(<span class="n">x</span>+<span class="mi">4</span>);  <span class="p">}</span> </pre></div> </td> </tr></table><p>이 수정의 결과, 새로운 프로그램의 루프 회수는 100회부터 20회에 삭감된다.점프 명령과 조건부 분기 명령의 실행 회수는 5분의 1이 되어, 루프 그 자체의 처리에 걸리는 시간은 큰폭으로 삭감될 가능성이 있다.그 효과를 최대로 하기 위해, 전개된 코드로는 <a href="http://tranpedia.selfhow.com/search?q=%ED%8F%AC%EC%9D%B8%ED%84%B0&amp;submit=Search" title="포인터(프로그래밍)">포인터</a> 계산을 하지 않게 하는 것이 중요하다.그 때문에 통상은 인덱스에 의한 참조로부터 베이스와 오프셋에 의한 참조로 전환할 필요가 있다.</p> <p>한편, 루프 전개에 의해서 코드 사이즈는 3행에서 7행에 증가해 컴파일러는 전개된 부분에서 필요한 변수를 격납하는 레지스터를 한층 더 필요로 하게 될 가능성이 있다.더하고, 전개전과 전개 나중에 처리 결과가 같게 되도록(듯이), 루프 변수의 루프내에서의 조작은 주의 깊게 실시하지 않으면 안 된다.예를 들면, 위의 예로 6회 만큼의 루프를 전개했을 경우, 100은 6으로 나뉘어 떨어지지 않기 때문에, 전개전과 같은 결과를 얻으려면  세공이 필요하다.또, 루프의 종료 조건이 변수였던 경우에는 한층 더 문제는 복잡화 한다.<a href="http://tranpedia.selfhow.com/search?q=Duff%27s%20device&amp;submit=Search" title="Duff's device">Duff's device</a>가 참조되고 싶다.</p> <h3 class="in-block"><span class="mw-headline" id=".E8.A4.87.E9.9B.91.E6.80.A7">complex system</span> <span></span></h3> <p>단순한 루프로는, 루프 제어는 단순한 관리 오바헷드이다.루프 자체는 필요한 결과에 직접 공헌할 것은 없고, 단지 프로그래머가 같은 코드를 얼마든지 코딩 하는 수고를 생략하는 것만으로 있다.그 만큼이면, 코드의 복제는 프리프로세서나 에디터의 기능을 사용해도 실현될 수 있다.이와 같이 <code>if</code>문등의 다른 <a href="http://tranpedia.selfhow.com/search?q=%EC%A0%9C%EC%96%B4%20%EA%B5%AC%EC%A1%B0&amp;submit=Search" title="제어 구조">제어 구조</a>도 코드의 복제로 옮겨놓을 수도 있지만, 결과적으로 터무니없음 차 마시기 내기인 코드가 완성되어 버린다.프로그램은 편성에 끊임 없이 주의할 수 있지만, 인간은 지루한 작업에 참지 못하고, 실수를 범한다.</p> <table border="1" cellpadding="1" class="wikitable"><tr><th>통상의 루프</th> <th>루프 전개 후</th> </tr><tr><td> <pre>   for i:=1:8 do    if i mod 2 = 0 then do_evenstuff(i)                    else do_oddstuff(i);    next i; </pre></td> <td> <pre>  do_oddstuff(1); do_evenstuff(2);  do_oddstuff(3); do_evenstuff(4);  do_oddstuff(5); do_evenstuff(6);  do_oddstuff(7); do_evenstuff(8); </pre></td> </tr></table><p>그러나, 물론 전개되는 내용은 수속 호출일 필요는 없다.다음 예로는 인덱스 변수의 계산이 관련되고 있다.</p> <table border="1" cellpadding="1" class="wikitable"><tr><th>통상의 루프</th> <th>루프 전개 후</th> </tr><tr><td> <pre>  x(1) = 1;  For i:=2:9 do            x(i):=x(i - 1)*i;            print i,x(i);            next i; </pre></td> <td> <pre>  x(1):=1;  x(2):=x(1)*2; print 2,x(2);  x(3):=x(2)*3; print 3,x(3);  ...etc.  . </pre></td> </tr></table><p>컴파일러의 루프 전개에 의해서 대량의 코드(특히 <i>print</i>문)가 생성된다고 해도, 한층 더 최적화가 가능하다.이 예로는 루프내에서 <i>x(i)와</i> <i>x(i - 1) 밖</i>에 참조하고 있지 않고(후자는 <i>x(i)의</i> 값을 만들기 위해서 마셔 참조), 배열 <i>x</i>에 외로부터 참조하는 것이 없으면, 배열의 각 요소를 단순한 변수에 옮겨놓을 수도 있다.게다가 이 코드로는 각 변수의 값을 정수로부터 요구하고 있고, 모두 정수로 간주할 수도 있다.그러자(면) 다음 같게 최적화할 수 있다.</p> <pre> print 2,2; print 3,6; print 4,24; ...etc. </pre> <p>컴파일러가 <i>x</i>를 <a href="http://tranpedia.selfhow.com/search?q=%EA%B3%84%EC%8A%B9&amp;submit=Search" title="계승">계승</a>의 테이블이라고 인식했다고 하면 놀라움이다.</p> <p>일반적으로 루프의 내용은 크고, 복잡한 배열의 인덱스부에 관련하고 있다.그 경우는 최적화 컴파일러에 전개를 맡기는 것이 최선일 것이다.가장 안쪽의 루프를 전개하는 것으로 여러가지 최적화가 가능해질지도 모르지만, 루프 회수가 많지 않은 한 효과는 한정적이다.</p> <h3 class="in-block"><span class="mw-headline" id="WHILE.E3.83.AB.E3.83.BC.E3.83.97.E3.81.AE.E5.B1.95.E9.96.8B">WHILE 루프의 전개</span> <span></span></h3> <p>WHILE 루프의 <a href="http://tranpedia.selfhow.com/search?q=%EC%9D%98%EC%82%AC%20%EC%BD%94%EB%93%9C&amp;submit=Search" title="의사 코드">의사 코드</a>의 예를 나타낸다.</p> <table border="1" cellpadding="1" class="wikitable"><tr><th>통상의 루프</th> <th>루프 전개 후</th> <th>전개해 &#12300;조정&#12301;한 루프</th> </tr><tr><td> <pre>   WHILE (condition) DO          action   ENDWHILE . . . . . . </pre></td> <td> <pre>   WHILE (condition) DO          action          IF NOT(condition) THEN GOTO break          action          IF NOT(condition) THEN GOTO break          action  ENDWHILE  LABEL break: . </pre></td> <td> <pre>  IF (condition) THEN   REPEAT {          action          IF NOT(condition) THEN GOTO break          action          IF NOT(condition) THEN GOTO break           action          } WHILE (condition)  LABEL break: </pre></td> </tr></table><p>전개한 예로는 ENDWHILE(컴파일 되면 루프 선두에의 점프가 된다)의 실행 회수가 66%적게 되어, 고속화된다.</p> <p>한층 더 &#12300;조정&#12301;을 더한 의사 코드의 예로는, 최적화 컴파일러를 사용하면 무조건 점프를 전혀 사용하지 않는 형태에 최적화될 것이다.</p> </div><h2 class="section-heading in-block" onclick="javascript:mfTempOpenSection(4)"><div class="mw-ui-icon mw-ui-icon-element indicator"></div><span class="mw-headline" id=".E5.8B.95.E7.9A.84.E3.83.AB.E3.83.BC.E3.83.97.E5.B1.95.E9.96.8B">동적 루프 전개</span> <span></span></h2><div class="mf-section-4 collapsible-block" id="mf-section-4"> <p>루프 전개의 유효성은 대상이 되는 배열의 크기에 의존하지만, 실행시가 되지 않으면 그 크기가 판명 하지 않는 것도 많다.<a href="http://tranpedia.selfhow.com/search?q=%EC%8B%A4%ED%96%89%EC%8B%9C%20%EC%BB%B4%ED%8C%8C%EC%9D%BC%EB%9F%AC&amp;submit=Search" title="실행시 컴파일러">실행시 컴파일러</a>(JIT) 등은, 통상의 루프에 해야 하는가, 전개해야할 것인가를 판단할 수 있다.루프 전개의 관점에서는, 이 유연성이 정적 또는 수동의 최적화에 비해 JIT 방식의 강점이 되고 있다.</p> <p><a href="http://tranpedia.selfhow.com/search?q=%EC%96%B4%EC%85%88%EB%B8%94%EB%A6%AC%20%EC%96%B8%EC%96%B4&amp;submit=Search" title="어셈블리 언어">어셈블리 언어</a>로는, 효율적인 <a href="http://tranpedia.selfhow.com/search?q=%EC%A0%90%ED%94%84%20%ED%85%8C%EC%9D%B4%EB%B8%94&amp;submit=Search" title="테이블 점프">점프 테이블</a>을 사용하는 기법으로 동적 루프 전개를 실시할 수 있다.여기서 중요해지는 것은, 배열의 최대 오프셋이 <a href="http://tranpedia.selfhow.com/search?q=%EA%B8%B0%EA%B3%84%EC%96%B4&amp;submit=Search" title="기계어">기계어</a> 명령으로 나타낼 수 있는 범위인지 어떤지이다.그 범위외의 경우, 최적화의 효과가 희미해진다.다음 예는 <a href="http://tranpedia.selfhow.com/search?q=System/360&amp;submit=Search" title="System/360">System/360</a>또는 <a href="http://tranpedia.selfhow.com/search?q=Z/Architecture&amp;submit=Search" title="Z/Architecture">Z/Architecture</a>의 어셈블리 언어로 쓰여져 있다.FROM 배열과 TO배열은 각각 1 요소 256바이트로 50 요소 있어, 각 요소의 선두로부터 100바이트를 FROM로부터 TO에 카피하는 것이다.</p> <h3 class="in-block"><span class="mw-headline" id=".E3.82.A2.E3.82.BB.E3.83.B3.E3.83.96.E3.83.AA.E8.A8.80.E8.AA.9E.EF.BC.88System.2F360.EF.BC.89.E3.81.AE.E4.BE.8B">어셈블리 언어(System/360)의 예</span><span></span></h3> <pre> <code>* 배열등을 가리키도록(듯이) 전레지스터를 초기화해 두는(R14는 리턴 주소) LM    R15,R2,INIT                       load R15= '16', R0=배열 요소수, R1--&gt; FROM 배열, R2--&gt; TO배열 LOOP     EQU   *          SR    R15,R0                            배열 요소수를 16으로부터 빼는 BNP ALL                               n &gt; 16이라면 전명령열을 실행해, 반복한다 * MVC 명령열의 선두로부터의 오프셋을 계산해, 전개된 MVC 루프의 소정의 위치에 무조건 점프 하는 MH    R15,=AL2(ILEN)                    MVC 명령의 길이(이 예로는 6)를 걸치는 B     ALL(R15)                          인덱스  분기 명령(그 위치로부터 MVC 명령을 실행) * 전송 테이블- 1개째가 최대 오프셋이며, 이 예로는 X'F00' ALL      MVC   15*256(100,R2),15*256(R1)         * 16번째의 엔트리의 100바이트를 FROM로부터 TO에 전송 ILEN     EQU   *-ALL                                         MVC 명령의 길이.이 예로는 6          MVC   14*256(100,R2),14*256(R1)         *          MVC   13*256(100,R2),13*256(R1)         *          MVC   12*256(100,R2),12*256(R1)         * 이것들 16개의 문자 전송 명령(MVC)은 베이스+오프셋의 애드레싱이며 MVC 11*256(100, R2),11*256(R1)         * 오프셋은 배열의 요소장(256) 두개 줄어 들고 있다.          MVC   10*256(100,R2),10*256(R1)         * System/360으로는 명령으로 지정할 수 있는 오프셋의 최대치는 X'FFF'여 MVC 09*256(100, R2),09*256(R1)         * 그것을 넘지 않는 범위에서 전개 가능한 최대가 16 요소라는 것이 된다.          MVC   08*256(100,R2),08*256(R1)         * 오프셋의 큰 분으로부터 전송 하므로, 선두의 요소가 마지막에 전송 된다.          MVC   07*256(100,R2),07*256(R1)         *          MVC   06*256(100,R2),06*256(R1)         *          MVC   05*256(100,R2),05*256(R1)         *          MVC   04*256(100,R2),04*256(R1)         *          MVC   03*256(100,R2),03*256(R1)         *          MVC   02*256(100,R2),02*256(R1)         *          MVC   01*256(100,R2),01*256(R1)         2번째의 요소의 100바이트를 전송 MVC 00*256(100, R2),00*256(R1)         1번째의 요소의 100바이트를 전송 *          S     R0,MAXM1                          나머지 요소수를 당기는 BNPR R14                               전부 전송 끝마쳤으므로, R14의 리턴 주소로 호출해 바탕으로 복귀 AH    R1,=AL2(16*256)                   FROM에의 포인터를 1 반복 만큼만 늦추는 AH    R2,=AL2(16*256)                   TO에의 포인터를 1 반복 만큼만 늦추는 L     R15,MAXM1                         R15를 MVC 명령수(16)에 재설정하는(계산으로 망가져 있기 때문에) B     LOOP                              루프의 선두로 돌아온다 * * -----정수와 변수의 정의(인수로서 건네줄 수도 있다) ---------------------------------  * INIT     DS    0A                                LM명령으로 사전 로드 되는 4개의 주소(포인터) MAXM1    DC    A(16)                             MVC 명령수 N        DC    A(50)                             배열의 요소수(변수이며, 변경 가능)          DC    A(FROM)                           배열 1의 선두 주소(포인터) DC    A(TO)                             배열 2의 선두 주소(포인터) * -----배열의 정의(동적으로 확보하는 일도 가능) --------------------------------------------------  * FROM     DS    50CL256                          256바이트&#215;50 엔트리의 배열 TO       DS    50CL256                          256바이트&#215;50 엔트리의 배열 </code> </pre> <p>이 예를 통상의 50회 반복하는 루프로 기술하면 202 명령을 필요로 하지만, 이와 같이 동적 코드로 하면 약 89 명령으로 끝난다( 약56%의 코드 삭감).배열이 2 요소 밖에 없는 경우에서도, 단순한 루프 전개와 동일한 정도의 명령수가 된다.<a href="http://tranpedia.selfhow.com/search?q=%EB%B0%94%EC%9D%B4%EB%84%88%EB%A6%AC&amp;submit=Search" title="바이너리">바이너리</a> 사이즈의 증대는 약 108바이트 정도여, 배열의 요소수가 수천이어도 대응 가능하다.이 경우는 MVC 명령의 반복을 전개했을 뿐이지만, 복수 명령의 경우도 같은 기법이 적용 가능하다.예를 들면, 이 예로 각 요소의 선두 100바이트를 카피한 후, 나머지의 부분을 눌 문자로 클리어 하고 싶은 경우, '<code>XC xx*256+100(156, R1), xx*256+100(R2)</code>'라고 하는 명령을 각 MVC 명령의 뒤에 추가하면 좋다('xx'는 직전의 MVC 명령과 같은 값으로 한다. ILEN의 위치에 주의).</p> <p>4또는 5개의 인수를 가지는 <a href="http://tranpedia.selfhow.com/search?q=%EB%A7%A4%ED%81%AC%EB%A1%9C&amp;submit=Search" title="매크로(컴퓨터 용어)">매크로</a>로 상기 코드를 인 라인 전개하는 것도 가능하고, 써브루틴화하는 것도 가능하다.</p> <h3 class="in-block"><span class="mw-headline" id="C.E8.A8.80.E8.AA.9E.E3.81.AE.E4.BE.8B">C언어의 예</span><span></span></h3> <p>다음 예는 <a href="http://tranpedia.selfhow.com/search?q=C%EC%96%B8%EC%96%B4&amp;submit=Search" title="C언어">C언어</a>로 쓰여진 간단한 프로그램을 동적 루프 전개한 것이다.어셈블리 언어의 상게의 예와는 달라, 변수(i)가 배열의 요소를 가리키는데 사용되고 있기 때문에, 컴파일러는 포인터/인덱스의 계산 코드를 생성하게 된다.최대한 최적화하려면 , 모든 인덱스 지정을 정수에 옮겨놓지 않으면 안 된다.</p> <div class="mw-highlight mw-content-ltr" dir="ltr"> <pre> <span class="cp">#include</span>&lt;<span class="cpf">stdio.h</span>&gt;  <span class="cp">#define TOGETHER (8)</span>  <span class="kt"><span class="p"></span><span class="p"></span>int</span> <span class="nf">main</span>(<span class="kt">void</span>) <span class="p">{</span>  <span class="kt"><span class="o"></span><span class="mi"></span><span class="p"></span>int</span> <span class="n">i</span> = 0;   <span class="kt"><span class="o"></span><span class="p"></span>int</span> <span class="n">entries</span> = <span class="mi">50</span>;                                 /*<span class="cm">총처리 회수</span>*/ <span class="kt">int</span> <span class="n">repeat</span><span class="p">;</span>                                       <span class="o"></span><span class="mi"></span><span class="p"></span>/*<span class="cm">루프 회수</span>*/ <span class="kt">int</span> <span class="n">left</span> = 0;                                     /*<span class="cm">나머지(나중에 처리한다)</span> */ /*<span class="cm">요소수가 BLOCKSIZE로 나뉘어 떨어지지 않는다고 해도,</span>*/ /*<span class="cm">처리의 대부분을 while 루프로 실시하도록(듯이), 반복 회수를 얻는다. */</span>   <span class="n"><span class="o"></span><span class="p"></span><span class="o"></span><span class="p"></span>repeat</span> = (<span class="n">entries</span> / <span class="n">TOGETHER</span>);                    <span class="o"></span><span class="o"></span>/*<span class="cm">반복 회수</span>*/ <span class="n">left</span> = <span class="p">(</span><span class="n">entries</span> % <span class="n">TOGETHER</span><span class="p">)</span>;                    <span class="cm">/*나머지를 계산*/</span>   <span class="cm">/* 8회 만큼의 처리를 전개*/</span>  <span class="k">while</span><span class="p">(</span> <span class="n">repeat</span><span class="o">--</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="p">)</span>   <span class="p">{</span>     <span class="n"><span class="p"></span><span class="s"></span><span class="p"></span>printf</span>("<span class="s">process(%d</span>)\<span class="se">n</span>", <span class="n">i</span>    <span class="p">);</span>     <span class="n"><span class="p"></span><span class="s"></span><span class="p"></span><span class="o"></span><span class="p"></span>printf</span>("<span class="s">process(%d</span>)\<span class="se">n</span>", <span class="n">i</span> + <span class="mi">1</span>);      <span class="n"><span class="p"></span><span class="s"></span><span class="p"></span><span class="o"></span><span class="p"></span>printf</span>("<span class="s">process(%d</span>)\<span class="se">n</span>", <span class="n">i</span> + <span class="mi">2</span>);      <span class="n"><span class="p"></span><span class="s"></span><span class="p"></span><span class="o"></span><span class="p"></span>printf</span>("<span class="s">process(%d</span>)\<span class="se">n</span>", <span class="n">i</span> + <span class="mi">3</span>);      <span class="n"><span class="p"></span><span class="s"></span><span class="p"></span><span class="o"></span><span class="p"></span>printf</span>("<span class="s">process(%d</span>)\<span class="se">n</span>", <span class="n">i</span> + <span class="mi">4</span>);      <span class="n"><span class="p"></span><span class="s"></span><span class="p"></span><span class="o"></span><span class="p"></span>printf</span>("<span class="s">process(%d</span>)\<span class="se">n</span>", <span class="n">i</span> + <span class="mi">5</span>);      <span class="n"><span class="p"></span><span class="s"></span><span class="p"></span><span class="o"></span><span class="p"></span>printf</span>("<span class="s">process(%d</span>)\<span class="se">n</span>", <span class="n">i</span> + <span class="mi">6</span>);      <span class="n"><span class="p"></span><span class="s"></span><span class="p"></span><span class="o"></span><span class="p"></span>printf</span>("<span class="s">process(%d</span>)\<span class="se">n</span>", <span class="n">i</span> + <span class="mi">7</span>);       <span class="cm">/*인덱스를 정리해 갱신*/</span>     <span class="n"><span class="o"></span><span class="p"></span>i</span> += <span class="n">TOGETHER</span>;    <span class="p">}</span>   <span class="cm">/* switch문을 사용해, case 라벨의 점프 하는 것으로 넘치는 부분을 처리한다. */</span>  <span class="cm">/*포르스르에 의해, 넘치는 만큼을 전부 처리한다. */</span>  <span class="k"><span class="p"></span><span class="p"></span>switch</span> (<span class="n">left</span>)   <span class="p">{</span>      <span class="k"><span class="o"></span><span class="p"></span><span class="s"></span><span class="p"></span><span class="o"></span><span class="p"></span>case</span> <span class="mi">7</span> : <span class="n">printf</span>("<span class="s">process(%d</span>)\<span class="se">n</span>", <span class="n">i</span> + <span class="mi">6</span>);       <span class="k"><span class="o"></span><span class="p"></span><span class="s"></span><span class="p"></span><span class="o"></span><span class="p"></span>case</span> <span class="mi">6</span> : <span class="n">printf</span>("<span class="s">process(%d</span>)\<span class="se">n</span>", <span class="n">i</span> + <span class="mi">5</span>);       <span class="k"><span class="o"></span><span class="p"></span><span class="s"></span><span class="p"></span><span class="o"></span><span class="p"></span>case</span> <span class="mi">5</span> : <span class="n">printf</span>("<span class="s">process(%d</span>)\<span class="se">n</span>", <span class="n">i</span> + <span class="mi">4</span>);       <span class="k"><span class="o"></span><span class="p"></span><span class="s"></span><span class="p"></span><span class="o"></span><span class="p"></span>case</span> <span class="mi">4</span> : <span class="n">printf</span>("<span class="s">process(%d</span>)\<span class="se">n</span>", <span class="n">i</span> + <span class="mi">3</span>);       <span class="k"><span class="o"></span><span class="p"></span><span class="s"></span><span class="p"></span><span class="o"></span><span class="p"></span>case</span> <span class="mi">3</span> : <span class="n">printf</span>("<span class="s">process(%d</span>)\<span class="se">n</span>", <span class="n">i</span> + <span class="mi">2</span>);       <span class="k"><span class="o"></span><span class="p"></span><span class="s"></span><span class="p"></span><span class="o"></span><span class="p"></span>case</span> <span class="mi">2</span> : <span class="n">printf</span>("<span class="s">process(%d</span>)\<span class="se">n</span>", <span class="n">i</span> + <span class="mi">1</span>);      <span class="o"></span><span class="s"></span>/*<span class="cm">나머지가 2의 경우</span>*/ <span class="k">case</span> <span class="mi">1</span> : <span class="n">printf</span><span class="p">(</span>"<span class="s">process(%d)</span><span class="se">\n</span>"<span class="p">,</span> <span class="n">i</span>    <span class="p">);</span>      <span class="o"></span>/*<span class="cm">나머지가 1의 경우</span>*/ <span class="k">case</span> <span class="mi">0</span> :                               <span class="p">;</span>      <span class="cm">/*나뉘어 떨어졌을 경우*/</span>   <span class="p">}</span> <span class="p">}</span> </pre></div> </div><h2 class="section-heading in-block" onclick="javascript:mfTempOpenSection(5)"><div class="mw-ui-icon mw-ui-icon-element indicator"></div><span class="mw-headline" id=".E8.84.9A.E6.B3.A8">각주</span> <span></span></h2><div class="mf-section-5 collapsible-block" id="mf-section-5"> <div class="reflist" style="list-style-type: decimal;"> <ol class="references"><li id="cite_note-1"><b><a href="http://tranpedia.selfhow.com/search?q=&amp;submit=Search"></a></b>^ <span class="reference-text"><cite class="citation book" style="font-style:normal">Ullman, Jeffrey D.; Aho, Alfred V. (1977). <i>Principles of compiler design</i>. Reading, Mass: Addison-Wesley Pub. Co. pp.&#160;471&#9633;2. <a href="http://tranpedia.selfhow.com/search?q=ISBN&amp;submit=Search" title="ISBN">ISBN</a>&#160;<a href="http://tranpedia.selfhow.com/search?q=0-201-10073-8&amp;submit=Search" title="특별:문헌 자료/0-201-10073-8">0-201-10073-8</a>.</cite><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=book&amp;rft.btitle=Principles+of+compiler+design&amp;rft.aulast=Ullman%2C+Jeffrey+D.%3B+Aho%2C+Alfred+V.&amp;rft.au=Ullman%2C+Jeffrey+D.%3B+Aho%2C+Alfred+V.&amp;rft.date=1977&amp;rft.pages=pp.%26nbsp%3B471%E2%80%932&amp;rft.place=Reading%2C+Mass&amp;rft.pub=Addison-Wesley+Pub.+Co&amp;rft.isbn=0-201-10073-8&amp;rfr_id=info:sid/ja.wikipedia.org:%E3%83%AB%E3%83%BC%E3%83%97%E5%B1%95%E9%96%8B"><span style="display: none;">&#160;</span></span></span></li> <li id="cite_note-2"><b><a href="http://tranpedia.selfhow.com/search?q=&amp;submit=Search"></a></b>^ <span class="reference-text"><cite class="citation book" style="font-style:normal">Petersen, W.P., Arbenz, P. (2004). <i>Introduction to Parallel Computing</i>. Oxford University Press. p.&#160;10.</cite><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=book&amp;rft.btitle=Introduction+to+Parallel+Computing&amp;rft.aulast=Petersen%2C+W.P.%2C+Arbenz%2C+P.&amp;rft.au=Petersen%2C+W.P.%2C+Arbenz%2C+P.&amp;rft.date=2004&amp;rft.pages=p.%26nbsp%3B10&amp;rft.pub=Oxford+University+Press&amp;rfr_id=info:sid/ja.wikipedia.org:%E3%83%AB%E3%83%BC%E3%83%97%E5%B1%95%E9%96%8B"><span style="display: none;">&#160;</span></span></span></li> <li id="cite_note-3"><b><a href="http://tranpedia.selfhow.com/search?q=&amp;submit=Search"></a></b>^ <span class="reference-text"><cite class="citation Journal" style="font-style:normal">Nicolau, Alexandru (1985). <i>Loop Quantization: Unwinding for Fine-Grain Parallelism Exploitation</i>. Dept. of Computer Science Technical Report. Ithaca, NY: Cornell University. <a href="http://tranpedia.selfhow.com/search?q=OCLC&amp;submit=Search" title="Online Computer Library Center">OCLC</a>&#160;<a class="external text" href="http://tranpedia.selfhow.com/search?q=14638257&amp;submit=Search" rel="nofollow">14638257</a>.</cite><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=book&amp;rft.btitle=Loop+Quantization%3A+Unwinding+for+Fine-Grain+Parallelism+Exploitation&amp;rft.aulast=Nicolau%2C+Alexandru&amp;rft.au=Nicolau%2C+Alexandru&amp;rft.date=1985&amp;rft.series=Dept.+of+Computer+Science+Technical+Report&amp;rft.place=Ithaca%2C+NY&amp;rft.pub=Cornell+University&amp;rft_id=info:oclcnum/14638257&amp;rfr_id=info:sid/ja.wikipedia.org:%E3%83%AB%E3%83%BC%E3%83%97%E5%B1%95%E9%96%8B"><span style="display: none;">&#160;</span></span></span></li> <li id="cite_note-fog2012-4"><b><a href="http://tranpedia.selfhow.com/search?q=&amp;submit=Search"></a></b>^ <span class="reference-text"><cite style="font-style:normal">Fog, Agner (<span title="">2012년 2월 29일</span>). "<a class="external text" href="http://tranpedia.selfhow.com/search?q=Optimizing%20subroutines%20in%20assembly%20language&amp;submit=Search" rel="nofollow">Optimizing subroutines in assembly language</a>".  Copenhagen University College of Engineering. pp.&#160;100. <span title="">2012년 9월 22일</span> 열람.&#160;"12.11 Loop unrolling"</cite></span></li> <li id="cite_note-5"><b><a href="http://tranpedia.selfhow.com/search?q=%5E&amp;submit=Search">^</a></b> <span class="reference-text"><cite class="citation Journal" style="font-style:normal">Sarkar, Vivek (2001). <a class="external text" href="http://tranpedia.selfhow.com/search?q=%E2%80%9COptimized%20Unrolling%20of%20Nested%20Loops%E2%80%9D&amp;submit=Search" rel="nofollow">"Optimized Unrolling of Nested Loops"</a>. <i>International Journal of Parallel Programming</i> <b>29</b> (5): 545&#8211;581. <a href="http://tranpedia.selfhow.com/search?q=doi&amp;submit=Search" title="디지털 오브젝트 식별자">doi</a>:<a class="external text" href="http://tranpedia.selfhow.com/search?q=10.1023/A%3A1012246031671&amp;submit=Search" rel="nofollow">10.1023/A:1012246031671</a><span style="display:none;">. <a class="external free" href="http://tranpedia.selfhow.com/search?q=http%3A//www.springerlink.com/content/g36002133451w774/&amp;submit=Search" rel="nofollow">http://www.springerlink.com/content/g36002133451w774/</a></span>.</cite><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.genre=article&amp;rft.atitle=Optimized+Unrolling+of+Nested+Loops&amp;rft.jtitle=International+Journal+of+Parallel+Programming&amp;rft.aulast=Sarkar%2C+Vivek&amp;rft.au=Sarkar%2C+Vivek&amp;rft.date=2001&amp;rft.volume=29&amp;rft.issue=5&amp;rft.pages=545%E2%80%93581&amp;rft_id=info:doi/10.1023%2FA%3A1012246031671&amp;rft_id=http%3A%2F%2Fwww.springerlink.com%2Fcontent%2Fg36002133451w774%2F&amp;rfr_id=info:sid/ja.wikipedia.org:%E3%83%AB%E3%83%BC%E3%83%97%E5%B1%95%E9%96%8B"><span style="display: none;">&#160;</span></span></span></li> <li id="cite_note-6"><b><a href="http://tranpedia.selfhow.com/search?q=&amp;submit=Search"></a></b>^ <span class="reference-text">Adam Horvath "<a class="external text" href="http://tranpedia.selfhow.com/search?q=Code%20unwinding%20-%20performance%20is%20far%20away&amp;submit=Search" rel="nofollow">Code unwinding - performance is far away</a></span>"</li> </ol></div> </div><h2 class="section-heading in-block" onclick="javascript:mfTempOpenSection(6)"><div class="mw-ui-icon mw-ui-icon-element indicator"></div><span class="mw-headline" id=".E5.8F.82.E8.80.83.E6.96.87.E7.8C.AE">참고 문헌</span> <span></span></h2><div class="mf-section-6 collapsible-block" id="mf-section-6"> <p><cite class="citation book" style="font-style:normal">Kennedy, Ken; &amp; Allen, Randy. (2001). <i>Optimizing Compilers for Modern Architectures: A Dependence-based Approach</i>. Morgan Kaufmann. <a href="http://tranpedia.selfhow.com/search?q=ISBN&amp;submit=Search" title="ISBN">ISBN</a>&#160;<a href="http://tranpedia.selfhow.com/search?q=1-55860-286-0&amp;submit=Search" title="특별:문헌 자료/1-55860-286-0">1-55860-286-0</a>.</cite><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=book&amp;rft.btitle=Optimizing+Compilers+for+Modern+Architectures%3A+A+Dependence-based+Approach&amp;rft.aulast=Kennedy%2C+Ken%3B+%26+Allen%2C+Randy.&amp;rft.au=Kennedy%2C+Ken%3B+%26+Allen%2C+Randy.&amp;rft.date=2001&amp;rft.pub=Morgan+Kaufmann&amp;rft.isbn=1-55860-286-0&amp;rfr_id=info:sid/ja.wikipedia.org:%E3%83%AB%E3%83%BC%E3%83%97%E5%B1%95%E9%96%8B"><span style="display: none;">&#160;</span></span></p> </div><h2 class="section-heading in-block" onclick="javascript:mfTempOpenSection(7)"><div class="mw-ui-icon mw-ui-icon-element indicator"></div><span class="mw-headline" id=".E9.96.A2.E9.80.A3.E9.A0.85.E7.9B.AE">관련 항목</span> <span></span></h2><div class="mf-section-7 collapsible-block" id="mf-section-7"> <ul><li><a href="http://tranpedia.selfhow.com/search?q=%EC%8B%A4%ED%96%89%EC%8B%9C%20%EC%BB%B4%ED%8C%8C%EC%9D%BC%EB%9F%AC&amp;submit=Search" title="실행시 컴파일러">실행시 컴파일러</a></li> <li><span title="링크처의 항목은 아직 없습니다.신규의 집필이나, 발설어판으로부터의 번역이 바람직합니다."><a class="new" href="http://tranpedia.selfhow.com/search?q=%EB%A3%A8%ED%94%84%20%EB%B6%84%ED%95%A0&amp;submit=Search" title="루프 분할(존재하지 않는 페이지)">루프 분할</a><span class="noprint" style="font-size: 0.77em; font-weight: normal;">(<a class="extiw" href="http://tranpedia.selfhow.com/search?q=%EC%98%81%EB%AC%B8%ED%8C%90&amp;submit=Search" title="en:Loop splitting">영문판</a>)</span></span></li> <li><span title="링크처의 항목은 아직 없습니다.신규의 집필이나, 발설어판으로부터의 번역이 바람직합니다."><a class="new" href="http://tranpedia.selfhow.com/search?q=%EB%A3%A8%ED%94%84%20%EC%9C%B5%ED%95%A9&amp;submit=Search" title="루프 융합(존재하지 않는 페이지)">루프 융합</a><span class="noprint" style="font-size: 0.77em; font-weight: normal;">(<a class="extiw" href="http://tranpedia.selfhow.com/search?q=%EC%98%81%EB%AC%B8%ED%8C%90&amp;submit=Search" title="en:Loop fusion">영문판</a>)</span></span></li> <li><a href="http://tranpedia.selfhow.com/search?q=Duff%27s%20device&amp;submit=Search" title="Duff's device">Duff's device</a></li> <li><a href="http://tranpedia.selfhow.com/search?q=%EB%AA%85%EB%A0%B9%20%EB%A0%88%EB%B2%A8%EC%9D%98%20%EB%B3%91%EB%A0%AC%EC%84%B1&amp;submit=Search" title="명령 레벨의 병렬성">명령 레벨의 병렬성</a></li> <li><a href="http://tranpedia.selfhow.com/search?q=%EB%B3%91%EB%A0%AC%20%EA%B3%84%EC%82%B0&amp;submit=Search" title="병렬 계산">병렬 계산</a></li> </ul></div><h2 class="section-heading in-block" onclick="javascript:mfTempOpenSection(8)"><div class="mw-ui-icon mw-ui-icon-element indicator"></div><span class="mw-headline" id=".E5.A4.96.E9.83.A8.E3.83.AA.E3.83.B3.E3.82.AF">외부 링크</span> <span></span></h2><div class="mf-section-8 collapsible-block" id="mf-section-8"> <ul><li><a class="external text" href="http://tranpedia.selfhow.com/search?q=Chapter%207%2C%20pages%208%20to%2010&amp;submit=Search" rel="nofollow">Chapter 7, pages 8 to 10</a>, of Michael Abrash's <i>Graphics Programming Black Book</i> -루프 전개에 대해 논하고 있어 x86 어셈블리 언어의 예도 있다.</li> <li><a class="external text" href="http://tranpedia.selfhow.com/search?q=Generalized%20Loop%20Unrolling&amp;submit=Search" rel="nofollow">Generalized Loop Unrolling</a></li> <li><a class="external text" href="http://tranpedia.selfhow.com/search?q=Optimizing%20subroutines%20in%20assembly%20language&amp;submit=Search" rel="nofollow">Optimizing subroutines in assembly language</a> Agner Fog의 최적화에 대한 핸드북.루프 전개 기법도 게재되고 있다.</li> </ul></div><script>(window.RLQ=window.RLQ||[]).push(function(){mw.log.warn("Gadget \"ReferenceTooltips\" styles loaded twice. Migrate to type=general. See \u003Chttps://phabricator.wikimedia.org/T42284\u003E.");});</script><noscript><img alt="" height="1" src="https://ja.wikipedia.org/wiki/Special:CentralAutoLogin/start?type=1x1&amp;mobile=1" style="border: none; position: absolute;" title="" width="1"/></noscript></div><div class="printfooter"> &#12300;<a dir="ltr" href="http://tranpedia.selfhow.com/search?q=https%3A//ja.wikipedia.org/w/index.php%3F%20title%3D%EB%A3%A8%ED%94%84%20%EC%A0%84%EA%B0%9C%26oldid%3D61560277&amp;submit=Search">https://ja.wikipedia.org/w/index.php? title=루프 전개&amp;oldid=61560277</a>&#12301;으로부터 취득</div> </div>         <p>This article is <a href='https://ja.wikipedia.org/wiki/%E3%83%AB%E3%83%BC%E3%83%97%E5%B1%95%E9%96%8B' target='_blank'>taken from the Japanese Wikipedia  <strong>루프 전개</strong> </a></p>         <p>This article is distributed by cc-by-sa or GFDL license in accordance <a href='https://en.wikipedia.org/wiki/Wikipedia:Copyrights' target='_blank'>with the provisions of Wikipedia.</a></p>         <p><a href='https://en.wikipedia.org/wiki/Wikipedia:General_disclaimer' target='_blank'>Wikipedia and Tranpedia does not guarantee the accuracy of this document. See our disclaimer for more information.</a></p>         <p>In addition, Tranpedia is simply not responsible for any show is only by translating the writings of foreign licenses that are compatible with CC-BY-SA license information.</p>      <div class='ads_adsense_response'> <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script> <ins class="adsbygoogle"      style="display:block"      data-ad-client="ca-pub-8393857339019314"      data-ad-slot="1428352782"      data-ad-format="auto"></ins> <script> (adsbygoogle = window.adsbygoogle || []).push({}); </script> </div> 
+<div style='clear:both;'></div>
+<div class='post-share-buttons'>
+<a class='goog-inline-block share-button sb-email' href='https://www.blogger.com/share-post.g?blogID=6996732972947782461&postID=65427964216509859&target=email' target='_blank' title='이메일로 전송'><span class='share-button-link-text'>이메일로 전송</span></a><a class='goog-inline-block share-button sb-blog' href='https://www.blogger.com/share-post.g?blogID=6996732972947782461&postID=65427964216509859&target=blog' onclick='window.open(this.href, "_blank", "height=270,width=475"); return false;' target='_blank' title='BlogThis!'><span class='share-button-link-text'>BlogThis!</span></a><a class='goog-inline-block share-button sb-twitter' href='https://www.blogger.com/share-post.g?blogID=6996732972947782461&postID=65427964216509859&target=twitter' target='_blank' title='Twitter에서 공유'><span class='share-button-link-text'>Twitter에서 공유</span></a><a class='goog-inline-block share-button sb-facebook' href='https://www.blogger.com/share-post.g?blogID=6996732972947782461&postID=65427964216509859&target=facebook' onclick='window.open(this.href, "_blank", "height=430,width=640"); return false;' target='_blank' title='Facebook에서 공유'><span class='share-button-link-text'>Facebook에서 공유</span></a><div class='goog-inline-block dummy-container'><g:plusone source='blogger:blog:plusone' href='http://pidia.selfhow.com/2016/11/blog-post_8289.html' size='medium' width='300' annotation='inline'/></div>
+</div>
+<span class='reaction-buttons'>
+</span>
+<div style='clear: both;'></div>
+</div>
+<footer class='entry-meta'>
+Posted on <time class='entry-date'>11/29/2016</time><span> by <span>selfpidia</span></span> | <a href='http://pidia.selfhow.com/2016/11/blog-post_8289.html#comment-form' onclick=''>No comments</a>
+</footer>
+</article>
+<div style='clear: both;'></div>
+<div class='blog-pager' id='blog-pager'>
+<span id='blog-pager-newer-link'>
+<a class='blog-pager-newer-link' href='http://pidia.selfhow.com/2016/11/boots-of-rag.html' id='Blog1_blog-pager-newer-link' title='최근 게시물'>최근 게시물</a>
+</span>
+<span id='blog-pager-older-link'>
+<a class='blog-pager-older-link' href='http://pidia.selfhow.com/2016/11/blog-post_555.html' id='Blog1_blog-pager-older-link' title='이전 게시물'>이전 게시물</a>
+</span>
+<a class='home-link' href='http://pidia.selfhow.com/'>홈</a>
+</div>
+<div class='clear'></div>
+<div class='comments' id='comments'>
+<a name='comments'></a>
+<h4>
+0
+개의 댓글:
+        
+</h4>
+<div id='Blog1_comments-block-wrapper'>
+<dl class='avatar-comment-indent' id='comments-block'>
+</dl>
+</div>
+<p class='comment-footer'>
+<div class='comment-form'>
+<a name='comment-form'></a>
+<h4 id='comment-post-message'>댓글 쓰기</h4>
+<p>
+</p>
+<a href='https://www.blogger.com/comment-iframe.g?blogID=6996732972947782461&postID=65427964216509859' id='comment-editor-src'></a>
+<iframe allowtransparency='true' class='blogger-iframe-colorize blogger-comment-from-post' frameborder='0' height='410' id='comment-editor' name='comment-editor' src='' width='100%'></iframe>
+<!--Can't find substitution for tag [post.friendConnectJs]-->
+<script src='https://www.blogger.com/static/v1/jsbin/1565398628-comment_from_post_iframe.js' type='text/javascript'></script>
+<script type='text/javascript'>
+      BLOG_CMT_createIframe('https://www.blogger.com/rpc_relay.html', '0');
+    </script>
+</div>
+</p>
+<div id='backlinks-container'>
+<div id='Blog1_backlinks-container'>
+</div>
+</div>
+</div>
+</div>
+
+        </div></div>
+      
+<!--Can't find substitution for tag [adEnd]-->
+</div>
+<div style='clear: both;'></div>
+<div class='post-feeds'>
+<div class='feed-links'>
+피드 구독하기:
+<a class='feed-link' href='http://pidia.selfhow.com/feeds/65427964216509859/comments/default' target='_blank' type='application/atom+xml'>댓글 (Atom)</a>
+</div>
+</div>
+<script type="text/javascript">window.___gcfg = {'lang': 'ko'};</script>
+</div></div>
+</div><!-- #content .site-content -->
+</div><!-- #primary .content-area -->
+<div class='widget-area' id='secondary' role='complementary'>
+<div class='widget widget_search'>
+<form action='/search' id='searchform' method='get' role='search'>
+<label class='assistive-text' for='s'>Search</label>
+<input class='field' id='s' name='q' placeholder='Search' type='text' value=''/>
+<input class='submit' id='searchsubmit' name='submit' type='submit' value='Search'/>
+</form>
+</div>
+<div class='sidebar section' id='sidebartop'><div class='widget HTML' data-version='1' id='HTML1'>
+<h2 class='title'>Recent Posts</h2>
+<div class='widget-content'>
+</div>
+<div class='clear'></div>
+<span class='widget-item-control'>
+<span class='item-control blog-admin'>
+<a class='quickedit' href='//www.blogger.com/rearrange?blogID=6996732972947782461&widgetType=HTML&widgetId=HTML1&action=editWidget&sectionId=sidebartop' onclick='return _WidgetManager._PopupConfig(document.getElementById("HTML1"));' target='configHTML1' title='수정'>
+<img alt='' height='18' src='https://resources.blogblog.com/img/icon18_wrench_allbkg.png' width='18'/>
+</a>
+</span>
+</span>
+<div class='clear'></div>
+</div>
+<div class='widget PopularPosts' data-version='1' id='PopularPosts1'>
+<h2>Popular Posts</h2>
+<div class='widget-content popular-posts'>
+<ul>
+<li>
+<div class='item-content'>
+<div class='item-title'><a href='http://pidia.selfhow.com/2016/12/blog-post_8280.html'>노예 성도 회장 히카루~음마에 점능 된 학원~</a></div>
+<div class='item-snippet'>      노예 성도 회장 히카루~음마에 점능 된 학원~ &#12300; 노예 성도 회장 히카루~음마에 점능 된 학원~ &#12301;( 어떤 것 줄여가며 꿰매어 실이야 나비히 가벼운 응마가짜응료 되었지만 구원)은, 키르타임코뮤니케이션의 라벨&#12539; 이차원 드림노베르즈 보다 발매된...</div>
+</div>
+<div style='clear: both;'></div>
+</li>
+<li>
+<div class='item-content'>
+<div class='item-title'><a href='http://pidia.selfhow.com/2017/03/blog-post_743.html'>사인&#12539;앤드&#12539;트레이드</a></div>
+<div class='item-snippet'>      사인&#12539;앤드&#12539;트레이드 사인&#12539;앤드&#12539;트레이드 (Sign and Trade)란, 북미 프로 농구 리그인 NBA  에 있어서 선수와 팀간의 계약 이행 형태의 하나이며, 리그와 NBA 선수 조합 과의 사이로의 결정(CBA)에 근거하고 있다.제한 없음의...</div>
+</div>
+<div style='clear: both;'></div>
+</li>
+<li>
+<div class='item-content'>
+<div class='item-title'><a href='http://pidia.selfhow.com/2017/03/8501.html'>인도네시아&#12539;에어 아시아 8501편 추락 사고</a></div>
+<div class='item-snippet'>      인도네시아&#12539;에어 아시아 8501편 추락 사고 인도네시아&#12539;에어 아시아 8501편   2014년 4월에 촬영된 해당기 PK-AXC   사고의 개요  일자  2014년 12월 28일 (2014-12-28)  개요  방향타 (라다-) 제어 시스템의...</div>
+</div>
+<div style='clear: both;'></div>
+</li>
+<li>
+<div class='item-content'>
+<div class='item-title'><a href='http://pidia.selfhow.com/2016/05/blog-post.html'>오오토모노 미유키</a></div>
+<div class='item-snippet'>오오토모노 미유키  &#160;  범례  오오토모노 미유키  시대  아스카 시대  중기-후기  탄생  타이카  2년( 646년 )? [ 1 ]  사망  다이호  원년 1월 15일 ( 701년  2월 27일 )  관직의 등급  마사히로3, 오노말 &#65288; 증 &#12539; 마사...</div>
+</div>
+<div style='clear: both;'></div>
+</li>
+<li>
+<div class='item-content'>
+<div class='item-title'><a href='http://pidia.selfhow.com/2017/02/blog-post_143.html'>중원 대학</a></div>
+<div class='item-snippet'>      중원 대학 나카하라대학      도서관   교훈  독신 역행  창립  1955년  학교 종별  사립대학  가맹 단체  재단법인 사립 나카하라대학  학장  장광정잠대(2012.8- )  직원  489명  학생  16,644명(2009년)  소...</div>
+</div>
+<div style='clear: both;'></div>
+</li>
+<li>
+<div class='item-content'>
+<div class='item-title'><a href='http://pidia.selfhow.com/2017/01/blog-post_767.html'>미즈노 마사유키</a></div>
+<div class='item-snippet'>      미즈노 마사유키  물의 마사유키  미즈노 마사유키  탄생  ( 1977-09-14 )  1977년 9월 14일 (39세)  일본  출신교  케이오 기쥬쿠 대학  졸업  직업  연출가 &#12289; 텔레비전 프로듀서 &#12289; 디렉터  미즈노 마사유키 (미즈노...</div>
+</div>
+<div style='clear: both;'></div>
+</li>
+<li>
+<div class='item-content'>
+<div class='item-title'><a href='http://pidia.selfhow.com/2016/06/blog-post.html'>타카기령</a></div>
+<div class='item-snippet'>       타카기령  타감 료  타카기령  프로필  출신지   일본 &#12539; 도쿄도 세타가야구  생년월일  1989년 9월 9일 (26세)  혈액형  O형  최종 학력  메이지 대학  정보 커뮤니케이션 학부  근무국  동일본 방송  활동 기간  2013년...</div>
+</div>
+<div style='clear: both;'></div>
+</li>
+<li>
+<div class='item-content'>
+<div class='item-title'><a href='http://pidia.selfhow.com/2016/10/blog-post_235.html'>토요타 세리나</a></div>
+<div class='item-snippet'>       토요타 세리나 (와)과낼 수 있는 리나 토요타 세리나   토요타 세리나   프로필  애칭  경배-, 경배-누  생년월일  1990년 10월 9일  현연령  26세  출신지   일본 &#12539; 아이치현  공칭 사이즈( 2016년  시점)  신장 /...</div>
+</div>
+<div style='clear: both;'></div>
+</li>
+<li>
+<div class='item-content'>
+<div class='item-title'><a href='http://pidia.selfhow.com/2017/03/blog-post_74.html'>휴&#12539;헤후나</a></div>
+<div class='item-snippet'>      휴&#12539;헤후나    이 생존 인물의 기사 에는 검증 가능 한 출전 이 요구되고 있습니다 . 신뢰할 수 있는 정보원 의 제공에 협력을 부탁합니다.생존 인물에 관한 출전이 없는, 혹은 불완전한 정보에 근거한 논쟁의 재료, 특히 잠재적으로 중상&#12539;명예...</div>
+</div>
+<div style='clear: both;'></div>
+</li>
+<li>
+<div class='item-content'>
+<div class='item-title'><a href='http://pidia.selfhow.com/2017/03/blog-post_658.html'>석유 발동기</a></div>
+<div class='item-snippet'>      석유 발동기    이 기사는 검증 가능 한 참고 문헌이나 출전 이 전혀 나타나지 않은지, 불충분합니다. 출전을 추가 해 기사의 신뢰성 향상에 협력해 주십시오. ( 2013년 10월 )     이 항목은 그 주제가 일본에 놓여진 기술이 되어 ...</div>
+</div>
+<div style='clear: both;'></div>
+</li>
+</ul>
+<div class='clear'></div>
+<span class='widget-item-control'>
+<span class='item-control blog-admin'>
+<a class='quickedit' href='//www.blogger.com/rearrange?blogID=6996732972947782461&widgetType=PopularPosts&widgetId=PopularPosts1&action=editWidget&sectionId=sidebartop' onclick='return _WidgetManager._PopupConfig(document.getElementById("PopularPosts1"));' target='configPopularPosts1' title='수정'>
+<img alt='' height='18' src='https://resources.blogblog.com/img/icon18_wrench_allbkg.png' width='18'/>
+</a>
+</span>
+</span>
+<div class='clear'></div>
+</div>
+</div><div class='widget BlogArchive' data-version='1' id='BlogArchive1'>
+<h2>Blog Archive</h2>
+<div class='widget-content'>
+<div id='ArchiveList'>
+<div id='BlogArchive1_ArchiveList'>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://pidia.selfhow.com/2018/'>2018</a>
+<span class='post-count' dir='ltr'>(1938)</span>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://pidia.selfhow.com/2018/03/'>3월</a>
+<span class='post-count' dir='ltr'>(194)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://pidia.selfhow.com/2018/02/'>2월</a>
+<span class='post-count' dir='ltr'>(1344)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://pidia.selfhow.com/2018/01/'>1월</a>
+<span class='post-count' dir='ltr'>(400)</span>
+</li>
+</ul>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://pidia.selfhow.com/2017/'>2017</a>
+<span class='post-count' dir='ltr'>(8190)</span>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://pidia.selfhow.com/2017/06/'>6월</a>
+<span class='post-count' dir='ltr'>(1290)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://pidia.selfhow.com/2017/05/'>5월</a>
+<span class='post-count' dir='ltr'>(1316)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://pidia.selfhow.com/2017/04/'>4월</a>
+<span class='post-count' dir='ltr'>(1379)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://pidia.selfhow.com/2017/03/'>3월</a>
+<span class='post-count' dir='ltr'>(1452)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://pidia.selfhow.com/2017/02/'>2월</a>
+<span class='post-count' dir='ltr'>(1303)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://pidia.selfhow.com/2017/01/'>1월</a>
+<span class='post-count' dir='ltr'>(1450)</span>
+</li>
+</ul>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate expanded'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy toggle-open'>&#9660;&#160;</span>
+</a>
+<a class='post-count-link' href='http://pidia.selfhow.com/2016/'>2016</a>
+<span class='post-count' dir='ltr'>(7570)</span>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://pidia.selfhow.com/2016/12/'>12월</a>
+<span class='post-count' dir='ltr'>(1459)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate expanded'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy toggle-open'>&#9660;&#160;</span>
+</a>
+<a class='post-count-link' href='http://pidia.selfhow.com/2016/11/'>11월</a>
+<span class='post-count' dir='ltr'>(1419)</span>
+<ul class='posts'>
+<li><a href='http://pidia.selfhow.com/2016/11/blog-post_2372.html'>알렉산더&#12539;달라스(해군 사관)</a></li>
+<li><a href='http://pidia.selfhow.com/2016/11/blog-post_3383.html'>카와니시 츠바사태</a></li>
+<li><a href='http://pidia.selfhow.com/2016/11/blog-post_5776.html'>히가시아이노나이역</a></li>
+<li><a href='http://pidia.selfhow.com/2016/11/blog-post_5146.html'>진&#12539;여신 전생 데빌 칠드런염의 서&#12539;빙의 책</a></li>
+<li><a href='http://pidia.selfhow.com/2016/11/blog-post_2644.html'>후고&#12539;디스트라(피겨 스케이트 선수)</a></li>
+<li><a href='http://pidia.selfhow.com/2016/11/blog-post_6336.html'>카미노야마시 타치야마 겐추 학교</a></li>
+<li><a href='http://pidia.selfhow.com/2016/11/blog-post_2031.html'>신화(오구리 유타카)</a></li>
+<li><a href='http://pidia.selfhow.com/2016/11/strikeforce-shamrock-vs-baroni.html'>Strikeforce: Shamrock vs. Baroni</a></li>
+<li><a href='http://pidia.selfhow.com/2016/11/blog-post_9145.html'>스티브&#12539;하퍼</a></li>
+<li><a href='http://pidia.selfhow.com/2016/11/scarlet-desire.html'>Scarlet Desire</a></li>
+<li><a href='http://pidia.selfhow.com/2016/11/blog-post_3999.html'>숀&#12539;파이후롬</a></li>
+<li><a href='http://pidia.selfhow.com/2016/11/blog-post_9997.html'>제프&#12539;후란코아</a></li>
+<li><a href='http://pidia.selfhow.com/2016/11/blog-post_7509.html'>마에무라 사키</a></li>
+<li><a href='http://pidia.selfhow.com/2016/11/blog-post_7254.html'>양성 적중율</a></li>
+<li><a href='http://pidia.selfhow.com/2016/11/engadget.html'>Engadget</a></li>
+<li><a href='http://pidia.selfhow.com/2016/11/blog-post_9213.html'>아이치 현립 반전 농업 고등학교</a></li>
+<li><a href='http://pidia.selfhow.com/2016/11/blog-post_2451.html'>일본에서의 아마츄어 무선을 둘러싼 여러 문제</a></li>
+<li><a href='http://pidia.selfhow.com/2016/11/2011_30.html'>마카오 축구 리그 퍼스트 디비전 2011</a></li>
+<li><a href='http://pidia.selfhow.com/2016/11/blog-post_3441.html'>미쥬미성</a></li>
+<li><a href='http://pidia.selfhow.com/2016/11/blog-post_3695.html'>인공의 등장 캐릭터 일람</a></li>
+<li><a href='http://pidia.selfhow.com/2016/11/3_30.html'>춘향과 야요이의 3월식등 글자</a></li>
+<li><a href='http://pidia.selfhow.com/2016/11/2_30.html'>(이)다 한 2호</a></li>
+<li><a href='http://pidia.selfhow.com/2016/11/blog-post_5009.html'>왓트탁스/스탁스&#12539;콘서트</a></li>
+<li><a href='http://pidia.selfhow.com/2016/11/blog-post_8844.html'>노무라 시로</a></li>
+<li><a href='http://pidia.selfhow.com/2016/11/blog-post_2182.html'>이이다방태</a></li>
+<li><a href='http://pidia.selfhow.com/2016/11/blog-post_6516.html'>지바현립 타테야마 운동 공원</a></li>
+<li><a href='http://pidia.selfhow.com/2016/11/blog-post_4395.html'>오토리성히로나무</a></li>
+<li><a href='http://pidia.selfhow.com/2016/11/blog-post_9501.html'>애리카&#12539;에레니악크</a></li>
+<li><a href='http://pidia.selfhow.com/2016/11/blog-post_8151.html'>센다이시립관초등학교</a></li>
+<li><a href='http://pidia.selfhow.com/2016/11/blog-post_7559.html'>황금떡</a></li>
+<li><a href='http://pidia.selfhow.com/2016/11/blog-post_1545.html'>낮 마을</a></li>
+<li><a href='http://pidia.selfhow.com/2016/11/7_30.html'>제백십7호구잠특무정</a></li>
+<li><a href='http://pidia.selfhow.com/2016/11/blog-post_2047.html'>노다이 후생 의료 센터</a></li>
+<li><a href='http://pidia.selfhow.com/2016/11/blog-post_4546.html'>질내사정잉마키모녀 풍덩</a></li>
+<li><a href='http://pidia.selfhow.com/2016/11/blog-post_7548.html'>남자의 약속</a></li>
+<li><a href='http://pidia.selfhow.com/2016/11/blog-post_9350.html'>벨라루스 관계 기사의 일람</a></li>
+<li><a href='http://pidia.selfhow.com/2016/11/blog-post_9569.html'>소마&#12539;레코딘그스</a></li>
+<li><a href='http://pidia.selfhow.com/2016/11/blog-post_2782.html'>검찰 심사회</a></li>
+<li><a href='http://pidia.selfhow.com/2016/11/blog-post_9644.html'>모노노베 쥰코</a></li>
+<li><a href='http://pidia.selfhow.com/2016/11/blog-post_788.html'>사쿠라회마</a></li>
+<li><a href='http://pidia.selfhow.com/2016/11/blog-post_1561.html'>호리이미월</a></li>
+<li><a href='http://pidia.selfhow.com/2016/11/blog-post_4211.html'>오다 노부타카</a></li>
+<li><a href='http://pidia.selfhow.com/2016/11/blog-post_6355.html'>아스티(나나오시)</a></li>
+<li><a href='http://pidia.selfhow.com/2016/11/blog-post_6655.html'>확률 음악</a></li>
+<li><a href='http://pidia.selfhow.com/2016/11/ka-27.html'>Ka-27 (항공기)</a></li>
+<li><a href='http://pidia.selfhow.com/2016/11/2013_29.html'>2013년 세계 복싱 선수권 대회</a></li>
+<li><a href='http://pidia.selfhow.com/2016/11/blog-post_7403.html'>후루이케 카즈코</a></li>
+<li><a href='http://pidia.selfhow.com/2016/11/blog-post_4967.html'>보궐 선거</a></li>
+<li><a href='http://pidia.selfhow.com/2016/11/blog-post_1454.html'>샤롯트&#12539;루이스</a></li>
+<li><a href='http://pidia.selfhow.com/2016/11/blog-post_3749.html'>이라리온&#12539;프랴니시니코후</a></li>
+<li><a href='http://pidia.selfhow.com/2016/11/blog-post_7123.html'>나카가와 아키라</a></li>
+<li><a href='http://pidia.selfhow.com/2016/11/blog-post_9045.html'>구산선</a></li>
+<li><a href='http://pidia.selfhow.com/2016/11/156.html'>156년</a></li>
+<li><a href='http://pidia.selfhow.com/2016/11/blog-post_2986.html'>오가들네</a></li>
+<li><a href='http://pidia.selfhow.com/2016/11/blog-post_8183.html'>아침해나루 보는거야</a></li>
+<li><a href='http://pidia.selfhow.com/2016/11/blog-post_5376.html'>리처드&#12539;콘테</a></li>
+<li><a href='http://pidia.selfhow.com/2016/11/blog-post_2898.html'>도대체 압연 차바퀴</a></li>
+<li><a href='http://pidia.selfhow.com/2016/11/blog-post_4073.html'>알 코레(몬트&#12539;에&#12539;브리안트현)</a></li>
+<li><a href='http://pidia.selfhow.com/2016/11/blog-post_3614.html'>닥터&#12539;카오스</a></li>
+<li><a href='http://pidia.selfhow.com/2016/11/blog-post_5582.html'>쥬디스&#12539;로딘</a></li>
+<li><a href='http://pidia.selfhow.com/2016/11/blog-post_5683.html'>알렉산더의 정리</a></li>
+<li><a href='http://pidia.selfhow.com/2016/11/blog-post_9598.html'>고원 석공</a></li>
+<li><a href='http://pidia.selfhow.com/2016/11/blog-post_3178.html'>죠스&#12539;웨돈</a></li>
+<li><a href='http://pidia.selfhow.com/2016/11/blog-post_3584.html'>도야마지철북두 버스</a></li>
+<li><a href='http://pidia.selfhow.com/2016/11/jimi.html'>JIMI&#65306;영광에의 궤적</a></li>
+<li><a href='http://pidia.selfhow.com/2016/11/blog-post_6860.html'>사쿠라자와마낮</a></li>
+<li><a href='http://pidia.selfhow.com/2016/11/blog-post_9831.html'>가나가와 미츠비시후소자동차판</a></li>
+<li><a href='http://pidia.selfhow.com/2016/11/casa-cn-235.html'>CASA CN-235</a></li>
+<li><a href='http://pidia.selfhow.com/2016/11/blog-post_9500.html'>목욕탕</a></li>
+<li><a href='http://pidia.selfhow.com/2016/11/blog-post_756.html'>리응 먹는 큰 길</a></li>
+<li><a href='http://pidia.selfhow.com/2016/11/boots-of-rag.html'>BOOTS OF THE RAG</a></li>
+<li><a href='http://pidia.selfhow.com/2016/11/blog-post_8289.html'>루프 전개</a></li>
+<li><a href='http://pidia.selfhow.com/2016/11/blog-post_555.html'>히라키 대작</a></li>
+<li><a href='http://pidia.selfhow.com/2016/11/28.html'>나가사키현도 28호 나가사키민예선</a></li>
+<li><a href='http://pidia.selfhow.com/2016/11/blog-post_3298.html'>사라고사 왕국</a></li>
+<li><a href='http://pidia.selfhow.com/2016/11/blog-post_4730.html'>포다르게이</a></li>
+<li><a href='http://pidia.selfhow.com/2016/11/blog-post_2308.html'>야노 켄타로(수학자)</a></li>
+<li><a href='http://pidia.selfhow.com/2016/11/blog-post_9535.html'>결면</a></li>
+<li><a href='http://pidia.selfhow.com/2016/11/blog-post_4877.html'>레네&#12539;적포도주</a></li>
+<li><a href='http://pidia.selfhow.com/2016/11/mk2.html'>초차원 게임네프테누 mk2</a></li>
+<li><a href='http://pidia.selfhow.com/2016/11/m1895.html'>만릿햐 M1895</a></li>
+<li><a href='http://pidia.selfhow.com/2016/11/blog-post_3196.html'>오구라 스포츠</a></li>
+<li><a href='http://pidia.selfhow.com/2016/11/blog-post_605.html'>디비스 컵 벨기에 대표</a></li>
+<li><a href='http://pidia.selfhow.com/2016/11/moonlighting.html'>Moonlighting</a></li>
+<li><a href='http://pidia.selfhow.com/2016/11/macwww.html'>MacWWW</a></li>
+<li><a href='http://pidia.selfhow.com/2016/11/1952.html'>1952년 영국 그랑프리</a></li>
+<li><a href='http://pidia.selfhow.com/2016/11/blog-post_3400.html'>마루야마천</a></li>
+<li><a href='http://pidia.selfhow.com/2016/11/345.html'>345년</a></li>
+<li><a href='http://pidia.selfhow.com/2016/11/blog-post_1817.html'>포트로다데이르</a></li>
+<li><a href='http://pidia.selfhow.com/2016/11/blog-post_8270.html'>자크미</a></li>
+<li><a href='http://pidia.selfhow.com/2016/11/blog-post_5109.html'>이토우일까 와</a></li>
+<li><a href='http://pidia.selfhow.com/2016/11/blog-post_3426.html'>트리가이</a></li>
+<li><a href='http://pidia.selfhow.com/2016/11/blog-post_2317.html'>미만서 학파</a></li>
+<li><a href='http://pidia.selfhow.com/2016/11/blog-post_535.html'>팥소구슬</a></li>
+<li><a href='http://pidia.selfhow.com/2016/11/blog-post_6852.html'>마품왕</a></li>
+<li><a href='http://pidia.selfhow.com/2016/11/yukis-brand.html'>YUKI&#39;S BRAND</a></li>
+<li><a href='http://pidia.selfhow.com/2016/11/blog-post_4567.html'>후린고</a></li>
+<li><a href='http://pidia.selfhow.com/2016/11/blog-post_3878.html'>소우르즈&#12539;오브&#12539;블랙</a></li>
+<li><a href='http://pidia.selfhow.com/2016/11/blog-post_1335.html'>에드거&#12539;곤잘레스(내야수)</a></li>
+<li><a href='http://pidia.selfhow.com/2016/11/blog-post_6091.html'>오르바니&#12539;앤드&#12539;스케네크타디 철도</a></li>
+</ul>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://pidia.selfhow.com/2016/10/'>10월</a>
+<span class='post-count' dir='ltr'>(853)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://pidia.selfhow.com/2016/09/'>9월</a>
+<span class='post-count' dir='ltr'>(708)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://pidia.selfhow.com/2016/08/'>8월</a>
+<span class='post-count' dir='ltr'>(734)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://pidia.selfhow.com/2016/07/'>7월</a>
+<span class='post-count' dir='ltr'>(731)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://pidia.selfhow.com/2016/06/'>6월</a>
+<span class='post-count' dir='ltr'>(705)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://pidia.selfhow.com/2016/05/'>5월</a>
+<span class='post-count' dir='ltr'>(731)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://pidia.selfhow.com/2016/04/'>4월</a>
+<span class='post-count' dir='ltr'>(230)</span>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class='clear'></div>
+<span class='widget-item-control'>
+<span class='item-control blog-admin'>
+<a class='quickedit' href='//www.blogger.com/rearrange?blogID=6996732972947782461&widgetType=BlogArchive&widgetId=BlogArchive1&action=editWidget&sectionId=sidebartop' onclick='return _WidgetManager._PopupConfig(document.getElementById("BlogArchive1"));' target='configBlogArchive1' title='수정'>
+<img alt='' height='18' src='https://resources.blogblog.com/img/icon18_wrench_allbkg.png' width='18'/>
+</a>
+</span>
+</span>
+<div class='clear'></div>
+</div>
+</div><div class='widget Attribution' data-version='1' id='Attribution1'>
+<div class='widget-content' style='text-align: center;'>
+Powered by <a href='https://www.blogger.com' target='_blank'>Blogger</a>.
+</div>
+<div class='clear'></div>
+<span class='widget-item-control'>
+<span class='item-control blog-admin'>
+<a class='quickedit' href='//www.blogger.com/rearrange?blogID=6996732972947782461&widgetType=Attribution&widgetId=Attribution1&action=editWidget&sectionId=sidebartop' onclick='return _WidgetManager._PopupConfig(document.getElementById("Attribution1"));' target='configAttribution1' title='수정'>
+<img alt='' height='18' src='https://resources.blogblog.com/img/icon18_wrench_allbkg.png' width='18'/>
+</a>
+</span>
+</span>
+<div class='clear'></div>
+</div><div class='widget Navbar' data-version='1' id='Navbar1'><script type="text/javascript">
+    function setAttributeOnload(object, attribute, val) {
+      if(window.addEventListener) {
+        window.addEventListener('load',
+          function(){ object[attribute] = val; }, false);
+      } else {
+        window.attachEvent('onload', function(){ object[attribute] = val; });
+      }
+    }
+  </script>
+<div id="navbar-iframe-container"></div>
+<script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
+<script type="text/javascript">
+      gapi.load("gapi.iframes:gapi.iframes.style.bubble", function() {
+        if (gapi.iframes && gapi.iframes.getContext) {
+          gapi.iframes.getContext().openChild({
+              url: 'https://www.blogger.com/navbar.g?targetBlogID\x3d6996732972947782461\x26blogName\x3d%EC%85%80%ED%94%84%ED%94%BC%EB%94%94%EC%95%84\x26publishMode\x3dPUBLISH_MODE_HOSTED\x26navbarType\x3dLIGHT\x26layoutType\x3dLAYOUTS\x26searchRoot\x3dhttp://pidia.selfhow.com/search\x26blogLocale\x3dko\x26v\x3d2\x26homepageUrl\x3dhttp://pidia.selfhow.com/\x26targetPostID\x3d65427964216509859\x26blogPostOrPageUrl\x3dhttp://pidia.selfhow.com/2016/11/blog-post_8289.html\x26vt\x3d-2120267787567503904',
+              where: document.getElementById("navbar-iframe-container"),
+              id: "navbar-iframe"
+          });
+        }
+      });
+    </script><script type="text/javascript">
+(function() {
+var script = document.createElement('script');
+script.type = 'text/javascript';
+script.src = '//pagead2.googlesyndication.com/pagead/js/google_top_exp.js';
+var head = document.getElementsByTagName('head')[0];
+if (head) {
+head.appendChild(script);
+}})();
+</script>
+</div></div>
+</div>
+</div><!-- #main .site-main -->
+<footer class='site-footer' id='colophon' role='contentinfo'>
+<div class='site-info'>
+Copyright &#169; <script type='text/javascript'>var creditsyear = new Date();document.write(creditsyear.getFullYear());</script>
+<a href='http://pidia.selfhow.com/'>셀프피디아</a> | Powered by <a href='http://www.blogger.com/'>Blogger</a>
+</div><!-- .site-info -->
+<div class='author-credit'>
+Design by <a href='http://www.edwardrjenkins.com' target='_blank'>Edward R. Jenkins</a> | Blogger Template by <a href='http://newbloggerthemes.com' target='_blank' title='Best Blogger Templates'>NewBloggerThemes.com</a>
+</div>
+</footer><!-- #colophon .site-footer -->
+</div><!-- #pagebwrap .hfeed .site -->
+</div><!-- .wrapper -->
+<script type='text/javascript'>
+//<![CDATA[
+
+/**
+ * Handles toggling the main navigation menu for small screens.
+ */
+jQuery( document ).ready( function( $ ) {
+	var $masthead = $( '#masthead' ),
+	    timeout = false;
+
+	$.fn.smallMenu = function() {
+		$masthead.find( '.site-navigation' ).removeClass( 'main-navigation' ).addClass( 'main-small-navigation' );
+		$masthead.find( '.site-navigation h1' ).removeClass( 'assistive-text' ).addClass( 'menu-toggle' );
+
+		$( '.menu-toggle' ).unbind( 'click' ).click( function() {
+			$masthead.find( '.menu' ).toggle();
+			$( this ).toggleClass( 'toggled-on' );
+		} );
+	};
+
+	// Check viewport width on first load.
+	if ( $( window ).width() < 600 )
+		$.fn.smallMenu();
+
+	// Check viewport width when user resizes the browser window.
+	$( window ).resize( function() {
+		var browserWidth = $( window ).width();
+
+		if ( false !== timeout )
+			clearTimeout( timeout );
+
+		timeout = setTimeout( function() {
+			if ( browserWidth < 600 ) {
+				$.fn.smallMenu();
+			} else {
+				$masthead.find( '.site-navigation' ).removeClass( 'main-small-navigation' ).addClass( 'main-navigation' );
+				$masthead.find( '.site-navigation h1' ).removeClass( 'menu-toggle' ).addClass( 'assistive-text' );
+				$masthead.find( '.menu' ).removeAttr( 'style' );
+			}
+		}, 200 );
+	} );
+} );
+
+//]]>
+</script>
+<script src='https://apis.google.com/js/plusone.js' type='text/javascript'></script>
+
+<script type="text/javascript" src="https://www.blogger.com/static/v1/widgets/698371418-widgets.js"></script>
+<script type='text/javascript'>
+window['__wavt'] = 'AOuZoY7xDWz9RDg9ENeWMu2qlMYYbQ3pqA:1521420118865';_WidgetManager._Init('//www.blogger.com/rearrange?blogID\x3d6996732972947782461','//pidia.selfhow.com/2016/11/blog-post_8289.html','6996732972947782461');
+_WidgetManager._SetDataContext([{'name': 'blog', 'data': {'blogId': '6996732972947782461', 'title': '셀프피디아', 'url': 'http://pidia.selfhow.com/2016/11/blog-post_8289.html', 'canonicalUrl': 'http://pidia.selfhow.com/2016/11/blog-post_8289.html', 'homepageUrl': 'http://pidia.selfhow.com/', 'searchUrl': 'http://pidia.selfhow.com/search', 'canonicalHomepageUrl': 'http://pidia.selfhow.com/', 'blogspotFaviconUrl': 'http://pidia.selfhow.com/favicon.ico', 'bloggerUrl': 'https://www.blogger.com', 'hasCustomDomain': true, 'httpsEnabled': false, 'enabledCommentProfileImages': true, 'gPlusViewType': 'FILTERED_POSTMOD', 'adultContent': false, 'analyticsAccountNumber': 'UA-73889181-8', 'encoding': 'UTF-8', 'locale': 'ko', 'localeUnderscoreDelimited': 'ko', 'languageDirection': 'ltr', 'isPrivate': false, 'isMobile': false, 'isMobileRequest': false, 'mobileClass': '', 'isPrivateBlog': false, 'feedLinks': '\x3clink rel\x3d\x22alternate\x22 type\x3d\x22application/atom+xml\x22 title\x3d\x22셀프피디아 - Atom\x22 href\x3d\x22http://pidia.selfhow.com/feeds/posts/default\x22 /\x3e\n\x3clink rel\x3d\x22alternate\x22 type\x3d\x22application/rss+xml\x22 title\x3d\x22셀프피디아 - RSS\x22 href\x3d\x22http://pidia.selfhow.com/feeds/posts/default?alt\x3drss\x22 /\x3e\n\x3clink rel\x3d\x22service.post\x22 type\x3d\x22application/atom+xml\x22 title\x3d\x22셀프피디아 - Atom\x22 href\x3d\x22https://www.blogger.com/feeds/6996732972947782461/posts/default\x22 /\x3e\n\n\x3clink rel\x3d\x22alternate\x22 type\x3d\x22application/atom+xml\x22 title\x3d\x22셀프피디아 - Atom\x22 href\x3d\x22http://pidia.selfhow.com/feeds/65427964216509859/comments/default\x22 /\x3e\n', 'meTag': '', 'openIdOpTag': '', 'adsenseHostId': 'ca-host-pub-1556223355139109', 'adsenseHasAds': false, 'view': '', 'dynamicViewsCommentsSrc': '//www.blogblog.com/dynamicviews/4224c15c4e7c9321/js/comments.js', 'dynamicViewsScriptSrc': '//www.blogblog.com/dynamicviews/1eda9627641898c5', 'plusOneApiSrc': 'https://apis.google.com/js/plusone.js', 'sharing': {'platforms': [{'name': '공유 링크 만들기', 'key': 'link', 'shareMessage': '공유 링크 만들기', 'target': ''}, {'name': 'Facebook', 'key': 'facebook', 'shareMessage': 'Facebook에 공유', 'target': 'facebook'}, {'name': 'BlogThis!', 'key': 'blogThis', 'shareMessage': 'BlogThis!', 'target': 'blog'}, {'name': 'Twitter', 'key': 'twitter', 'shareMessage': 'Twitter에 공유', 'target': 'twitter'}, {'name': 'Pinterest', 'key': 'pinterest', 'shareMessage': 'Pinterest에 공유', 'target': 'pinterest'}, {'name': 'Google+', 'key': 'googlePlus', 'shareMessage': 'Google+에 공유', 'target': 'googleplus'}, {'name': '이메일', 'key': 'email', 'shareMessage': '이메일', 'target': 'email'}], 'googlePlusShareButtonWidth': 300, 'googlePlusBootstrap': '\x3cscript type\x3d\x22text/javascript\x22\x3ewindow.___gcfg \x3d {\x27lang\x27: \x27ko\x27};\x3c/script\x3e'}, 'hasCustomJumpLinkMessage': false, 'jumpLinkMessage': '자세한 내용 보기', 'pageType': 'item', 'postId': '65427964216509859', 'postImageUrl': 'https://ja.wikipedia.org/wiki/Special:CentralAutoLogin/start?type\x3d1x1\x26mobile\x3d1', 'pageName': '루프 전개', 'pageTitle': '셀프피디아: 루프 전개'}}, {'name': 'features', 'data': {'lazy_images': 'false', 'sharing_get_link_dialog': 'true', 'sharing_native': 'false'}}, {'name': 'messages', 'data': {'edit': '수정', 'linkCopiedToClipboard': '링크를 클립보드에 복사했습니다.', 'ok': '확인', 'postLink': '글 링크'}}, {'name': 'template', 'data': {'name': 'custom', 'localizedName': '사용자 지정', 'isResponsive': false, 'isAlternateRendering': false, 'isCustom': true}}, {'name': 'view', 'data': {'classic': {'name': 'classic', 'url': '?view\x3dclassic'}, 'flipcard': {'name': 'flipcard', 'url': '?view\x3dflipcard'}, 'magazine': {'name': 'magazine', 'url': '?view\x3dmagazine'}, 'mosaic': {'name': 'mosaic', 'url': '?view\x3dmosaic'}, 'sidebar': {'name': 'sidebar', 'url': '?view\x3dsidebar'}, 'snapshot': {'name': 'snapshot', 'url': '?view\x3dsnapshot'}, 'timeslide': {'name': 'timeslide', 'url': '?view\x3dtimeslide'}, 'isMobile': false, 'title': '루프 전개', 'description': '      루프 전개 루프 전개 (루프라고 야, 영어 : Loop Unwinding )는, 프로그램의 사이즈를 희생에 실행 속도를 최적화하는( 시간과 공간의 트레이드 오프 ), 루프 변환 ( 영문판 ) 으로 불리는 수법의 하나이다. loop unrol...', 'featuredImage': 'https://lh3.googleusercontent.com/proxy/FKlxoYxtGQ70rc6PyaAbflR8G22MmLwYrZ6A-F-WoaiS-KxGcgRMW-TX3M9yfBx99EY0oeibTkoGBIWD4Lz5_g3uOOEgIRXslXbng0jidMdrRKzyZCrpQB49Ct64euL_x6U', 'url': 'http://pidia.selfhow.com/2016/11/blog-post_8289.html', 'type': 'item', 'isSingleItem': true, 'isMultipleItems': false, 'isError': false, 'isPage': false, 'isPost': true, 'isHomepage': false, 'isArchive': false, 'isLabelSearch': false, 'postId': 65427964216509859}}]);
+_WidgetManager._RegisterWidget('_HeaderView', new _WidgetInfo('Header1', 'headersec', null, document.getElementById('Header1'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_BlogView', new _WidgetInfo('Blog1', 'mainblogsec', null, document.getElementById('Blog1'), {'cmtInteractionsEnabled': false, 'useNgc': false, 'lightboxEnabled': true, 'lightboxModuleUrl': 'https://www.blogger.com/static/v1/jsbin/1532655129-lbx__ko.js', 'lightboxCssUrl': 'https://www.blogger.com/static/v1/v-css/368954415-lightbox_bundle.css'}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_HTMLView', new _WidgetInfo('HTML1', 'sidebartop', null, document.getElementById('HTML1'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_PopularPostsView', new _WidgetInfo('PopularPosts1', 'sidebartop', null, document.getElementById('PopularPosts1'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_BlogArchiveView', new _WidgetInfo('BlogArchive1', 'sidebartop', null, document.getElementById('BlogArchive1'), {'languageDirection': 'ltr', 'loadingMessage': '로드 중\x26hellip;'}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_AttributionView', new _WidgetInfo('Attribution1', 'sidebartop', null, document.getElementById('Attribution1'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_NavbarView', new _WidgetInfo('Navbar1', 'sidebartop', null, document.getElementById('Navbar1'), {}, 'displayModeFull'));
+</script>
+</body>
+</html>

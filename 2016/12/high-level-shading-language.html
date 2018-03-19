@@ -1,0 +1,1724 @@
+<!DOCTYPE html>
+<html dir='ltr' xmlns='http://www.w3.org/1999/xhtml' xmlns:b='http://www.google.com/2005/gml/b' xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.com/2005/gml/expr'>
+<head>
+<link href='https://www.blogger.com/static/v1/widgets/3957297643-widget_css_bundle.css' rel='stylesheet' type='text/css'/>
+<meta content='width=device-width' name='viewport'/>
+<meta content='text/html; charset=UTF-8' http-equiv='Content-Type'/>
+<meta content='blogger' name='generator'/>
+<link href='http://pidia.selfhow.com/favicon.ico' rel='icon' type='image/x-icon'/>
+<link href='http://pidia.selfhow.com/2016/12/high-level-shading-language.html' rel='canonical'/>
+<link rel="alternate" type="application/atom+xml" title="셀프피디아 - Atom" href="http://pidia.selfhow.com/feeds/posts/default" />
+<link rel="alternate" type="application/rss+xml" title="셀프피디아 - RSS" href="http://pidia.selfhow.com/feeds/posts/default?alt=rss" />
+<link rel="service.post" type="application/atom+xml" title="셀프피디아 - Atom" href="https://www.blogger.com/feeds/6996732972947782461/posts/default" />
+
+<link rel="alternate" type="application/atom+xml" title="셀프피디아 - Atom" href="http://pidia.selfhow.com/feeds/8478958478467227911/comments/default" />
+<!--Can't find substitution for tag [blog.ieCssRetrofitLinks]-->
+<link href='https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/Question_book-4.svg/50px-Question_book-4.svg.png' rel='image_src'/>
+<meta content='http://pidia.selfhow.com/2016/12/high-level-shading-language.html' property='og:url'/>
+<meta content='High Level Shading Language' property='og:title'/>
+<meta content='      High Level Shading Language High Level Shading Language (하이레벨 쉐이딩 언어, 약칭: HLSL )는 마이크로소프트 에 의해서 개발된, Direct3D  ( DirectX )로 사용되는 프 로그라...' property='og:description'/>
+<meta content='https://lh6.googleusercontent.com/proxy/7IfoWFVzWixu_uM-4zU0fk3hwo97Zgd30IOBqULXDuzP_eFANab2zmDkegKXkW7uW1_s3kQs6I4-Sl-VSl1GLJ0TZam1OZ_VXZWc4n5JFiYKF_o2LB_VoT803V8741HR8cb24MQytzGyX86MB1_a_3CnJlPbCwSOpcWmJYdn=w1200-h630-p-k-no-nu' property='og:image'/>
+<!--[if IE]> <script> (function() { var html5 = ("abbr,article,aside,audio,canvas,datalist,details," + "figure,footer,header,hgroup,mark,menu,meter,nav,output," + "progress,section,time,video").split(','); for (var i = 0; i < html5.length; i++) { document.createElement(html5[i]); } try { document.execCommand('BackgroundImageCache', false, true); } catch(e) {} })(); </script> <![endif]-->
+<link href='http://fonts.googleapis.com/css?family=Gloria+Hallelujah&ver=3.8-alpha' id='chalkboard-gloria-css' media='all' rel='stylesheet' type='text/css'/>
+<link href='http://fonts.googleapis.com/css?family=Roboto:400italic,700italic,400,700&subset=latin,latin-ext' id='chalkboard-roboto-css' media='all' rel='stylesheet' type='text/css'/>
+<!-- Start www.bloggertipandtrick.net: Changing the Blogger Title Tag -->
+<title>High Level Shading Language ~ 셀프피디아</title>
+<!-- End www.bloggertipandtrick.net: Changing the Blogger Title Tag -->
+<!--[if lt IE 9]> <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script> <![endif]-->
+<style id='page-skin-1' type='text/css'><!--
+/*
+-----------------------------------------------
+Template Name  : Classic Chalkboard
+Author         : NewBloggerThemes.com
+Author URL     : http://newbloggerthemes.com/
+Theme URL      : http://newbloggerthemes.com/classic-chalkboard-blogger-template/
+Created Date   : Wednesday, October 30, 2013
+License        : This template is free for both personal and commercial use, But to satisfy the 'attribution' clause of the license, you are required to keep the footer links intact which provides due credit to its authors.For more information about this license, please use this link :http://creativecommons.org/licenses/by/3.0/
+----------------------------------------------- */
+body#layout ul{list-style-type:none;list-style:none}
+body#layout ul li{list-style-type:none;list-style:none}
+body#layout #content {}
+body#layout #slidearea {display:none;}
+body#layout #headbox{display:none;}
+/* Variable definitions
+====================
+*/
+/* Use this with templates/template-twocol.html */
+.section, .widget {
+margin:0;
+padding:0;
+}
+/*
+Resetting and rebuilding styles have been helped along thanks to the fine work of
+Eric Meyer http://meyerweb.com/eric/tools/css/reset/index.html
+along with Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
+and Blueprint http://www.blueprintcss.org/
+*/
+/* =Reset
+-------------------------------------------------------------- */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+border: 0;
+font-family: inherit;
+font-size: 100%;
+font-style: inherit;
+font-weight: inherit;
+margin: 0;
+outline: 0;
+padding: 0;
+vertical-align: baseline;
+}
+html {
+font-size: 62.5%; /* Corrects text resizing oddly in IE6/7 when body font-size is set using em units http://clagnut.com/blog/348/#c790 */
+overflow-y: scroll; /* Keeps page centred in all browsers regardless of content height */
+-webkit-text-size-adjust: 100%; /* Prevents iOS text size adjust after orientation change, without disabling user zoom */
+-ms-text-size-adjust: 100%; /* www.456bereastreet.com/archive/201012/controlling_text_size_in_safari_for_ios_without_disabling_user_zoom/ */
+}
+body, .body-fauxcolumn-outer {
+background: #fff;
+}
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+nav,
+section {
+display: block;
+}
+ol, ul {
+list-style: none;
+}
+table { /* tables still need 'cellspacing="0"' in the markup */
+border-collapse: separate;
+border-spacing: 0;
+}
+caption, th, td {
+font-weight: normal;
+text-align: left;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+content: "";
+}
+blockquote, q {
+quotes: "" "";
+}
+a:focus {
+outline: thin dotted;
+}
+a:hover,
+a:active { /* Improves readability when focused and also mouse hovered in all browsers people.opera.com/patrickl/experiments/keyboard/test */
+outline: 0;
+}
+a img {
+border: 0;
+}
+/* =Global
+----------------------------------------------- */
+body,
+button,
+input,
+select,
+textarea {
+font-family: 'Roboto', Arial, Helvetica, sans-serif;
+font-size: 20px;
+font-size: 2.0rem;
+line-height: 1.6;
+}
+body.sidebar-active {
+font-size: 20px;
+font-size: 2.0rem;
+}
+body, .body-fauxcolumn-outer {
+background: #f1eedc;
+color: #eee;
+}
+/* Headings */
+h1,h2,h3,h4,h5,h6 {
+clear: both;
+font-family: 'Gloria Hallelujah', Arial, Helvetica, sans-serif;
+margin: 1.3em 0 .3em;
+}
+h1 {
+font-size: 48px;
+font-size: 4.8rem;
+margin: 0 0 .3em;
+}
+h2 {
+font-size: 42px;
+font-size: 4.2rem;
+}
+h3 {
+font-size: 36px;
+font-size: 3.6rem;
+}
+h4 {
+font-size: 24px;
+font-size: 2.4rem;
+}
+h5 {
+font-size: 20px;
+font-size: 2.0rem;
+}
+h6 {
+font-size: 18px;
+font-size: 1.8rem;
+}
+hr {
+background-color: #ccc;
+border: 0;
+height: 1px;
+margin-bottom: 1.6em;
+}
+/* Text elements */
+p {
+margin-bottom: 1.6em;
+}
+ul, ol {
+margin: 0 0 1.6em 3em;
+}
+ul {
+list-style: disc;
+}
+ol {
+list-style: decimal;
+}
+ul ul, ol ol, ul ol, ol ul {
+margin-bottom: 0;
+margin-left: 1.6em;
+}
+dt {
+font-weight: bold;
+}
+dd {
+margin: 0 1.6em 1.6em;
+}
+b, strong {
+font-weight: bold;
+}
+dfn, cite, em, i {
+font-style: italic;
+}
+blockquote {
+border-left: 5px solid #f5f5f5;
+font-style: italic;
+margin: 0 1.6em;
+padding: 0 0 0 1.6em;
+}
+address {
+font-style: italic;
+margin: 0 0 1.6em;
+}
+pre {
+background: rgba(255,255,255,.2);
+font-family: "Courier 10 Pitch", Courier, monospace;
+font-size: 18px;
+font-size: 1.8rem;
+line-height: 1.6;
+margin-bottom: 1.6em;
+padding: 1em 1.6em;
+overflow: auto;
+max-width: 100%;
+}
+code, kbd, tt, var {
+font: 18px Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+}
+abbr, acronym {
+border-bottom: 1px dotted #666;
+cursor: help;
+}
+mark, ins {
+background: #fff9c0;
+color: #333;
+text-decoration: none;
+}
+sup,
+sub {
+font-size: 75%;
+height: 0;
+line-height: 0;
+position: relative;
+vertical-align: baseline;
+}
+sup {
+bottom: 1ex;
+}
+sub {
+top: .5ex;
+}
+small {
+font-size: 75%;
+}
+big {
+font-size: 125%;
+}
+figure {
+margin: 0;
+}
+table {
+margin: 0 0 1.6em;
+width: 100%;
+}
+td {
+padding: 5px 7px;
+}
+tr.alternate {
+background: rgba(255,255,255,.1);
+}
+th {
+border-bottom: 5px solid #f5f5f5;
+font-weight: bold;
+padding: 5px 7px;
+}
+button,
+input,
+select,
+textarea {
+font-size: 100%; /* Corrects font size not being inherited in all browsers */
+margin: 0; /* Addresses margins set differently in IE6/7, F3/4, S5, Chrome */
+vertical-align: baseline; /* Improves appearance and consistency in all browsers */
+*vertical-align: middle; /* Improves appearance and consistency in all browsers */
+}
+button,
+input {
+line-height: normal; /* Addresses FF3/4 setting line-height using !important in the UA stylesheet */
+*overflow: visible;  /* Corrects inner spacing displayed oddly in IE6/7 */
+}
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+border: 1px solid #ccc;
+border-color: #ccc #ccc #bbb #ccc;
+border-radius: 3px;
+background: #e6e6e6;
+-webkit-box-shadow: inset 0 1px 0 rgba(255,255,255,0.5), inset 0 15px 17px rgba(255,255,255,0.5), inset 0 -5px 12px rgba(0,0,0,0.05);
+-moz-box-shadow: inset 0 1px 0 rgba(255,255,255,0.5), inset 0 15px 17px rgba(255,255,255,0.5), inset 0 -5px 12px rgba(0,0,0,0.05);
+box-shadow: inset 0 1px 0 rgba(255,255,255,0.5), inset 0 15px 17px rgba(255,255,255,0.5), inset 0 -5px 12px rgba(0,0,0,0.05);
+color: rgba(0,0,0,.8);
+cursor: pointer; /* Improves usability and consistency of cursor style between image-type 'input' and others */
+-webkit-appearance: button; /* Corrects inability to style clickable 'input' types in iOS */
+font-size: 12px;
+font-size: 1.4rem;
+line-height: 1;
+padding: .7em 1.6em .6em;
+text-shadow: 0 1px 0 rgba(255,255,255,.8);
+}
+button:hover,
+html input[type="button"]:hover,
+input[type="reset"]:hover,
+input[type="submit"]:hover {
+border-color: #ccc #bbb #aaa #bbb;
+-webkit-box-shadow: inset 0 1px 0 rgba(255,255,255,0.8), inset 0 15px 17px rgba(255,255,255,0.8), inset 0 -5px 12px rgba(0,0,0,0.02);
+-moz-box-shadow: inset 0 1px 0 rgba(255,255,255,0.8), inset 0 15px 17px rgba(255,255,255,0.8), inset 0 -5px 12px rgba(0,0,0,0.02);
+box-shadow: inset 0 1px 0 rgba(255,255,255,0.8), inset 0 15px 17px rgba(255,255,255,0.8), inset 0 -5px 12px rgba(0,0,0,0.02);
+}
+button:focus,
+html input[type="button"]:focus,
+input[type="reset"]:focus,
+input[type="submit"]:focus,
+button:active,
+html input[type="button"]:active,
+input[type="reset"]:active,
+input[type="submit"]:active {
+border-color: #aaa #bbb #bbb #bbb;
+-webkit-box-shadow: inset 0 -1px 0 rgba(255,255,255,0.5), inset 0 2px 5px rgba(0,0,0,0.15);
+-moz-box-shadow: inset 0 -1px 0 rgba(255,255,255,0.5), inset 0 2px 5px rgba(0,0,0,0.15);
+box-shadow: inset 0 -1px 0 rgba(255,255,255,0.5), inset 0 2px 5px rgba(0,0,0,0.15);
+}
+input[type="checkbox"],
+input[type="radio"] {
+box-sizing: border-box; /* Addresses box sizing set to content-box in IE8/9 */
+padding: 0; /* Addresses excess padding in IE8/9 */
+}
+input[type="search"] {
+-webkit-appearance: textfield; /* Addresses appearance set to searchfield in S5, Chrome */
+-moz-box-sizing: content-box;
+-webkit-box-sizing: content-box; /* Addresses box sizing set to border-box in S5, Chrome (include -moz to future-proof) */
+box-sizing: content-box;
+}
+input[type="search"]::-webkit-search-decoration { /* Corrects inner padding displayed oddly in S5, Chrome on OSX */
+-webkit-appearance: none;
+}
+button::-moz-focus-inner,
+input::-moz-focus-inner { /* Corrects inner padding and border displayed oddly in FF3/4 www.sitepen.com/blog/2008/05/14/the-devils-in-the-details-fixing-dojos-toolbar-buttons/ */
+border: 0;
+padding: 0;
+}
+input[type=text],
+input[type=email],
+input[type=password],
+textarea {
+color: #666;
+border: 1px solid #ccc;
+border-radius: 3px;
+}
+input[type=text]:focus,
+input[type=email]:focus,
+input[type=password]:focus,
+textarea:focus {
+color: #111;
+}
+input[type=text],
+input[type=email],
+input[type=password] {
+padding: 5px;
+position: relative;
+top: 3px;
+}
+textarea {
+overflow: auto; /* Removes default vertical scrollbar in IE6/7/8/9 */
+padding-left: 3px;
+vertical-align: top; /* Improves readability and alignment in all browsers */
+width: 98%;
+}
+/* Links */
+a {
+color: #fff;
+}
+a:visited {
+color: #fff;
+}
+a:hover,
+a:focus,
+a:active {
+color: #fff;
+}
+/* Alignment */
+.alignleft {
+display: inline;
+float: left;
+margin-right: 1.6em;
+margin-top: .8em;
+margin-bottom: .8em;
+}
+.alignright {
+display: inline;
+float: right;
+margin-left: 1.6em;
+margin-top: .8em;
+margin-bottom: .8em;
+}
+.aligncenter {
+clear: both;
+display: block;
+margin: .8em auto;
+}
+/* Text meant only for screen readers */
+.assistive-text {
+clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+clip: rect(1px, 1px, 1px, 1px);
+position: absolute !important;
+}
+/* =Layout
+----------------------------------------------- */
+#pagebwrap {
+background: #000 url('http://2.bp.blogspot.com/-A80lkNvsNUg/UnCKS_gy4iI/AAAAAAAALH4/fBNGe5OjwAo/s1600/chalk2.jpg') repeat;
+background-size: 360px auto;
+border-radius: 10px;
+display: block;
+box-shadow: 5px 5px 20px rgba(0,0,0,.5) inset;
+margin: 0 auto;
+padding: 15px 100px 5px;
+max-width: 960px;
+z-index: 10;
+}
+.wrapper {
+background: #855e42 url('http://2.bp.blogspot.com/-4uPv-bCyM1Y/UnCJh0DlmUI/AAAAAAAALHk/kvDStLoVuz8/s1600/woodtexture.jpg');
+background-size: 225px auto;
+border-radius: 10px;
+box-shadow: 5px 2px 15px rgba(0,0,0,.4);
+display: block;
+margin: 40px auto;
+max-width: 1170px;
+padding: 40px;
+}
+#main:before,
+#main:after {
+content: "";
+display: table;
+}
+#main:after {
+clear: both;
+}
+#primary {
+float: none;
+margin: 0;
+}
+.sidebar-active #primary {
+float: left;
+margin: 0 -25% 0 0;
+width: 100%;
+}
+#content,
+body.page-template-nosidebar-page-php #content,
+body.single-attachment #content {
+margin: 0;
+}
+.sidebar-active #content {
+margin: 0 35% 0 0;
+}
+#secondary { /* Sidebar 1 */
+float: right;
+overflow: hidden;
+width: 25%;
+}
+#tertiary { /* Footer sidebars */
+clear: both;
+}
+.site-footer {
+clear: both;
+width: 100%;
+}
+#colophon {
+background: url('http://1.bp.blogspot.com/-HKu0rscguYo/UnCIrezPUpI/AAAAAAAALHA/VuK3mvmn_6s/s1600/boardbottom-new.png') no-repeat center bottom;
+background-size: 100%;
+clear: both;
+display: block;
+font-family: 'Gloria Hallelujah', Arial, Helvetica, sans-serif;
+font-size: 16px;
+font-size: 1.6rem;
+margin: 50px auto -8px;
+max-width: 800px;
+text-align: center;
+width: 100%;
+min-height: 126px;
+}
+/* =Header
+----------------------------------------------- */
+#masthead {
+font-family: 'Gloria Hallelujah', Arial, Helvetica, sans-serif;
+margin: 0 0 3.2em;
+}
+#masthead:before,
+#masthead:after {
+content: "";
+display: table;
+}
+#masthead:after {
+clear: both;
+}
+#masthead img {
+display: block;
+margin: 15px auto;
+}
+.site-title {
+font-size: 250%;
+font-weight: bold;
+line-height: 1.25;
+margin: .67em 0 5px;
+text-align: center;
+text-decoration: none;
+text-transform: uppercase;
+}
+.site-title a {
+color: #fff;
+text-decoration: none;
+}
+.site-description {
+font-size: 24px;
+font-size: 2.4rem;
+font-weight: normal;
+margin: 0 0 1.6em;
+text-align: center;
+}
+/* =Menu
+----------------------------------------------- */
+.main-navigation {
+clear: both;
+display: block;
+float: left;
+text-align: center;
+width: 100%;
+}
+.main-navigation ul {
+list-style: none;
+margin: 0;
+padding-left: 0;
+}
+.main-navigation li {
+display: inline;
+position: relative;
+}
+.main-navigation a {
+display: inline-block;
+font-size: 19px;
+font-size: 1.9rem;
+line-height: 2em;
+padding: 3px 1em;
+text-align: center;
+text-decoration: none;
+}
+.main-navigation ul ul {
+background: url('http://1.bp.blogspot.com/-fEmJpRZ5E6U/UnCIpwOlVsI/AAAAAAAALG4/uJLT5UDUDyQ/s1600/chalk.png');
+border: 5px solid #f5f5f5;
+border-radius: 5px;
+-moz-box-shadow: 0 3px 3px rgba(0,0,0,0.2);
+-webkit-box-shadow: 0 3px 3px rgba(0,0,0,0.2);
+box-shadow: 0 3px 3px rgba(0,0,0,0.2);
+display: none;
+float: left;
+position: absolute;
+top: 1.6em;
+left: 0;
+z-index: 99999;
+}
+.main-navigation ul ul ul {
+left: 100%;
+top: -6px;
+}
+.main-navigation ul ul a {
+line-height: 1.5;
+text-align: left;
+width: 170px;
+}
+.main-navigation ul ul li {
+}
+.main-navigation li:hover > a {
+opacity: .8;
+}
+.main-navigation ul ul :hover > a {
+}
+.main-navigation ul ul a:hover {
+}
+.main-navigation ul li:hover > ul {
+display: block;
+}
+.main-navigation li.current_page_item a,
+.main-navigation li.current-menu-item a {
+text-decoration: underline;
+}
+/* Small menu */
+.menu-toggle {
+border: 5px solid #fff;
+border-radius: 10px;
+cursor: pointer;
+display: block;
+font-family: "Gloria Hallelujah", Arial, Helvetica, sans-serif;
+font-size: 20px;
+font-size: 2.0rem;
+margin: 0 auto;
+text-align: center;
+width: 125px;
+}
+.main-small-navigation .menu {
+display: none;
+}
+/* =Content
+----------------------------------------------- */
+.sticky.hentry {
+border: 1px solid #f5f5f5;
+border-radius: 15px;
+margin: 0 0 1.6em;
+padding: 30px;
+}
+.sticky.hentry:after,
+.archive .hentry:last-of-type:after,
+.search .hentry:last-of-type:after {
+display: none;
+}
+.hentry {
+margin: 0;
+}
+.hentry:after,
+#tertiary:before {
+background: url('http://1.bp.blogspot.com/-apHpvA6HWu0/UnCJe_DUcWI/AAAAAAAALHQ/EATAIrMRUlE/s1600/postseparator2.png') no-repeat center bottom;
+background-size: 335px auto;
+clear: both;
+content: "";
+display: block;
+margin: 0 0 1.6em;
+width: 100%;
+height: 85px;
+}
+.entry-title {
+font-size: 41px;
+font-size: 4.1rem;
+line-height: 1.2;
+text-align: center;
+margin: 0.5em 0 0.3em;
+}
+.entry-title a {
+text-decoration: none;
+}
+.entry-content {
+font-family: "Roboto", Arial, Helvetica, sans-serif;
+overflow: hidden;
+}
+.entry-meta {
+clear: both;
+color: rgba(255,255,255,.9);
+font-family: 'Gloria Hallelujah', Arial, Helvetica, sans-serif;
+font-size: 18px;
+font-size: 1.8rem;
+font-style: italic;
+text-align: center;
+margin-top: 15px;
+}
+.entry-meta a {
+color: rgba(255,255,255,.9);
+}
+.byline {
+display: none;
+}
+.single .byline,
+.group-blog .byline {
+display: inline;
+}
+.entry-content,
+.entry-summary {
+margin: 1.6em 0 0;
+}
+.page-links {
+clear: both;
+margin: 0 0 1.6em;
+}
+.page-title {
+font-size: 24px;
+font-size: 2.4rem;
+margin: 0 0 1.6em;
+}
+.single-attachment .attachment img {
+display: block;
+margin: 0 auto;
+}
+.single-attachment .entry-caption {
+text-align: center;
+}
+/* =Post Formats
+----------------------------------------------- */
+.format-link .entry-title {
+display: none;
+}
+/* =Media
+----------------------------------------------- */
+.site-header img,
+.entry-content img,
+.comment-content img,
+.widget img {
+max-width: 100%; /* Fluid images for posts, comments, and widgets */
+}
+.site-header img,
+.entry-content img,
+.comment-content img[height],
+img[class*="align"],
+img[class*="wp-image-"],
+.widget img {
+height: auto; /* Make sure images with WordPress-added height and width attributes are scaled correctly */
+}
+.site-header img,
+.entry-content img,
+img.size-full {
+max-width: 100%;
+}
+/* Make sure embeds and iframes fit their containers */
+embed,
+iframe,
+object {
+max-width: 100%;
+}
+/* =Navigation
+----------------------------------------------- */
+#nav-above {
+display: none;
+}
+.site-content .site-navigation {
+margin: 1.6em 0;
+overflow: hidden;
+}
+.site-content .site-navigation a {
+font-family: "Gloria Hallelujah", Arial, Helvetica, sans-serif;
+text-decoration: none;
+}
+.site-content .nav-previous {
+float: left;
+width: 50%;
+}
+.site-content .nav-next,
+.next-image {
+float: right;
+text-align: right;
+width: 50%;
+}
+/* =Widgets
+----------------------------------------------- */
+#tertiary:before,
+#tertiary:after {
+content: "";
+display: table;
+}
+#tertiary:after {
+clear: both;
+}
+.widget-left,
+.widget-middle,
+.widget-right {
+float: left;
+margin-right: 5%;
+overflow: hidden;
+width: 30%;
+}
+.widget-right {
+margin-right: 0;
+}
+.sidebar .widget {
+font-family: "Roboto", Arial, Helvetica, sans-serif;
+font-size: 16px;
+font-size: 1.6rem;
+margin: 0 0 1.6em;
+}
+.widget-title {
+font-family: "Gloria Hallelujah", Arial, Helvetica, sans-serif;
+font-size: 24px;
+font-size: 2.4rem;
+}
+.sidebar .widget h2 {
+font-family: "Gloria Hallelujah", Arial, Helvetica, sans-serif;
+font-size: 24px;
+font-size: 2.4rem;
+}
+.sidebar .widget-content{
+margin:0px;
+padding:0px;
+}
+.sidebar ul{
+margin:0px 0px 0px 24px;
+padding:0px;
+}
+.sidebar ul li{
+padding:5px 0px;
+margin:0px;
+border-bottom:0px solid #eeeeee;
+}
+/* Make sure select elements fit in widgets */
+.sidebar .widget select {
+max-width: 100%;
+}
+/* Search widget */
+#searchsubmit {
+display: none;
+}
+/* =Retina Media Queries
+----------------------------------------------- */
+@media only screen and (-webkit-min-device-pixel-ratio: 2),
+only screen and (-moz-min-device-pixel-ratio: 2),
+only screen and (-o-min-device-pixel-ratio: 2/1),
+only screen and (min-device-pixel-ratio: 2) {
+#colophon {
+background: url('http://2.bp.blogspot.com/-y13MmUYRb8c/UnCJhYXfrbI/AAAAAAAALHg/FbQ8MDfSNYU/s1600/boardbottom-new-2x.png') no-repeat center bottom;
+background-size: 100%;
+}
+}
+/* =Responsive Media Queries
+----------------------------------------------- */
+@media only screen and ( max-width: 900px ) {
+.widget-left,
+.widget-middle,
+.widget-right,
+#secondary {
+clear: both;
+float: none;
+margin: 0;
+width: 100%;
+}
+.sidebar-active #content {
+margin: 0;
+}
+}
+@media only screen and ( max-width: 800px ) {
+body, .body-fauxcolumn-outer {
+font-size: 18px;
+font-size: 1.8rem;
+}
+.wrapper {
+padding: 20px;
+}
+#pagebwrap {
+padding: 30px 30px 0;
+}
+.entry-title {
+font-size: 28px;
+font-size: 2.8rem;
+}
+.site-title {
+font-size: 36px;
+font-size: 3.6rem;
+}
+#colophon,
+.entry-meta,
+.entry-content {
+font-size: 14px;
+font-size: 1.4rem;
+}
+#colophon {
+max-width: 100%;
+}
+}
+h2.date-header {
+margin: 1.5em 0 .5em;
+display: none;
+}
+.main .widget {
+margin: 0 0 5px;
+padding: 0 0 2px;
+}
+.main .Blog {
+border-bottom-width: 0;
+}
+#header .description {
+color:#ffffff;
+font-size:14px;
+text-shadow:0px 1px 0px #000000;
+}
+/* Comments----------------------------------------------- */
+#comments {
+padding:10px;
+margin-bottom:20px;
+}
+#comments h4 {
+font-size:22px;
+margin-bottom:10px;
+}
+.deleted-comment {
+font-style: italic;
+color: gray;
+}
+#blog-pager-newer-link {
+float: left;
+}
+#blog-pager-older-link {
+float: right;
+}
+#blog-pager {
+text-align: center;
+padding:5px;
+}
+.feed-links {
+clear: both;
+}
+.comment-form {
+max-width: 600px;
+}
+#navbar-iframe {
+height: 0;
+visibility: hidden;
+display: none;
+}
+.PopularPosts .widget-content ul li {
+padding:6px 0px;
+}
+.reaction-buttons table{
+border:none;
+margin-bottom:5px;
+}
+.reaction-buttons table, .reaction-buttons td{
+border:none;
+}
+.bthumbimg {
+float:left;
+margin:0px 10px 5px 0px;
+background:none;
+padding:3px;
+border:1px solid #eee;
+}
+
+--></style>
+<script src='https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js' type='text/javascript'></script>
+<script type='text/javascript'>
+//<![CDATA[
+
+/*! jQuery Migrate v1.2.1 | (c) 2005, 2013 jQuery Foundation, Inc. and other contributors | jquery.org/license */
+jQuery.migrateMute===void 0&&(jQuery.migrateMute=!0),function(e,t,n){function r(n){var r=t.console;i[n]||(i[n]=!0,e.migrateWarnings.push(n),r&&r.warn&&!e.migrateMute&&(r.warn("JQMIGRATE: "+n),e.migrateTrace&&r.trace&&r.trace()))}function a(t,a,i,o){if(Object.defineProperty)try{return Object.defineProperty(t,a,{configurable:!0,enumerable:!0,get:function(){return r(o),i},set:function(e){r(o),i=e}}),n}catch(s){}e._definePropertyBroken=!0,t[a]=i}var i={};e.migrateWarnings=[],!e.migrateMute&&t.console&&t.console.log&&t.console.log("JQMIGRATE: Logging is active"),e.migrateTrace===n&&(e.migrateTrace=!0),e.migrateReset=function(){i={},e.migrateWarnings.length=0},"BackCompat"===document.compatMode&&r("jQuery is not compatible with Quirks Mode");var o=e("<input/>",{size:1}).attr("size")&&e.attrFn,s=e.attr,u=e.attrHooks.value&&e.attrHooks.value.get||function(){return null},c=e.attrHooks.value&&e.attrHooks.value.set||function(){return n},l=/^(?:input|button)$/i,d=/^[238]$/,p=/^(?:autofocus|autoplay|async|checked|controls|defer|disabled|hidden|loop|multiple|open|readonly|required|scoped|selected)$/i,f=/^(?:checked|selected)$/i;a(e,"attrFn",o||{},"jQuery.attrFn is deprecated"),e.attr=function(t,a,i,u){var c=a.toLowerCase(),g=t&&t.nodeType;return u&&(4>s.length&&r("jQuery.fn.attr( props, pass ) is deprecated"),t&&!d.test(g)&&(o?a in o:e.isFunction(e.fn[a])))?e(t)[a](i):("type"===a&&i!==n&&l.test(t.nodeName)&&t.parentNode&&r("Can't change the 'type' of an input or button in IE 6/7/8"),!e.attrHooks[c]&&p.test(c)&&(e.attrHooks[c]={get:function(t,r){var a,i=e.prop(t,r);return i===!0||"boolean"!=typeof i&&(a=t.getAttributeNode(r))&&a.nodeValue!==!1?r.toLowerCase():n},set:function(t,n,r){var a;return n===!1?e.removeAttr(t,r):(a=e.propFix[r]||r,a in t&&(t[a]=!0),t.setAttribute(r,r.toLowerCase())),r}},f.test(c)&&r("jQuery.fn.attr('"+c+"') may use property instead of attribute")),s.call(e,t,a,i))},e.attrHooks.value={get:function(e,t){var n=(e.nodeName||"").toLowerCase();return"button"===n?u.apply(this,arguments):("input"!==n&&"option"!==n&&r("jQuery.fn.attr('value') no longer gets properties"),t in e?e.value:null)},set:function(e,t){var a=(e.nodeName||"").toLowerCase();return"button"===a?c.apply(this,arguments):("input"!==a&&"option"!==a&&r("jQuery.fn.attr('value', val) no longer sets properties"),e.value=t,n)}};var g,h,v=e.fn.init,m=e.parseJSON,y=/^([^<]*)(<[\w\W]+>)([^>]*)$/;e.fn.init=function(t,n,a){var i;return t&&"string"==typeof t&&!e.isPlainObject(n)&&(i=y.exec(e.trim(t)))&&i[0]&&("<"!==t.charAt(0)&&r("$(html) HTML strings must start with '<' character"),i[3]&&r("$(html) HTML text after last tag is ignored"),"#"===i[0].charAt(0)&&(r("HTML string cannot start with a '#' character"),e.error("JQMIGRATE: Invalid selector string (XSS)")),n&&n.context&&(n=n.context),e.parseHTML)?v.call(this,e.parseHTML(i[2],n,!0),n,a):v.apply(this,arguments)},e.fn.init.prototype=e.fn,e.parseJSON=function(e){return e||null===e?m.apply(this,arguments):(r("jQuery.parseJSON requires a valid JSON string"),null)},e.uaMatch=function(e){e=e.toLowerCase();var t=/(chrome)[ \/]([\w.]+)/.exec(e)||/(webkit)[ \/]([\w.]+)/.exec(e)||/(opera)(?:.*version|)[ \/]([\w.]+)/.exec(e)||/(msie) ([\w.]+)/.exec(e)||0>e.indexOf("compatible")&&/(mozilla)(?:.*? rv:([\w.]+)|)/.exec(e)||[];return{browser:t[1]||"",version:t[2]||"0"}},e.browser||(g=e.uaMatch(navigator.userAgent),h={},g.browser&&(h[g.browser]=!0,h.version=g.version),h.chrome?h.webkit=!0:h.webkit&&(h.safari=!0),e.browser=h),a(e,"browser",e.browser,"jQuery.browser is deprecated"),e.sub=function(){function t(e,n){return new t.fn.init(e,n)}e.extend(!0,t,this),t.superclass=this,t.fn=t.prototype=this(),t.fn.constructor=t,t.sub=this.sub,t.fn.init=function(r,a){return a&&a instanceof e&&!(a instanceof t)&&(a=t(a)),e.fn.init.call(this,r,a,n)},t.fn.init.prototype=t.fn;var n=t(document);return r("jQuery.sub() is deprecated"),t},e.ajaxSetup({converters:{"text json":e.parseJSON}});var b=e.fn.data;e.fn.data=function(t){var a,i,o=this[0];return!o||"events"!==t||1!==arguments.length||(a=e.data(o,t),i=e._data(o,t),a!==n&&a!==i||i===n)?b.apply(this,arguments):(r("Use of jQuery.fn.data('events') is deprecated"),i)};var j=/\/(java|ecma)script/i,w=e.fn.andSelf||e.fn.addBack;e.fn.andSelf=function(){return r("jQuery.fn.andSelf() replaced by jQuery.fn.addBack()"),w.apply(this,arguments)},e.clean||(e.clean=function(t,a,i,o){a=a||document,a=!a.nodeType&&a[0]||a,a=a.ownerDocument||a,r("jQuery.clean() is deprecated");var s,u,c,l,d=[];if(e.merge(d,e.buildFragment(t,a).childNodes),i)for(c=function(e){return!e.type||j.test(e.type)?o?o.push(e.parentNode?e.parentNode.removeChild(e):e):i.appendChild(e):n},s=0;null!=(u=d[s]);s++)e.nodeName(u,"script")&&c(u)||(i.appendChild(u),u.getElementsByTagName!==n&&(l=e.grep(e.merge([],u.getElementsByTagName("script")),c),d.splice.apply(d,[s+1,0].concat(l)),s+=l.length));return d});var Q=e.event.add,x=e.event.remove,k=e.event.trigger,N=e.fn.toggle,T=e.fn.live,M=e.fn.die,S="ajaxStart|ajaxStop|ajaxSend|ajaxComplete|ajaxError|ajaxSuccess",C=RegExp("\\b(?:"+S+")\\b"),H=/(?:^|\s)hover(\.\S+|)\b/,A=function(t){return"string"!=typeof t||e.event.special.hover?t:(H.test(t)&&r("'hover' pseudo-event is deprecated, use 'mouseenter mouseleave'"),t&&t.replace(H,"mouseenter$1 mouseleave$1"))};e.event.props&&"attrChange"!==e.event.props[0]&&e.event.props.unshift("attrChange","attrName","relatedNode","srcElement"),e.event.dispatch&&a(e.event,"handle",e.event.dispatch,"jQuery.event.handle is undocumented and deprecated"),e.event.add=function(e,t,n,a,i){e!==document&&C.test(t)&&r("AJAX events should be attached to document: "+t),Q.call(this,e,A(t||""),n,a,i)},e.event.remove=function(e,t,n,r,a){x.call(this,e,A(t)||"",n,r,a)},e.fn.error=function(){var e=Array.prototype.slice.call(arguments,0);return r("jQuery.fn.error() is deprecated"),e.splice(0,0,"error"),arguments.length?this.bind.apply(this,e):(this.triggerHandler.apply(this,e),this)},e.fn.toggle=function(t,n){if(!e.isFunction(t)||!e.isFunction(n))return N.apply(this,arguments);r("jQuery.fn.toggle(handler, handler...) is deprecated");var a=arguments,i=t.guid||e.guid++,o=0,s=function(n){var r=(e._data(this,"lastToggle"+t.guid)||0)%o;return e._data(this,"lastToggle"+t.guid,r+1),n.preventDefault(),a[r].apply(this,arguments)||!1};for(s.guid=i;a.length>o;)a[o++].guid=i;return this.click(s)},e.fn.live=function(t,n,a){return r("jQuery.fn.live() is deprecated"),T?T.apply(this,arguments):(e(this.context).on(t,this.selector,n,a),this)},e.fn.die=function(t,n){return r("jQuery.fn.die() is deprecated"),M?M.apply(this,arguments):(e(this.context).off(t,this.selector||"**",n),this)},e.event.trigger=function(e,t,n,a){return n||C.test(e)||r("Global events are undocumented and deprecated"),k.call(this,e,t,n||document,a)},e.each(S.split("|"),function(t,n){e.event.special[n]={setup:function(){var t=this;return t!==document&&(e.event.add(document,n+"."+e.guid,function(){e.event.trigger(n,null,t,!0)}),e._data(this,n,e.guid++)),!1},teardown:function(){return this!==document&&e.event.remove(document,n+"."+e._data(this,n)),!1}}})}(jQuery,window);
+
+//]]>
+</script>
+<script type='text/javascript'>
+//<![CDATA[
+
+function showrecentcomments(json){for(var i=0;i<a_rc;i++){var b_rc=json.feed.entry[i];var c_rc;if(i==json.feed.entry.length)break;for(var k=0;k<b_rc.link.length;k++){if(b_rc.link[k].rel=='alternate'){c_rc=b_rc.link[k].href;break;}}c_rc=c_rc.replace("#","#comment-");var d_rc=c_rc.split("#");d_rc=d_rc[0];var e_rc=d_rc.split("/");e_rc=e_rc[5];e_rc=e_rc.split(".html");e_rc=e_rc[0];var f_rc=e_rc.replace(/-/g," ");f_rc=f_rc.link(d_rc);var g_rc=b_rc.published.$t;var h_rc=g_rc.substring(0,4);var i_rc=g_rc.substring(5,7);var j_rc=g_rc.substring(8,10);var k_rc=new Array();k_rc[1]="Jan";k_rc[2]="Feb";k_rc[3]="Mar";k_rc[4]="Apr";k_rc[5]="May";k_rc[6]="Jun";k_rc[7]="Jul";k_rc[8]="Aug";k_rc[9]="Sep";k_rc[10]="Oct";k_rc[11]="Nov";k_rc[12]="Dec";if("content" in b_rc){var l_rc=b_rc.content.$t;}else if("summary" in b_rc){var l_rc=b_rc.summary.$t;}else var l_rc="";var re=/<\S[^>]*>/g;l_rc=l_rc.replace(re,"");if(m_rc==true)document.write('On '+k_rc[parseInt(i_rc,10)]+' '+j_rc+' ');document.write('<a href="'+c_rc+'">'+b_rc.author[0].name.$t+'</a> commented');if(n_rc==true)document.write(' on '+f_rc);document.write(': ');if(l_rc.length<o_rc){document.write('<i>&#8220;');document.write(l_rc);document.write('&#8221;</i><br/><br/>');}else{document.write('<i>&#8220;');l_rc=l_rc.substring(0,o_rc);var p_rc=l_rc.lastIndexOf(" ");l_rc=l_rc.substring(0,p_rc);document.write(l_rc+'&hellip;&#8221;</i>');document.write('<br/><br/>');}}}
+
+function rp(json){document.write('<ul>');for(var i=0;i<numposts;i++){document.write('<li>');var entry=json.feed.entry[i];var posttitle=entry.title.$t;var posturl;if(i==json.feed.entry.length)break;for(var k=0;k<entry.link.length;k++){if(entry.link[k].rel=='alternate'){posturl=entry.link[k].href;break}}posttitle=posttitle.link(posturl);var readmorelink="(more)";readmorelink=readmorelink.link(posturl);var postdate=entry.published.$t;var cdyear=postdate.substring(0,4);var cdmonth=postdate.substring(5,7);var cdday=postdate.substring(8,10);var monthnames=new Array();monthnames[1]="Jan";monthnames[2]="Feb";monthnames[3]="Mar";monthnames[4]="Apr";monthnames[5]="May";monthnames[6]="Jun";monthnames[7]="Jul";monthnames[8]="Aug";monthnames[9]="Sep";monthnames[10]="Oct";monthnames[11]="Nov";monthnames[12]="Dec";if("content"in entry){var postcontent=entry.content.$t}else if("summary"in entry){var postcontent=entry.summary.$t}else var postcontent="";var re=/<\S[^>]*>/g;postcontent=postcontent.replace(re,"");document.write(posttitle);if(showpostdate==true)document.write(' - '+monthnames[parseInt(cdmonth,10)]+' '+cdday);if(showpostsummary==true){if(postcontent.length<numchars){document.write(postcontent)}else{postcontent=postcontent.substring(0,numchars);var quoteEnd=postcontent.lastIndexOf(" ");postcontent=postcontent.substring(0,quoteEnd);document.write(postcontent+'...'+readmorelink)}}document.write('</li>')}document.write('</ul>')}
+
+//]]>
+</script>
+<style id='custom-background-css' type='text/css'>
+body.custom-background { background-image: url('http://2.bp.blogspot.com/-oS920l1lAcQ/UnCJgDGqawI/AAAAAAAALHY/GRklHHyHTjM/s1600/walltexture.png'); background-repeat: repeat; background-position: top left; background-attachment: scroll; }
+</style>
+<link href='https://www.blogger.com/dyn-css/authorization.css?targetBlogID=6996732972947782461&amp;zx=f4c524e6-0f98-445f-8404-7de1e7905bae' media='none' onload='if(media!=&#39;all&#39;)media=&#39;all&#39;' rel='stylesheet'/><noscript><link href='https://www.blogger.com/dyn-css/authorization.css?targetBlogID=6996732972947782461&amp;zx=f4c524e6-0f98-445f-8404-7de1e7905bae' rel='stylesheet'/></noscript>
+</head>
+<body class='custom-background sidebar-active'>
+<div class='wrapper'>
+<div id='pagebwrap'>
+<header class='site-header' id='masthead' role='banner'>
+<div class='headersec section' id='headersec'><div class='widget Header' data-version='1' id='Header1'>
+<div id='header-inner'>
+<div class='titlewrapper'>
+<h1 class='site-title'>
+<a href='http://pidia.selfhow.com/'>셀프피디아</a>
+</h1>
+</div>
+<div class='descriptionwrapper'>
+<h2 class='site-description'>일본 위키피디아 번역</h2>
+</div>
+</div>
+</div></div>
+<nav class='site-navigation main-navigation' role='navigation'>
+<h1 class='assistive-text'>Menu</h1>
+<div class='assistive-text skip-link'><a href='#content' title='Skip to content'>Skip to content</a></div>
+<div class='menu'>
+<ul>
+<li><a href='http://pidia.selfhow.com/'>Home</a></li>
+<li><a href='#'>Business</a>
+<ul class='children'>
+<li><a href='#'>Internet</a></li>
+<li><a href='#'>Market</a></li>
+<li><a href='#'>Stock</a></li>
+</ul>
+</li>
+<li><a href='#'>Downloads</a>
+<ul class='children'>
+<li><a href='#'>Dvd</a></li>
+<li><a href='#'>Games</a></li>
+<li><a href='#'>Software</a>
+<ul class='children'>
+<li><a href='#'>Office</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href='#'>Parent Category</a>
+<ul class='children'>
+<li><a href='#'>Child Category 1</a>
+<ul class='children'>
+<li><a href='#'>Sub Child Category 1</a></li>
+<li><a href='#'>Sub Child Category 2</a></li>
+<li><a href='#'>Sub Child Category 3</a></li>
+</ul>
+</li>
+<li><a href='#'>Child Category 2</a></li>
+<li><a href='#'>Child Category 3</a></li>
+<li><a href='#'>Child Category 4</a></li>
+</ul>
+</li>
+<li><a href='#'>Featured</a></li>
+</ul>
+</div>
+</nav><!-- .site-navigation .main-navigation -->
+</header><!-- #masthead .site-header -->
+<div class='site-main' id='main'>
+<div class='content-area' id='primary'>
+<div class='site-content' id='content' role='main'>
+<div class='mainblogsec section' id='mainblogsec'><div class='widget Blog' data-version='1' id='Blog1'>
+<div class='blog-posts hfeed'>
+<!--Can't find substitution for tag [defaultAdStart]-->
+
+          <div class="date-outer">
+        
+<h2 class='date-header'><span>2016년 12월 19일 월요일</span></h2>
+
+          <div class="date-posts">
+        
+<div class='post-outer'>
+<article class='post hentry'>
+<a name='8478958478467227911'></a>
+<header class='entry-header'>
+<h2 class='post-title entry-title'>
+<a href='http://pidia.selfhow.com/2016/12/high-level-shading-language.html'>High Level Shading Language</a>
+</h2>
+</header>
+<div class='post-header-line-1'></div>
+<div class='post-body entry-content'>
+ <div class='ads_adsense_response'> <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script> <ins class="adsbygoogle"      style="display:block"      data-ad-client="ca-pub-8393857339019314"      data-ad-slot="1428352782"      data-ad-format="auto"></ins> <script> (adsbygoogle = window.adsbygoogle || []).push({}); </script> </div> <h1>High Level Shading Language</h1><div class="content" id="bodyContent"><div class="mw-content-ltr" dir="ltr" id="mw-content-text" lang="ja"><script>function mfTempOpenSection(id){var block=document.getElementById("mf-section-"+id);block.className+=" open-block";block.previousSibling.className+=" open-block";}</script><div class="mf-section-0" id="mf-section-0"><p><b>High Level Shading Language</b>(하이레벨 쉐이딩 언어, 약칭: <b>HLSL</b>)는 <a href="http://tranpedia.selfhow.com/search?q=%EB%A7%88%EC%9D%B4%ED%81%AC%EB%A1%9C%EC%86%8C%ED%94%84%ED%8A%B8&amp;submit=Search" title="마이크로소프트">마이크로소프트</a>에 의해서 개발된, <a href="http://tranpedia.selfhow.com/search?q=Direct3D&amp;submit=Search" title="Direct3D">Direct3D</a> (<a class="mw-redirect" href="http://tranpedia.selfhow.com/search?q=DirectX&amp;submit=Search" title="DirectX">DirectX</a>)로 사용되는 프<a class="mw-redirect" href="http://tranpedia.selfhow.com/search?q=%EB%A1%9C%EA%B7%B8%EB%9D%BC%EB%A7%88%EB%B8%8C%EB%A5%B4%EC%8B%9C%EB%8B%A4%EB%A5%BC&amp;submit=Search" title="프로그라마브르시다">로그라마브르시다를</a> 위한 프<a href="http://tranpedia.selfhow.com/search?q=%EB%A1%9C%ED%94%84%EB%9D%BC%EC%9D%B4%EC%97%90%ED%83%80%EB%A6%AC%EC%9D%B8&amp;submit=Search" title="프로프라이에타리&#12539;소프트웨어">로프라이에타리인</a> <a href="http://tranpedia.selfhow.com/search?q=%EC%89%90%EC%9D%B4%EB%94%A9%20%EC%96%B8%EC%96%B4%EC%9D%B4&amp;submit=Search" title="쉐이딩 언어">쉐이딩 언어이</a>다. 이전에는 <b>High Level Shader Language</b>라고 하는 부르는 법도 되고 있던[<sup class="reference" id="cite_ref-1"><a href="http://tranpedia.selfhow.com/search?q=1&amp;submit=Search">1</a></sup>].다만 MSDN의 일본어판으로는, Direct3D 11이 릴리스 된 나중에도 <b>상위 레베르시다 언어</b>(지우이레베루시다 언어)라고 하는 역어를 사용하고 있는[<sup class="reference" id="cite_ref-2"><a href="http://tranpedia.selfhow.com/search?q=2&amp;submit=Search">2</a></sup>] [<sup class="reference" id="cite_ref-3"><a href="http://tranpedia.selfhow.com/search?q=3&amp;submit=Search">3</a></sup>].</p> <p>HLSL는 <a href="http://tranpedia.selfhow.com/search?q=OpenGL&amp;submit=Search" title="OpenGL">OpenGL</a>로 사용되는 쉐이딩 언어인 <a href="http://tranpedia.selfhow.com/search?q=GLSL&amp;submit=Search" title="GLSL">GLSL</a>와(기능적으로는) 유사한 물건이다.또, <a href="http://tranpedia.selfhow.com/search?q=NVIDIA&amp;submit=Search" title="NVIDIA">NVIDIA</a>와 협력해 개발된 것으로부터, 언어 문법이 <a href="http://tranpedia.selfhow.com/search?q=Cg&amp;submit=Search" title="Cg (프로그램 언어)">Cg</a>(C for Graphics) 언어에 매우 잘 비슷하다.</p> <p></p> <div class="toc-mobile" id="toc"><h2>목차</h2></div></div><h2 class="section-heading in-block" onclick="javascript:mfTempOpenSection(1)"><div class="mw-ui-icon mw-ui-icon-element indicator"></div><span class="mw-headline" id=".E9.96.8B.E7.99.BA.E7.B5.8C.E7.B7.AF">개발 경위</span> <span></span></h2><div class="mf-section-1 collapsible-block" id="mf-section-1"> <p>Direct3D 7까지는 그래픽 카드에 실장된 고정 파이프라인 및 하드웨어 기능을 구사해 3 D그래픽스 씬을 구축하고 있었지만, 그래픽스 표현의 유연성을 향상시킬 수 있도록, Direct3D 8으로는 <a class="mw-redirect" href="http://tranpedia.selfhow.com/search?q=%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9D%BC%EB%A7%88%EB%B8%8C%EB%A5%B4%EC%8B%9C%EB%8B%A4&amp;submit=Search" title="프로그라마브르시다">프로그라마브르시다</a>가 탑재된[<sup class="reference" id="cite_ref-4"><a href="http://tranpedia.selfhow.com/search?q=4&amp;submit=Search">4</a></sup>].이것에 의해서, 그래픽스 어플리케이션 개발자가 그래픽스 묘화 알고리즘을 소프트웨어에 의해서 커스터마이즈 하는 것이 가능해졌다.그러나, Direct3D 8으로 사용할 수 있는 시다 언어는 <a class="mw-redirect" href="http://tranpedia.selfhow.com/search?q=%EC%96%B4%EC%85%88%EB%B8%94%EB%9F%AC&amp;submit=Search" title="어셈블러">어셈블러</a>(<a class="mw-redirect" href="http://tranpedia.selfhow.com/search?q=%EC%A0%80%EA%B8%89%20%EC%96%B8%EC%96%B4&amp;submit=Search" title="저급 언어">저급 언어</a>)에서 만났기 때문에, 개발 효율이나 프로그램 코드의 재이용성에 한계가 있었다.그것을 해소할 수 있도록, <a href="http://tranpedia.selfhow.com/search?q=C%EC%96%B8%EC%96%B4&amp;submit=Search" title="C언어">C언어</a>풍의 선언문이나 제어문등의 기법을 가능하게 한 고급언어 HLSL가 개발되게 되었다.HLSL는 Direct3D 9로 처음으로 도입되어 그 후도 Direct3D와 함께 기능확장이 계속되고 있다.</p> <p><a href="http://tranpedia.selfhow.com/search?q=GDC&amp;submit=Search" title="Game Developers Conference">GDC</a> 2016으로는 DirectX 12의 향후의 발전, 그리고 새로운 차기 DirectX와 시다모델 6의 개발에 관해서 언급이 있어, HLSL 언어 사양에도 큰 기능 추가가 예정되어 있는 것이 발표된[<sup class="reference" id="cite_ref-5"><a href="http://tranpedia.selfhow.com/search?q=5&amp;submit=Search">5</a></sup>].시다모델 6.0으로는 <i>Wave</i>로 불리는 <span title="링크처의 항목은 아직 없습니다.신규의 집필이나, 발설어판으로부터의 번역이 바람직합니다."><a class="new" href="http://tranpedia.selfhow.com/search?q=SIMT&amp;submit=Search" title="SIMT (존재하지 않는 페이지)">SIMT</a><span class="noprint" style="font-size: 0.77em; font-weight: normal;">(<a class="extiw" href="http://tranpedia.selfhow.com/search?q=%EC%98%81%EB%AC%B8%ED%8C%90&amp;submit=Search" title="en:Single instruction, multiple threads">영문판</a>)</span></span> 스렛드그르프의 개념과 각 그룹내로의 데이터 교환을 위한 짜넣어 명령이 도입되어 NVIDIA GPU의 <i>Warp</i> 및 AMD GPU의 <i>Wavefront</i>를 표준화 하는 것이 예정되어 있는[<sup class="reference" id="cite_ref-6"><a href="http://tranpedia.selfhow.com/search?q=6&amp;submit=Search">6</a></sup>].</p> </div><h2 class="section-heading in-block" onclick="javascript:mfTempOpenSection(2)"><div class="mw-ui-icon mw-ui-icon-element indicator"></div><span class="mw-headline" id=".E3.83.97.E3.83.AD.E3.82.B0.E3.83.A9.E3.83.9E.E3.83.96.E3.83.AB.E3.83.91.E3.82.A4.E3.83.97.E3.83.A9.E3.82.A4.E3.83.B3.E3.82.B9.E3.83.86.E3.83.BC.E3.82.B8">프로그래머블 파이프라인 스테이지</span> <span></span></h2><div class="mf-section-2 collapsible-block" id="mf-section-2"> <p>HLSL에 의해서 프로그램 가능한 그래픽스 파이프라인 스테이지는, 대응하는 Direct3D의 버전 및 시다모델(후술)에 따라서 다르다.</p> <ul><li>Direct3D 9의 경우(시다모델 1. x-3. 0)은, <a class="mw-redirect" href="http://tranpedia.selfhow.com/search?q=%EC%A0%95%EC%A0%90%20%EC%8B%9C%EB%8B%A4&amp;submit=Search" title="정점 시다">정점 시다</a>(<a class="mw-redirect" href="http://tranpedia.selfhow.com/search?q=%EB%B0%94%ED%85%8D%EC%8A%A4%EC%8B%9C%EB%8B%A4&amp;submit=Search" title="바텍스시다">바텍스시다</a>) 및 <a class="mw-redirect" href="http://tranpedia.selfhow.com/search?q=%ED%94%BC%ED%81%AC%EC%84%B8%EB%A5%B4%EC%8B%9C%EB%8B%A4&amp;submit=Search" title="피크세르시다">피크세르시다</a>(OpenGL에 있어서의 <a class="mw-redirect" href="http://tranpedia.selfhow.com/search?q=%ED%9B%84%EB%9D%BC%EA%B7%B8%EB%A8%BC%ED%8A%B8%EC%8B%9C%EB%8B%A4&amp;submit=Search" title="후라그먼트시다">후라그먼트시다</a>에 상당)의 2개이다.</li> <li>Direct3D 10. x의 경우(시다모델 4. x)는, 정점 시다, <a class="mw-redirect" href="http://tranpedia.selfhow.com/search?q=%EC%A7%80%EC%98%A4%EB%A9%94%ED%8A%B8%EB%A6%AC%EC%8B%9C%EB%8B%A4&amp;submit=Search" title="지오메트리시다">지오메트리시다</a>(OpenGL로는 프리미티브시다라고도 불린다), 그리고 <a class="mw-redirect" href="http://tranpedia.selfhow.com/search?q=%ED%94%BC%ED%81%AC%EC%84%B8%EB%A5%B4%EC%8B%9C%EB%8B%A4&amp;submit=Search" title="피크세르시다">피크세르시다</a>의 3개이다.</li> <li>Direct3D 11. x/12의 경우(시다모델 5. x)는, 정점 시다, 하르시다(OpenGL에 있어서의 <a href="http://tranpedia.selfhow.com/search?q=%ED%85%9F%EC%84%B8%EB%A0%88%EC%9D%B4%EC%85%98&amp;submit=Search" title="텟세레이션">텟세레이션</a> 제어 시다에 상당), 드메인시다(OpenGL에 있어서의 <a href="http://tranpedia.selfhow.com/search?q=%ED%85%9F%EC%84%B8%EB%A0%88%EC%9D%B4%EC%85%98&amp;submit=Search" title="텟세레이션">텟세레이션</a> 평가 시다에 상당), <a class="mw-redirect" href="http://tranpedia.selfhow.com/search?q=%EC%A7%80%EC%98%A4%EB%A9%94%ED%8A%B8%EB%A6%AC%EC%8B%9C%EB%8B%A4&amp;submit=Search" title="지오메트리시다">지오메트리시다</a>, <a class="mw-redirect" href="http://tranpedia.selfhow.com/search?q=%ED%94%BC%ED%81%AC%EC%84%B8%EB%A5%B4%EC%8B%9C%EB%8B%A4&amp;submit=Search" title="피크세르시다">피크세르시다</a>, 그리고 <a class="mw-redirect" href="http://tranpedia.selfhow.com/search?q=%EC%BD%98%ED%93%A8%ED%8A%B8%EC%8B%9C%EB%8B%A4&amp;submit=Search" title="콘퓨트시다">콘퓨트시다</a>(계산 시다, 연산 시다)의 6개이다.다만 콘퓨트시다 만일 수 있는은 그래픽스 파이프라인과는 독립해 동작시킬 수 있다.</li> </ul><p>정점 시다는 어플리케이션에 의해서 제공(입력)되는 정점 각각 붙어 실행되어 주로 오브젝트 공간으로부터 시 공간에의 정점 좌표변화나 texture 좌표의 생성, 또 정점의 접선이나 종법선이나 법선 벡터와 같은 광선의 계수의 계산등의 처리를 담당한다.정점 시다를 통해 정점의 그룹(삼각형이면 통상은 3개)이 입력되었을 때, 출력 좌표는 그 영역내에서 화면상의 픽셀을 결정하기 위해서 보간 된다.이 처리는 <a class="mw-redirect" href="http://tranpedia.selfhow.com/search?q=%EB%9D%BC%EC%8A%A4%ED%83%80%EB%9D%BC%EC%9D%B4%EC%A0%9C%EC%9D%B4%EC%85%98&amp;submit=Search" title="라스타라이제이션">라스타라이제이션</a>으로서 알려져 있다.이러한 픽셀 각각이 피크세르시다를 통과하는 것으로, 결과적으로 스크린상의 각 점의 색이 계산된다.</p> <p>또, Direct3D 10/11/12대응 하드웨어에 대해 Direct3D 10/11/12인터페이스를 사용하는 어플리케이션은, 정점 시다스테이지의 뒤에 지오메트리시다를 지정할 수도 있다.지오메트리시다는 rasterize의 전에 원시적의 증감이나 종류의 변경을 행할 수 있다.</p> <p>덧붙여 HLSL로 사용 가능한 <a href="http://tranpedia.selfhow.com/search?q=%ED%8C%8C%EB%A6%B0%EB%85%B8%EC%9D%B4%EC%A6%88&amp;submit=Search" title="파린노이즈">파린노이즈</a> 생성 함수인 noise()는, 테크스체시다로 불리는 특수한 시다스테이지에서만 이용이 가능해지고 있다.</p> </div><h2 class="section-heading in-block" onclick="javascript:mfTempOpenSection(3)"><div class="mw-ui-icon mw-ui-icon-element indicator"></div><span class="mw-headline" id=".E8.A8.80.E8.AA.9E.E6.A9.9F.E8.83.BD">언어 기능</span> <span></span></h2><div class="mf-section-3 collapsible-block" id="mf-section-3"> <p>HLSL의 기본적인 문법은 C/C++에 준하지만, 그래픽스 프로그램을 기술하는데 적합한 전용의 벡터&#12539;행렬형이나 함수를 갖추고 있다.수학 함수안에는 C/C++표준 라이브러리와 같은 것도 포함된다.또, Direct3D 10으로는 API의 대폭적인 설계 변경이 행해진 적도 있어, Direct3D 9용의 HLSL와 비교하고, Direct3D 10이후 용무의 HLSL로는 <a href="http://tranpedia.selfhow.com/search?q=%EA%B0%9D%EC%B2%B4%20%EC%A7%80%ED%96%A5&amp;submit=Search" title="객체 지향">객체 지향</a>에 근거한 언어 사양의 재설계가 이루어져 다수의 사양 변경이 더해지고 있는[<sup class="reference" id="cite_ref-7"><a href="http://tranpedia.selfhow.com/search?q=7&amp;submit=Search">7</a></sup>].</p> <p>Direct3D 10이후로는 HLSL에서 <a href="http://tranpedia.selfhow.com/search?q=%ED%81%B4%EB%9E%98%EC%8A%A4&amp;submit=Search" title="클래스(컴퓨터)">클래스</a>를 정의해, C++와 같이 데이터(멤버 변수)와 행동(멤버 함수)을 관련짓는 것이 가능하지만, 액세스 지정자에 의한 <a href="http://tranpedia.selfhow.com/search?q=%EC%BA%A1%EC%8A%90%ED%99%94&amp;submit=Search" title="캡슐화">캡슐화</a>나 <a href="http://tranpedia.selfhow.com/search?q=%EA%B3%84%EC%8A%B9&amp;submit=Search" title="계승(프로그래밍)">계승</a> 및 가상 함수라고 하는 기능은 갖추지 않았다.</p> <p>Direct3D 11으로는 시다 의<a class="mw-redirect" href="http://tranpedia.selfhow.com/search?q=%20%ED%8E%B8%EC%84%B1%20%ED%8F%AD%EB%B0%9C&amp;submit=Search" title="편성 폭발"> 편성 폭발</a> 문제를 해소할 수 있도록, HLSL에서 <a href="http://tranpedia.selfhow.com/search?q=%EC%9D%B8%ED%84%B0%ED%8E%98%EC%9D%B4%EC%8A%A4&amp;submit=Search" title="인터페이스(정보기술)">인터페이스</a>의 정의와 실장에 의한 <a href="http://tranpedia.selfhow.com/search?q=%ED%8F%AC%EB%A6%AC%EB%AA%A8%ED%94%BC%EC%A6%98&amp;submit=Search" title="포리모피즘">포리모피즘</a>을 유사적으로 실현되는 &#12300;동적 시다린크(Dynamic Shader Linkage)&#12301;라고 불리는 기능이 추가된[<sup class="reference" id="cite_ref-8"><a href="http://tranpedia.selfhow.com/search?q=8&amp;submit=Search">8</a></sup>].</p> </div><h2 class="section-heading in-block" onclick="javascript:mfTempOpenSection(4)"><div class="mw-ui-icon mw-ui-icon-element indicator"></div><span class="mw-headline" id=".E3.82.B3.E3.83.BC.E3.83.89.E4.BE.8B">코드예</span><span></span></h2><div class="mf-section-4 collapsible-block" id="mf-section-4"> <p>이하에 Direct3D 10/11향해라 HLSL를 이용한, 단순한 <a href="http://tranpedia.selfhow.com/search?q=Half%20Lambert%20%EC%A1%B0%EB%AA%85%20%EB%AA%A8%EB%8D%B8&amp;submit=Search" title="램버트 반사">Half Lambert 조명 모델</a> 및 <a href="http://tranpedia.selfhow.com/search?q=Phong%20%EC%A1%B0%EB%AA%85%20%EB%AA%A8%EB%8D%B8&amp;submit=Search" title="Phong의 반사 모델">Phong 조명 모델</a>(Blinn-Phong)의 정점 시다 및 피크세르시다의 프로그램을 나타낸다.또한 분기에 의해서 조명 모델을 바꾸고 있지만, 이것은 이른바 워바시다(uber-shader)이므로, 실행 속도 효율 등은 고려하고 있지 않는 것에 주의받고 싶다.</p> <div class="mw-highlight mw-content-ltr" dir="ltr"> <pre> <span class="c1">// Shader Constants.</span> <span class="n"><span class="p"></span>matrix</span> <span class="n">TrWorldViewProj</span>; <span class="n"><span class="p"></span>matrix</span> <span class="n">TrWorld</span>; <span class="n"><span class="p"></span>float4</span> <span class="n">LightPosition</span>; <span class="n"><span class="p"></span>float3</span> <span class="n">EyePosition</span>; <span class="n"><span class="p"></span>float4</span> <span class="n">DiffuseColor</span>; <span class="n"><span class="p"></span>float4</span> <span class="n">SpecularColor</span>; <span class="kt"><span class="p"></span>float</span> <span class="n">SpecularPower</span>; <span class="kt"><span class="p"></span>bool</span> <span class="n">IsPhongModel</span>;  <span class="k">struct</span> <span class="n">BasicVSOutput</span> <span class="p">{</span> 	<span class="n"><span class="p"></span>float4</span> <span class="nl">Pos</span> : <span class="n"><span class="p"></span>SV_POSITION</span>; 	<span class="n"><span class="p"></span>float3</span> <span class="nl">WPos</span> : <span class="n"><span class="p"></span>TEXCOORD1</span>; 	<span class="n"><span class="p"></span>float3</span> <span class="nl">WNormal</span> : <span class="n"><span class="p"></span>NORMAL0</span>; <span class="p">};</span> <span class="k"><span class="p"></span>typedef</span> <span class="n">BasicVSOutput</span> <span class="n">BasicPSInput</span>;  <span class="c1">// Vertex Shader Program.</span> <span class="n"><span class="p"></span><span class="p"></span><span class="p"></span><span class="p"></span>BasicVSOutput</span> <span class="nf">BasicVS</span>(<span class="n">float3</span> <span class="nl">pos</span> : <span class="n">POSITION0</span><span class="p">,</span> <span class="n">float3</span> <span class="nl">normal</span> : <span class="n">NORMAL0</span>) <span class="p">{</span> 	<span class="n"><span class="o"></span><span class="p"></span><span class="p"></span><span class="p"></span>BasicVSOutput</span> <span class="n">output</span> = (<span class="n">BasicVSOutput</span>)<span class="mi">0</span>; 	<span class="n"><span class="p"></span><span class="o"></span><span class="p"></span><span class="p"></span><span class="p"></span><span class="p"></span><span class="p"></span>output</span>.<span class="n">Pos</span> = <span class="n">mul</span>(<span class="n">float4</span>(<span class="n">pos</span>, <span class="mi">1</span>), <span class="n">TrWorldViewProj</span>); 	<span class="n"><span class="p"></span><span class="o"></span><span class="p"></span><span class="p"></span><span class="p"></span><span class="p"></span><span class="p"></span>output</span>.<span class="n">WPos</span> = <span class="n">mul</span>(<span class="n">float4</span>(<span class="n">pos</span>, <span class="mi">1</span>), <span class="n">TrWorld</span>).<span class="n"><span class="p"></span>xyz</span>; 	<span class="n"><span class="p"></span><span class="o"></span><span class="p"></span><span class="p"></span><span class="p"></span><span class="p"></span><span class="p"></span>output</span>.<span class="n">WNormal</span> = <span class="n">mul</span>(<span class="n">normal</span>, (<span class="n">float3x3</span>)<span class="n">TrWorld</span>); 	<span class="k"><span class="p"></span>return</span> <span class="n">output</span>; <span class="p">}</span>  <span class="n"><span class="p"></span><span class="p"></span><span class="p"></span>float4</span> <span class="nf">CalcLambert</span>(<span class="n">float3</span> <span class="n">light</span>, <span class="n">float3</span> <span class="n">wnormal</span>) <span class="p">{</span> 	<span class="c1">// Half Lambert.</span>  	<span class="kt"><span class="o"></span><span class="p"></span><span class="p"></span><span class="p"></span>float</span> <span class="n">lambert</span> = <span class="n">dot</span>(<span class="n">light</span>, <span class="n">wnormal</span>); 	<span class="n"><span class="o"></span><span class="o"></span><span class="o"></span><span class="p"></span>lambert</span> = <span class="n">lambert</span> * <span class="mf">0.5f</span> + <span class="mf">0.5f</span>; 	<span class="n"><span class="o"></span><span class="p"></span>lambert</span> *= <span class="n">lambert</span>; 	<span class="k"><span class="o"></span><span class="p"></span>return</span> <span class="n">lambert</span> * <span class="n">DiffuseColor</span>; <span class="p">}</span>  <span class="n"><span class="p"></span><span class="p"></span>float4</span> <span class="nf">BasicLambert</span>(<span class="n">BasicPSInput</span> <span class="n">input</span>) <span class="p">{</span> 	<span class="k"><span class="o"></span><span class="p"></span><span class="p"></span><span class="o"></span><span class="p"></span><span class="p"></span>const</span> <span class="n">float3</span> <span class="n">light</span> = <span class="n">normalize</span>(<span class="n">LightPosition</span>.<span class="n">xyz</span> - <span class="n">input</span>.<span class="n">WPos</span>); 	<span class="k"><span class="o"></span><span class="p"></span><span class="p"></span><span class="p"></span>const</span> <span class="n">float3</span> <span class="n">normal</span> = <span class="n">normalize</span>(<span class="n">input</span>.<span class="n">WNormal</span>); 	<span class="k"><span class="p"></span><span class="p"></span><span class="p"></span>return</span> <span class="n">CalcLambert</span>(<span class="n">light</span>, <span class="n">normal</span>); <span class="p">}</span>  <span class="n"><span class="p"></span><span class="p"></span>float4</span> <span class="nf">BasicPhong</span>(<span class="n">BasicPSInput</span> <span class="n">input</span>) <span class="p">{</span> 	<span class="c1">// Phong lighting with specular.</span>  	<span class="k"><span class="o"></span><span class="p"></span><span class="o"></span><span class="p"></span><span class="p"></span>const</span> <span class="n">float3</span> <span class="n">eye</span> = <span class="n">normalize</span>(<span class="n">EyePosition</span> - <span class="n">input</span>.<span class="n">WPos</span>); 	<span class="k"><span class="o"></span><span class="p"></span><span class="p"></span><span class="o"></span><span class="p"></span><span class="p"></span>const</span> <span class="n">float3</span> <span class="n">light</span> = <span class="n">normalize</span>(<span class="n">LightPosition</span>.<span class="n">xyz</span> - <span class="n">input</span>.<span class="n">WPos</span>); 	<span class="k"><span class="o"></span><span class="p"></span><span class="o"></span><span class="p"></span>const</span> <span class="n">float3</span> <span class="n">halfway</span> = <span class="n">normalize</span>(<span class="n">light</span> + <span class="n">eye</span>); 	<span class="k"><span class="o"></span><span class="p"></span><span class="p"></span><span class="p"></span>const</span> <span class="n">float3</span> <span class="n">normal</span> = <span class="n">normalize</span>(<span class="n">input</span>.<span class="n">WNormal</span>); 	<span class="k"><span class="o"></span><span class="p"></span><span class="p"></span><span class="p"></span><span class="p"></span><span class="p"></span><span class="p"></span><span class="p"></span>const</span> <span class="kt">float</span> <span class="n">specular</span> = <span class="n">pow</span>(<span class="n">max</span>(<span class="n">dot</span>(<span class="n">normal</span>, <span class="n">halfway</span>), <span class="mf">0.0</span>), <span class="n">SpecularPower</span>); 	<span class="k"><span class="p"></span><span class="p"></span><span class="p"></span><span class="o"></span><span class="o"></span><span class="p"></span>return</span> <span class="n">CalcLambert</span>(<span class="n">light</span>, <span class="n">normal</span>) + <span class="n">specular</span> * <span class="n">SpecularColor</span>; <span class="p">}</span>  <span class="c1">// Pixel Shader Program.</span> <span class="n"><span class="p"></span><span class="p"></span><span class="o"></span>float4</span> <span class="nf">BasicPS</span>(<span class="n">BasicPSInput</span> <span class="n">input</span>) : <span class="n">SV_TARGET0</span> <span class="p">{</span> 	<span class="k"><span class="p"></span><span class="p"></span>if</span> (<span class="n">IsPhongModel</span>) 	<span class="p">{</span> 		<span class="k"><span class="p"></span><span class="p"></span>return</span> <span class="n">BasicPhong</span>(<span class="n">input</span>); 	<span class="p">}</span> 	<span class="k">else</span> 	<span class="p">{</span> 		<span class="k"><span class="p"></span><span class="p"></span>return</span> <span class="n">BasicLambert</span>(<span class="n">input</span>); 	<span class="p">}</span> <span class="p">}</span> </pre></div> <p>예의 같게, 피크세르시다에 의해서 픽셀 단위의 정규화 법선 벡터를 요구하는 것으로, Direct3D 7 이전의 고정 기능 시다로는 실현이 어려웠던 Per-Pixel 라이팅이 용이하게 실장 가능해지고 있다. 물론, 사용하는 시다모델 및 대응하는 하드웨어에 따라서는, 보다 복잡하고 장대한 알고리즘을 실장할 수도 있다.리얼타임 그래픽스이기 때문에 하드웨어 성능에 응한 트레이드 오프로는 되지만, 단순한 국소 조명(<a class="new" href="http://tranpedia.selfhow.com/search?q=%EB%A1%9C%EC%BB%AC%20%EC%9D%BC%EB%A3%A8%EB%AF%B8%EB%84%A4%EC%9D%B4%EC%85%98&amp;submit=Search" title="로컬 일루미네이션(존재하지 않는 페이지)">로컬 일루미네이션</a>) 뿐만이 아니라, 보다 엄밀한 물리 베이스의 <span title="링크처의 항목은 아직 없습니다.신규의 집필이나, 발설어판으로부터의 번역이 바람직합니다."><a class="new" href="http://tranpedia.selfhow.com/search?q=%EB%A0%8C%EB%8D%94%EB%A7%81%20%EB%B0%A9%EC%A0%95%EC%8B%9D&amp;submit=Search" title="렌더링 방정식(존재하지 않는 페이지)">렌더링 방정식</a><span class="noprint" style="font-size: 0.77em; font-weight: normal;">(<a class="extiw" href="http://tranpedia.selfhow.com/search?q=%EC%98%81%EB%AC%B8%ED%8C%90&amp;submit=Search" title="en:Rendering equation">영문판</a>)</span></span>에 근거한, 광역 조명(<a class="mw-redirect" href="http://tranpedia.selfhow.com/search?q=%EA%B8%80%EB%A1%9C%EB%B2%8C%20%EC%9D%BC%EB%A3%A8%EB%AF%B8%EB%84%A4%EC%9D%B4%EC%85%98&amp;submit=Search" title="글로벌 일루미네이션">글로벌 일루미네이션</a>) 모델을 HLSL에 의한 프로그라마브르시다로 실장하는 것으로, 보다 현실에 가까운 리얼타임 3 D컴퓨터 그래픽스를 실현하는 일도 가능해진다.게다가 Direct3D 11 (<a href="http://tranpedia.selfhow.com/search?q=DirectCompute&amp;submit=Search" title="DirectCompute">DirectCompute</a>)으로는 콘퓨트시다를 사용하고, GPU에 그래픽스 용도 이외의 범용 계산을 행하게 하는 <a href="http://tranpedia.selfhow.com/search?q=GPGPU&amp;submit=Search" title="GPGPU">GPGPU</a> 프로그램을 HLSL로 기술하는 일도 가능해진다.</p> <p>덧붙여 HLSL 원시 파일에는 통례. hlsl 확장자를 붙일 수 있어 헤더 파일에는. hlsli 확장자를 붙일 수 있는[<sup class="reference" id="cite_ref-9"><a href="http://tranpedia.selfhow.com/search?q=9&amp;submit=Search">9</a></sup>].</p> </div><h2 class="section-heading in-block" onclick="javascript:mfTempOpenSection(5)"><div class="mw-ui-icon mw-ui-icon-element indicator"></div><span class="mw-headline" id=".E5.AF.BE.E5.BF.9C.E7.92.B0.E5.A2.83">대응 환경</span> <span></span></h2><div class="mf-section-5 collapsible-block" id="mf-section-5"> <p>HLSL 프로그램은 주로 호스트가 되는 C++응용 프로그램 코드로부터 Direct3D API를 사용해 입력과 출력을 관리할 필요가 있으므로, 단체로 동작시킬 수 없다.덧붙여 단체의 컴파일러는 마이크로소프트로부터 무상 제공되고 있는 <a class="mw-redirect" href="http://tranpedia.selfhow.com/search?q=DirectX&amp;submit=Search" title="DirectX">DirectX</a> SDK(혹은 버전  8.0이후의 Windows SDK)에 부속된다.HLSL 컴파일러 fxc.exe에 의해서 출력되는 것은, 그래픽스 하드웨어의 벤더에 의존하지 않는 공통 <a href="http://tranpedia.selfhow.com/search?q=%EB%B0%94%EC%9D%B4%ED%8A%B8%20%EC%BD%94%EB%93%9C&amp;submit=Search" title="아르바이트 코드">바이트 코드</a>이기 위해, 한 번 컴파일 해 두면 다른 하드웨어여도(컴파일시에 상정되고 있던 기능을 채우는 한) 동작시킬 수 있는[<sup class="reference" id="cite_ref-10"><a href="http://tranpedia.selfhow.com/search?q=10&amp;submit=Search">10</a></sup>].HLSL 프로그램을 서포트하는 것은 Direct3D 9이후를 서포트하는 시스템에 한정되기 위해, 2015년 1월 현재는 <a class="mw-redirect" href="http://tranpedia.selfhow.com/search?q=Windows&amp;submit=Search" title="Windows">Windows</a> OS, <a href="http://tranpedia.selfhow.com/search?q=Xbox%20360&amp;submit=Search" title="Xbox 360">Xbox 360</a> 및 <a href="http://tranpedia.selfhow.com/search?q=Xbox%20One&amp;submit=Search" title="Xbox One">Xbox One</a>이 주된 동작환경이다.</p> <p>어플리케이션의 실행시에 HLSL 원시 코드를 컴파일 해 아르바이트 코드를 생성하는 기능을 짜넣기 위한 D3DCompiler 런타임도 제공되고 있는[<sup class="reference" id="cite_ref-11"><a href="http://tranpedia.selfhow.com/search?q=11&amp;submit=Search">11</a></sup>].</p> <p>그 밖에, 게임 엔진의 <a href="http://tranpedia.selfhow.com/search?q=Unity&amp;submit=Search" title="Unity (게임 엔진)">Unity</a>로는, Windows상에서 <a href="http://tranpedia.selfhow.com/search?q=DirectCompute&amp;submit=Search" title="DirectCompute">DirectCompute</a> 베이스(DirectX 11 베이스)의 콘퓨트시다를 사용할 수 있지만, 콘퓨트시다의 기술에는 Cg는 아니고 HLSL를 이용하는[<sup class="reference" id="cite_ref-12"><a href="http://tranpedia.selfhow.com/search?q=12&amp;submit=Search">12</a></sup>].Unity는 Cg/HLSL로부터 GLSL에의 트랜슬레이션이 가능하기 때문에, OpenGL 4.3이나 <a href="http://tranpedia.selfhow.com/search?q=OpenGL%20ES&amp;submit=Search" title="OpenGL ES">OpenGL ES</a> 3.1의 콘퓨트시다를 이용하는 경우에서도 GLSL는 아니고 HLSL를 사용하는 것이 추천 되고 있다.</p> </div><h2 class="section-heading in-block" onclick="javascript:mfTempOpenSection(6)"><div class="mw-ui-icon mw-ui-icon-element indicator"></div><span class="mw-headline" id=".E3.82.A8.E3.83.95.E3.82.A7.E3.82.AF.E3.83.88">효과</span> <span></span></h2><div class="mf-section-6 collapsible-block" id="mf-section-6"> <p>HLSL 자체는, 시다 함수 및 각 시다스테이지의 참가 신청 포인트(이른바 메인 함수)를 기술하기 위해서 사용되지만, 이 복수의 시다스테이지를 정리해 관리&#12539;적용하는 &#12300;효과&#12301;라고 불리는 구조도 존재한다.즉, 예를 들면 2개의 정점 시다엔트리포인트 VS1(), VS2()와 2개의 피크세르시다엔트리포인트 PS1(), PS2()를 단일의 HLSL 소스 프로그램 파일(통례. fx확장자를 붙일 수 있어 효과 파일로 불린다)에 기술해, 한층 더 VS1+PS1, VS2+PS2, VS1+PS2, VS2+PS1라고 하는 시다스테이지의 편성(패스)외, 각종 렌더링 스테이트의 설정을 효과 파일중에 기술해 관련지을 수 있다.효과를 취급하는 <a class="mw-disambig" href="http://tranpedia.selfhow.com/search?q=API&amp;submit=Search" title="API">API</a>는 Direct3D 10의 코아라이브라리 혹은 Direct3D 9/11의 extension 라이브러리(D3DX)에 준비되어 있어 렌더링 파이프라인의 관리를 C++코드로부터 분리할 수 있다.</p> </div><h2 class="section-heading in-block" onclick="javascript:mfTempOpenSection(7)"><div class="mw-ui-icon mw-ui-icon-element indicator"></div><span class="mw-headline" id="WPF.E3.82.A8.E3.83.95.E3.82.A7.E3.82.AF.E3.83.88">WPF 효과</span> <span></span></h2><div class="mf-section-7 collapsible-block" id="mf-section-7"> <p>Windows 데스크탑 어플리케이션 체제의 하나인 <a href="http://tranpedia.selfhow.com/search?q=WPF&amp;submit=Search" title="Windows Presentation Foundation">WPF</a>로는, 그래픽스의 렌더링에 Direct3D가 사용되고 있지만, GUI 위제트에 브라-(애매하게 해)나 드롭섀도우라고 하는 효과(필터)를 적용하는 것이 가능해지고 있다.한층 더 WPF로는 유저 프로그래머가 HLSL로 작성한 피크세르시다를 사용해 커스텀 효과를 적용할 수도 있는[<sup class="reference" id="cite_ref-13"><a href="http://tranpedia.selfhow.com/search?q=13&amp;submit=Search">13</a></sup>].</p> <p>WPF 3.5까지는 시다모델 2.0의 피크세르시다만이 서포트되고 있었지만, WPF 4로는 시다모델 3.0의 피크세르시다도 사용할 수 있게 된[<sup class="reference" id="cite_ref-14"><a href="http://tranpedia.selfhow.com/search?q=14&amp;submit=Search">14</a></sup>] [<sup class="reference" id="cite_ref-15"><a href="http://tranpedia.selfhow.com/search?q=15&amp;submit=Search">15</a></sup>].</p> </div><h2 class="section-heading in-block" onclick="javascript:mfTempOpenSection(8)"><div class="mw-ui-icon mw-ui-icon-element indicator"></div><span class="mw-headline" id="Direct2D.E3.82.A8.E3.83.95.E3.82.A7.E3.82.AF.E3.83.88">Direct2D 효과</span> <span></span></h2><div class="mf-section-8 collapsible-block" id="mf-section-8"> <p>DirectX 패밀리의 하나, <a href="http://tranpedia.selfhow.com/search?q=2%20%EC%B0%A8%EC%9B%90%20%EC%BB%B4%ED%93%A8%ED%84%B0%20%EA%B7%B8%EB%9E%98%ED%94%BD%EC%8A%A4&amp;submit=Search" title="2 차원 컴퓨터 그래픽스">2 차원 컴퓨터 그래픽스</a> API인 <a href="http://tranpedia.selfhow.com/search?q=Direct2D&amp;submit=Search" title="Direct2D">Direct2D</a>로는, 버전 1.1에서 효과 기능이 실장되었지만, HLSL에 의한 커스텀 효과를 작성&#12539;이용하는 일도 가능해지고 있는[<sup class="reference" id="cite_ref-16"><a href="http://tranpedia.selfhow.com/search?q=16&amp;submit=Search">16</a></sup>].</p> </div><h2 class="section-heading in-block" onclick="javascript:mfTempOpenSection(9)"><div class="mw-ui-icon mw-ui-icon-element indicator"></div><span class="mw-headline" id=".E3.82.B7.E3.82.A7.E3.83.BC.E3.83.80.E3.83.BC.E3.83.A2.E3.83.87.E3.83.AB">시다모델</span> <span></span></h2><div class="mf-section-9 collapsible-block" id="mf-section-9"> <div class="rellink" style="margin-bottom: 0.5em; padding-left: 2em; font-style: italic;">&#12300;<a class="extiw" href="http://tranpedia.selfhow.com/search?q=%3Aen%3AHigh-Level%20Shading%20Language&amp;submit=Search" title="en:High-Level Shading Language">:en:High-Level Shading Language</a>&#12301;도 참조</div> <p>Direct3D 프로그라마브르시다를 실행하려면 , Direct3D 8이후에 대응한 하드웨어가 필요하다.다만, Direct3D 9까지의 경우, 정점 시다 만일 수 있는은 소프트웨어 즉 CPU로 에뮤레이트 할 수도 있는(<code>D3DCREATE_SOFTWARE_VERTEXPROCESSING</code>) 모아 두어 고정 기능 피크세르시다와 조합하는 것으로 Direct3D 7 이전의 낡은 하드웨어로 프로그라마브르시다를 실행하는 것도 가능하다.또, Direct3D 10.1이후로는 비교적 고속의 소프트웨어 렌더링 엔진인 WARP 디바이스도 실장되고 있기 때문에, GPU가 대응하고 있지 않아도 CPU에 Direct3D 렌더링을 실행시킬 수도 있다.</p> <p>Direct3D 대응 하드웨어(<a class="mw-redirect" href="http://tranpedia.selfhow.com/search?q=%EA%B7%B8%EB%9E%98%ED%94%BD%20%EC%B9%B4%EB%93%9C&amp;submit=Search" title="그래픽 카드">그래픽 카드</a>)의 세대에 의해서, GPU상에서 하드웨어 레벨로 실행 가능한 시다프로그람의 사양(제약, 기능등)이 다르다.이 사양은 <b>시다모델</b>로 불려 새로운 세대의 시다모델을 서포트하는 하드웨어는 기본적으로 낡은 세대의 시다모델도 서포트하는[<sup class="reference" id="cite_ref-17"><a href="http://tranpedia.selfhow.com/search?q=17&amp;submit=Search">17</a></sup>]이, 벤더 마다 확장된 2.0 a/2. 0 b등의 예외도 존재한다. 또한 HLSL가 Direct3D에 탑재된 것은 버전  9이후이지만, 시다모델  2.0이후가 아니면 HLSL를 사용할 수 없는 것은 없고, HLSL를 사용해 시다모델 1. x레벨의 프로그램을 기술하는 것도 가능하다.또, Direct3D 10으로는, 어셈블리 언어에 의한 시다프로그람 개발이 폐지되어 시다의 기술에는 HLSL만을 사용할 수 있게 된[<sup class="reference" id="cite_ref-18"><a href="http://tranpedia.selfhow.com/search?q=18&amp;submit=Search">18</a></sup>].</p> <p>시다모델 3.0에는 정점 texture 페치(Vertex Texture Fetch, VTF)로 불리는 기능이 존재하지만, DirectX 9.0 c세대에 대응한 것은 NVIDIA의 하드웨어만으로, <a href="http://tranpedia.selfhow.com/search?q=ATI&amp;submit=Search" title="ATI Technologies">ATI</a>의 하드웨어로는 서포트되지 않았다.반대로, 부동 소수점 버퍼에 있어서의 에일리어징 제거 기능은, NVIDIA 하드웨어로는 서포트되지 않고, ATI 하드웨어만으로의 대응이 되고 있던[<sup class="reference" id="cite_ref-19"><a href="http://tranpedia.selfhow.com/search?q=19&amp;submit=Search">19</a></sup>] [<sup class="reference" id="cite_ref-20"><a href="http://tranpedia.selfhow.com/search?q=20&amp;submit=Search">20</a></sup>].그 밖에도, (DirectX 11으로 표준화 되기 전의) <a href="http://tranpedia.selfhow.com/search?q=%ED%85%9F%EC%84%B8%EB%A0%88%EC%9D%B4%EC%85%98&amp;submit=Search" title="텟세레이션">텟세레이션</a> 기능[<sup class="reference" id="cite_ref-21"><a href="http://tranpedia.selfhow.com/search?q=21&amp;submit=Search">21</a></sup>]이 ATI 하드웨어상만으로 서포트되는[<sup class="reference" id="cite_ref-22"><a href="http://tranpedia.selfhow.com/search?q=22&amp;submit=Search">22</a></sup>] [<sup class="reference" id="cite_ref-23"><a href="http://tranpedia.selfhow.com/search?q=23&amp;submit=Search">23</a></sup>] [<sup class="reference" id="cite_ref-24"><a href="http://tranpedia.selfhow.com/search?q=24&amp;submit=Search">24</a></sup>]등, 시다모델 3.0까지는(비록 DirectX 9.0 c대응을 구가하고 있어도) 기능면에 있어 각사의 보조가 모이지 않는 상태에 있어, 이러한 기능을 이용하는 어플리케이션 개발자는 사용하고 싶은 기능이 실제로 하드웨어로 서포트되고 있는지 어떤지를 미리 Direct3D의 Caps (Capabilities) 취득 API를 사용해 하나하나 조사하지 않으면 안 되었다.이와 같이 벤더 마다 각 기능의 대응 레벨이 뿔뿔이되고 있던 비참한 상황은, 다음 버전의 Direct3D 10이후에 요구 사양이 엄격화된 것으로, 어느 정도 해소되게 되는[<sup class="reference" id="cite_ref-25"><a href="http://tranpedia.selfhow.com/search?q=25&amp;submit=Search">25</a></sup>].</p> <p>덧붙여 Direct3D 10.1 API로는 4. x프로파일의 시다프로그람에 가세해 다운 레벨의 2.0 프로파일이 사용 가능하고, Direct3D 11/12 API로는 5. x 및 4. x프로파일에 가세해 다운 레벨의 2.0 프로파일이 사용 가능하지만, 모두 3.0 프로파일에 관해서는 사용할 수 없는[<sup class="reference" id="cite_ref-26"><a href="http://tranpedia.selfhow.com/search?q=26&amp;submit=Search">26</a></sup>] [<sup class="reference" id="cite_ref-27"><a href="http://tranpedia.selfhow.com/search?q=27&amp;submit=Search">27</a></sup>] [<sup class="reference" id="cite_ref-28"><a href="http://tranpedia.selfhow.com/search?q=28&amp;submit=Search">28</a></sup>] [<sup class="reference" id="cite_ref-29"><a href="http://tranpedia.selfhow.com/search?q=29&amp;submit=Search">29</a></sup>].</p> <h3 class="in-block"><span class="mw-headline" id="DirectX.E3.83.90.E3.83.BC.E3.82.B8.E3.83.A7.E3.83.B3.E3.81.A8.E5.90.84.E3.82.B7.E3.82.A7.E3.83.BC.E3.83.80.E3.83.BC.E3.82.B9.E3.83.86.E3.83.BC.E3.82.B8">DirectX 버전과 각 시다스테이지</span> <span></span></h3> <p>이하의 겉(표)는 하드웨어가 대응하고 있는 DirectX 버전과 그 하드웨어가 서포트하는 각 시다스테이지의 최상위버전(프로파일) 간의 관계를 나타내고 있다. 후술 하도록(듯이), 실행 가능한 시다프로그람의 최대 명령수나 레지스터수, 자원 슬롯수 등은 새로운 버전 쪽이 커져, 보다 유연하고 장대한 프로그램을 기술할 수 있게 된다.</p> <table class="wikitable"><tr><th>DirectX Version</th> <th>Pixel Shader</th> <th>Vertex Shader</th> <th>Geometry Shader</th> <th>Hull Shader</th> <th>Domain Shader</th> <th>Compute Shader</th> </tr><tr><td>8.0</td> <td>1.0, 1.1</td> <td>1.0</td> <td>-</td> <td>-</td> <td>-</td> <td>-</td> </tr><tr><td>8.1</td> <td>1.2, 1.3, 1.4</td> <td>1.1</td> <td>-</td> <td>-</td> <td>-</td> <td>-</td> </tr><tr><td>9.0</td> <td>2.0</td> <td>2.0</td> <td>-</td> <td>-</td> <td>-</td> <td>-</td> </tr><tr><td>9.0a</td> <td>2.0a</td> <td>2.0a</td> <td>-</td> <td>-</td> <td>-</td> <td>-</td> </tr><tr><td>9.0b</td> <td>2.0b</td> <td>2.0</td> <td>-</td> <td>-</td> <td>-</td> <td>-</td> </tr><tr><td>9.0c</td> <td>3.0</td> <td>3.0</td> <td>-</td> <td>-</td> <td>-</td> <td>-</td> </tr><tr><td>10.0</td> <td>4.0</td> <td>4.0</td> <td>4.0</td> <td>-</td> <td>-</td> <td>4.0</td> </tr><tr><td>10.1</td> <td>4.1</td> <td>4.1</td> <td>4.1</td> <td>-</td> <td>-</td> <td>4.1</td> </tr><tr><td>11.0-11.2</td> <td>5.0</td> <td>5.0</td> <td>5.0</td> <td>5.0</td> <td>5.0</td> <td>5.0</td> </tr><tr><td>11.3, 12</td> <td>5.1</td> <td>5.1</td> <td>5.1</td> <td>5.1</td> <td>5.1</td> <td>5.1</td> </tr><tr><td>12</td> <td>6.0</td> <td>6.0</td> <td>6.0</td> <td>6.0</td> <td>6.0</td> <td>6.0</td> </tr></table><p>또한 콘퓨트시다(<a href="http://tranpedia.selfhow.com/search?q=DirectCompute&amp;submit=Search" title="DirectCompute">DirectCompute</a>)는 DirectX 11에서 도입된 스테이지이며, DirectX 10 API를 경유해 이용할 수 없지만, 드라이버가 대응하고 있으면 DirectX 10. x세대의 하드웨어상에서도 DirectX 11 API를 경유해 다운 레벨(기능 제한부)의 콘퓨트시다를 실행하는 것이 가능해진다.</p> <p>시다모델 5.1[<sup class="reference" id="cite_ref-30"><a href="http://tranpedia.selfhow.com/search?q=30&amp;submit=Search">30</a></sup>]은 DirectX 12 API를 드라이버 레벨로 서포트하는 모든 하드웨어(기능 레벨11_0이상이 필수)로 사용 가능하지만, Root Signature에 관한 기능은 DirectX 11.3으로는 사용하지 못하고, DirectX 12 전용의 기능이 되는[<sup class="reference" id="cite_ref-31"><a href="http://tranpedia.selfhow.com/search?q=31&amp;submit=Search">31</a></sup>].또, ROV (Rasterizer Order View)에 관한 오브젝트는, ROV 대응 하드웨어로 밖에 사용할 수 없는[<sup class="reference" id="cite_ref-32"><a href="http://tranpedia.selfhow.com/search?q=32&amp;submit=Search">32</a></sup>].</p> <p>시다모델 6.0[<sup class="reference" id="cite_ref-33"><a href="http://tranpedia.selfhow.com/search?q=33&amp;submit=Search">33</a></sup>]의 편입 함수는 기능 레벨12_0의 요건으로서 추가되고 있다.</p> <h3 class="in-block"><span class="mw-headline" id=".E3.83.94.E3.82.AF.E3.82.BB.E3.83.AB.E3.82.B7.E3.82.A7.E3.83.BC.E3.83.80.E3.83.BC.E3.81.AE.E6.AF.94.E8.BC.83">피크세르시다의 비교</span> <span></span></h3> <table class="wikitable"><tr><th>&#160;</th> <th>PS 1.0-1.3</th> <th>PS 1.4</th> <th>PS 2.0</th> <th>PS 2.0a</th> <th>PS 2.0b</th> <th>PS 3.0[<sup class="reference" id="cite_ref-SM3_34-0"><a href="http://tranpedia.selfhow.com/search?q=34&amp;submit=Search">34</a></sup>]</th> <th>PS 4.0[<sup class="reference" id="cite_ref-D3D10_35-0"><a href="http://tranpedia.selfhow.com/search?q=35&amp;submit=Search">35</a></sup>], 4.1, 5.0</th> </tr><tr><th>의존 texture 제한</th> <td>4</td> <td>6</td> <td>8</td> <td>무제한</td> <td>4</td> <td>무제한</td> <td>무제한</td> </tr><tr><th>texture 명령 제한</th> <td>4</td> <td>6*2</td> <td>32</td> <td>무제한</td> <td>무제한</td> <td>무제한</td> <td>무제한</td> </tr><tr><th>Position register</th> <td>No</td> <td>No</td> <td>No</td> <td>No</td> <td>No</td> <td>Yes</td> <td>Yes</td> </tr><tr><th>명령 슬롯수</th> <td>8 + 4</td> <td>8 + 4</td> <td>32 + 64</td> <td>512</td> <td>512</td> <td>&#8805; 512</td> <td>&#8805; 65536</td> </tr><tr><th>실행 명령수</th> <td>8+4</td> <td>6*2+8*2</td> <td>32 + 64</td> <td>512</td> <td>512</td> <td>65536</td> <td>무제한</td> </tr><tr><th>texture의 <a href="http://tranpedia.selfhow.com/search?q=%EA%B0%84%EC%A0%91%20%EC%B0%B8%EC%A1%B0&amp;submit=Search" title="간접 참조">간접 참조</a>수</th> <td>4</td> <td>4</td> <td>4</td> <td>무제한</td> <td>4</td> <td>무제한</td> <td>무제한</td> </tr><tr><th>Interpolated registers</th> <td>2 + 8</td> <td>2 + 8</td> <td>2 + 8</td> <td>2 + 8</td> <td>2 + 8</td> <td>10</td> <td>32</td> </tr><tr><th>명령 예측</th> <td>No</td> <td>No</td> <td>No</td> <td>Yes</td> <td>No</td> <td>Yes</td> <td>No</td> </tr><tr><th>Index input registers</th> <td>No</td> <td>No</td> <td>No</td> <td>No</td> <td>No</td> <td>Yes</td> <td>Yes</td> </tr><tr><th>일시 레지스터(Temp registers)</th> <td>2</td> <td>6 &#12288;</td> <td>12에서 32</td> <td>22</td> <td>32</td> <td>32</td> <td>4096</td> </tr><tr><th>정수 레지스터(Constant registers)</th> <td>8</td> <td>8</td> <td>32</td> <td>32</td> <td>32</td> <td>224</td> <td>16x4096</td> </tr><tr><th>Arbitrary <span title="링크처의 항목은 아직 없습니다.신규의 집필이나, 발설어판으로부터의 번역이 바람직합니다."><a class="new" href="http://tranpedia.selfhow.com/search?q=swizzling&amp;submit=Search" title="Swizzling (존재하지 않는 페이지)">swizzling</a><span class="noprint" style="font-size: 0.77em; font-weight: normal;">(<a class="extiw" href="http://tranpedia.selfhow.com/search?q=%EC%98%81%EB%AC%B8%ED%8C%90&amp;submit=Search" title="en:Swizzling (computer graphics)">영문판</a>)</span></span></th> <td>No</td> <td>No</td> <td>No</td> <td>Yes</td> <td>No</td> <td>Yes</td> <td>Yes</td> </tr><tr><th>Gradient instructions</th> <td>No</td> <td>No</td> <td>No</td> <td>Yes</td> <td>No</td> <td>Yes</td> <td>Yes</td> </tr><tr><th>Loop count register</th> <td>No</td> <td>No</td> <td>No</td> <td>No</td> <td>No</td> <td>Yes</td> <td>Yes</td> </tr><tr><th>Face register (2-sided lighting)</th> <td>No</td> <td>No</td> <td>No</td> <td>No</td> <td>No</td> <td>Yes</td> <td>Yes</td> </tr><tr><th>동적 flow control</th> <td>No</td> <td>No</td> <td>No</td> <td>No</td> <td>No</td> <td>24</td> <td>Yes</td> </tr><tr><th>비트 연산</th> <td>No</td> <td>No</td> <td>No</td> <td>No</td> <td>No</td> <td>No</td> <td>Yes</td> </tr><tr><th>정수 연산</th> <td>No</td> <td>No</td> <td>No</td> <td>No</td> <td>No</td> <td>No</td> <td>Yes</td> </tr></table><ul><li><b>PS 2.0</b> = DirectX 9.0 오리지날의 <b>시다모델 2.0</b> 사양.</li> <li><b>PS 2.0 a</b> = <a href="http://tranpedia.selfhow.com/search?q=NVIDIA%20GeForce&amp;submit=Search" title="NVIDIA GeForce">NVIDIA GeForce</a> FX에 최적화된 모델.</li> <li><b>PS 2.0 b</b> = <a href="http://tranpedia.selfhow.com/search?q=ATI%20Radeon%20X700%2C%20X800%2C%20X850&amp;submit=Search" title="AMD Radeon">ATI Radeon X700, X800, X850</a>의 시다모델(DirectX 9.0 b).</li> <li><b>PS 3.0</b> =<b>시다모델 3.0</b>에 포함된다.</li> <li><b>PS 4.0</b> =<b>시다모델 4.0</b>에 포함된다.</li> <li><b>PS 4.1</b> =<b>시다모델 4.1</b>에 포함된다.</li> <li><b>PS 5.0</b> =<b>시다모델 5.0</b>에 포함된다.</li> </ul><p><i>실행 명령수</i>에 대해"32 + 64"라고 하는 것은"32의 texture 명령과 64의 산술 명령"을 의미한다.</p> <h3 class="in-block"><span class="mw-headline" id=".E9.A0.82.E7.82.B9.E3.82.B7.E3.82.A7.E3.83.BC.E3.83.80.E3.83.BC.E3.81.AE.E6.AF.94.E8.BC.83">정점 시다의 비교</span> <span></span></h3> <table class="wikitable"><tr><th>&#160;</th> <th>VS 1.1</th> <th>VS 2.0</th> <th>VS 2.0a</th> <th>VS 3.0[<sup class="reference" id="cite_ref-SM3_34-1"><a href="http://tranpedia.selfhow.com/search?q=34&amp;submit=Search">34</a></sup>]</th> <th>VS 4.0[<sup class="reference" id="cite_ref-D3D10_35-1"><a href="http://tranpedia.selfhow.com/search?q=35&amp;submit=Search">35</a></sup>], 4.1, 5.0</th> </tr><tr><th>명령 슬롯수</th> <td>128</td> <td>256</td> <td>256</td> <td>&#8805; 512</td> <td>4096</td> </tr><tr><th>최대 명령 실행수</th> <td>불명</td> <td>65536</td> <td>65536</td> <td>65536</td> <td>65536</td> </tr><tr><th>명령 예측</th> <td>No</td> <td>No</td> <td>Yes</td> <td>Yes</td> <td>Yes</td> </tr><tr><th>일시 레지스터(Temp registers)</th> <td>12</td> <td>12</td> <td>13</td> <td>32</td> <td>4096</td> </tr><tr><th>정수 레지스터(Constant registers)</th> <td>&#8805; 96</td> <td>&#8805; 256</td> <td>&#8805; 256</td> <td>&#8805; 256</td> <td>16x4096</td> </tr><tr><th>정적 flow control</th> <td>불명</td> <td>Yes</td> <td>Yes</td> <td>Yes</td> <td>Yes</td> </tr><tr><th>동적 flow control</th> <td>No</td> <td>No</td> <td>Yes</td> <td>Yes</td> <td>Yes</td> </tr><tr><th>동적 flow control의 심도</th> <td>No</td> <td>No</td> <td>24</td> <td>24</td> <td>Yes</td> </tr><tr><th>Vertex Texture Fetch</th> <td>No</td> <td>No</td> <td>No</td> <td>Yes</td> <td>Yes</td> </tr><tr><th>테크스체산프라의 수</th> <td>N/A</td> <td>N/A</td> <td>N/A</td> <td>4</td> <td>128</td> </tr><tr><th><a class="new" href="http://tranpedia.selfhow.com/search?q=Geometry%20instancing&amp;submit=Search" title="Geometry instancing (존재하지 않는 페이지)">Geometry instancing</a> support</th> <td>No</td> <td>No</td> <td>No</td> <td>Yes</td> <td>Yes</td> </tr><tr><th>비트 연산</th> <td>No</td> <td>No</td> <td>No</td> <td>No</td> <td>Yes</td> </tr><tr><th>정수 연산</th> <td>No</td> <td>No</td> <td>No</td> <td>No</td> <td>Yes</td> </tr></table><ul><li><b>VS 2.0</b> = DirectX 9.0 오리지날의 <b>시다모델 2.0</b> 사양.</li> <li><b>VS 2.0 a</b> = NVIDIA GeForce FX에 최적화된 모델.</li> <li><b>VS 3.0</b> =<b>시다모델 3.0</b>에 포함된다.</li> <li><b>VS 4.0</b> =<b>시다모델 4.0</b>에 포함된다.</li> <li><b>VS 4.1</b> =<b>시다모델 4.1</b>에 포함된다.</li> <li><b>VS 5.0</b> =<b>시다모델 5.0</b>에 포함된다.</li> </ul><p>또한 VS 2.0 b는 존재하지 않는[<sup class="reference" id="cite_ref-36"><a href="http://tranpedia.selfhow.com/search?q=36&amp;submit=Search">36</a></sup>].</p> <h3 class="in-block"><span class="mw-headline" id=".E5.AF.BE.E5.BF.9C.E3.83.8F.E3.83.BC.E3.83.89.E3.82.A6.E3.82.A7.E3.82.A2.E3.81.AE.E6.A6.82.E7.95.A5">대응 하드웨어의 개략</span> <span></span></h3> <table class="plainlinks ambox mbox-small-left ambox-content" role="presentation" style="width:auto;"><tr><td class="mbox-image"><a class="image" href="http://tranpedia.selfhow.com/search?q=%C2%A0&amp;submit=Search"><noscript><img alt="Question book-4.svg" data-file-height="204" data-file-width="262" height="39" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/Question_book-4.svg/50px-Question_book-4.svg.png" width="50"/></noscript><span class="lazy-image-placeholder" data-alt="Question book-4.svg" data-height="39" data-src="//upload.wikimedia.org/wikipedia/commons/thumb/6/64/Question_book-4.svg/50px-Question_book-4.svg.png" data-srcset="//upload.wikimedia.org/wikipedia/commons/thumb/6/64/Question_book-4.svg/75px-Question_book-4.svg.png 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/6/64/Question_book-4.svg/100px-Question_book-4.svg.png 2x" data-width="50" style="width: 50px;height: 39px;">&#160;</span></a></td> <td class="mbox-text"><span class="mbox-text-span"><b>이 마디는 <a href="http://tranpedia.selfhow.com/search?q=%EA%B2%80%EC%A6%9D%20%EA%B0%80%EB%8A%A5&amp;submit=Search" title="Wikipedia:검증 가능성">검증 가능</a>한 <a href="http://tranpedia.selfhow.com/search?q=%EC%B0%B8%EA%B3%A0%20%EB%AC%B8%ED%97%8C%EC%9D%B4%EB%82%98%20%EC%B6%9C%EC%A0%84&amp;submit=Search" title="Wikipedia:신뢰할 수 있는 정보원">참고 문헌이나 출전</a>이 전혀 나타나지 않은지, 불충분합니다.</b><a href="http://tranpedia.selfhow.com/search?q=%EC%B6%9C%EC%A0%84%EC%9D%84%20%EC%B6%94%EA%B0%80&amp;submit=Search" title="Wikipedia:출전을 명기한다">출전을 추가</a>해 기사의 신뢰성 향상에 협력해 주십시오.<small>(<span title="2015년 2월">2015년 2월</span>)</small></span></td> </tr></table><p>이하의 겉(표)는 Direct3D 프로그라마브르시다에 대응하고 있는 각사 그래픽 카드의 개략이며, 대응하는 피크세르시다바젼과 DirectX의 버전을 나타내고 있다.그래픽 칩은 전술대로, 일반적으로는 상위 <a href="http://tranpedia.selfhow.com/search?q=%ED%98%B8%ED%99%98%EC%84%B1&amp;submit=Search" title="호환성">호환성</a>이 있다.예를 들면 PS 3.0 대응의 팁은 PS 2.0이나 PS 1.1에도 대응하고 있다.</p> <p>또한 개발에 전용 API나 OpenGL/GLSL를 사용하는 게임 전용기나 모바일 기기는, 비록 프로그라마브르시다 대응이어도 Direct3D/HLSL에 대응하고 있다고는 할 수 없지만, 그래픽 칩의 세대를 나타낼 때는 편의상 시다모델을 사용하는 일이 있다.</p> <table class="prettytable" style="text-align: center"><tr bgcolor="#FFDEAD"><th>PS version</th> <th><a class="mw-redirect" href="http://tranpedia.selfhow.com/search?q=DirectX&amp;submit=Search" title="DirectX">DirectX</a> version</th> <th><a class="mw-redirect" href="http://tranpedia.selfhow.com/search?q=3Dlabs&amp;submit=Search" title="3Dlabs">3Dlabs</a></th> <th><a href="http://tranpedia.selfhow.com/search?q=AMD&amp;submit=Search" title="어드밴스트&#12539;마이크로&#12539;데바이세즈"><a href="http://tranpedia.selfhow.com/search?q=&amp;submit=Search" title="ATI Technologies"></a>AMD</a> ( 구ATI)</th> <th><a href="http://tranpedia.selfhow.com/search?q=%EC%9D%B8%ED%85%94&amp;submit=Search" title="인텔">인텔</a></th> <th><a href="http://tranpedia.selfhow.com/search?q=Matrox&amp;submit=Search" title="Matrox">Matrox</a></th> <th><a href="http://tranpedia.selfhow.com/search?q=NVIDIA&amp;submit=Search" title="NVIDIA">NVIDIA</a></th> <th><a href="http://tranpedia.selfhow.com/search?q=S3%20Graphics&amp;submit=Search" title="S3 Graphics">S3 Graphics</a></th> <th><a class="mw-redirect" href="http://tranpedia.selfhow.com/search?q=SiS&amp;submit=Search" title="SiS">SiS</a></th> <th><a href="http://tranpedia.selfhow.com/search?q=XGI&amp;submit=Search" title="XGI Technology Inc.">XGI</a></th> </tr><tr><td>1.0/1.1</td> <td>8.0</td> <td>-</td> <td>-</td> <td>-</td> <td>-</td> <td><a class="mw-redirect" href="http://tranpedia.selfhow.com/search?q=GeForce%203%20series&amp;submit=Search" title="GeForce">GeForce 3 series</a></td> <td>-</td> <td>Xabre-Series</td> <td>-</td> </tr><tr><td>1.2</td> <td>8.0a</td> <td><a class="new" href="http://tranpedia.selfhow.com/search?q=Wildcat%20VP&amp;submit=Search" title="3 DLabs Wildcat VP (존재하지 않는 페이지)">Wildcat VP</a></td> <td>-</td> <td>-</td> <td>-</td> <td>-</td> <td>-</td> <td>-</td> <td>-</td> </tr><tr><td>1.3</td> <td>8.0a</td> <td>-</td> <td>-</td> <td>-</td> <td><a href="http://tranpedia.selfhow.com/search?q=Parhelia-Series&amp;submit=Search" title="Parhelia">Parhelia-Series</a></td> <td><a class="mw-redirect" href="http://tranpedia.selfhow.com/search?q=GeForce%204%20Ti/Go%20series&amp;submit=Search" title="GeForce">GeForce 4 Ti/Go series</a></td> <td>-</td> <td>Mirage 2(소프트웨어 에뮬레이션으로 대응)</td> <td>-</td> </tr><tr><td>1.4</td> <td>8.1</td> <td>-</td> <td><a href="http://tranpedia.selfhow.com/search?q=Radeon%20R200%20%288500-9250%29&amp;submit=Search" title="AMD Radeon">Radeon R200 (8500-9250)</a></td> <td>-</td> <td>-</td> <td>-</td> <td>-</td> <td>Mirage 3</td> <td><a class="new" href="http://tranpedia.selfhow.com/search?q=Volari%20V3%20series&amp;submit=Search" title="XGI Volari (존재하지 않는 페이지)">Volari V3 series</a> (V3XT를 제외하다)</td> </tr><tr><td>2.0</td> <td>9.0</td> <td><a class="new" href="http://tranpedia.selfhow.com/search?q=Wildcat%20Realizm&amp;submit=Search" title="3 DLabs Wildcat Realizm (존재하지 않는 페이지)">Wildcat Realizm</a></td> <td><a href="http://tranpedia.selfhow.com/search?q=Radeon%20R300%20%289500-9800%2C%20X300-X600%29&amp;submit=Search" title="AMD Radeon">Radeon R300 (9500-9800, X300-X600)</a></td> <td><a href="http://tranpedia.selfhow.com/search?q=Intel%20GMA&amp;submit=Search" title="Intel GMA">Intel GMA</a> 900</td> <td>-</td> <td><a href="http://tranpedia.selfhow.com/search?q=GeForce%20FX%20Series&amp;submit=Search" title="NVIDIA GeForce">GeForce FX Series</a></td> <td><a href="http://tranpedia.selfhow.com/search?q=DeltaChrome&amp;submit=Search" title="S3 Chrome">DeltaChrome</a>, <a href="http://tranpedia.selfhow.com/search?q=GammaChrome&amp;submit=Search" title="S3 Chrome">GammaChrome</a>, <a href="http://tranpedia.selfhow.com/search?q=Chrome%20S2x%20series&amp;submit=Search" title="S3 Chrome">Chrome S2x series</a>, <a href="http://tranpedia.selfhow.com/search?q=Chrome9%20HC&amp;submit=Search" title="S3 Chrome">Chrome9 HC</a></td> <td>Mirage 3+</td> <td><a class="new" href="http://tranpedia.selfhow.com/search?q=Volari%20V3XT%2C%20Volari%20V5%20series%2C%20Volari%20V8%20series%2C%20Volari%208300%2C%20Volari%20XP10&amp;submit=Search" title="XGI Volari (존재하지 않는 페이지)">Volari V3XT, Volari V5 series, Volari V8 series, Volari 8300, Volari XP10</a></td> </tr><tr><td>2.0a</td> <td>9.0a</td> <td>-</td> <td>-</td> <td>-</td> <td>-</td> <td><a href="http://tranpedia.selfhow.com/search?q=GeForce%20FX%20Series&amp;submit=Search" title="NVIDIA GeForce">GeForce FX Series</a></td> <td>-</td> <td>-</td> <td>-</td> </tr><tr><td>2.0b</td> <td>9.0b</td> <td>-</td> <td><a href="http://tranpedia.selfhow.com/search?q=Radeon%20R420%20%28X700-X850%29&amp;submit=Search" title="AMD Radeon">Radeon R420 (X700-X850)</a></td> <td>-</td> <td>-</td> <td>-</td> <td>-</td> <td>-</td> <td>-</td> </tr><tr><td>3.0</td> <td>9.0c</td> <td>-</td> <td><a class="mw-redirect" href="http://tranpedia.selfhow.com/search?q=Radeon%20X1xxx&amp;submit=Search" title="RADEON">Radeon X1xxx</a></td> <td><a href="http://tranpedia.selfhow.com/search?q=Intel%20GMA&amp;submit=Search" title="Intel GMA">Intel GMA</a> 950(3.0은 소프트웨어 에뮬레이션), 3000, 3100</td> <td><a href="http://tranpedia.selfhow.com/search?q=M%20Series&amp;submit=Search" title="M시리즈(컴퓨터)">M Series</a></td> <td><a class="mw-redirect" href="http://tranpedia.selfhow.com/search?q=GeForce%206%20series&amp;submit=Search" title="GeForce">GeForce 6 series</a>, <a class="mw-redirect" href="http://tranpedia.selfhow.com/search?q=GeForce%207%20series&amp;submit=Search" title="GeForce">GeForce 7 series</a></td> <td>-</td> <td>-</td> <td>-</td> </tr><tr><td>4.0</td> <td>10</td> <td>-</td> <td><a class="mw-redirect" href="http://tranpedia.selfhow.com/search?q=Radeon%20HD%202xxx&amp;submit=Search" title="RADEON">Radeon HD 2xxx</a></td> <td><a href="http://tranpedia.selfhow.com/search?q=Intel%20GMA&amp;submit=Search" title="Intel GMA">Intel GMA</a> X3100 이후의 시리즈</td> <td>-</td> <td><a class="mw-redirect" href="http://tranpedia.selfhow.com/search?q=GeForce%208%20series&amp;submit=Search" title="GeForce">GeForce 8 series</a>, <a class="mw-redirect" href="http://tranpedia.selfhow.com/search?q=GeForce%209%20series&amp;submit=Search" title="GeForce">GeForce 9 series</a></td> <td>-</td> <td>-</td> <td>-</td> </tr><tr><td>4.1</td> <td>10.1</td> <td>-</td> <td><a class="mw-redirect" href="http://tranpedia.selfhow.com/search?q=Radeon%20HD%203xxx%2C%20Radeon%20HD%204xxx&amp;submit=Search" title="RADEON">Radeon HD 3xxx, Radeon HD 4xxx</a></td> <td><a href="http://tranpedia.selfhow.com/search?q=HD%20Graphics%202000/3000&amp;submit=Search" title="Intel HD Graphics">HD Graphics 2000/3000</a></td> <td>-</td> <td><a class="mw-redirect" href="http://tranpedia.selfhow.com/search?q=GeForce%20GT%20200%20Series&amp;submit=Search" title="GeForce">GeForce GT 200 Series</a></td> <td><a href="http://tranpedia.selfhow.com/search?q=Chrome400/500&amp;submit=Search" title="S3 Chrome">Chrome400/500</a></td> <td>-</td> <td>-</td> </tr><tr><td>5.0</td> <td>11</td> <td>-</td> <td><a href="http://tranpedia.selfhow.com/search?q=Radeon%20HD%205xxx&amp;submit=Search" title="AMD Radeon">Radeon HD 5xxx</a></td> <td><a href="http://tranpedia.selfhow.com/search?q=HD%20Graphics%202500/4000&amp;submit=Search" title="Intel HD Graphics">HD Graphics 2500/4000</a></td> <td>-</td> <td><a class="mw-redirect" href="http://tranpedia.selfhow.com/search?q=GeForce%20GTX%20400%20Series&amp;submit=Search" title="GeForce">GeForce GTX 400 Series</a></td> <td>-</td> <td>-</td> <td>-</td> </tr></table><h4 class="in-block"><span class="mw-headline" id="Shader_Model_1.x">Shader Model 1. x</span><span></span></h4> <ul><li>DirectX 8. x세대.</li> <li><a href="http://tranpedia.selfhow.com/search?q=NVIDIA&amp;submit=Search" title="NVIDIA">NVIDIA</a>와 <a class="mw-redirect mw-disambig" href="http://tranpedia.selfhow.com/search?q=ATI&amp;submit=Search" title="ATI">ATI</a>가 끝 없게 기능확장을 행했을 무렵의 모델.1.1, 1.2, 1.3, 1.4의 마이너 버전이 존재한다.</li> <li>대응 GPU: <a href="http://tranpedia.selfhow.com/search?q=AMD%20Radeon&amp;submit=Search" title="AMD Radeon">AMD Radeon</a>는 8 xxx, <a href="http://tranpedia.selfhow.com/search?q=NVIDIA%20GeForce&amp;submit=Search" title="NVIDIA GeForce">NVIDIA GeForce</a>는 3-4 Ti시리즈.</li> <li>게임기인 <a href="http://tranpedia.selfhow.com/search?q=Xbox&amp;submit=Search" title="Xbox">Xbox</a>용 GPU는 SM1.x, 또는 그 파생판이라고 볼 수 있다.</li> </ul><h4 class="in-block"><span class="mw-headline" id="Shader_Model_2.0">Shader Model 2.0</span> <span></span></h4> <ul><li>DirectX 9세대.</li> <li><span class="fix-domain" title="이 기술에는 신뢰할 수 있는 정보원의 제시가 요구되고 있습니다.(2015년 2월)"><a href="http://tranpedia.selfhow.com/search?q=%EB%A7%88%EC%9D%B4%ED%81%AC%EB%A1%9C%EC%86%8C%ED%94%84%ED%8A%B8&amp;submit=Search" title="마이크로소프트">마이크로소프트</a>와 <a href="http://tranpedia.selfhow.com/search?q=%EC%9D%B8%ED%85%94&amp;submit=Search" title="인텔">인텔</a>이, 양자의 이점을 살려 만든 스탠다드 모델</span>[<sup class="noprint Template-Fact"><i><a href="http://tranpedia.selfhow.com/search?q=%EC%9A%94%EC%A0%90%20%EC%B6%9C%EC%A0%84&amp;submit=Search" title="Wikipedia:&#12300;요점 출전&#12301;이 클릭된 (분)편에"><span title="이 기술에는 신뢰할 수 있는 정보원의 제시가 요구되고 있습니다.(2015년 2월)">요점 출전</span></a></i></sup>].</li> <li>NVIDIA 확장인 2.0 a로 ATI 확장인 2.0 b가 존재한다.</li> <li>대응 GPU: Radeon는 9500-X850, GeForce는 FX 5 xxx 시리즈.</li> </ul><h4 class="in-block"><span class="mw-headline" id="Shader_Model_3.0">Shader Model 3.0</span> <span></span></h4> <ul><li>DirectX 9.0 c세대.</li> <li>이 버전보다, 시다프로그람장의 제한이 거의 않게 되었다.</li> <li>대응 GPU: Radeon는 X1000 시리즈, GeForce는 6, 7 시리즈.</li> <li>게임기인 <a href="http://tranpedia.selfhow.com/search?q=Xbox%20360&amp;submit=Search" title="Xbox 360">Xbox 360</a>, <a href="http://tranpedia.selfhow.com/search?q=%ED%94%8C%EB%A0%88%EC%9D%B4%20%EC%8A%A4%ED%85%8C%EC%9D%B4%EC%85%98%203&amp;submit=Search" title="PlayStation 3">플레이 스테이션 3</a>용 GPU는, SM3. 0또는 그 파생판이라고 생각된다.</li> </ul><h4 class="in-block"><span class="mw-headline" id="Shader_Model_4.x">Shader Model 4. x</span><span></span></h4> <ul><li>DirectX 10. x세대.</li> <li>통합형 시다아키테크체의 채용.덧붙여 GPGPU용 API의 <a href="http://tranpedia.selfhow.com/search?q=CUDA&amp;submit=Search" title="CUDA">CUDA</a>나 <a href="http://tranpedia.selfhow.com/search?q=OpenCL&amp;submit=Search" title="OpenCL">OpenCL</a>에 대응하는 것은 SM 4.0세대 이후이다.</li> <li>정수 레지스터(정수 버퍼) 용량의 대폭적인 확장.</li> <li>지오메트리시다의 추가.</li> <li>추가의 texture 명령등을 서포트하는 마이너 버전 4.1이 존재하는[<sup class="reference" id="cite_ref-37"><a href="http://tranpedia.selfhow.com/search?q=37&amp;submit=Search">37</a></sup>].</li> <li>대응 GPU: Radeon는 HD 2 xxx-HD 4 xxx 시리즈, GeForce는 8 xxx-GT 3 xx시리즈.</li> <li>게임기인 <a href="http://tranpedia.selfhow.com/search?q=Wii%20U&amp;submit=Search" title="Wii U">Wii U</a>용 GPU는, SM4. 0또는 그 파생판이라고 생각되는[<sup class="reference" id="cite_ref-38"><a href="http://tranpedia.selfhow.com/search?q=38&amp;submit=Search">38</a></sup>].</li> </ul><h4 class="in-block"><span class="mw-headline" id="Shader_Model_5.0">Shader Model 5.0</span> <span></span></h4> <ul><li>DirectX 11. x세대.</li> <li>하르시다, 드메인시다, 고정 기능 텟세레이타가 포함되는 텟세레이션스테이지의 추가, 및 <a href="http://tranpedia.selfhow.com/search?q=GPGPU&amp;submit=Search" title="GPGPU">GPGPU</a> 기능인 콘퓨트시다(<a href="http://tranpedia.selfhow.com/search?q=DirectCompute&amp;submit=Search" title="DirectCompute">DirectCompute</a>)의 대응 등.</li> <li>대응 GPU: Radeon는 HD 5 xxx-HD 8 xxx, Rx 2 xx/3 xx시리즈, GeForce는 Fermi, Kepler, Maxwell 제 1세대.</li> <li>게임기인 <a href="http://tranpedia.selfhow.com/search?q=Xbox%20One&amp;submit=Search" title="Xbox One">Xbox One</a>, <a href="http://tranpedia.selfhow.com/search?q=PlayStation%204&amp;submit=Search" title="PlayStation 4">PlayStation 4</a>용 GPU는, SM5. 0또는 그 파생판이라고 생각되는[<sup class="reference" id="cite_ref-39"><a href="http://tranpedia.selfhow.com/search?q=39&amp;submit=Search">39</a></sup>].</li> </ul><h4 class="in-block"><span class="mw-headline" id="Shader_Model_6.0">Shader Model 6.0</span> <span></span></h4> <ul><li>DirectX 12세대.</li> <li>대응 GPU: Radeon는 GCN 제 2세대 이후, GeForce는 Maxwell 제 2세대 이후.</li> </ul><p>또한 <a href="http://tranpedia.selfhow.com/search?q=OpenGL&amp;submit=Search" title="OpenGL">OpenGL</a> 대응 레벨에 관해서는, 넘버링이 DirectX의 버전이나 시다모델과 정확하게 대응하는 것은 아니고, 세세한 기능에 있어서의 차이가 다수 존재하지만, 세대로서는 대체로 아래와 같이 된다.</p> <ul><li>OpenGL 2.x - Direct3D 9</li> <li>OpenGL 3.x - Direct3D 10</li> <li>OpenGL 4.x - Direct3D 11</li> </ul></div><h2 class="section-heading in-block" onclick="javascript:mfTempOpenSection(10)"><div class="mw-ui-icon mw-ui-icon-element indicator"></div><span class="mw-headline" id=".E9.96.A2.E9.80.A3.E9.A0.85.E7.9B.AE">관련 항목</span> <span></span></h2><div class="mf-section-10 collapsible-block" id="mf-section-10"> <ul><li><a href="http://tranpedia.selfhow.com/search?q=Microsoft%20DirectX&amp;submit=Search" title="Microsoft DirectX">Microsoft DirectX</a></li> <li><a href="http://tranpedia.selfhow.com/search?q=Direct3D&amp;submit=Search" title="Direct3D">Direct3D</a></li> <li><a href="http://tranpedia.selfhow.com/search?q=DirectCompute&amp;submit=Search" title="DirectCompute">DirectCompute</a></li> <li><a href="http://tranpedia.selfhow.com/search?q=GLSL&amp;submit=Search" title="GLSL">GLSL</a></li> <li><a href="http://tranpedia.selfhow.com/search?q=Cg%20%28%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%A8%20%EC%96%B8%EC%96%B4%29&amp;submit=Search" title="Cg (프로그램 언어)">Cg (프로그램 언어)</a></li> </ul></div><h2 class="section-heading in-block" onclick="javascript:mfTempOpenSection(11)"><div class="mw-ui-icon mw-ui-icon-element indicator"></div><span class="mw-headline" id=".E8.84.9A.E6.B3.A8">각주</span> <span></span></h2><div class="mf-section-11 collapsible-block" id="mf-section-11"> <table class="noprint" style="float:right; font-size:90%;"><tr><td>[<a href="http://tranpedia.selfhow.com/search?q=%ED%97%AC%ED%94%84&amp;submit=Search" title="Help:각주/독자 전용"><span title="이 란의 조작법">헬프</span></a>]</td> </tr></table><div class="reflist" style="list-style-type: decimal;"> <ol class="references"><li id="cite_note-1"><b><a href="http://tranpedia.selfhow.com/search?q=&amp;submit=Search"></a></b>^ <span class="reference-text"><a class="external text" href="http://tranpedia.selfhow.com/search?q=Writing%20HLSL%20Shaders%20in%20Direct3D%209%20%28Windows&amp;submit=Search" rel="nofollow">Writing HLSL Shaders in Direct3D 9 (Windows</a></span>)</li> <li id="cite_note-2"><b><a href="http://tranpedia.selfhow.com/search?q=%5E&amp;submit=Search">^</a></b> <span class="reference-text"><a class="external text" href="http://tranpedia.selfhow.com/search?q=%EC%83%81%EC%9C%84%20%EB%A0%88%EB%B2%A0%EB%A5%B4%EC%8B%9C%EB%8B%A4%20%EC%96%B8%EC%96%B4-%20MSDN&amp;submit=Search" rel="nofollow">상위 레베르시다 언어- MSDN</a></span></li> <li id="cite_note-3"><b><a href="http://tranpedia.selfhow.com/search?q=&amp;submit=Search"></a></b>^ <span class="reference-text"><a class="external text" href="http://tranpedia.selfhow.com/search?q=HLSL%20-%20MSDN&amp;submit=Search" rel="nofollow">HLSL - MSDN</a></span></li> <li id="cite_note-4"><b><a href="http://tranpedia.selfhow.com/search?q=&amp;submit=Search"></a></b>^ <span class="reference-text"><a class="external text" href="http://tranpedia.selfhow.com/search?q=Shader%20Models%20vs%20Shader%20Profiles%20-%20MSDN&amp;submit=Search" rel="nofollow">Shader Models vs Shader Profiles - MSDN</a></span></li> <li id="cite_note-5"><b><a href="http://tranpedia.selfhow.com/search?q=%5E&amp;submit=Search">^</a></b> <span class="reference-text"><a class="external text" href="http://tranpedia.selfhow.com/search?q=%EF%BC%BBGDC%202016%EF%BC%BD%EC%8B%9C%EB%8B%A4%EB%AA%A8%EB%8D%B8%206.0%EC%9D%B4%20%EC%98%A8%EB%8B%A4%21%20Microsoft%EA%B0%80%20%EB%A7%90%ED%95%9C%20%E3%80%8C%EB%8B%A4%EC%9D%8C%20DirectX%E3%80%8D-%204%20Gamer.net&amp;submit=Search" rel="nofollow">&#65339;GDC 2016&#65341;시다모델 6.0이 온다! Microsoft가 말한 &#12300;다음 DirectX&#12301;- 4 Gamer.net</a></span></li> <li id="cite_note-6"><b><a href="http://tranpedia.selfhow.com/search?q=%5E&amp;submit=Search">^</a></b> <span class="reference-text"><a class="external text" href="http://tranpedia.selfhow.com/search?q=HLSL%20Shader%20Model%206.0%20%28Windows%29&amp;submit=Search" rel="nofollow">HLSL Shader Model 6.0 (Windows)</a></span></li> <li id="cite_note-7"><b><a href="http://tranpedia.selfhow.com/search?q=&amp;submit=Search"></a></b>^ <span class="reference-text"><a class="external text" href="http://tranpedia.selfhow.com/search?q=Direct3D%209%EB%A1%9C%EB%B6%80%ED%84%B0%20Direct3D%2010%EC%97%90%EC%9D%98%20%EC%9D%B4%ED%96%89%EC%8B%9C%EC%9D%98%20%EA%B3%A0%EB%A0%A4%EC%82%AC%ED%95%AD%28Direct3D%2010%29&amp;submit=Search" rel="nofollow">Direct3D 9로부터 Direct3D 10에의 이행시의 고려사항(Direct3D 10)</a></span></li> <li id="cite_note-8"><b><a href="http://tranpedia.selfhow.com/search?q=&amp;submit=Search"></a></b>^<span class="reference-text"><a class="external text" href="http://tranpedia.selfhow.com/search?q=%EB%8F%99%EC%A0%81%20%EB%A7%81%ED%81%AC&amp;submit=Search" rel="nofollow">동적 링크</a></span></li> <li id="cite_note-9"><b><a href="http://tranpedia.selfhow.com/search?q=&amp;submit=Search"></a></b>^ .<span class="reference-text"><a class="external text" href="http://tranpedia.selfhow.com/search?q=hlsli%20Extension%20-%20List%20of%20programs%20that%20can%20open%20.hlsli%20files&amp;submit=Search" rel="nofollow">hlsli Extension - List of programs that can open .hlsli files</a></span></li> <li id="cite_note-10"><b><a href="http://tranpedia.selfhow.com/search?q=%5E&amp;submit=Search">^</a></b> <span class="reference-text"><a class="external text" href="http://tranpedia.selfhow.com/search?q=Direct3D%209%EB%A1%9C%EC%9D%98%20%EC%8B%9C%EB%8B%A4%EC%9D%98%20%EC%82%AC%EC%9A%A9&amp;submit=Search" rel="nofollow">Direct3D 9로의 시다의 사용</a></span></li> <li id="cite_note-11"><b><a href="http://tranpedia.selfhow.com/search?q=&amp;submit=Search"></a></b>^ <span class="reference-text"><a class="external text" href="http://tranpedia.selfhow.com/search?q=HLSL%2C%20FXC%2C%20and%20D3DCompile%20-%20Games%20for%20Windows%20and%20the%20DirectX%20SDK%20-%20Site%20Home%20-%20MSDN%20Blogs&amp;submit=Search" rel="nofollow">HLSL, FXC, and D3DCompile - Games for Windows and the DirectX SDK - Site Home - MSDN Blogs</a></span></li> <li id="cite_note-12"><b><a href="http://tranpedia.selfhow.com/search?q=%5E&amp;submit=Search">^</a></b> <span class="reference-text"><a class="external text" href="http://tranpedia.selfhow.com/search?q=Unity%20-%20Unity%20Manual&amp;submit=Search" rel="nofollow">Unity - Unity Manual</a></span></li> <li id="cite_note-13"><b><a href="http://tranpedia.selfhow.com/search?q=&amp;submit=Search"></a></b>^ <span class="reference-text"><a class="external text" href="http://tranpedia.selfhow.com/search?q=ShaderEffect%20%ED%81%B4%EB%9E%98%EC%8A%A4%28System.Windows.Media.Effects%29&amp;submit=Search" rel="nofollow">ShaderEffect 클래스(System.Windows.Media.Effects)</a></span></li> <li id="cite_note-14"><b><a href="http://tranpedia.selfhow.com/search?q=&amp;submit=Search"></a></b>^ <span class="reference-text"><a class="external text" href="http://tranpedia.selfhow.com/search?q=ShaderEffect%20%ED%81%B4%EB%9E%98%EC%8A%A4%28System.Windows.Media.Effects%29&amp;submit=Search" rel="nofollow">ShaderEffect 클래스(System.Windows.Media.Effects)</a></span></li> <li id="cite_note-15"><b><a href="http://tranpedia.selfhow.com/search?q=%5E&amp;submit=Search">^</a></b> <span class="reference-text"><a class="external text" href="http://tranpedia.selfhow.com/search?q=WPF%20Version%204%EC%9D%98%20%EC%8B%A0%EA%B8%B0%EB%8A%A5&amp;submit=Search" rel="nofollow">WPF Version 4의 신기능</a></span></li> <li id="cite_note-16"><b><a href="http://tranpedia.selfhow.com/search?q=&amp;submit=Search"></a></b>^ <span class="reference-text"><a class="external text" href="http://tranpedia.selfhow.com/search?q=Effects%20%28Windows&amp;submit=Search" rel="nofollow">Effects (Windows</a></span>)</li> <li id="cite_note-17"><b><a href="http://tranpedia.selfhow.com/search?q=%5E&amp;submit=Search">^</a></b> <span class="reference-text"><a class="external text" href="http://tranpedia.selfhow.com/search?q=%EC%8B%9C%EB%8B%A4%EB%AA%A8%EB%8D%B8%EA%B3%BC%20%EC%8B%9C%EB%8B%A4%ED%94%84%EB%A1%9C%ED%8C%8C%EC%9D%BC&amp;submit=Search" rel="nofollow">시다모델과 시다프로파일</a></span></li> <li id="cite_note-18"><b><a href="http://tranpedia.selfhow.com/search?q=%5E&amp;submit=Search">^</a></b> <span class="reference-text"><a class="external text" href="http://tranpedia.selfhow.com/search?q=Direct3D%2010%EC%9C%BC%EB%A1%9C%EC%9D%98%20%EC%8B%9C%EB%8B%A4%EC%9D%98%20%EC%82%AC%EC%9A%A9&amp;submit=Search" rel="nofollow">Direct3D 10으로의 시다의 사용</a></span></li> <li id="cite_note-19"><b><a href="http://tranpedia.selfhow.com/search?q=%5E&amp;submit=Search">^</a></b> <span class="reference-text"><a class="external text" href="http://tranpedia.selfhow.com/search?q=3%20D%EA%B7%B8%EB%9E%98%ED%94%BD%EC%8A%A4%E3%83%BB%EB%A7%88%EB%8B%88%EC%95%85%EC%8A%A4%284%29%20GPU%EC%99%80%20%EC%8B%9C%EB%8B%A4%20%EA%B8%B0%EC%88%A0%EC%9D%98%20%EA%B8%B0%EC%B4%88%EC%A7%80%EC%8B%9D%284%29%20%7C%20%EB%A7%88%EC%9D%B4%20%EB%84%A4%EB%B9%84%20%EB%89%B4%EC%8A%A4&amp;submit=Search" rel="nofollow">3 D그래픽스&#12539;마니악스(4) GPU와 시다 기술의 기초지식(4) | 마이 네비 뉴스</a></span></li> <li id="cite_note-20"><b><a href="http://tranpedia.selfhow.com/search?q=&amp;submit=Search"></a></b>^&#12304;<span class="reference-text"><a class="external text" href="http://tranpedia.selfhow.com/search?q=4%20Gamer.net%E3%80%91%EF%BC%BB%ED%8A%B9%EC%A7%91%EF%BC%BDATI%EC%99%80%20NVIDIA%EA%B0%80%20%EB%A7%90%ED%95%98%EB%8A%94%202005%EF%BC%862006%EB%85%84%20ATI%ED%8E%B8&amp;submit=Search" rel="nofollow">4 Gamer.net&#12305;&#65339;특집&#65341;ATI와 NVIDIA가 말하는 2005&#65286;2006년 ATI편</a></span></li> <li id="cite_note-21"><b><a href="http://tranpedia.selfhow.com/search?q=%5E&amp;submit=Search">^</a></b> <span class="reference-text"><a class="external text" href="http://tranpedia.selfhow.com/search?q=%ED%85%9F%EC%84%B8%EB%A0%88%EC%9D%B4%EC%85%98%28Direct3D%209%29&amp;submit=Search" rel="nofollow">텟세레이션(Direct3D 9)</a></span></li> <li id="cite_note-22"><b><a href="http://tranpedia.selfhow.com/search?q=&amp;submit=Search"></a></b>^ <span class="reference-text"><a class="external text" href="http://tranpedia.selfhow.com/search?q=4%20Gamer.net%20AMD%2C%20%EC%BD%94%EB%93%9C%EB%84%A4%EC%9E%84%20%E3%80%8CR600%E3%80%8D%EC%9D%BC%20%E3%80%8CATI%20Radeon%20HD%202000%E3%80%8D%EC%9D%84%20%EB%B0%9C%ED%91%9C&amp;submit=Search" rel="nofollow">4 Gamer.net AMD, 코드네임 &#12300;R600&#12301;일 &#12300;ATI Radeon HD 2000&#12301;을 발표</a></span></li> <li id="cite_note-23"><b><a href="http://tranpedia.selfhow.com/search?q=&amp;submit=Search"></a></b>^ &#65339;<span class="reference-text"><a class="external text" href="http://tranpedia.selfhow.com/search?q=%EC%97%B0%EC%9E%AC%EF%BC%BD%EF%BC%BB%EB%8B%88%EC%8B%9C%EC%B9%B4%EC%99%80%20%EC%A0%A0%EC%A7%80%EC%9D%98%203%20D%EA%B2%8C%EC%9E%84%20%EC%97%91%EC%8A%A4%ED%84%B0%EC%8B%9C%EF%BC%BD%E3%80%8CATI%20Radeon%20HD%202000%E3%80%8D%EC%8B%9C%EB%A6%AC%EC%A6%88%EC%9D%98%20GPU%20%EC%95%84%ED%82%A4%ED%85%8D%EC%B3%90%20%EC%B2%A0%EC%A0%80%20%ED%95%B4%EC%84%A4&amp;submit=Search" rel="nofollow">연재&#65341;&#65339;니시카와 젠지의 3 D게임 엑스터시&#65341;&#12300;ATI Radeon HD 2000&#12301;시리즈의 GPU 아키텍쳐 철저 해설</a></span></li> <li id="cite_note-24"><b><a href="http://tranpedia.selfhow.com/search?q=&amp;submit=Search"></a></b>^ <span class="reference-text"><a class="external text" href="http://tranpedia.selfhow.com/search?q=Game%20Developers%20Conference%28GDC%29%202010%20%ED%98%84%EC%A7%80%20%EB%A6%AC%ED%8F%AC%ED%8A%B8-%20GAME%20Watch&amp;submit=Search" rel="nofollow">Game Developers Conference(GDC) 2010 현지 리포트- GAME Watch</a></span></li> <li id="cite_note-25"><b><a href="http://tranpedia.selfhow.com/search?q=&amp;submit=Search"></a></b>^ "<span class="reference-text"><a class="external text" href="http://tranpedia.selfhow.com/search?q=PDC%202008%3A%EB%A9%94%EC%9D%B8%20%EC%8A%A4%ED%8A%B8%EB%A6%BC%20%EC%96%B4%ED%94%8C%EB%A6%AC%EC%BC%80%EC%9D%B4%EC%85%98%EC%9D%84%20%EC%9C%84%ED%95%9C%20%20Direct3D10%22%2C%20Microsoft%20Corporation%2C%202008%EB%85%84%2010%EC%9B%94&amp;submit=Search" rel="nofollow">PDC 2008:메인 스트림 어플리케이션을 위한  Direct3D10", Microsoft Corporation, 2008년 10월</a></span></li> <li id="cite_note-26"><b><a href="http://tranpedia.selfhow.com/search?q=%5E&amp;submit=Search">^</a></b> <span class="reference-text"><a class="external text" href="http://tranpedia.selfhow.com/search?q=D3D_FEATURE_LEVEL%20enumeration&amp;submit=Search" rel="nofollow">D3D_FEATURE_LEVEL enumeration</a></span></li> <li id="cite_note-27"><b><a href="http://tranpedia.selfhow.com/search?q=%5E&amp;submit=Search">^</a></b> <span class="reference-text"><a class="external text" href="http://tranpedia.selfhow.com/search?q=Direct3D%20feature%20levels&amp;submit=Search" rel="nofollow">Direct3D feature levels</a></span></li> <li id="cite_note-28"><b><a href="http://tranpedia.selfhow.com/search?q=%5E&amp;submit=Search">^</a></b> <span class="reference-text"><a class="external text" href="http://tranpedia.selfhow.com/search?q=%EB%8B%A4%EC%9A%B4%20%EB%A0%88%EB%B2%A8%EC%9D%98%20%ED%95%98%EB%93%9C%EC%9B%A8%EC%96%B4%EC%83%81%EC%9D%98%20Direct3D%2011&amp;submit=Search" rel="nofollow">다운 레벨의 하드웨어상의 Direct3D 11</a></span></li> <li id="cite_note-29"><b><a href="http://tranpedia.selfhow.com/search?q=&amp;submit=Search"></a></b>^ <span class="reference-text"><a class="external text" href="http://tranpedia.selfhow.com/search?q=10%20Level9%20%EB%A0%88%ED%8D%BC%EB%9F%B0%EC%8A%A4&amp;submit=Search" rel="nofollow">10 Level9 레퍼런스</a></span></li> <li id="cite_note-30"><b><a href="http://tranpedia.selfhow.com/search?q=&amp;submit=Search"></a></b>^ <span class="reference-text"><a class="external text" href="http://tranpedia.selfhow.com/search?q=Shader%20Model%205.1&amp;submit=Search" rel="nofollow">Shader Model 5.1</a></span></li> <li id="cite_note-31"><b><a href="http://tranpedia.selfhow.com/search?q=&amp;submit=Search"></a></b>^ <span class="reference-text"><a class="external text" href="http://tranpedia.selfhow.com/search?q=HLSL%20Shader%20Model%205.1%20Features%20for%20Direct3D%2012&amp;submit=Search" rel="nofollow">HLSL Shader Model 5.1 Features for Direct3D 12</a></span></li> <li id="cite_note-32"><b><a href="http://tranpedia.selfhow.com/search?q=%5E&amp;submit=Search">^</a></b> <span class="reference-text"><a class="external text" href="http://tranpedia.selfhow.com/search?q=Hardware%20Feature%20Levels&amp;submit=Search" rel="nofollow">Hardware Feature Levels</a></span></li> <li id="cite_note-33"><b><a href="http://tranpedia.selfhow.com/search?q=%5E&amp;submit=Search">^</a></b> <span class="reference-text"><a class="external text" href="http://tranpedia.selfhow.com/search?q=HLSL%20Shader%20Model%206.0%20%28Windows%29&amp;submit=Search" rel="nofollow">HLSL Shader Model 6.0 (Windows)</a></span></li> <li id="cite_note-SM3-34">^ <a href="http://tranpedia.selfhow.com/search?q=a&amp;submit=Search"><sup><i><b>a</b></i></sup></a> <a href="http://tranpedia.selfhow.com/search?q=b&amp;submit=Search"><sup><i><b>b</b></i></sup></a> <span class="reference-text"><a class="external text" href="http://tranpedia.selfhow.com/search?q=Shader%20Model%203.0%2C%20Ashu%20Rege%2C%20NVIDIA%20Developer%20Technology%20Group%2C%202004.&amp;submit=Search" rel="nofollow">Shader Model 3.0, Ashu Rege, NVIDIA Developer Technology Group, 2004.</a></span></li> <li id="cite_note-D3D10-35">^ <a href="http://tranpedia.selfhow.com/search?q=a&amp;submit=Search"><sup><i><b>a</b></i></sup></a> <a href="http://tranpedia.selfhow.com/search?q=b&amp;submit=Search"><sup><i><b>b</b></i></sup></a> <span class="reference-text"><a class="external text" href="http://tranpedia.selfhow.com/search?q=The%20Direct3D%2010%20System%2C%20David%20Blythe%2C%20Microsoft%20Corporation%2C%202006.&amp;submit=Search" rel="nofollow">The Direct3D 10 System, David Blythe, Microsoft Corporation, 2006.</a></span></li> <li id="cite_note-36"><b><a href="http://tranpedia.selfhow.com/search?q=&amp;submit=Search"></a></b>^ "<span class="reference-text"><a class="external text" href="http://tranpedia.selfhow.com/search?q=Shader%20Model%203.0%20Unleashed%22%2C%20Randima%20%28Randy%29%20Fernando%2C%20NVIDIA%20Developer%20Technology%20Group&amp;submit=Search" rel="nofollow">Shader Model 3.0 Unleashed", Randima (Randy) Fernando, NVIDIA Developer Technology Group</a></span></li> <li id="cite_note-37"><b><a href="http://tranpedia.selfhow.com/search?q=%5E&amp;submit=Search">^</a></b> <span class="reference-text"><a class="external text" href="http://tranpedia.selfhow.com/search?q=%EC%9E%AC%EC%A7%88%EA%B0%90%20%EC%98%A4%EB%B8%8C%EC%A0%9D%ED%8A%B8%28DirectX%20HLSL%29&amp;submit=Search" rel="nofollow">재질감 오브젝트(DirectX HLSL)</a></span></li> <li id="cite_note-38"><b><a href="http://tranpedia.selfhow.com/search?q=%5E&amp;submit=Search">^</a></b> <span class="reference-text"><cite style="font-style:normal">"<a class="external text" href="http://tranpedia.selfhow.com/search?q=%EB%8B%88%EC%8B%9C%EC%B9%B4%EC%99%80%20%EC%A0%A0%EC%A7%80%EC%9D%98%203%20D%EA%B2%8C%EC%9E%84%20%ED%8C%AC%EC%9D%84%20%EC%9C%84%ED%95%9C%20E3%EC%B5%9C%EC%8B%A0%20%ED%95%98%EB%93%9C%EC%9B%A8%EC%96%B4%20%EA%B0%95%EC%A2%8C&amp;submit=Search" rel="nofollow">니시카와 젠지의 3 D게임 팬을 위한 E3최신 하드웨어 강좌</a>"(일본어).  Impress Watch (<span title="">2011년 6월 11일</span>). <span title="">2011년 6월 11일</span> 열람.</cite></span></li> <li id="cite_note-39"><b><a href="http://tranpedia.selfhow.com/search?q=&amp;submit=Search"></a></b>^<span class="reference-text"><cite style="font-style:normal">"<a class="external text" href="http://tranpedia.selfhow.com/search?q=%EB%8B%88%EC%8B%9C%EC%B9%B4%EC%99%80%20%EC%A0%A0%EC%A7%80%EC%9D%98%203%20D%EA%B2%8C%EC%9E%84%20%ED%8C%AC%EC%9D%84%20%EC%9C%84%ED%95%9C%20%E3%80%8C%ED%94%8C%EB%A0%88%EC%9D%B4%20%EC%8A%A4%ED%85%8C%EC%9D%B4%EC%85%98%204%E3%80%8D%EA%B7%B8%EB%9E%98%ED%94%BD%EC%8A%A4%E3%80%8D%EA%B0%95%EC%A2%8C%28%ED%9B%84%ED%8E%B8%29&amp;submit=Search" rel="nofollow">니시카와 젠지의 3 D게임 팬을 위한 &#12300;플레이 스테이션 4&#12301;그래픽스&#12301;강좌(후편)</a>"(일본어).  Impress Watch (<span title="">2013년 3월 8일</span>). <span title="">2014년 8월 29일</span> 열람.</cite></span></li> </ol></div> </div><h2 class="section-heading in-block" onclick="javascript:mfTempOpenSection(12)"><div class="mw-ui-icon mw-ui-icon-element indicator"></div><span class="mw-headline" id=".E5.A4.96.E9.83.A8.E3.83.AA.E3.83.B3.E3.82.AF">외부 링크</span> <span></span></h2><div class="mf-section-12 collapsible-block" id="mf-section-12"> <ul><li><a class="external text" href="http://tranpedia.selfhow.com/search?q=HLSL%20%28Windows%29%20-%20MSDN&amp;submit=Search" rel="nofollow">HLSL (Windows) - MSDN</a></li> <li><a class="external text" href="http://tranpedia.selfhow.com/search?q=%EC%83%81%EC%9C%84%20%EB%A0%88%EB%B2%A0%EB%A5%B4%EC%8B%9C%EB%8B%A4%20%EC%96%B8%EC%96%B4-%20MSDN&amp;submit=Search" rel="nofollow">상위 레베르시다 언어- MSDN</a></li> <li><a class="external text" href="http://tranpedia.selfhow.com/search?q=HYPER%EB%8D%B0%EC%B9%98%28shadermodel%29&amp;submit=Search" rel="nofollow">HYPER데치(shadermodel)</a></li> <li><a class="external text" href="http://tranpedia.selfhow.com/search?q=Cutting%20Edge%20DX9%20%EC%B9%B4%EC%99%80%EB%8B%88%EC%8B%9C%20%ED%9E%88%EB%A1%9C%EC%9C%A0%ED%82%A4%EC%9D%98%20%EC%B9%BC%EB%9F%BC&amp;submit=Search" rel="nofollow">Cutting Edge DX9 카와니시 히로유키의 칼럼</a></li> </ul><table class="asbox plainlinks noprint" role="presentation"><tr><td class="mbox-image"><a class="image" href="http://tranpedia.selfhow.com/search?q=%C2%A0&amp;submit=Search" title="집필의 도중에 스"><noscript><img alt="집필의 도중에 스" data-file-height="48" data-file-width="48" height="40" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/PC_template.svg/40px-PC_template.svg.png" width="40"/></noscript><span class="lazy-image-placeholder" data-alt="執筆の途中です" data-height="40" data-src="//upload.wikimedia.org/wikipedia/commons/thumb/b/be/PC_template.svg/40px-PC_template.svg.png" data-srcset="//upload.wikimedia.org/wikipedia/commons/thumb/b/be/PC_template.svg/60px-PC_template.svg.png 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/b/be/PC_template.svg/80px-PC_template.svg.png 2x" data-width="40" style="width: 40px;height: 40px;">&#160;</span></a></td> <td class="mbox-text">이 항목은, <a href="http://tranpedia.selfhow.com/search?q=%EC%BB%B4%ED%93%A8%ED%84%B0&amp;submit=Search" title="컴퓨터">컴퓨터</a>에 관련한 <b><a href="http://tranpedia.selfhow.com/search?q=%EC%93%B0%EB%8B%A4%20%EB%A7%8C%20%ED%95%AD%EB%AA%A9&amp;submit=Search" title="Wikipedia:그루터기">쓰다 만 항목</a></b>입니다.<a class="external text" href="http://tranpedia.selfhow.com/search?q=%EC%9D%B4%20%ED%95%AD%EB%AA%A9%EC%9D%84%20%EA%B0%80%ED%95%84%E3%83%BB%EC%A0%95%EC%A0%95&amp;submit=Search">이 항목을 가필&#12539;정정</a>등 해 주시는 <a href="http://tranpedia.selfhow.com/search?q=%ED%98%91%EB%A0%A5%EC%9E%90%EB%A5%BC%20%EC%9A%94%EA%B5%AC%ED%95%98%EA%B3%A0%20%EC%9E%88%EC%8A%B5%EB%8B%88%EB%8B%A4&amp;submit=Search" title="Category:컴퓨터 관련의 그루터기 항목">협력자를 요구하고 있습니다</a>(<a href="http://tranpedia.selfhow.com/search?q=PJ%3A%EC%BB%B4%ED%93%A8%ED%84%B0&amp;submit=Search" title="프로젝트:컴퓨터">PJ:컴퓨터</a>/<a href="http://tranpedia.selfhow.com/search?q=P%3A%EC%BB%B4%ED%93%A8%ED%84%B0&amp;submit=Search" title="Portal:컴퓨터">P:컴퓨터</a>).</td> </tr></table></div><noscript><img alt="" height="1" src="https://ja.wikipedia.org/wiki/Special:CentralAutoLogin/start?type=1x1&amp;mobile=1" style="border: none; position: absolute;" title="" width="1"/></noscript></div><div class="printfooter"> &#12300;<a dir="ltr" href="http://tranpedia.selfhow.com/search?q=https%3A//ja.wikipedia.org/w/index.php%3F%20title%3DHigh_Level_Shading_Language%26oldid%3D62180127&amp;submit=Search">https://ja.wikipedia.org/w/index.php? title=High_Level_Shading_Language&amp;oldid=62180127</a>&#12301;으로부터 취득</div> </div>         <p>This article is <a href='https://ja.wikipedia.org/wiki/High_Level_Shading_Language' target='_blank'>taken from the Japanese Wikipedia  <strong>High Level Shading Language</strong> </a></p>         <p>This article is distributed by cc-by-sa or GFDL license in accordance <a href='https://en.wikipedia.org/wiki/Wikipedia:Copyrights' target='_blank'>with the provisions of Wikipedia.</a></p>         <p><a href='https://en.wikipedia.org/wiki/Wikipedia:General_disclaimer' target='_blank'>Wikipedia and Tranpedia does not guarantee the accuracy of this document. See our disclaimer for more information.</a></p>         <p>In addition, Tranpedia is simply not responsible for any show is only by translating the writings of foreign licenses that are compatible with CC-BY-SA license information.</p>      <div class='ads_adsense_response'> <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script> <ins class="adsbygoogle"      style="display:block"      data-ad-client="ca-pub-8393857339019314"      data-ad-slot="1428352782"      data-ad-format="auto"></ins> <script> (adsbygoogle = window.adsbygoogle || []).push({}); </script> </div> 
+<div style='clear:both;'></div>
+<div class='post-share-buttons'>
+<a class='goog-inline-block share-button sb-email' href='https://www.blogger.com/share-post.g?blogID=6996732972947782461&postID=8478958478467227911&target=email' target='_blank' title='이메일로 전송'><span class='share-button-link-text'>이메일로 전송</span></a><a class='goog-inline-block share-button sb-blog' href='https://www.blogger.com/share-post.g?blogID=6996732972947782461&postID=8478958478467227911&target=blog' onclick='window.open(this.href, "_blank", "height=270,width=475"); return false;' target='_blank' title='BlogThis!'><span class='share-button-link-text'>BlogThis!</span></a><a class='goog-inline-block share-button sb-twitter' href='https://www.blogger.com/share-post.g?blogID=6996732972947782461&postID=8478958478467227911&target=twitter' target='_blank' title='Twitter에서 공유'><span class='share-button-link-text'>Twitter에서 공유</span></a><a class='goog-inline-block share-button sb-facebook' href='https://www.blogger.com/share-post.g?blogID=6996732972947782461&postID=8478958478467227911&target=facebook' onclick='window.open(this.href, "_blank", "height=430,width=640"); return false;' target='_blank' title='Facebook에서 공유'><span class='share-button-link-text'>Facebook에서 공유</span></a><div class='goog-inline-block dummy-container'><g:plusone source='blogger:blog:plusone' href='http://pidia.selfhow.com/2016/12/high-level-shading-language.html' size='medium' width='300' annotation='inline'/></div>
+</div>
+<span class='reaction-buttons'>
+</span>
+<div style='clear: both;'></div>
+</div>
+<footer class='entry-meta'>
+Posted on <time class='entry-date'>12/19/2016</time><span> by <span>selfpidia</span></span> | <a href='http://pidia.selfhow.com/2016/12/high-level-shading-language.html#comment-form' onclick=''>No comments</a>
+</footer>
+</article>
+<div style='clear: both;'></div>
+<div class='blog-pager' id='blog-pager'>
+<span id='blog-pager-newer-link'>
+<a class='blog-pager-newer-link' href='http://pidia.selfhow.com/2016/12/blog-post_133.html' id='Blog1_blog-pager-newer-link' title='최근 게시물'>최근 게시물</a>
+</span>
+<span id='blog-pager-older-link'>
+<a class='blog-pager-older-link' href='http://pidia.selfhow.com/2016/12/blog-post_213.html' id='Blog1_blog-pager-older-link' title='이전 게시물'>이전 게시물</a>
+</span>
+<a class='home-link' href='http://pidia.selfhow.com/'>홈</a>
+</div>
+<div class='clear'></div>
+<div class='comments' id='comments'>
+<a name='comments'></a>
+<h4>
+0
+개의 댓글:
+        
+</h4>
+<div id='Blog1_comments-block-wrapper'>
+<dl class='avatar-comment-indent' id='comments-block'>
+</dl>
+</div>
+<p class='comment-footer'>
+<div class='comment-form'>
+<a name='comment-form'></a>
+<h4 id='comment-post-message'>댓글 쓰기</h4>
+<p>
+</p>
+<a href='https://www.blogger.com/comment-iframe.g?blogID=6996732972947782461&postID=8478958478467227911' id='comment-editor-src'></a>
+<iframe allowtransparency='true' class='blogger-iframe-colorize blogger-comment-from-post' frameborder='0' height='410' id='comment-editor' name='comment-editor' src='' width='100%'></iframe>
+<!--Can't find substitution for tag [post.friendConnectJs]-->
+<script src='https://www.blogger.com/static/v1/jsbin/1565398628-comment_from_post_iframe.js' type='text/javascript'></script>
+<script type='text/javascript'>
+      BLOG_CMT_createIframe('https://www.blogger.com/rpc_relay.html', '0');
+    </script>
+</div>
+</p>
+<div id='backlinks-container'>
+<div id='Blog1_backlinks-container'>
+</div>
+</div>
+</div>
+</div>
+
+        </div></div>
+      
+<!--Can't find substitution for tag [adEnd]-->
+</div>
+<div style='clear: both;'></div>
+<div class='post-feeds'>
+<div class='feed-links'>
+피드 구독하기:
+<a class='feed-link' href='http://pidia.selfhow.com/feeds/8478958478467227911/comments/default' target='_blank' type='application/atom+xml'>댓글 (Atom)</a>
+</div>
+</div>
+<script type="text/javascript">window.___gcfg = {'lang': 'ko'};</script>
+</div></div>
+</div><!-- #content .site-content -->
+</div><!-- #primary .content-area -->
+<div class='widget-area' id='secondary' role='complementary'>
+<div class='widget widget_search'>
+<form action='/search' id='searchform' method='get' role='search'>
+<label class='assistive-text' for='s'>Search</label>
+<input class='field' id='s' name='q' placeholder='Search' type='text' value=''/>
+<input class='submit' id='searchsubmit' name='submit' type='submit' value='Search'/>
+</form>
+</div>
+<div class='sidebar section' id='sidebartop'><div class='widget HTML' data-version='1' id='HTML1'>
+<h2 class='title'>Recent Posts</h2>
+<div class='widget-content'>
+</div>
+<div class='clear'></div>
+<span class='widget-item-control'>
+<span class='item-control blog-admin'>
+<a class='quickedit' href='//www.blogger.com/rearrange?blogID=6996732972947782461&widgetType=HTML&widgetId=HTML1&action=editWidget&sectionId=sidebartop' onclick='return _WidgetManager._PopupConfig(document.getElementById("HTML1"));' target='configHTML1' title='수정'>
+<img alt='' height='18' src='https://resources.blogblog.com/img/icon18_wrench_allbkg.png' width='18'/>
+</a>
+</span>
+</span>
+<div class='clear'></div>
+</div>
+<div class='widget PopularPosts' data-version='1' id='PopularPosts1'>
+<h2>Popular Posts</h2>
+<div class='widget-content popular-posts'>
+<ul>
+<li>
+<div class='item-content'>
+<div class='item-title'><a href='http://pidia.selfhow.com/2016/12/blog-post_8280.html'>노예 성도 회장 히카루~음마에 점능 된 학원~</a></div>
+<div class='item-snippet'>      노예 성도 회장 히카루~음마에 점능 된 학원~ &#12300; 노예 성도 회장 히카루~음마에 점능 된 학원~ &#12301;( 어떤 것 줄여가며 꿰매어 실이야 나비히 가벼운 응마가짜응료 되었지만 구원)은, 키르타임코뮤니케이션의 라벨&#12539; 이차원 드림노베르즈 보다 발매된...</div>
+</div>
+<div style='clear: both;'></div>
+</li>
+<li>
+<div class='item-content'>
+<div class='item-title'><a href='http://pidia.selfhow.com/2017/03/blog-post_743.html'>사인&#12539;앤드&#12539;트레이드</a></div>
+<div class='item-snippet'>      사인&#12539;앤드&#12539;트레이드 사인&#12539;앤드&#12539;트레이드 (Sign and Trade)란, 북미 프로 농구 리그인 NBA  에 있어서 선수와 팀간의 계약 이행 형태의 하나이며, 리그와 NBA 선수 조합 과의 사이로의 결정(CBA)에 근거하고 있다.제한 없음의...</div>
+</div>
+<div style='clear: both;'></div>
+</li>
+<li>
+<div class='item-content'>
+<div class='item-title'><a href='http://pidia.selfhow.com/2017/03/8501.html'>인도네시아&#12539;에어 아시아 8501편 추락 사고</a></div>
+<div class='item-snippet'>      인도네시아&#12539;에어 아시아 8501편 추락 사고 인도네시아&#12539;에어 아시아 8501편   2014년 4월에 촬영된 해당기 PK-AXC   사고의 개요  일자  2014년 12월 28일 (2014-12-28)  개요  방향타 (라다-) 제어 시스템의...</div>
+</div>
+<div style='clear: both;'></div>
+</li>
+<li>
+<div class='item-content'>
+<div class='item-title'><a href='http://pidia.selfhow.com/2016/05/blog-post.html'>오오토모노 미유키</a></div>
+<div class='item-snippet'>오오토모노 미유키  &#160;  범례  오오토모노 미유키  시대  아스카 시대  중기-후기  탄생  타이카  2년( 646년 )? [ 1 ]  사망  다이호  원년 1월 15일 ( 701년  2월 27일 )  관직의 등급  마사히로3, 오노말 &#65288; 증 &#12539; 마사...</div>
+</div>
+<div style='clear: both;'></div>
+</li>
+<li>
+<div class='item-content'>
+<div class='item-title'><a href='http://pidia.selfhow.com/2017/02/blog-post_143.html'>중원 대학</a></div>
+<div class='item-snippet'>      중원 대학 나카하라대학      도서관   교훈  독신 역행  창립  1955년  학교 종별  사립대학  가맹 단체  재단법인 사립 나카하라대학  학장  장광정잠대(2012.8- )  직원  489명  학생  16,644명(2009년)  소...</div>
+</div>
+<div style='clear: both;'></div>
+</li>
+<li>
+<div class='item-content'>
+<div class='item-title'><a href='http://pidia.selfhow.com/2017/01/blog-post_767.html'>미즈노 마사유키</a></div>
+<div class='item-snippet'>      미즈노 마사유키  물의 마사유키  미즈노 마사유키  탄생  ( 1977-09-14 )  1977년 9월 14일 (39세)  일본  출신교  케이오 기쥬쿠 대학  졸업  직업  연출가 &#12289; 텔레비전 프로듀서 &#12289; 디렉터  미즈노 마사유키 (미즈노...</div>
+</div>
+<div style='clear: both;'></div>
+</li>
+<li>
+<div class='item-content'>
+<div class='item-title'><a href='http://pidia.selfhow.com/2016/06/blog-post.html'>타카기령</a></div>
+<div class='item-snippet'>       타카기령  타감 료  타카기령  프로필  출신지   일본 &#12539; 도쿄도 세타가야구  생년월일  1989년 9월 9일 (26세)  혈액형  O형  최종 학력  메이지 대학  정보 커뮤니케이션 학부  근무국  동일본 방송  활동 기간  2013년...</div>
+</div>
+<div style='clear: both;'></div>
+</li>
+<li>
+<div class='item-content'>
+<div class='item-title'><a href='http://pidia.selfhow.com/2016/10/blog-post_235.html'>토요타 세리나</a></div>
+<div class='item-snippet'>       토요타 세리나 (와)과낼 수 있는 리나 토요타 세리나   토요타 세리나   프로필  애칭  경배-, 경배-누  생년월일  1990년 10월 9일  현연령  26세  출신지   일본 &#12539; 아이치현  공칭 사이즈( 2016년  시점)  신장 /...</div>
+</div>
+<div style='clear: both;'></div>
+</li>
+<li>
+<div class='item-content'>
+<div class='item-title'><a href='http://pidia.selfhow.com/2017/03/blog-post_74.html'>휴&#12539;헤후나</a></div>
+<div class='item-snippet'>      휴&#12539;헤후나    이 생존 인물의 기사 에는 검증 가능 한 출전 이 요구되고 있습니다 . 신뢰할 수 있는 정보원 의 제공에 협력을 부탁합니다.생존 인물에 관한 출전이 없는, 혹은 불완전한 정보에 근거한 논쟁의 재료, 특히 잠재적으로 중상&#12539;명예...</div>
+</div>
+<div style='clear: both;'></div>
+</li>
+<li>
+<div class='item-content'>
+<div class='item-title'><a href='http://pidia.selfhow.com/2017/03/blog-post_658.html'>석유 발동기</a></div>
+<div class='item-snippet'>      석유 발동기    이 기사는 검증 가능 한 참고 문헌이나 출전 이 전혀 나타나지 않은지, 불충분합니다. 출전을 추가 해 기사의 신뢰성 향상에 협력해 주십시오. ( 2013년 10월 )     이 항목은 그 주제가 일본에 놓여진 기술이 되어 ...</div>
+</div>
+<div style='clear: both;'></div>
+</li>
+</ul>
+<div class='clear'></div>
+<span class='widget-item-control'>
+<span class='item-control blog-admin'>
+<a class='quickedit' href='//www.blogger.com/rearrange?blogID=6996732972947782461&widgetType=PopularPosts&widgetId=PopularPosts1&action=editWidget&sectionId=sidebartop' onclick='return _WidgetManager._PopupConfig(document.getElementById("PopularPosts1"));' target='configPopularPosts1' title='수정'>
+<img alt='' height='18' src='https://resources.blogblog.com/img/icon18_wrench_allbkg.png' width='18'/>
+</a>
+</span>
+</span>
+<div class='clear'></div>
+</div>
+</div><div class='widget BlogArchive' data-version='1' id='BlogArchive1'>
+<h2>Blog Archive</h2>
+<div class='widget-content'>
+<div id='ArchiveList'>
+<div id='BlogArchive1_ArchiveList'>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://pidia.selfhow.com/2018/'>2018</a>
+<span class='post-count' dir='ltr'>(1938)</span>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://pidia.selfhow.com/2018/03/'>3월</a>
+<span class='post-count' dir='ltr'>(194)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://pidia.selfhow.com/2018/02/'>2월</a>
+<span class='post-count' dir='ltr'>(1344)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://pidia.selfhow.com/2018/01/'>1월</a>
+<span class='post-count' dir='ltr'>(400)</span>
+</li>
+</ul>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://pidia.selfhow.com/2017/'>2017</a>
+<span class='post-count' dir='ltr'>(8190)</span>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://pidia.selfhow.com/2017/06/'>6월</a>
+<span class='post-count' dir='ltr'>(1290)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://pidia.selfhow.com/2017/05/'>5월</a>
+<span class='post-count' dir='ltr'>(1316)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://pidia.selfhow.com/2017/04/'>4월</a>
+<span class='post-count' dir='ltr'>(1379)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://pidia.selfhow.com/2017/03/'>3월</a>
+<span class='post-count' dir='ltr'>(1452)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://pidia.selfhow.com/2017/02/'>2월</a>
+<span class='post-count' dir='ltr'>(1303)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://pidia.selfhow.com/2017/01/'>1월</a>
+<span class='post-count' dir='ltr'>(1450)</span>
+</li>
+</ul>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate expanded'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy toggle-open'>&#9660;&#160;</span>
+</a>
+<a class='post-count-link' href='http://pidia.selfhow.com/2016/'>2016</a>
+<span class='post-count' dir='ltr'>(7570)</span>
+<ul class='hierarchy'>
+<li class='archivedate expanded'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy toggle-open'>&#9660;&#160;</span>
+</a>
+<a class='post-count-link' href='http://pidia.selfhow.com/2016/12/'>12월</a>
+<span class='post-count' dir='ltr'>(1459)</span>
+<ul class='posts'>
+<li><a href='http://pidia.selfhow.com/2016/12/js-love-song.html'>J&#39;s LOVE SONG</a></li>
+<li><a href='http://pidia.selfhow.com/2016/12/blog-post_9526.html'>아프리카 분쟁</a></li>
+<li><a href='http://pidia.selfhow.com/2016/12/blog-post_4779.html'>나카죠(쿠마가야시)</a></li>
+<li><a href='http://pidia.selfhow.com/2016/12/fifa-2016.html'>FIFA 클럽 월드컵 2016</a></li>
+<li><a href='http://pidia.selfhow.com/2016/12/blog-post_9027.html'>키류우시립 사쿠라기 중학교</a></li>
+<li><a href='http://pidia.selfhow.com/2016/12/blog-post_5500.html'>오키나와 연대구</a></li>
+<li><a href='http://pidia.selfhow.com/2016/12/blog-post_4823.html'>다나카 히로시(모터스포츠)</a></li>
+<li><a href='http://pidia.selfhow.com/2016/12/blog-post_7620.html'>이오아니스&#12539;카포디스트리아스</a></li>
+<li><a href='http://pidia.selfhow.com/2016/12/blog-post_4494.html'>요시다 오사무사</a></li>
+<li><a href='http://pidia.selfhow.com/2016/12/1980.html'>체인지 링(1980년의 영화)</a></li>
+<li><a href='http://pidia.selfhow.com/2016/12/blog-post_9594.html'>오오노지마</a></li>
+<li><a href='http://pidia.selfhow.com/2016/12/blog-post_8356.html'>이나코스의 다리</a></li>
+<li><a href='http://pidia.selfhow.com/2016/12/blue-blue.html'>blue blue</a></li>
+<li><a href='http://pidia.selfhow.com/2016/12/blog-post_3889.html'>리기제</a></li>
+<li><a href='http://pidia.selfhow.com/2016/12/blog-post_2960.html'>베네치아와 그 석</a></li>
+<li><a href='http://pidia.selfhow.com/2016/12/219.html'>시가현도 219호 토요사토 정거장선</a></li>
+<li><a href='http://pidia.selfhow.com/2016/12/blog-post_1540.html'>훌륭한 세계</a></li>
+<li><a href='http://pidia.selfhow.com/2016/12/blog-post_6966.html'>옥구선</a></li>
+<li><a href='http://pidia.selfhow.com/2016/12/blog-post_7719.html'>이토 모시풀</a></li>
+<li><a href='http://pidia.selfhow.com/2016/12/3-d.html'>리베레이타(3 D프린트총)</a></li>
+<li><a href='http://pidia.selfhow.com/2016/12/blog-post_8517.html'>비다</a></li>
+<li><a href='http://pidia.selfhow.com/2016/12/nayoga.html'>NaYOGA</a></li>
+<li><a href='http://pidia.selfhow.com/2016/12/bostec.html'>BOSTEC</a></li>
+<li><a href='http://pidia.selfhow.com/2016/12/blog-post_2637.html'>오카모토 시즈카</a></li>
+<li><a href='http://pidia.selfhow.com/2016/12/blog-post_4215.html'>력서(노스트라다무스)</a></li>
+<li><a href='http://pidia.selfhow.com/2016/12/blog-post_8474.html'>윌리엄&#12539;후르크</a></li>
+<li><a href='http://pidia.selfhow.com/2016/12/blog-post_7970.html'>전갈이 싶은</a></li>
+<li><a href='http://pidia.selfhow.com/2016/12/blog-post_7630.html'>오고리쵸</a></li>
+<li><a href='http://pidia.selfhow.com/2016/12/select-150.html'>Select 150</a></li>
+<li><a href='http://pidia.selfhow.com/2016/12/blog-post_2561.html'>니트로셀루로스</a></li>
+<li><a href='http://pidia.selfhow.com/2016/12/blog-post_3688.html'>키야논에스키스시스템</a></li>
+<li><a href='http://pidia.selfhow.com/2016/12/blog-post_8494.html'>망애행정 위원회</a></li>
+<li><a href='http://pidia.selfhow.com/2016/12/blog-post_8202.html'>오카이 케이블 테레비</a></li>
+<li><a href='http://pidia.selfhow.com/2016/12/18_31.html'>난사토 18가역</a></li>
+<li><a href='http://pidia.selfhow.com/2016/12/blog-post_1542.html'>사워 사와구치</a></li>
+<li><a href='http://pidia.selfhow.com/2016/12/blog-post_3045.html'>마츠모토 츠카사</a></li>
+<li><a href='http://pidia.selfhow.com/2016/12/blog-post_9050.html'>이구치 노보루</a></li>
+<li><a href='http://pidia.selfhow.com/2016/12/blog-post_1906.html'>휴대 음성 통신 사업자에 의한 계약자등의 본인 확인등 및 휴대 음성 통신 역무의 부정한 이...</a></li>
+<li><a href='http://pidia.selfhow.com/2016/12/blog-post_6718.html'>나카무라 하쿠요</a></li>
+<li><a href='http://pidia.selfhow.com/2016/12/blog-post_269.html'>레이크&#12539;탑판</a></li>
+<li><a href='http://pidia.selfhow.com/2016/12/blog-post_5672.html'>나카 야스시</a></li>
+<li><a href='http://pidia.selfhow.com/2016/12/blog-post_4510.html'>미케레&#12539;피로</a></li>
+<li><a href='http://pidia.selfhow.com/2016/12/blog-post_2146.html'>후지에 키요시</a></li>
+<li><a href='http://pidia.selfhow.com/2016/12/blog-post_7752.html'>츄우오토리(도쿄도)</a></li>
+<li><a href='http://pidia.selfhow.com/2016/12/blog-post_5911.html'>간다 진보쵸</a></li>
+<li><a href='http://pidia.selfhow.com/2016/12/blog-post_3199.html'>트스네르다(소행성)</a></li>
+<li><a href='http://pidia.selfhow.com/2016/12/blog-post_9176.html'>로우접</a></li>
+<li><a href='http://pidia.selfhow.com/2016/12/blog-post_7709.html'>맛티&#12539;야르비넨</a></li>
+<li><a href='http://pidia.selfhow.com/2016/12/blog-post_1879.html'>신시내티(원자력 잠수함)</a></li>
+<li><a href='http://pidia.selfhow.com/2016/12/blog-post_6403.html'>사지마 어항</a></li>
+<li><a href='http://pidia.selfhow.com/2016/12/blog-post_3485.html'>마이클 부가</a></li>
+<li><a href='http://pidia.selfhow.com/2016/12/blog-post_4360.html'>비라말</a></li>
+<li><a href='http://pidia.selfhow.com/2016/12/blog-post_5312.html'>군마현 경찰부</a></li>
+<li><a href='http://pidia.selfhow.com/2016/12/blog-post_7624.html'>낮드라</a></li>
+<li><a href='http://pidia.selfhow.com/2016/12/blog-post_8210.html'>페리&#12539;데&#12539;레프트</a></li>
+<li><a href='http://pidia.selfhow.com/2016/12/blog-post_1218.html'>미키 아키라박</a></li>
+<li><a href='http://pidia.selfhow.com/2016/12/blog-post_9909.html'>가을 눈동자</a></li>
+<li><a href='http://pidia.selfhow.com/2016/12/75-mm.html'>레피에 75 mm포</a></li>
+<li><a href='http://pidia.selfhow.com/2016/12/blog-post_9435.html'>카와이현사</a></li>
+<li><a href='http://pidia.selfhow.com/2016/12/laplace.html'>laplace 원리</a></li>
+<li><a href='http://pidia.selfhow.com/2016/12/blog-post_1733.html'>내일 만난 소녀</a></li>
+<li><a href='http://pidia.selfhow.com/2016/12/blog-post_7579.html'>사세보시립 도서관</a></li>
+<li><a href='http://pidia.selfhow.com/2016/12/4_30.html'>서경 4 도선</a></li>
+<li><a href='http://pidia.selfhow.com/2016/12/ui1.html'>UI1</a></li>
+<li><a href='http://pidia.selfhow.com/2016/12/blog-post_7035.html'>코다붕홍</a></li>
+<li><a href='http://pidia.selfhow.com/2016/12/422.html'>아이치현도 422호 호리키리 야스미선</a></li>
+<li><a href='http://pidia.selfhow.com/2016/12/blog-post_5338.html'>후지사와시립 메이지 초등학교</a></li>
+<li><a href='http://pidia.selfhow.com/2016/12/blog-post_6485.html'>양가즈키요</a></li>
+<li><a href='http://pidia.selfhow.com/2016/12/blog-post_821.html'>산세이도(의약품사)</a></li>
+<li><a href='http://pidia.selfhow.com/2016/12/blog-post_5618.html'>프르코보 공항</a></li>
+<li><a href='http://pidia.selfhow.com/2016/12/blog-post_1068.html'>에어 벤더</a></li>
+<li><a href='http://pidia.selfhow.com/2016/12/blog-post_7633.html'>움직이지 말아라, 죽음이군요, 되살아나라!</a></li>
+<li><a href='http://pidia.selfhow.com/2016/12/blog-post_1190.html'>이온 마케팅</a></li>
+<li><a href='http://pidia.selfhow.com/2016/12/blog-post_3564.html'>알렉스&#12539;캅브</a></li>
+<li><a href='http://pidia.selfhow.com/2016/12/blog-post_6293.html'>만화 오오타의 역사</a></li>
+<li><a href='http://pidia.selfhow.com/2016/12/blog-post_9096.html'>목검</a></li>
+<li><a href='http://pidia.selfhow.com/2016/12/blog-post_9828.html'>사철나무의태</a></li>
+<li><a href='http://pidia.selfhow.com/2016/12/blog-post_7609.html'>토다렴길</a></li>
+<li><a href='http://pidia.selfhow.com/2016/12/sco19.html'>SCO19</a></li>
+<li><a href='http://pidia.selfhow.com/2016/12/blog-post_1995.html'>현인</a></li>
+<li><a href='http://pidia.selfhow.com/2016/12/blog-post_7226.html'>아슈란드(도크형 양륙함)</a></li>
+<li><a href='http://pidia.selfhow.com/2016/12/blog-post_7967.html'>카미시오바라 온천</a></li>
+<li><a href='http://pidia.selfhow.com/2016/12/blog-post_4359.html'>마츠모토숭춘</a></li>
+<li><a href='http://pidia.selfhow.com/2016/12/m1-1.html'>진행 M1-1</a></li>
+<li><a href='http://pidia.selfhow.com/2016/12/blog-post_2786.html'>아키타시 남부 시민 서비스 센터</a></li>
+<li><a href='http://pidia.selfhow.com/2016/12/blog-post_4918.html'>미네쵸 역사 민속 자료관</a></li>
+<li><a href='http://pidia.selfhow.com/2016/12/blog-post_487.html'>케이트&#12539;알렌</a></li>
+<li><a href='http://pidia.selfhow.com/2016/12/blog-post_2476.html'>박전사</a></li>
+<li><a href='http://pidia.selfhow.com/2016/12/blog-post_780.html'>고라이아스가엘</a></li>
+<li><a href='http://pidia.selfhow.com/2016/12/blog-post_2563.html'>고양이와 금붕어</a></li>
+<li><a href='http://pidia.selfhow.com/2016/12/blog-post_9170.html'>이쿠사카무라</a></li>
+<li><a href='http://pidia.selfhow.com/2016/12/blog-post_5931.html'>데&#12539;고든</a></li>
+<li><a href='http://pidia.selfhow.com/2016/12/blog-post_1024.html'>더&#12539;버드&#12539;앤드&#12539;더&#12539;비&#12539;사이즈</a></li>
+<li><a href='http://pidia.selfhow.com/2016/12/blog-post_2794.html'>우치야마(오이타현)</a></li>
+<li><a href='http://pidia.selfhow.com/2016/12/blog-post_8280.html'>노예 성도 회장 히카루~음마에 점능 된 학원~</a></li>
+<li><a href='http://pidia.selfhow.com/2016/12/blog-post_9728.html'>이온 타운 센다이샘오사와</a></li>
+<li><a href='http://pidia.selfhow.com/2016/12/blog-post_3145.html'>리라이안트&#12539;스타디움</a></li>
+<li><a href='http://pidia.selfhow.com/2016/12/blog-post_8753.html'>사카와강 교량(고텐바선)</a></li>
+<li><a href='http://pidia.selfhow.com/2016/12/blog-post_1310.html'>무라카미 아키코</a></li>
+<li><a href='http://pidia.selfhow.com/2016/12/blog-post_9079.html'>전자파 과민증</a></li>
+</ul>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://pidia.selfhow.com/2016/11/'>11월</a>
+<span class='post-count' dir='ltr'>(1419)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://pidia.selfhow.com/2016/10/'>10월</a>
+<span class='post-count' dir='ltr'>(853)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://pidia.selfhow.com/2016/09/'>9월</a>
+<span class='post-count' dir='ltr'>(708)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://pidia.selfhow.com/2016/08/'>8월</a>
+<span class='post-count' dir='ltr'>(734)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://pidia.selfhow.com/2016/07/'>7월</a>
+<span class='post-count' dir='ltr'>(731)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://pidia.selfhow.com/2016/06/'>6월</a>
+<span class='post-count' dir='ltr'>(705)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://pidia.selfhow.com/2016/05/'>5월</a>
+<span class='post-count' dir='ltr'>(731)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://pidia.selfhow.com/2016/04/'>4월</a>
+<span class='post-count' dir='ltr'>(230)</span>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class='clear'></div>
+<span class='widget-item-control'>
+<span class='item-control blog-admin'>
+<a class='quickedit' href='//www.blogger.com/rearrange?blogID=6996732972947782461&widgetType=BlogArchive&widgetId=BlogArchive1&action=editWidget&sectionId=sidebartop' onclick='return _WidgetManager._PopupConfig(document.getElementById("BlogArchive1"));' target='configBlogArchive1' title='수정'>
+<img alt='' height='18' src='https://resources.blogblog.com/img/icon18_wrench_allbkg.png' width='18'/>
+</a>
+</span>
+</span>
+<div class='clear'></div>
+</div>
+</div><div class='widget Attribution' data-version='1' id='Attribution1'>
+<div class='widget-content' style='text-align: center;'>
+Powered by <a href='https://www.blogger.com' target='_blank'>Blogger</a>.
+</div>
+<div class='clear'></div>
+<span class='widget-item-control'>
+<span class='item-control blog-admin'>
+<a class='quickedit' href='//www.blogger.com/rearrange?blogID=6996732972947782461&widgetType=Attribution&widgetId=Attribution1&action=editWidget&sectionId=sidebartop' onclick='return _WidgetManager._PopupConfig(document.getElementById("Attribution1"));' target='configAttribution1' title='수정'>
+<img alt='' height='18' src='https://resources.blogblog.com/img/icon18_wrench_allbkg.png' width='18'/>
+</a>
+</span>
+</span>
+<div class='clear'></div>
+</div><div class='widget Navbar' data-version='1' id='Navbar1'><script type="text/javascript">
+    function setAttributeOnload(object, attribute, val) {
+      if(window.addEventListener) {
+        window.addEventListener('load',
+          function(){ object[attribute] = val; }, false);
+      } else {
+        window.attachEvent('onload', function(){ object[attribute] = val; });
+      }
+    }
+  </script>
+<div id="navbar-iframe-container"></div>
+<script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
+<script type="text/javascript">
+      gapi.load("gapi.iframes:gapi.iframes.style.bubble", function() {
+        if (gapi.iframes && gapi.iframes.getContext) {
+          gapi.iframes.getContext().openChild({
+              url: 'https://www.blogger.com/navbar.g?targetBlogID\x3d6996732972947782461\x26blogName\x3d%EC%85%80%ED%94%84%ED%94%BC%EB%94%94%EC%95%84\x26publishMode\x3dPUBLISH_MODE_HOSTED\x26navbarType\x3dLIGHT\x26layoutType\x3dLAYOUTS\x26searchRoot\x3dhttp://pidia.selfhow.com/search\x26blogLocale\x3dko\x26v\x3d2\x26homepageUrl\x3dhttp://pidia.selfhow.com/\x26targetPostID\x3d8478958478467227911\x26blogPostOrPageUrl\x3dhttp://pidia.selfhow.com/2016/12/high-level-shading-language.html\x26vt\x3d6151696510191418423',
+              where: document.getElementById("navbar-iframe-container"),
+              id: "navbar-iframe"
+          });
+        }
+      });
+    </script><script type="text/javascript">
+(function() {
+var script = document.createElement('script');
+script.type = 'text/javascript';
+script.src = '//pagead2.googlesyndication.com/pagead/js/google_top_exp.js';
+var head = document.getElementsByTagName('head')[0];
+if (head) {
+head.appendChild(script);
+}})();
+</script>
+</div></div>
+</div>
+</div><!-- #main .site-main -->
+<footer class='site-footer' id='colophon' role='contentinfo'>
+<div class='site-info'>
+Copyright &#169; <script type='text/javascript'>var creditsyear = new Date();document.write(creditsyear.getFullYear());</script>
+<a href='http://pidia.selfhow.com/'>셀프피디아</a> | Powered by <a href='http://www.blogger.com/'>Blogger</a>
+</div><!-- .site-info -->
+<div class='author-credit'>
+Design by <a href='http://www.edwardrjenkins.com' target='_blank'>Edward R. Jenkins</a> | Blogger Template by <a href='http://newbloggerthemes.com' target='_blank' title='Best Blogger Templates'>NewBloggerThemes.com</a>
+</div>
+</footer><!-- #colophon .site-footer -->
+</div><!-- #pagebwrap .hfeed .site -->
+</div><!-- .wrapper -->
+<script type='text/javascript'>
+//<![CDATA[
+
+/**
+ * Handles toggling the main navigation menu for small screens.
+ */
+jQuery( document ).ready( function( $ ) {
+	var $masthead = $( '#masthead' ),
+	    timeout = false;
+
+	$.fn.smallMenu = function() {
+		$masthead.find( '.site-navigation' ).removeClass( 'main-navigation' ).addClass( 'main-small-navigation' );
+		$masthead.find( '.site-navigation h1' ).removeClass( 'assistive-text' ).addClass( 'menu-toggle' );
+
+		$( '.menu-toggle' ).unbind( 'click' ).click( function() {
+			$masthead.find( '.menu' ).toggle();
+			$( this ).toggleClass( 'toggled-on' );
+		} );
+	};
+
+	// Check viewport width on first load.
+	if ( $( window ).width() < 600 )
+		$.fn.smallMenu();
+
+	// Check viewport width when user resizes the browser window.
+	$( window ).resize( function() {
+		var browserWidth = $( window ).width();
+
+		if ( false !== timeout )
+			clearTimeout( timeout );
+
+		timeout = setTimeout( function() {
+			if ( browserWidth < 600 ) {
+				$.fn.smallMenu();
+			} else {
+				$masthead.find( '.site-navigation' ).removeClass( 'main-small-navigation' ).addClass( 'main-navigation' );
+				$masthead.find( '.site-navigation h1' ).removeClass( 'menu-toggle' ).addClass( 'assistive-text' );
+				$masthead.find( '.menu' ).removeAttr( 'style' );
+			}
+		}, 200 );
+	} );
+} );
+
+//]]>
+</script>
+<script src='https://apis.google.com/js/plusone.js' type='text/javascript'></script>
+
+<script type="text/javascript" src="https://www.blogger.com/static/v1/widgets/698371418-widgets.js"></script>
+<script type='text/javascript'>
+window['__wavt'] = 'AOuZoY6rZ9qyj9anVNt_B-SuMulQ5pzSfw:1521435466029';_WidgetManager._Init('//www.blogger.com/rearrange?blogID\x3d6996732972947782461','//pidia.selfhow.com/2016/12/high-level-shading-language.html','6996732972947782461');
+_WidgetManager._SetDataContext([{'name': 'blog', 'data': {'blogId': '6996732972947782461', 'title': '셀프피디아', 'url': 'http://pidia.selfhow.com/2016/12/high-level-shading-language.html', 'canonicalUrl': 'http://pidia.selfhow.com/2016/12/high-level-shading-language.html', 'homepageUrl': 'http://pidia.selfhow.com/', 'searchUrl': 'http://pidia.selfhow.com/search', 'canonicalHomepageUrl': 'http://pidia.selfhow.com/', 'blogspotFaviconUrl': 'http://pidia.selfhow.com/favicon.ico', 'bloggerUrl': 'https://www.blogger.com', 'hasCustomDomain': true, 'httpsEnabled': false, 'enabledCommentProfileImages': true, 'gPlusViewType': 'FILTERED_POSTMOD', 'adultContent': false, 'analyticsAccountNumber': 'UA-73889181-8', 'encoding': 'UTF-8', 'locale': 'ko', 'localeUnderscoreDelimited': 'ko', 'languageDirection': 'ltr', 'isPrivate': false, 'isMobile': false, 'isMobileRequest': false, 'mobileClass': '', 'isPrivateBlog': false, 'feedLinks': '\x3clink rel\x3d\x22alternate\x22 type\x3d\x22application/atom+xml\x22 title\x3d\x22셀프피디아 - Atom\x22 href\x3d\x22http://pidia.selfhow.com/feeds/posts/default\x22 /\x3e\n\x3clink rel\x3d\x22alternate\x22 type\x3d\x22application/rss+xml\x22 title\x3d\x22셀프피디아 - RSS\x22 href\x3d\x22http://pidia.selfhow.com/feeds/posts/default?alt\x3drss\x22 /\x3e\n\x3clink rel\x3d\x22service.post\x22 type\x3d\x22application/atom+xml\x22 title\x3d\x22셀프피디아 - Atom\x22 href\x3d\x22https://www.blogger.com/feeds/6996732972947782461/posts/default\x22 /\x3e\n\n\x3clink rel\x3d\x22alternate\x22 type\x3d\x22application/atom+xml\x22 title\x3d\x22셀프피디아 - Atom\x22 href\x3d\x22http://pidia.selfhow.com/feeds/8478958478467227911/comments/default\x22 /\x3e\n', 'meTag': '', 'openIdOpTag': '', 'adsenseHostId': 'ca-host-pub-1556223355139109', 'adsenseHasAds': false, 'view': '', 'dynamicViewsCommentsSrc': '//www.blogblog.com/dynamicviews/4224c15c4e7c9321/js/comments.js', 'dynamicViewsScriptSrc': '//www.blogblog.com/dynamicviews/6724040bb52bb8c9', 'plusOneApiSrc': 'https://apis.google.com/js/plusone.js', 'sharing': {'platforms': [{'name': '공유 링크 만들기', 'key': 'link', 'shareMessage': '공유 링크 만들기', 'target': ''}, {'name': 'Facebook', 'key': 'facebook', 'shareMessage': 'Facebook에 공유', 'target': 'facebook'}, {'name': 'BlogThis!', 'key': 'blogThis', 'shareMessage': 'BlogThis!', 'target': 'blog'}, {'name': 'Twitter', 'key': 'twitter', 'shareMessage': 'Twitter에 공유', 'target': 'twitter'}, {'name': 'Pinterest', 'key': 'pinterest', 'shareMessage': 'Pinterest에 공유', 'target': 'pinterest'}, {'name': 'Google+', 'key': 'googlePlus', 'shareMessage': 'Google+에 공유', 'target': 'googleplus'}, {'name': '이메일', 'key': 'email', 'shareMessage': '이메일', 'target': 'email'}], 'googlePlusShareButtonWidth': 300, 'googlePlusBootstrap': '\x3cscript type\x3d\x22text/javascript\x22\x3ewindow.___gcfg \x3d {\x27lang\x27: \x27ko\x27};\x3c/script\x3e'}, 'hasCustomJumpLinkMessage': false, 'jumpLinkMessage': '자세한 내용 보기', 'pageType': 'item', 'postId': '8478958478467227911', 'postImageUrl': 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/Question_book-4.svg/50px-Question_book-4.svg.png', 'pageName': 'High Level Shading Language', 'pageTitle': '셀프피디아: High Level Shading Language'}}, {'name': 'features', 'data': {'lazy_images': 'false', 'sharing_get_link_dialog': 'true', 'sharing_native': 'false'}}, {'name': 'messages', 'data': {'edit': '수정', 'linkCopiedToClipboard': '링크를 클립보드에 복사했습니다.', 'ok': '확인', 'postLink': '글 링크'}}, {'name': 'template', 'data': {'name': 'custom', 'localizedName': '사용자 지정', 'isResponsive': false, 'isAlternateRendering': false, 'isCustom': true}}, {'name': 'view', 'data': {'classic': {'name': 'classic', 'url': '?view\x3dclassic'}, 'flipcard': {'name': 'flipcard', 'url': '?view\x3dflipcard'}, 'magazine': {'name': 'magazine', 'url': '?view\x3dmagazine'}, 'mosaic': {'name': 'mosaic', 'url': '?view\x3dmosaic'}, 'sidebar': {'name': 'sidebar', 'url': '?view\x3dsidebar'}, 'snapshot': {'name': 'snapshot', 'url': '?view\x3dsnapshot'}, 'timeslide': {'name': 'timeslide', 'url': '?view\x3dtimeslide'}, 'isMobile': false, 'title': 'High Level Shading Language', 'description': '      High Level Shading Language High Level Shading Language (하이레벨 쉐이딩 언어, 약칭: HLSL )는 마이크로소프트 에 의해서 개발된, Direct3D  ( DirectX )로 사용되는 프 로그라...', 'featuredImage': 'https://lh6.googleusercontent.com/proxy/7IfoWFVzWixu_uM-4zU0fk3hwo97Zgd30IOBqULXDuzP_eFANab2zmDkegKXkW7uW1_s3kQs6I4-Sl-VSl1GLJ0TZam1OZ_VXZWc4n5JFiYKF_o2LB_VoT803V8741HR8cb24MQytzGyX86MB1_a_3CnJlPbCwSOpcWmJYdn', 'url': 'http://pidia.selfhow.com/2016/12/high-level-shading-language.html', 'type': 'item', 'isSingleItem': true, 'isMultipleItems': false, 'isError': false, 'isPage': false, 'isPost': true, 'isHomepage': false, 'isArchive': false, 'isLabelSearch': false, 'postId': 8478958478467227911}}]);
+_WidgetManager._RegisterWidget('_HeaderView', new _WidgetInfo('Header1', 'headersec', null, document.getElementById('Header1'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_BlogView', new _WidgetInfo('Blog1', 'mainblogsec', null, document.getElementById('Blog1'), {'cmtInteractionsEnabled': false, 'useNgc': false, 'lightboxEnabled': true, 'lightboxModuleUrl': 'https://www.blogger.com/static/v1/jsbin/1532655129-lbx__ko.js', 'lightboxCssUrl': 'https://www.blogger.com/static/v1/v-css/368954415-lightbox_bundle.css'}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_HTMLView', new _WidgetInfo('HTML1', 'sidebartop', null, document.getElementById('HTML1'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_PopularPostsView', new _WidgetInfo('PopularPosts1', 'sidebartop', null, document.getElementById('PopularPosts1'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_BlogArchiveView', new _WidgetInfo('BlogArchive1', 'sidebartop', null, document.getElementById('BlogArchive1'), {'languageDirection': 'ltr', 'loadingMessage': '로드 중\x26hellip;'}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_AttributionView', new _WidgetInfo('Attribution1', 'sidebartop', null, document.getElementById('Attribution1'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_NavbarView', new _WidgetInfo('Navbar1', 'sidebartop', null, document.getElementById('Navbar1'), {}, 'displayModeFull'));
+</script>
+</body>
+</html>
